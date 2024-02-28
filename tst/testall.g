@@ -1,5 +1,5 @@
 #
-# WeylModules: Weyl modules for semisimple, simply-connected algebraic groups
+# WeylModules: for simple simply-connected algebraic groups
 #
 # This file runs package tests. It is also referenced in the package
 # metadata in PackageInfo.g.

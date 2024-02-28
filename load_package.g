@@ -1,0 +1,2 @@
+SetPackagePath("WeylModules",".");
+LoadPackage("WeylModules");

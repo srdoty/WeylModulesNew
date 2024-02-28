@@ -1,5 +1,5 @@
 #
-# WeylModules: Weyl modules for semisimple, simply-connected algebraic groups
+# WeylModules: for simple simply-connected algebraic groups
 #
 # This file contains package meta data. For additional information on
 # the meaning and correct usage of these fields, please consult the
@@ -9,8 +9,8 @@
 SetPackageInfo( rec(
 
 PackageName := "WeylModules",
-Subtitle := "Weyl modules for semisimple, simply-connected algebraic groups",
-Version := "0.1",
+Subtitle := "for simple simply-connected algebraic groups",
+Version := "2.0",
 Date := "23/02/2024", # dd/mm/yyyy format
 License := "GPL-2.0-or-later",
 
@@ -22,7 +22,10 @@ Persons := [
     Email := "doty@math.luc.edu",
     IsAuthor := true,
     IsMaintainer := true,
-    PostalAddress := "Department of Mathematics & Statistics, Loyola University Chicago, Chicago, IL",
+    PostalAddress := Concatenation( [
+                       "Department of Mathematics and Statistics\n",
+                       "Loyola University Chicago\n",
+                       "Chicago, Illinois 60660 USA" ] ),
     Place := "Chicago",
     Institution := "Loyola University Chicago",
   ),
@@ -50,7 +53,7 @@ ArchiveFormats := ".tar.gz",
 ##    "dev"           for development versions of packages
 ##    "other"         for all other packages
 ##
-Status := "dev",
+Status := "other",
 
 AbstractHTML   :=  "",
 
@@ -60,7 +63,7 @@ PackageDoc := rec(
   HTMLStart := "doc/chap0_mj.html",
   PDFFile   := "doc/manual.pdf",
   SixFile   := "doc/manual.six",
-  LongTitle := "Weyl modules for semisimple, simply-connected algebraic groups",
+  LongTitle := "Weyl modules for simple simply-connected algebraic groups",
 ),
 
 Dependencies := rec(
@@ -74,8 +77,15 @@ AvailabilityTest := ReturnTrue,
 
 TestFile := "tst/testall.g",
 
-#Keywords := [ "TODO" ],
-
+AutoDoc := rec(
+  TitlePage := rec(
+    Acknowledgements := "Insert thanks here.",
+    Abstract := "&WeylModules; is a &GAP; Package supporting computer computations with Weyl modules for simple simply-connected algebraic groups.",
+    Copyright := "&copyright; Copyright 2009--2024 by Stephen R. Doty.<Br/>This package is distributed under the terms and conditions of the GNU Public License Version 2 or (at your option) any later version." ),
+),
+                
+Keywords := [ "algebraic groups", "Weyl modules" ],
+                    
 ));
 
 

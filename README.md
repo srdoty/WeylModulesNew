@@ -1,17 +1,24 @@
-# The GAP package WeylModules
+# The Weyl modules package
 
-TODO: add a description of your package; perhaps also instructions how how to
-install and use it, resp. where to find out more
+This is the README file for the GAP package "WeylModules". You must
+have a working copy of GAP installed in order to use this package.
 
+The package provides functions for doing computations with Weyl modules
+in positive characteristic for a semisimple simply-connected algebraic
+group. 
 
-## Contact
+The package is not yet submitted to GAP.  For updates between releases
+of GAP itself check the package Web page, at
+http://doty.math.luc.edu/weylmodules.
+  
+After downloading the package, start GAP in the download folder, and type:
+```
+gap> SetPackagePath("WeylModules",".");
+gap> LoadPackage("WeylModules");
+```
+You can also run `ExtendRootDirectories` to tell GAP where to
+find the package. (See Chapter 76 of the
+[GAP Manual](https://www.gap-system.org/Manuals/doc/ref/chap76.html).)
 
-TODO: add info on how to contact you and/or how to report issues with your
-package
-
-## License
-
-TODO: Provide information on the license of your package. A license is
-important as it determines who has a right to distribute your package. The
-"default" license to consider is GNU General Public License v2 or later, as
-that is the license of GAP itself.
+For details on how to use the WeylModules package see the package
+documentation in the `doc` subdirectory.
