@@ -49,7 +49,7 @@ tilting module conjecture, by Bendel, Nakano, Pillen, and Sobaje <Cite
 Key="BNPS"/> motivated the author to make subsequent calculations that
 led to the realization that the <K>SubmoduleStructure</K> function was
 not reliable. This led to the development of Version 2.0, which
-elimates the unreliable command and adds a number of new functions
+eliminates the unreliable command and adds a number of new functions
 that extend the capabilities of the previous version.
  
 Although most of the functions deal with the simple simply-connected
