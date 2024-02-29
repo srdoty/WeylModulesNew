@@ -1,7 +1,6 @@
-@Chapter Weyl modules
-@ChapterLabel Weyl_modules
+@Chapter Introduction
 
-This chapter discusses the commands available for computations with
+This &GAP; Package supports digital computer computations with
 Weyl modules for a given simple simply-connected algebraic group $G$
 in positive characteristic $p$. Actually the group $G$ itself never
 appears in any of the computations, which take place instead using the
@@ -9,6 +8,8 @@ appears in any of the computations, which take place instead using the
 $G$, taken over the prime field. One should refer to <Cite
 Key="Jantzen"/> for the definition of the algebra of distributions,
 and other basic definitions and properties related to Weyl modules.
+
+
 
 The algorithms are based on the method of <Cite Key = "Irving"/> (see
 also <Cite Key = "Xi"/>) and build on the existing Lie algebra
@@ -38,11 +39,34 @@ module $V$. The implementation of this idea involves a brute force
 search through each dominant weight space, examing all linear
 combinations (over the prime field) and compiling a list of the ones
 which are maximal. This exploits the pleasant fact that for Weyl
-modules of small dimension, the dimension of the weight spaces tends
+modules of small dimension, the weight spaces tend to be small enough
 to be manageable.
 
+Versions 1.0 and 1.1 of this package were released in 2009. Their
+initial development was spurred by work on the paper <Cite
+Key="BDM"/>.  The discovery of the first counterexample to Donkin's
+tilting module conjecture, by Bendel, Nakano, Pillen, and Sobaje <Cite
+Key="BNPS"/> motivated the author to make subsequent calculations that
+led to the realization that the <K>SubmoduleStructure</K> function was
+not reliable. This led to the development of Version 2.0, which
+elimates the unreliable command and adds a number of new functions
+that extend the capabilities of the previous version.
+ 
+Although most of the functions deal with the simple simply-connected
+case, there are a few functions for dealing with Schur algebras and
+symmetric groups. Those commands are limited in scope, and provided
+mainly as a convenience.
 
-**Warning.** In most cases, the dimension of space of maximal vectors
+
+@Chapter Weyl modules
+@ChapterLabel Weyl_modules
+
+This chapter discusses the commands available for computations (in
+positive characteristic $p$) with Weyl modules, quotient Weyl modules,
+submodules of Weyl modules, and submodules of quotient Weyl modules.
+
+
+WARNING. In most cases, the dimension of space of maximal vectors
 of a given dominant weight is either $0$ or $1$. Cases for which there
 exist two or more independent maximal vectors of the same weight can
 lead to complications, such as a lack of rigidity in the submodule

@@ -20,7 +20,8 @@
 #! @Chapter Reference: Declarations by File
 
 #! This chapter documents the declarations by file in the <F>lib</F> folder,
-#! following the load order specified in the file <F>init.g</F>. 
+#! following the load order specified in the file <F>init.g</F>. This is
+#! provided mainly to aid in subsequent development efforts.
 
 #! @Section Contents of weylmodules.gd
 
