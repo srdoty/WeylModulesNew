@@ -7,9 +7,8 @@ The package provides functions for doing computations with Weyl modules
 in positive characteristic for a simple simply-connected algebraic
 group. 
 
-The package is not yet submitted to GAP.  For updates between releases
-of GAP itself check the package Web page, at
-http://doty.math.luc.edu/weylmodules.
+For updates between releases check the package Web page, at
+https://github.com/srdoty/WeylModulesNew.
   
 After downloading the package, you can start GAP and load the package at
 the same time by opening a terminal, changing directory to the download
