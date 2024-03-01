@@ -10,23 +10,15 @@ group.
 For updates between releases check the package Web page, at
 https://github.com/srdoty/WeylModulesNew.
   
-After downloading the package, you can start GAP and load the package at
-the same time by opening a terminal, changing directory to the download
-folder, and then typing:
+After downloading the package, start GAP and then run the following two
+commands to load the package: 
 ```
-$ gap load_package.g
-```
-on the command line. 
-
-Alternatively, you can first start GAP in the download folder, and then
-type:
-```
-gap> SetPackagePath("WeylModules",".");
+gap> SetPackagePath("WeylModules","path/to/your/copy/of/package");
 gap> LoadPackage("WeylModules");
 ```
-You could also run `ExtendRootDirectories` to tell GAP where to
-find the package, thus avoiding the first step. (See Chapter 76 of the
-[GAP Manual](https://www.gap-system.org/Manuals/doc/ref/chap76.html).)
+For further details, please see Chapter 76 of the
+[GAP Manual](https://www.gap-system.org/Manuals/doc/ref/chap76.html).
 
-For details on how to use the WeylModules package see the package
-documentation in the `doc` subdirectory.
+The manual for the WeylModules package can be found in the `doc`
+subdirectory as either `manual.pdf` or `chap0.html` (depending on
+your formatting preference).
