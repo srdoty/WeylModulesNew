@@ -30,10 +30,11 @@ function(Q,vec)
 
  W:= AmbientWeylModule(Q);
  if vec = Generator(W) then
+    h:= Q!.homomorphism;  # ADDED 3 Mar 2024
     lbasis:= BasisVecs(Q);
     rowbasis:=[];
     for v in lbasis do
-       Add(rowbasis, RowVec(W,v));
+       Add(rowbasis, Image(h, RowVec(W,v)));  # MODIFIED 3 Mar 2024
     od;   
     SM:=Objectify(NewType(FamilyObj(Q), IsSubQuotientWeylModule),
      rec(eltbasis:=lbasis,repbasis:=rowbasis,gens:=[vec],
