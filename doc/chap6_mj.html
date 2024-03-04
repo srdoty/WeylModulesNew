@@ -1,0 +1,763 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<script type="text/javascript"
+  src="mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<title>GAP (WeylModules) - Chapter 6: Reference: Declarations by File</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap6"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chap5_mj.html">5</a>  <a href="chap6_mj.html">6</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap5_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chapBib_mj.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap6.html">[MathJax off]</a></p>
+<p><a id="X7FFDD0E77FC6FE23" name="X7FFDD0E77FC6FE23"></a></p>
+<div class="ChapSects"><a href="chap6_mj.html#X7FFDD0E77FC6FE23">6 <span class="Heading">Reference: Declarations by File</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6_mj.html#X80A7304E7D182FE5">6.1 <span class="Heading">Contents of weylmodules.gd</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7A7608EE7AE465EC">6.1-1 IsWeylModule</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X84AF39327E59725D">6.1-2 WeylModule</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X829734257CE51E5F">6.1-3 WeylModule</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7EA8C07B795522F0">6.1-4 IsAmbiguous</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7888AC5E8236ED49">6.1-5 AmbiguousMaxVecs</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X84DDF2577B92FA98">6.1-6 TheLieAlgebra</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X872B412C81A39CA1">6.1-7 TheCharacteristic</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X83086AF07F809720">6.1-8 BasisVecs</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7FC03496810E941F">6.1-9 Generator</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X792E60F07E313BAF">6.1-10 Dim</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7DA6241E803BB20E">6.1-11 Weights</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X8604A818852A2168">6.1-12 DominantWeights</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X8282AAF78421722D">6.1-13 WeightSpace</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X86E802677BBC222B">6.1-14 WeightSpaces</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7B67F53A7D7DAEEC">6.1-15 ActOn</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X85C0B48979C81EBB">6.1-16 DominantWeightSpaces</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X8392A7ED79FF0832">6.1-17 Character</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X79585E0E8196DDB2">6.1-18 SimpleLieAlgGens</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X808AB4567CA75339">6.1-19 IsMaximalVector</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7F3839F6788E2036">6.1-20 MaximalVectors</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X8529E4A28500AE1B">6.1-21 MaximalVectors</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7BFF2C1B7ECFC259">6.1-22 SocleSeries</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7C1B5AC57EF2E7A5">6.1-23 SimpleQuotient</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7B807AEB811F0B58">6.1-24 MaximalSubmodule</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7F573CC481D0C1B3">6.1-25 DecompositionNumbers</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6_mj.html#X7EF46ECE843F762D">6.2 <span class="Heading">Contents of submodules.gd</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7C4293A880CA5D99">6.2-1 IsSubWeylModule</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7BF970867C8EE376">6.2-2 SubWeylModule</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X827B43437F91DA28">6.2-3 SubWeylModule</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7C53BAE3855679C2">6.2-4 SubWeylModule</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X83E9AA1D7E2024DC">6.2-5 SubWeylModuleDirectSum</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X878ACA477B462A62">6.2-6 IsAmbiguous</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X8027458B7E76ADBE">6.2-7 AmbiguousMaxVecs</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X79AE972C78B40A2F">6.2-8 Generators</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X83F74F9F83BDC981">6.2-9 BasisVecs</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7D84C58580179602">6.2-10 Dim</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7BE7DC5784D28C11">6.2-11 AmbientWeylModule</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7F10CD1B7B153010">6.2-12 Weights</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X8409DCD4837E7D87">6.2-13 DominantWeights</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X8607F8497F78A026">6.2-14 WeightSpaces</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7F63A03385C25693">6.2-15 Character</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X8494B22B821EC906">6.2-16 DominantWeightSpaces</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X854807B78610BE67">6.2-17 WeightSpace</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X84CCE13785B2F008">6.2-18 IsMaximalVector</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X83E213787E989C44">6.2-19 MaximalVectors</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X83E46D9E7A51DDEE">6.2-20 MaximalVectors</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7D54AC4B7C86D6A1">6.2-21 IsWithin</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X82C0AD2D79D3C3DF">6.2-22 SocleWeyl</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X8233F4C87B9D33EA">6.2-23 NextSocle</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X871CABC4879C316F">6.2-24 GensNextSocle</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6_mj.html#X8170ED927F25FB00">6.3 <span class="Heading">Contents of characters.gd</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7A83790B7BD90776">6.3-1 Weight</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X80FB052C8203D491">6.3-2 DifferenceCharacter</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X8555BDBC8166FE06">6.3-3 ProductCharacter</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X82C78150813EA846">6.3-4 DecomposeCharacter</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7E3A603183A05187">6.3-5 SimpleCharacter</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X82C40C697A63B419">6.3-6 SimpleCharacter</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6_mj.html#X87644C5E87544144">6.4 <span class="Heading">Contents of partitions.gd</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7D55BD8F7B566541">6.4-1 CompositionToWeight</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X82C16B5F847757D4">6.4-2 WeightToComposition</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7AA6705482A42EDB">6.4-3 BoundedPartitions</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7DABA4DF81E39BDD">6.4-4 BoundedPartitions</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X78D3B01F7FAF3CAD">6.4-5 pRestrictedPartitions</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7E22D9817EE8BCED">6.4-6 AllPartitions</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X796223647E619A1D">6.4-7 Conjugate</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7D2F79FE7A6B1911">6.4-8 pRestricted</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X8502679A7BA8D6BD">6.4-9 pRegular</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7EFF862081A1912C">6.4-10 Mullineux</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7CDCD0147B36F7A7">6.4-11 pRegularPartitions</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6_mj.html#X7D194ECF827AD607">6.5 <span class="Heading">Contents of quotient.gd</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X8622477F829F7CCB">6.5-1 IsQuotientWeylModule</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7B24F92D81C110EC">6.5-2 QuotientWeylModule</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X855B7A5A85406B5B">6.5-3 AmbientWeylModule</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X8120F6BC8259F9D6">6.5-4 DefiningKernel</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7F7B651C873FA922">6.5-5 IsAmbiguous</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X78459E5F7A528047">6.5-6 AmbiguousMaxVecs</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7CA8012D87A8F7D7">6.5-7 TheLieAlgebra</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X878108107BAB56EB">6.5-8 TheCharacteristic</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7F1B557787890B1B">6.5-9 BasisVecs</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7B8B3F1879070824">6.5-10 Generator</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X872624E3813F12FF">6.5-11 Dim</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7CE4B29B81E48C9B">6.5-12 Weights</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7E77F8F97C7A0225">6.5-13 DominantWeights</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X78A14EEA81798734">6.5-14 WeightSpaces</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7DBF79D081F69409">6.5-15 Character</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7B171F318658F512">6.5-16 DominantWeightSpaces</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X8712F2F981F285B2">6.5-17 WeightSpace</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7C3353628112FD32">6.5-18 ActOn</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X82D21BBE87EE1D85">6.5-19 MaximalVectors</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X802830D07ED74B37">6.5-20 MaximalVectors</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X80860CBB80A5498B">6.5-21 SocleSeries</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6_mj.html#X785B4A9B801AD7CF">6.6 <span class="Heading">Contents of schuralgebras.gd</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7A142DF97DA7FC57">6.6-1 IsSchurAlgebraWeylModule</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7BADB611851BF24E">6.6-2 SchurAlgebraWeylModule</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X819204EC85215AEA">6.6-3 SchurAlgebraDecompositionMatrix</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7C934349804AF7F6">6.6-4 SymmetricGroupDecompositionNumbers</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7DD2E56C7D6752D2">6.6-5 SymmetricGroupDecompositionMatrix</a></span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6_mj.html#X79A84B3F79F2B0FF">6.7 <span class="Heading">Contents of subquotient.gd</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7D8D0E4A7A20ACC4">6.7-1 IsSubQuotientWeylModule</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X87854A357E724CD1">6.7-2 IsWithin</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X817995B8799471F2">6.7-3 SubWeylModule</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X79ED76798799624A">6.7-4 SubWeylModule</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7F38126A7EF9AF5F">6.7-5 SubWeylModule</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X86BBDD027CDCE992">6.7-6 SubWeylModuleDirectSum</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X84E9848E848E0760">6.7-7 Generators</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X794D1B0779786C9E">6.7-8 BasisVecs</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X8613711B845805F3">6.7-9 Dim</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7EA45084876AD8B1">6.7-10 AmbientQuotient</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7EF05C7587AB22B4">6.7-11 Weights</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X788C11538628836B">6.7-12 WeightSpaces</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X86EEE6FA7F07F38C">6.7-13 Character</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X782BC97082FF36E5">6.7-14 DominantWeightSpaces</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X879E32C3797083D4">6.7-15 WeightSpace</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7FE9530C81DA5FE4">6.7-16 SocleWeyl</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X78086C8D815896F5">6.7-17 NextSocle</a></span>
+</div></div>
+</div>
+
+<h3>6 <span class="Heading">Reference: Declarations by File</span></h3>
+
+<p>This chapter documents the declarations by file in the <code class="file">lib</code> folder, following the load order specified in the file <code class="file">init.g</code>. This is provided mainly to aid in subsequent development efforts.</p>
+
+<p><a id="X80A7304E7D182FE5" name="X80A7304E7D182FE5"></a></p>
+
+<h4>6.1 <span class="Heading">Contents of weylmodules.gd</span></h4>
+
+<p><a id="X7A7608EE7AE465EC" name="X7A7608EE7AE465EC"></a></p>
+
+<h5>6.1-1 IsWeylModule</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsWeylModule</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="code">true</code> or <code class="code">false</code></p>
+
+<p><a id="X84AF39327E59725D" name="X84AF39327E59725D"></a></p>
+
+<h5>6.1-2 WeylModule</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; WeylModule</code>( <var class="Arg">arg1</var>, <var class="Arg">arg2</var>, <var class="Arg">arg3</var>, <var class="Arg">arg4</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X829734257CE51E5F" name="X829734257CE51E5F"></a></p>
+
+<h5>6.1-3 WeylModule</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; WeylModule</code>( <var class="Arg">arg1</var>, <var class="Arg">arg2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X7EA8C07B795522F0" name="X7EA8C07B795522F0"></a></p>
+
+<h5>6.1-4 IsAmbiguous</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAmbiguous</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X7888AC5E8236ED49" name="X7888AC5E8236ED49"></a></p>
+
+<h5>6.1-5 AmbiguousMaxVecs</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AmbiguousMaxVecs</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X84DDF2577B92FA98" name="X84DDF2577B92FA98"></a></p>
+
+<h5>6.1-6 TheLieAlgebra</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TheLieAlgebra</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X872B412C81A39CA1" name="X872B412C81A39CA1"></a></p>
+
+<h5>6.1-7 TheCharacteristic</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TheCharacteristic</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X83086AF07F809720" name="X83086AF07F809720"></a></p>
+
+<h5>6.1-8 BasisVecs</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BasisVecs</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X7FC03496810E941F" name="X7FC03496810E941F"></a></p>
+
+<h5>6.1-9 Generator</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Generator</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X792E60F07E313BAF" name="X792E60F07E313BAF"></a></p>
+
+<h5>6.1-10 Dim</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Dim</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X7DA6241E803BB20E" name="X7DA6241E803BB20E"></a></p>
+
+<h5>6.1-11 Weights</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Weights</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X8604A818852A2168" name="X8604A818852A2168"></a></p>
+
+<h5>6.1-12 DominantWeights</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DominantWeights</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X8282AAF78421722D" name="X8282AAF78421722D"></a></p>
+
+<h5>6.1-13 WeightSpace</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; WeightSpace</code>( <var class="Arg">arg1</var>, <var class="Arg">arg2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X86E802677BBC222B" name="X86E802677BBC222B"></a></p>
+
+<h5>6.1-14 WeightSpaces</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; WeightSpaces</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X7B67F53A7D7DAEEC" name="X7B67F53A7D7DAEEC"></a></p>
+
+<h5>6.1-15 ActOn</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ActOn</code>( <var class="Arg">arg1</var>, <var class="Arg">arg2</var>, <var class="Arg">arg3</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X85C0B48979C81EBB" name="X85C0B48979C81EBB"></a></p>
+
+<h5>6.1-16 DominantWeightSpaces</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DominantWeightSpaces</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X8392A7ED79FF0832" name="X8392A7ED79FF0832"></a></p>
+
+<h5>6.1-17 Character</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Character</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X79585E0E8196DDB2" name="X79585E0E8196DDB2"></a></p>
+
+<h5>6.1-18 SimpleLieAlgGens</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SimpleLieAlgGens</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X808AB4567CA75339" name="X808AB4567CA75339"></a></p>
+
+<h5>6.1-19 IsMaximalVector</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsMaximalVector</code>( <var class="Arg">arg1</var>, <var class="Arg">arg2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X7F3839F6788E2036" name="X7F3839F6788E2036"></a></p>
+
+<h5>6.1-20 MaximalVectors</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MaximalVectors</code>( <var class="Arg">arg1</var>, <var class="Arg">arg2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X8529E4A28500AE1B" name="X8529E4A28500AE1B"></a></p>
+
+<h5>6.1-21 MaximalVectors</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MaximalVectors</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X7BFF2C1B7ECFC259" name="X7BFF2C1B7ECFC259"></a></p>
+
+<h5>6.1-22 SocleSeries</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SocleSeries</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X7C1B5AC57EF2E7A5" name="X7C1B5AC57EF2E7A5"></a></p>
+
+<h5>6.1-23 SimpleQuotient</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SimpleQuotient</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X7B807AEB811F0B58" name="X7B807AEB811F0B58"></a></p>
+
+<h5>6.1-24 MaximalSubmodule</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MaximalSubmodule</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X7F573CC481D0C1B3" name="X7F573CC481D0C1B3"></a></p>
+
+<h5>6.1-25 DecompositionNumbers</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DecompositionNumbers</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X7EF46ECE843F762D" name="X7EF46ECE843F762D"></a></p>
+
+<h4>6.2 <span class="Heading">Contents of submodules.gd</span></h4>
+
+<p><a id="X7C4293A880CA5D99" name="X7C4293A880CA5D99"></a></p>
+
+<h5>6.2-1 IsSubWeylModule</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSubWeylModule</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="code">true</code> or <code class="code">false</code></p>
+
+<p><a id="X7BF970867C8EE376" name="X7BF970867C8EE376"></a></p>
+
+<h5>6.2-2 SubWeylModule</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SubWeylModule</code>( <var class="Arg">arg1</var>, <var class="Arg">arg2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X827B43437F91DA28" name="X827B43437F91DA28"></a></p>
+
+<h5>6.2-3 SubWeylModule</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SubWeylModule</code>( <var class="Arg">arg1</var>, <var class="Arg">arg2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X7C53BAE3855679C2" name="X7C53BAE3855679C2"></a></p>
+
+<h5>6.2-4 SubWeylModule</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SubWeylModule</code>( <var class="Arg">arg1</var>, <var class="Arg">arg2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X83E9AA1D7E2024DC" name="X83E9AA1D7E2024DC"></a></p>
+
+<h5>6.2-5 SubWeylModuleDirectSum</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SubWeylModuleDirectSum</code>( <var class="Arg">arg1</var>, <var class="Arg">arg2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X878ACA477B462A62" name="X878ACA477B462A62"></a></p>
+
+<h5>6.2-6 IsAmbiguous</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAmbiguous</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X8027458B7E76ADBE" name="X8027458B7E76ADBE"></a></p>
+
+<h5>6.2-7 AmbiguousMaxVecs</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AmbiguousMaxVecs</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X79AE972C78B40A2F" name="X79AE972C78B40A2F"></a></p>
+
+<h5>6.2-8 Generators</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Generators</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X83F74F9F83BDC981" name="X83F74F9F83BDC981"></a></p>
+
+<h5>6.2-9 BasisVecs</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BasisVecs</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X7D84C58580179602" name="X7D84C58580179602"></a></p>
+
+<h5>6.2-10 Dim</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Dim</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X7BE7DC5784D28C11" name="X7BE7DC5784D28C11"></a></p>
+
+<h5>6.2-11 AmbientWeylModule</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AmbientWeylModule</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X7F10CD1B7B153010" name="X7F10CD1B7B153010"></a></p>
+
+<h5>6.2-12 Weights</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Weights</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X8409DCD4837E7D87" name="X8409DCD4837E7D87"></a></p>
+
+<h5>6.2-13 DominantWeights</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DominantWeights</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X8607F8497F78A026" name="X8607F8497F78A026"></a></p>
+
+<h5>6.2-14 WeightSpaces</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; WeightSpaces</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X7F63A03385C25693" name="X7F63A03385C25693"></a></p>
+
+<h5>6.2-15 Character</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Character</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X8494B22B821EC906" name="X8494B22B821EC906"></a></p>
+
+<h5>6.2-16 DominantWeightSpaces</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DominantWeightSpaces</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X854807B78610BE67" name="X854807B78610BE67"></a></p>
+
+<h5>6.2-17 WeightSpace</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; WeightSpace</code>( <var class="Arg">arg1</var>, <var class="Arg">arg2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X84CCE13785B2F008" name="X84CCE13785B2F008"></a></p>
+
+<h5>6.2-18 IsMaximalVector</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsMaximalVector</code>( <var class="Arg">arg1</var>, <var class="Arg">arg2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X83E213787E989C44" name="X83E213787E989C44"></a></p>
+
+<h5>6.2-19 MaximalVectors</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MaximalVectors</code>( <var class="Arg">arg1</var>, <var class="Arg">arg2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X83E46D9E7A51DDEE" name="X83E46D9E7A51DDEE"></a></p>
+
+<h5>6.2-20 MaximalVectors</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MaximalVectors</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X7D54AC4B7C86D6A1" name="X7D54AC4B7C86D6A1"></a></p>
+
+<h5>6.2-21 IsWithin</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsWithin</code>( <var class="Arg">arg1</var>, <var class="Arg">arg2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X82C0AD2D79D3C3DF" name="X82C0AD2D79D3C3DF"></a></p>
+
+<h5>6.2-22 SocleWeyl</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SocleWeyl</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X8233F4C87B9D33EA" name="X8233F4C87B9D33EA"></a></p>
+
+<h5>6.2-23 NextSocle</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NextSocle</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X871CABC4879C316F" name="X871CABC4879C316F"></a></p>
+
+<h5>6.2-24 GensNextSocle</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GensNextSocle</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X8170ED927F25FB00" name="X8170ED927F25FB00"></a></p>
+
+<h4>6.3 <span class="Heading">Contents of characters.gd</span></h4>
+
+<p><a id="X7A83790B7BD90776" name="X7A83790B7BD90776"></a></p>
+
+<h5>6.3-1 Weight</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Weight</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X80FB052C8203D491" name="X80FB052C8203D491"></a></p>
+
+<h5>6.3-2 DifferenceCharacter</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DifferenceCharacter</code>( <var class="Arg">arg1</var>, <var class="Arg">arg2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X8555BDBC8166FE06" name="X8555BDBC8166FE06"></a></p>
+
+<h5>6.3-3 ProductCharacter</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ProductCharacter</code>( <var class="Arg">arg1</var>, <var class="Arg">arg2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X82C78150813EA846" name="X82C78150813EA846"></a></p>
+
+<h5>6.3-4 DecomposeCharacter</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DecomposeCharacter</code>( <var class="Arg">arg1</var>, <var class="Arg">arg2</var>, <var class="Arg">arg3</var>, <var class="Arg">arg4</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X7E3A603183A05187" name="X7E3A603183A05187"></a></p>
+
+<h5>6.3-5 SimpleCharacter</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SimpleCharacter</code>( <var class="Arg">arg1</var>, <var class="Arg">arg2</var>, <var class="Arg">arg3</var>, <var class="Arg">arg4</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X82C40C697A63B419" name="X82C40C697A63B419"></a></p>
+
+<h5>6.3-6 SimpleCharacter</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SimpleCharacter</code>( <var class="Arg">arg1</var>, <var class="Arg">arg2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X87644C5E87544144" name="X87644C5E87544144"></a></p>
+
+<h4>6.4 <span class="Heading">Contents of partitions.gd</span></h4>
+
+<p><a id="X7D55BD8F7B566541" name="X7D55BD8F7B566541"></a></p>
+
+<h5>6.4-1 CompositionToWeight</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; CompositionToWeight</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X82C16B5F847757D4" name="X82C16B5F847757D4"></a></p>
+
+<h5>6.4-2 WeightToComposition</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; WeightToComposition</code>( <var class="Arg">arg1</var>, <var class="Arg">arg2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X7AA6705482A42EDB" name="X7AA6705482A42EDB"></a></p>
+
+<h5>6.4-3 BoundedPartitions</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BoundedPartitions</code>( <var class="Arg">arg1</var>, <var class="Arg">arg2</var>, <var class="Arg">arg3</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X7DABA4DF81E39BDD" name="X7DABA4DF81E39BDD"></a></p>
+
+<h5>6.4-4 BoundedPartitions</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BoundedPartitions</code>( <var class="Arg">arg1</var>, <var class="Arg">arg2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X78D3B01F7FAF3CAD" name="X78D3B01F7FAF3CAD"></a></p>
+
+<h5>6.4-5 pRestrictedPartitions</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; pRestrictedPartitions</code>( <var class="Arg">arg1</var>, <var class="Arg">arg2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X7E22D9817EE8BCED" name="X7E22D9817EE8BCED"></a></p>
+
+<h5>6.4-6 AllPartitions</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AllPartitions</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X796223647E619A1D" name="X796223647E619A1D"></a></p>
+
+<h5>6.4-7 Conjugate</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Conjugate</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X7D2F79FE7A6B1911" name="X7D2F79FE7A6B1911"></a></p>
+
+<h5>6.4-8 pRestricted</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; pRestricted</code>( <var class="Arg">arg1</var>, <var class="Arg">arg2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X8502679A7BA8D6BD" name="X8502679A7BA8D6BD"></a></p>
+
+<h5>6.4-9 pRegular</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; pRegular</code>( <var class="Arg">arg1</var>, <var class="Arg">arg2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X7EFF862081A1912C" name="X7EFF862081A1912C"></a></p>
+
+<h5>6.4-10 Mullineux</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Mullineux</code>( <var class="Arg">arg1</var>, <var class="Arg">arg2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X7CDCD0147B36F7A7" name="X7CDCD0147B36F7A7"></a></p>
+
+<h5>6.4-11 pRegularPartitions</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; pRegularPartitions</code>( <var class="Arg">arg1</var>, <var class="Arg">arg2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X7D194ECF827AD607" name="X7D194ECF827AD607"></a></p>
+
+<h4>6.5 <span class="Heading">Contents of quotient.gd</span></h4>
+
+<p><a id="X8622477F829F7CCB" name="X8622477F829F7CCB"></a></p>
+
+<h5>6.5-1 IsQuotientWeylModule</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsQuotientWeylModule</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="code">true</code> or <code class="code">false</code></p>
+
+<p><a id="X7B24F92D81C110EC" name="X7B24F92D81C110EC"></a></p>
+
+<h5>6.5-2 QuotientWeylModule</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; QuotientWeylModule</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X855B7A5A85406B5B" name="X855B7A5A85406B5B"></a></p>
+
+<h5>6.5-3 AmbientWeylModule</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AmbientWeylModule</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X8120F6BC8259F9D6" name="X8120F6BC8259F9D6"></a></p>
+
+<h5>6.5-4 DefiningKernel</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DefiningKernel</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X7F7B651C873FA922" name="X7F7B651C873FA922"></a></p>
+
+<h5>6.5-5 IsAmbiguous</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAmbiguous</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X78459E5F7A528047" name="X78459E5F7A528047"></a></p>
+
+<h5>6.5-6 AmbiguousMaxVecs</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AmbiguousMaxVecs</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X7CA8012D87A8F7D7" name="X7CA8012D87A8F7D7"></a></p>
+
+<h5>6.5-7 TheLieAlgebra</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TheLieAlgebra</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X878108107BAB56EB" name="X878108107BAB56EB"></a></p>
+
+<h5>6.5-8 TheCharacteristic</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TheCharacteristic</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X7F1B557787890B1B" name="X7F1B557787890B1B"></a></p>
+
+<h5>6.5-9 BasisVecs</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BasisVecs</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X7B8B3F1879070824" name="X7B8B3F1879070824"></a></p>
+
+<h5>6.5-10 Generator</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Generator</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X872624E3813F12FF" name="X872624E3813F12FF"></a></p>
+
+<h5>6.5-11 Dim</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Dim</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X7CE4B29B81E48C9B" name="X7CE4B29B81E48C9B"></a></p>
+
+<h5>6.5-12 Weights</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Weights</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X7E77F8F97C7A0225" name="X7E77F8F97C7A0225"></a></p>
+
+<h5>6.5-13 DominantWeights</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DominantWeights</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X78A14EEA81798734" name="X78A14EEA81798734"></a></p>
+
+<h5>6.5-14 WeightSpaces</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; WeightSpaces</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X7DBF79D081F69409" name="X7DBF79D081F69409"></a></p>
+
+<h5>6.5-15 Character</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Character</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X7B171F318658F512" name="X7B171F318658F512"></a></p>
+
+<h5>6.5-16 DominantWeightSpaces</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DominantWeightSpaces</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X8712F2F981F285B2" name="X8712F2F981F285B2"></a></p>
+
+<h5>6.5-17 WeightSpace</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; WeightSpace</code>( <var class="Arg">arg1</var>, <var class="Arg">arg2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X7C3353628112FD32" name="X7C3353628112FD32"></a></p>
+
+<h5>6.5-18 ActOn</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ActOn</code>( <var class="Arg">arg1</var>, <var class="Arg">arg2</var>, <var class="Arg">arg3</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X82D21BBE87EE1D85" name="X82D21BBE87EE1D85"></a></p>
+
+<h5>6.5-19 MaximalVectors</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MaximalVectors</code>( <var class="Arg">arg1</var>, <var class="Arg">arg2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X802830D07ED74B37" name="X802830D07ED74B37"></a></p>
+
+<h5>6.5-20 MaximalVectors</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MaximalVectors</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X80860CBB80A5498B" name="X80860CBB80A5498B"></a></p>
+
+<h5>6.5-21 SocleSeries</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SocleSeries</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X785B4A9B801AD7CF" name="X785B4A9B801AD7CF"></a></p>
+
+<h4>6.6 <span class="Heading">Contents of schuralgebras.gd</span></h4>
+
+<p><a id="X7A142DF97DA7FC57" name="X7A142DF97DA7FC57"></a></p>
+
+<h5>6.6-1 IsSchurAlgebraWeylModule</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSchurAlgebraWeylModule</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="code">true</code> or <code class="code">false</code></p>
+
+<p><a id="X7BADB611851BF24E" name="X7BADB611851BF24E"></a></p>
+
+<h5>6.6-2 SchurAlgebraWeylModule</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SchurAlgebraWeylModule</code>( <var class="Arg">arg1</var>, <var class="Arg">arg2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X819204EC85215AEA" name="X819204EC85215AEA"></a></p>
+
+<h5>6.6-3 SchurAlgebraDecompositionMatrix</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SchurAlgebraDecompositionMatrix</code>( <var class="Arg">arg1</var>, <var class="Arg">arg2</var>, <var class="Arg">arg3</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X7C934349804AF7F6" name="X7C934349804AF7F6"></a></p>
+
+<h5>6.6-4 SymmetricGroupDecompositionNumbers</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SymmetricGroupDecompositionNumbers</code>( <var class="Arg">arg1</var>, <var class="Arg">arg2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X7DD2E56C7D6752D2" name="X7DD2E56C7D6752D2"></a></p>
+
+<h5>6.6-5 SymmetricGroupDecompositionMatrix</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SymmetricGroupDecompositionMatrix</code>( <var class="Arg">arg1</var>, <var class="Arg">arg2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X79A84B3F79F2B0FF" name="X79A84B3F79F2B0FF"></a></p>
+
+<h4>6.7 <span class="Heading">Contents of subquotient.gd</span></h4>
+
+<p><a id="X7D8D0E4A7A20ACC4" name="X7D8D0E4A7A20ACC4"></a></p>
+
+<h5>6.7-1 IsSubQuotientWeylModule</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSubQuotientWeylModule</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="code">true</code> or <code class="code">false</code></p>
+
+<p><a id="X87854A357E724CD1" name="X87854A357E724CD1"></a></p>
+
+<h5>6.7-2 IsWithin</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsWithin</code>( <var class="Arg">arg1</var>, <var class="Arg">arg2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X817995B8799471F2" name="X817995B8799471F2"></a></p>
+
+<h5>6.7-3 SubWeylModule</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SubWeylModule</code>( <var class="Arg">arg1</var>, <var class="Arg">arg2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X79ED76798799624A" name="X79ED76798799624A"></a></p>
+
+<h5>6.7-4 SubWeylModule</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SubWeylModule</code>( <var class="Arg">arg1</var>, <var class="Arg">arg2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X7F38126A7EF9AF5F" name="X7F38126A7EF9AF5F"></a></p>
+
+<h5>6.7-5 SubWeylModule</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SubWeylModule</code>( <var class="Arg">arg1</var>, <var class="Arg">arg2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X86BBDD027CDCE992" name="X86BBDD027CDCE992"></a></p>
+
+<h5>6.7-6 SubWeylModuleDirectSum</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SubWeylModuleDirectSum</code>( <var class="Arg">arg1</var>, <var class="Arg">arg2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X84E9848E848E0760" name="X84E9848E848E0760"></a></p>
+
+<h5>6.7-7 Generators</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Generators</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X794D1B0779786C9E" name="X794D1B0779786C9E"></a></p>
+
+<h5>6.7-8 BasisVecs</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BasisVecs</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X8613711B845805F3" name="X8613711B845805F3"></a></p>
+
+<h5>6.7-9 Dim</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Dim</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X7EA45084876AD8B1" name="X7EA45084876AD8B1"></a></p>
+
+<h5>6.7-10 AmbientQuotient</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AmbientQuotient</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X7EF05C7587AB22B4" name="X7EF05C7587AB22B4"></a></p>
+
+<h5>6.7-11 Weights</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Weights</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X788C11538628836B" name="X788C11538628836B"></a></p>
+
+<h5>6.7-12 WeightSpaces</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; WeightSpaces</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X86EEE6FA7F07F38C" name="X86EEE6FA7F07F38C"></a></p>
+
+<h5>6.7-13 Character</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Character</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X782BC97082FF36E5" name="X782BC97082FF36E5"></a></p>
+
+<h5>6.7-14 DominantWeightSpaces</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DominantWeightSpaces</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X879E32C3797083D4" name="X879E32C3797083D4"></a></p>
+
+<h5>6.7-15 WeightSpace</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; WeightSpace</code>( <var class="Arg">arg1</var>, <var class="Arg">arg2</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X7FE9530C81DA5FE4" name="X7FE9530C81DA5FE4"></a></p>
+
+<h5>6.7-16 SocleWeyl</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SocleWeyl</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p><a id="X78086C8D815896F5" name="X78086C8D815896F5"></a></p>
+
+<h5>6.7-17 NextSocle</h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NextSocle</code>( <var class="Arg">arg</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap5_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chapBib_mj.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chap5_mj.html">5</a>  <a href="chap6_mj.html">6</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>

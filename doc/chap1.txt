@@ -1,0 +1,53 @@
+  
+  [1X1 [33X[0;0YIntroduction[133X[101X
+  
+  [33X[0;0YThis  [5XGAP[105X  Package  supports digital computer computations with Weyl modules
+  for   a   given  simple  simply-connected  algebraic  group  [23XG[123X  in  positive
+  characteristic  [23Xp[123X.  Actually  the group [23XG[123X itself never appears in any of the
+  computations,  which  take  place instead using the [13Xalgebra of distributions[113X
+  (also  known  as  the  [13Xhyperalgebra[113X)  of  [23XG[123X, taken over the prime field. One
+  should  refer to [Jan03] for the definition of the algebra of distributions,
+  and other basic definitions and properties related to Weyl modules.[133X
+  
+  [33X[0;0YThe  algorithms  are  based  on  the method of [Irv86] (see also [Xi99]) and
+  build  on  the  existing Lie algebra functionality in [5XGAP[105X. In principle, one
+  can  work  with  arbitrary weights for an arbitrary (simple) root system; in
+  practice,  the  functionality  is  limited  by the size of the objects being
+  computed.  If  your Weyl module has dimension in the thousands, you may have
+  to wait a very long time for certain computations to finish.[133X
+  
+  [33X[0;0YThe package is possibly most useful for doing computations in characteristic
+  [23Xp[123X,  where  [23Xp[123X is relatively small relative to the Coxeter number. The general
+  theory  of  Weyl  modules [Jan03] includes a number of basic properties that
+  break down (or are not known to hold) if the characteristic is too small. In
+  such cases, explicit computations are often useful.[133X
+  
+  [33X[0;0YRecall  that  a  [13Xmaximal  vector[113X  is  a weight vector which is killed by the
+  positive  unipotent radical; equivalently, it is killed by the positive part
+  of the algebra of distributions.[133X
+  
+  [33X[0;0YThe  main  technical  idea  underlying  this  package is the following fact:
+  computing  all  the  maximal vectors in a given Weyl module [23XV[123X classifies the
+  nonzero  Weyl  modules  [23XW[123X  for  which  a  nonzero homomorphism from [23XW[123X into [23XV[123X
+  exists.  Such  homological  information  is  a powerful aid to understanding
+  structural  properties of the Weyl module [23XV[123X. The implementation of this idea
+  involves  a  brute  force search through each dominant weight space, examing
+  all  linear  combinations (over the prime field) and compiling a list of the
+  ones  which  are  maximal.  This  exploits  the  pleasant fact that for Weyl
+  modules  of small dimension, the weight spaces tend to be small enough to be
+  manageable.[133X
+  
+  [33X[0;0YVersions  1.0  and  1.1 of this package were released in 2009. Their initial
+  development  was  spurred by work on the paper [BDM11]. The discovery of the
+  first  counterexample  to  Donkin's  tilting  module  conjecture, by Bendel,
+  Nakano,  Pillen, and Sobaje [BNPS20] motivated the author to make subsequent
+  calculations  that  led  to  the  realization  that  the  [9XSubmoduleStructure[109X
+  function was not reliable. This led to the development of Version 2.0, which
+  eliminates  the  unreliable  command and adds a number of new functions that
+  extend the capabilities of the previous version.[133X
+  
+  [33X[0;0YAlthough  most  of the functions deal with the simple simply-connected case,
+  there  are  a  few  functions  for dealing with Schur algebras and symmetric
+  groups.  Those  commands  are  limited  in  scope,  and provided mainly as a
+  convenience.[133X
+  

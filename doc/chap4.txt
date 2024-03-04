@@ -1,0 +1,294 @@
+  
+  [1X4 [33X[0;0YSchur algebras and symmetric groups[133X[101X
+  
+  [33X[0;0YThe  decomposition  numbers  for  the  algebraic  group [23XSL_n[123X of type [23XA_{n−1}[123X
+  determine  the  decomposition  numbers for the corresponding Schur algebras,
+  and  thus  also  determine  the  decomposition numbers for symmetric groups.
+  People  working with Schur algebras and symmetric groups often prefer to use
+  [13Xpartitions[113X  to  label  highest  weights.  Although  it is trivial to convert
+  between  [23XSL_n[123X  weight  notation  and  partition  notation,  for  the sake of
+  convenience,  we  provide a few functions that perform such conversions, and
+  various other functions related to Schur algebras and symmetric groups.[133X
+  
+  [33X[0;0YIt  should  be noted that the functions for symmetric groups are quite slow,
+  so  readers  interested  in  symmetric  group  computations may want to look
+  elsewhere for better tools.[133X
+  
+  
+  [1X4.1 [33X[0;0YCompositions and weights[133X[101X
+  
+  [33X[0;0YA (weak) [13Xcomposition[113X of degree [23Xr[123X is a finite sequence [23Xc = [c_1 , \dots , c_n
+  ][123X  of non-negative integers which add up to [23Xr[123X. The number [23Xn[123X of parts of [23Xc[123X is
+  called  its  [13Xlength[113X. Note that zeros are allowed in weak compositions, which
+  are called compositions from now on.[133X
+  
+  [33X[0;0YOne  may  identify  the  set  of  compositions  of  length [23Xn[123X with the set of
+  polynomial weights of the algebraic group [23XGL_n[123X. Note that a composition is a
+  partition  if  and  only if it is a dominant weight relative to the diagonal
+  maximal torus in [23XGL_n[123X.[133X
+  
+  CompositionToWeight( c )
+  WeightToComposition( r , wt )
+  
+  [33X[0;0Y[9XCompositionToWeight[109X  converts  a  given  list  [3Xc[103X  (of length [23Xn[123X) into an [23XSL_n[123X
+  weight,  by taking successive differences in the parts of [3Xc[103X. This produces a
+  list  of length [23Xn-1[123X. [9XWeightToComposition[109X does the reverse operation, padding
+  with  zeros  if  necessary in order to return a composition of degree [23Xr[123X. The
+  degree  must  be  specified since it is not uniquely determined by the given
+  weight.  (The  degree  is  unique  modulo  [23Xn[123X.) The length [23Xn[123X of the output is
+  always one more than the length of the input.[133X
+  
+  [33X[0;0YAs a special case, these operations take partitions to dominant weights, and
+  vice versa.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xwt:= CompositionToWeight( [3,3,2,1,1,0,0] );[127X[104X
+    [4X[28X[ 0, 1, 1, 0, 1, 0 ][128X[104X
+    [4X[25Xgap>[125X [27XWeightToComposition(10, wt);[127X[104X
+    [4X[28X[ 3, 3, 2, 1, 1, 0, 0 ][128X[104X
+    [4X[25Xgap>[125X [27XWeightToComposition(17, wt);[127X[104X
+    [4X[28X[ 4, 4, 3, 2, 2, 1, 1 ][128X[104X
+  [4X[32X[104X
+  
+  
+  [1X4.2 [33X[0;0YBounded partitions[133X[101X
+  
+  [33X[0;0YThere are two functions that compute lists of bounded partitiuons.[133X
+  
+  BoundedPartitions( n, r, s )
+  BoundedPartitions( n, r )
+  
+  [33X[0;0YThe first form returns a list of all partitions of [3Xn[103X parts in degree [3Xr[103X whose
+  parts lie in the closed interval [23X[0,s][123X. The second form is equivalent to the
+  first where [23Xs = r[123X; that is, it returns a list of all of [3Xn[103X parts in degree [3Xr[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XBoundedPartitions(4,3,2);[127X[104X
+    [4X[28X[ [ 2, 1, 0, 0 ], [ 1, 1, 1, 0 ] ][128X[104X
+    [4X[25Xgap>[125X [27XBoundedPartitions(4,3,3);[127X[104X
+    [4X[28X[ [ 3, 0, 0, 0 ], [ 2, 1, 0, 0 ], [ 1, 1, 1, 0 ] ][128X[104X
+    [4X[25Xgap>[125X [27XBoundedPartitions(4,3);[127X[104X
+    [4X[28X[ [ 3, 0, 0, 0 ], [ 2, 1, 0, 0 ], [ 1, 1, 1, 0 ] ][128X[104X
+    [4X[25Xgap>[125X [27XBoundedPartitions(4,4,4);[127X[104X
+    [4X[28X[ [ 4, 0, 0, 0 ], [ 3, 1, 0, 0 ], [ 2, 2, 0, 0 ], [ 2, 1, 1, 0 ],[128X[104X
+    [4X[28X[ 1, 1, 1, 1 ] ][128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YNotice that we sometimes allow zero parts in partitions.[133X
+  
+  
+  [1X4.3 [33X[0;0YListing partitions[133X[101X
+  
+  [33X[0;0YWe can also compute a list of all partitions of a given degree.[133X
+  
+  AllPartitions( r )
+  
+  [33X[0;0YThis  returns  a  list  of all the partitions of [3Xr[103X, where zero parts are not
+  allowed.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XAllPartitions(4);[127X[104X
+    [4X[28X[ [ 4 ], [ 3, 1 ], [ 2, 2 ], [ 2, 1, 1 ], [ 1, 1, 1, 1 ] ][128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YOne can also calculate lists of [23Xp[123X-restricted and [23Xp[123X-regular partitions, where
+  [23Xp[123X is a given prime.[133X
+  
+  pRestrictedPartitions( p, n )
+  pRegularPartitions( p, n )
+  
+  [33X[0;0YHere [3Xp[103X is the characteristic and [3Xn[103X the degree.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XpRestrictedPartitions(2,5);[127X[104X
+    [4X[28X[ [ 2, 2, 1 ], [ 2, 1, 1, 1 ], [ 1, 1, 1, 1, 1 ] ][128X[104X
+    [4X[25Xgap>[125X [27XpRegularPartitions(2,5);[127X[104X
+    [4X[28X[ [ 3, 2 ], [ 4, 1 ], [ 5 ] ][128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YFinally,  we  have functions that test a given partition to check whether or
+  not it is restricted or regular with respect to a given prime.[133X
+  
+  pRestricted( p, ptn )
+  pRegular( p, ptn )
+  
+  [33X[0;0YThe  functions  return  true  if  the given partition [3Xptn[103X is [23Xp[123X-restricted or
+  [23Xp[123X-regular,  respectively,  and return false otherwise. The characteristic is
+  [3Xp[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XpRestricted(2,[2,2,1]);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XpRestricted(2,[3,1]);[127X[104X
+    [4X[28Xfalse[128X[104X
+    [4X[25Xgap>[125X [27XpRegular(2,[3,2]);[127X[104X
+    [4X[28Xtrue[128X[104X
+    [4X[25Xgap>[125X [27XpRegular(2,[2,2,1]);[127X[104X
+    [4X[28Xfalse[128X[104X
+  [4X[32X[104X
+  
+  
+  [1X4.4 [33X[0;0YSchur algebras[133X[101X
+  
+  [33X[0;0YThere  are only a few functions for working directly with Schur algebra Weyl
+  modules.[133X
+  
+  SchurAlgebraWeylModule( p, lambda )
+  
+  [33X[0;0YThis  returns  a  Weyl  module of highest weight [3Xlambda[103X in characteristic [3Xp[103X,
+  regarded  as  a module for [23XGL_n[123X where [23Xn[123X is the length of the given partition
+  [3Xlambda[103X. Note that zero parts are allowed in [3Xlambda[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XV:= SchurAlgebraWeylModule(3, [2,2,1,1,0]);[127X[104X
+    [4X[28X<Schur algebra Weyl module of highest weight [ 2, 2, 1, 1, 0 ] at prime p = 3>[128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YThere is also a category of Schur algebra Weyl modules.[133X
+  
+  IsSchurAlgebraWeylModule( V )
+  
+  [33X[0;0YThis  returns true if the given [3XV[103X belongs to the category, and returns false
+  otherwise.[133X
+  
+  [33X[0;0YIt  is possible to compute the decomposition numbers of a Schur algebra Weyl
+  module, and the result is returned using partition notation.[133X
+  
+  DecompositionNumbers( V )
+  
+  [33X[0;0YThis returns a list consiting of each highest weight of a composition factor
+  (in  partition  notation)  followed  by its corresponding composition factor
+  multiplicity.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XV:= SchurAlgebraWeylModule(3, [2,2,1,1,0]);[127X[104X
+    [4X[28X<Schur algebra Weyl module of highest weight [ 2, 2, 1, 1, 0 ] at prime p = 3>[128X[104X
+    [4X[25Xgap>[125X [27XDecompositionNumbers(V);[127X[104X
+    [4X[28X[ [ 2, 2, 1, 1, 0 ], 1 ][128X[104X
+    [4X[25Xgap>[125X [27XV:= SchurAlgebraWeylModule(2, [4,2,1,1,0]);[127X[104X
+    [4X[28X<Schur algebra Weyl module of highest weight [ 4, 2, 1, 1, 0 ] at prime p = 2>[128X[104X
+    [4X[25Xgap>[125X [27XDecompositionNumbers(V);[127X[104X
+    [4X[28X[ [ 4, 2, 1, 1, 0 ], 1, [ 3, 3, 1, 1, 0 ], 1, [ 3, 2, 2, 1, 0 ], 1,[128X[104X
+    [4X[28X[ 4, 1, 1, 1, 1 ], 1, [ 2, 2, 2, 2, 0 ], 1, [ 2, 2, 2, 1, 1 ], 1 ][128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YFinally,  we  can  compute the entire decomposition matrix for a given Schur
+  algebra.[133X
+  
+  SchurAlgebraDecompositionMatrix( p, n, r )
+  
+  [33X[0;0YHere,  [3Xp[103X  is the characteristic and [23XS(n,r)[123X is the Schur algebra in question,
+  whose  modules  are the homogeneous polynomial modules for [23XGL_n[123X in degree [3Xr[103X.
+  The rows and columns of the matrix are indexed by the partitions produced by
+  [9XBoundedPartitions(n,r)[109X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XSchurAlgebraDecompositionMatrix(2, 4, 5);[127X[104X
+    [4X[28X[ [ 1, 0, 1, 1, 0, 0 ], [ 0, 1, 0, 0, 0, 1 ], [ 0, 0, 1, 1, 1, 0 ],[128X[104X
+    [4X[28X[ 0, 0, 0, 1, 1, 0 ], [ 0, 0, 0, 0, 1, 0 ], [ 0, 0, 0, 0, 0, 1 ] ][128X[104X
+    [4X[25Xgap>[125X [27XBoundedPartitions(4,5);[127X[104X
+    [4X[28X[ [ 5, 0, 0, 0 ], [ 4, 1, 0, 0 ], [ 3, 2, 0, 0 ], [ 3, 1, 1, 0 ],[128X[104X
+    [4X[28X[ 2, 2, 1, 0 ], [ 2, 1, 1, 1 ] ][128X[104X
+  [4X[32X[104X
+  
+  
+  [1X4.5 [33X[0;0YSymmetric groups[133X[101X
+  
+  [33X[0;0YSymmetric  group  decomposition  numbers  in  positive characteristic may be
+  obtained  from  corresponding decomposition numbers for a Schur algebra Weyl
+  module,  by means of the well known Schur functor. (See for instance Chapter
+  6  of  [Gre07]  for details.) This method is quite slow. People needing such
+  numbers for large partitions should use other methods.[133X
+  
+  SymmetricGroupDecompositionNumbers( p, mu )
+  
+  [33X[0;0YThis returns a list of the decomposition numbers [23X[S_\mu : D_\lambda][123X for the
+  dual Specht module [23XS_\mu[123X labeled by a partition [3Xmu[103X, in characteristic [3Xp[103X. The
+  simple  modules [23XD_\lambda[123X are labeled by [23Xp[123X-restricted partitions of the same
+  degree as [23X\mu[123X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XSymmetricGroupDecompositionNumbers(3, [3,2,1]);[127X[104X
+    [4X[28X[ [ 3, 2, 1 ], 1, [ 2, 2, 2 ], 1, [ 3, 1, 1, 1 ], 1, [ 2, 1, 1, 1, 1 ], 1,[128X[104X
+    [4X[28X[ 1, 1, 1, 1, 1, 1 ], 1 ][128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YOne  can  also  compute  the  decomposition  matrix for a symmetric group in
+  positive characteristic.[133X
+  
+  SymmetricGroupDecompositionMatrix( p, n )
+  
+  [33X[0;0YThis  returns the decomposition matrix for the symmetric group on [3Xn[103X letters,
+  in characteristic [3Xp[103X. The rows of the matrix are labeled by the partitions of
+  [3Xn[103X  (in  the  order produced by [9XAllPartitions[109X) and the columns are labeled by
+  [23Xp[123X-restricted partitions of [3Xn[103X.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XSymmetricGroupDecompositionMatrix(2, 5);[127X[104X
+    [4X[28X[ [ 0, 0, 1 ], [ 0, 1, 0 ], [ 1, 0, 1 ], [ 1, 0, 2 ], [ 1, 0, 1 ],[128X[104X
+    [4X[28X[ 0, 1, 0 ], [ 0, 0, 1 ] ][128X[104X
+    [4X[25Xgap>[125X [27XAllPartitions(5);[127X[104X
+    [4X[28X[ [ 5 ], [ 4, 1 ], [ 3, 2 ], [ 3, 1, 1 ], [ 2, 2, 1 ], [ 2, 1, 1, 1 ],[128X[104X
+    [4X[28X[ 1, 1, 1, 1, 1 ] ][128X[104X
+    [4X[25Xgap>[125X [27XpRestrictedPartitions(2,5);[127X[104X
+    [4X[28X[ [ 2, 2, 1 ], [ 2, 1, 1, 1 ], [ 1, 1, 1, 1, 1 ] ][128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0YNote  that  [5XGAP[105X  has  a built-in [9XPartitions[109X function that also gives all the
+  partitions  of  [23Xn[123X,  but  the  ordering  is  different  from  the ordering in
+  [9XAllPartitions[109X.  To  correctly  interpret  row  labels  in  the decomposition
+  matrix, one must use the ordering given in [9XAllPartitions[109X.[133X
+  
+  
+  [1X4.6 [33X[0;0YThe Mullineux correspondence[133X[101X
+  
+  [33X[0;0YComputing  symmetric  group  decomposition  numbers  by  means  of the Schur
+  functor  naturally  produces  the numbers [23X[S_\mu : D_\lambda][123X for partitions
+  [23X\mu[123X  and  [23Xp[123X-restricted  partitions  [23X\lambda[123X.  Here  [23XS_\mu[123X is the dual Specht
+  module  labeled  by  [23X\mu[123X  and [23XD_\lambda[123X is the dual simple module labeled by
+  [23X\lambda[123X.[133X
+  
+  [33X[0;0YLet  [23X\lambda'[123X be the conjugate partition of a partition [23X\lambda[123X, obtained by
+  transposing  rows  and  columns  of the corresponding Young diagram. We have
+  [23X(S^\mu)^*  \cong  S_\mu[123X  for  a  partition  [23X\mu[123X  and  [23XD^\lambda  ⊗ sgn \cong
+  D_{\lambda'}[123X  for  a  [23Xp[123X-regular  partition [23X\lambda[123X, where [23XS^\mu[123X is the usual
+  Specht  module  and  [23XD^\lambda[123X is the usual simple module, using notation in
+  accord   with   [Jam78].   The   notation   [23Xsgn[123X  here  refers  to  the  sign
+  representation.[133X
+  
+  [33X[0;0YThus  it follows that [23X[S_\mu : D_\lambda] = [S^\mu : D^{Mull(λ)}][123X if [23X\lambda[123X
+  is  [23Xp[123X-restricted.  So by sending [23X\lambda \to Mull(\lambda')[123X, one obtains the
+  column labels for the decomposition matrix that appear in [Jam78].[133X
+  
+  Mullineux( p, mu )
+  
+  [33X[0;0YThis  returns  the  partition  [23XMull(µ)[123X  corresponding  to  a given [23Xp[123X-regular
+  partition [23X\mu[123X under the Mullineux map.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XMullineux(3, [5,4,1,1]);[127X[104X
+    [4X[28X[ 9, 2 ][128X[104X
+    [4X[25Xgap>[125X [27XMullineux(3, [9,2]);[127X[104X
+    [4X[28X[ 5, 4, 1, 1 ][128X[104X
+  [4X[32X[104X
+  
+  [33X[0;0Y[9XpRegularPartitions(p,n)[109X  returns a list of the [23Xp[123X-regular partitions of [23Xn[123X, in
+  bijection  with  the  list  of  [23Xp[123X-restricted  partitions  of  [23Xn[123X  produced by
+  [9XpRestrictedPartitions(p,n)[109X,  using the bijection [23X\lambda \to Mull(\lambda')[123X.
+  Thus,  to  read  a  symmetric  group  decomposition  matrix  using [23Xp[123X-regular
+  partition  notation,  one uses the output of [9XpRegularPartitions[109X to index the
+  columns of the matrix.[133X
+  
+  [33X[0;0YFinally, we have a function that computes the conjugate of a partition.[133X
+  
+  Conjugate( lambda )
+  
+  [33X[0;0YThis returns the conjugate (or transpose) of the input partition.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XConjugate( [4,4,2,1] );[127X[104X
+    [4X[28X[ 4, 3, 2, 2 ][128X[104X
+    [4X[25Xgap>[125X [27XConjugate( [4,3,2,2] );[127X[104X
+    [4X[28X[ 4, 4, 2, 1 ][128X[104X
+  [4X[32X[104X
+  

@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>GAP (WeylModules) - Chapter 5: Case studies</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap5"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap4.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap6.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap5_mj.html">[MathJax on]</a></p>
+<p><a id="X833CC02B84DBBBE2" name="X833CC02B84DBBBE2"></a></p>
+<div class="ChapSects"><a href="chap5.html#X833CC02B84DBBBE2">5 <span class="Heading">Case studies</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X8710D75A7A6F88D6">5.1 <span class="Heading">Type G 2 in characteristic 2</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X7D4521E27DF5A99B">5.1-1 <span class="Heading">Dimensions of restricted simples</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X8780D0157A1FFA74">5.1-2 <span class="Heading">Structure of the Weyl module of highest weight $[2,0]$</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X7B6FFCE0817942B8">5.1-3 <span class="Heading">The socle of the Weyl module of highest weight $[2,2]$</span></a>
+</span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5.html#X80515539841DB516">5.2 <span class="Heading">Type A 2</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X85D41F8685185C65">5.2-1 <span class="Heading">The Weyl module of highest weight $[7,7]$ in characteristic 2</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X82A46C8F838C9C3A">5.2-2 <span class="Heading">The Weyl module of highest weight $[7,7]$ in characteristic 3</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5.html#X7C3256DC79410D9C">5.2-3 <span class="Heading">The Weyl module of highest weight $[7,7]$ in characteristic 5</span></a>
+</span>
+</div></div>
+</div>
+
+<h3>5 <span class="Heading">Case studies</span></h3>
+
+<p>In this chapter we give a few examples of the package in use, by obtaining information about certain Weyl modules. This is intended to illustrate some of the possibilities and demonstrate how the commands can work together.</p>
+
+<p><a id="X8710D75A7A6F88D6" name="X8710D75A7A6F88D6"></a></p>
+
+<h4>5.1 <span class="Heading">Type G 2 in characteristic 2</span></h4>
+
+<p>In this section we study a few small Weyl modules for type <span class="Math">G_2</span> in characteristic <span class="Math">2</span>. We will show that the Weyl module of highest weight <span class="Math">[2,0]</span> has four composition factors and is non-rigid (meaning that its socle series does not coincide with its radical series).</p>
+
+<p><a id="X7D4521E27DF5A99B" name="X7D4521E27DF5A99B"></a></p>
+
+<h5>5.1-1 <span class="Heading">Dimensions of restricted simples</span></h5>
+
+<p>There are four restricted weights in this situation: <span class="Math">[0,0]</span>, <span class="Math">[1,0]</span>, <span class="Math">[0,1]</span>, and <span class="Math">[1,1]</span>. Let's start by computing the dimensions of the Weyl modules with those highest weights.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">V00 := WeylModule(2,[0,0],"G",2); Dim(V00);</span>
+&lt;Type G2 Weyl module of highest weight [ 0, 0 ] at prime p = 2&gt;
+1
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">V10:=WeylModule(2,[1,0],"G",2); Dim(V10);</span>
+&lt;Type G2 Weyl module of highest weight [ 1, 0 ] at prime p = 2&gt;
+7
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">V01:=WeylModule(2,[0,1],"G",2); Dim(V01);</span>
+&lt;Type G2 Weyl module of highest weight [ 0, 1 ] at prime p = 2&gt;
+14
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">V11:=WeylModule(2,[1,1],"G",2); Dim(V11);</span>
+&lt;Type G2 Weyl module of highest weight [ 1, 1 ] at prime p = 2&gt;
+64
+</pre></div>
+
+<p>Of course we know that <code class="code">V00</code> is the trivial module and <code class="code">V11</code> is the Steinberg module; they are both simple. It turns out that <code class="code">V01</code> is also simple but <code class="code">V10</code> is not.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MaximalVectors(V10); List(last,Weight);</span>
+[ 1*v0, y4*v0 ]
+[ [ 1, 0 ], [ 0, 0 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MaximalVectors(V01); List(last,Weight);</span>
+[ 1*v0 ]
+[ [ 0, 1 ] ]
+</pre></div>
+
+<p>This suggests that <code class="code">V10</code> is a non-split extension of its simple head by the trivial module. If so, the simple module of highest weight <span class="Math">[1,0]</span> has dimension <span class="Math">6</span>. We can double check that guess, as follows.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">S := MaximalSubmodule(V10); Dim(S);</span>
+&lt;SubWeylModule of dimension 1, generated by elements [ y4*v0 ] of weights 
+[ [ 0, 0 ] ]&gt;, in
+&lt;Type G2 Weyl module of highest weight [ 1, 0 ] at prime p = 2&gt;
+1
+</pre></div>
+
+<p>This confirms our guess. The simple head of <code class="code">V10</code> must have dimension <span class="Math">6</span>. Another way to confirm it is to compute the simple character of highest weight <span class="Math">[1,0]</span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SimpleCharacter(2,[1,0],"G",2);</span>
+[ [ 1, 0 ], 1, [ -1, 1 ], 1, [ 2, -1 ], 1, [ -2, 1 ], 1, [ 1, -1 ], 1, 
+  [ -1, 0 ], 1 ]
+</pre></div>
+
+<p>Yet another way to confirm this is the following.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Dim(SimpleQuotient(V10));</span>
+6
+</pre></div>
+
+<p>At this point, we know the characters of all the restricted simples, and thus by Steinberg's tensor product theorem, we know the characters of all the simple moduless for type <span class="Math">G_2</span> in characteristc <span class="Math">2</span>. For example,</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SimpleCharacter(2,[3,0],"G",2);</span>
+[ [ 3, 0 ], 1, [ -1, 2 ], 1, [ 5, -2 ], 1, [ -3, 2 ], 2, [ 3, -2 ], 2, 
+  [ -1, 0 ], 1, [ 1, 1 ], 1, [ -3, 3 ], 1, [ 3, -1 ], 2, [ -5, 3 ], 1, 
+  [ 1, -1 ], 1, [ -3, 1 ], 2, [ 4, -1 ], 1, [ 0, 1 ], 2, [ 6, -3 ], 1, 
+  [ -2, 1 ], 1, [ 4, -3 ], 1, [ 0, -1 ], 2, [ -4, 3 ], 1, [ 2, -1 ], 1, 
+  [ -6, 3 ], 1, [ -4, 1 ], 1, [ -1, 1 ], 1, [ 5, -3 ], 1, [ 3, -3 ], 1, 
+  [ -1, -1 ], 1, [ 1, 0 ], 1, [ -5, 2 ], 1, [ 1, -2 ], 1, [ -3, 0 ], 1 ]
+</pre></div>
+
+<p><a id="X8780D0157A1FFA74" name="X8780D0157A1FFA74"></a></p>
+
+<h5>5.1-2 <span class="Heading">Structure of the Weyl module of highest weight $[2,0]$</span></h5>
+
+<p>Now we turn to an analysis of the structure of the Weyl module of highest weight <span class="Math">[2,0]</span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">V20 := WeylModule(2,[2,0],"G",2); Dim(V20); </span>
+&lt;Type G2 Weyl module of highest weight [ 2, 0 ] at prime p = 2&gt;
+27
+</pre></div>
+
+<p>The module has dimension <span class="Math">27</span>. Let's see how many maximal vectors it has.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">m20 := MaximalVectors(V20); List(m20,Weight);</span>
+[ 1*v0, y1*v0, y4*v0 ]
+[ [ 2, 0 ], [ 0, 1 ], [ 1, 0 ] ]
+</pre></div>
+
+<p>and compute the submodules generated by the maximal vectors different from the generator of <code class="code">V20</code>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">S1 := SubWeylModule(V20,m20[2]); S2 := SubWeylModule(V20,m20[3]);</span>
+&lt;SubWeylModule of dimension 14, generated by elements [ y1*v0 ] of weights 
+[ [ 0, 1 ] ]&gt;, in
+&lt;Type G2 Weyl module of highest weight [ 2, 0 ] at prime p = 2&gt;
+&lt;SubWeylModule of dimension 6, generated by elements [ y4*v0 ] of weights 
+[ [ 1, 0 ] ]&gt;, in
+&lt;Type G2 Weyl module of highest weight [ 2, 0 ] at prime p = 2&gt;
+</pre></div>
+
+<p>Both submodules are simple, hence lie in the socle. In fact, we have</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">soc20 := SocleWeyl(V20);</span>
+&lt;SubWeylModule of dimension 20, generated by elements 
+[ y1*v0, y4*v0 ] of weights [ [ 0, 1 ], [ 1, 0 ] ]&gt;, in
+&lt;Type G2 Weyl module of highest weight [ 2, 0 ] at prime p = 2&gt;
+</pre></div>
+
+<p>which confirms this.</p>
+
+<p>The corresponding quotient by the socle is thus a <span class="Math">7</span>-dimensional module. It would be useful to compute the socle of this quotient.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SocleWeyl(QuotientWeylModule(soc20));</span>
+&lt;SubQuotient WeylModule of dimension 1, generated by elements 
+[ y4^(2)*v0 ] of weights [ [ 0, 0 ] ]&gt;, in
+&lt;Quotient of Type G2 Weyl module of highest weight [ 2, 0 ] at prime p = 2&gt;
+</pre></div>
+
+<p>We see that the socle is of dimension <span class="Math">1</span>, isomorphic to the trivial module. Since the dimension of the simple module of highest weight <span class="Math">[2,0]</span> is equal to <span class="Math">6</span>, as it is the Frobenius twist of the simple module of highest weight <span class="Math">[1,0]</span>, we conclude that this quotient module is uniserial of length two. In fact, it is isomorphic to the Frobenius twist of <code class="code">V10</code>.</p>
+
+<p>Computing the socle series bears this out.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SocleSeries(V20);</span>
+[ &lt;SubWeylModule of dimension 20, generated by elements 
+    [ y1*v0, y4*v0 ] of weights [ [ 0, 1 ], [ 1, 0 ] ]&gt;, in
+    &lt;Type G2 Weyl module of highest weight [ 2, 0 ] at prime p = 2&gt;, 
+  &lt;SubWeylModule of dimension 21, generated by elements 
+    [ y1*v0, y4*v0, y4^(2)*v0 ] of weights [ [ 0, 1 ], [ 1, 0 ], [ 0, 0 ] 
+     ]&gt;, in
+    &lt;Type G2 Weyl module of highest weight [ 2, 0 ] at prime p = 2&gt;, 
+  &lt;SubWeylModule of dimension 27, generated by elements 
+    [ y1*v0, y4*v0, y4^(2)*v0, 1*v0 ] of weights 
+    [ [ 0, 1 ], [ 1, 0 ], [ 0, 0 ], [ 2, 0 ] ]&gt;, in
+    &lt;Type G2 Weyl module of highest weight [ 2, 0 ] at prime p = 2&gt; ]
+</pre></div>
+
+<p>and computing the decomposition numbers confirms that this Weyl module has four composition factors.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DecompositionNumbers(V20);</span>
+[ [ 2, 0 ], 1, [ 0, 1 ], 1, [ 1, 0 ], 1, [ 0, 0 ], 1 ]
+</pre></div>
+
+<p>The complete submodule structure is still unclear, however. We need more data. Let's look at a couple of other quotients of <code class="code">V20</code>. Recall that we previously computed <code class="code">S1</code> and <code class="code">S2</code> as the simple modules, of dimension <span class="Math">14</span> and <span class="Math">6</span> respectively, whose direct sum makes up the socle of <code class="code">V20</code>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Q1 := QuotientWeylModule(S1); Q2 := QuotientWeylModule(S2);</span>
+&lt;Quotient of Type G2 Weyl module of highest weight [ 2, 0 ] at prime p = 2&gt;
+&lt;Quotient of Type G2 Weyl module of highest weight [ 2, 0 ] at prime p = 2&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">max1 := MaximalVectors(Q1); List(max1,Weight);</span>
+[ 1*v0, y4*v0 ]
+[ [ 2, 0 ], [ 1, 0 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">max2 := MaximalVectors(Q2); List(max2,Weight);</span>
+[ 1*v0, y1*v0, y1*y6*v0+y3*y5*v0+y4^(2)*v0 ]
+[ [ 2, 0 ], [ 0, 1 ], [ 0, 0 ] ]
+</pre></div>
+
+<p>Each quotient module has exactly three composition factors. The first, <code class="code">Q1</code>, must be uniserial with a copy of the trivial module in the middle socle layer (otherwise there would be another maximal vector). On the other hand, <code class="code">Q2</code> has two factors in its socle, of highest weight <span class="Math">[1,0]</span> and <span class="Math">[0,0]</span>. We can check these conclusions by computing the socle series for each quotient.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SocleSeries(Q1);</span>
+[ &lt;SubQuotient WeylModule of dimension 6, generated by elements 
+    [ y4*v0 ] of weights [ [ 1, 0 ] ]&gt;, in
+    &lt;Quotient of Type G2 Weyl module of highest weight [ 2, 0 ] at prime p = 
+    2&gt;, &lt;SubQuotient WeylModule of dimension 7, generated by elements 
+    [ y4*v0, y4^(2)*v0 ] of weights [ [ 1, 0 ], [ 0, 0 ] ]&gt;, in
+    &lt;Quotient of Type G2 Weyl module of highest weight [ 2, 0 ] at prime p = 
+    2&gt;, &lt;SubQuotient WeylModule of dimension 13, generated by elements 
+    [ y4*v0, y4^(2)*v0, 1*v0 ] of weights [ [ 1, 0 ], [ 0, 0 ], [ 2, 0 ] 
+     ]&gt;, in
+    &lt;Quotient of Type G2 Weyl module of highest weight [ 2, 0 ] at prime p = 
+    2&gt; ]
+</pre></div>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SocleSeries(Q2);</span>
+[ &lt;SubQuotient WeylModule of dimension 15, generated by elements 
+    [ y1*v0, y1*y6*v0+y3*y5*v0+y4^(2)*v0 ] of weights [ [ 0, 1 ], [ 0, 0 ] 
+     ]&gt;, in
+    &lt;Quotient of Type G2 Weyl module of highest weight [ 2, 0 ] at prime p = 
+    2&gt;, &lt;SubQuotient WeylModule of dimension 21, generated by elements 
+    [ y1*v0, y1*y6*v0+y3*y5*v0+y4^(2)*v0, 1*v0 ] of weights 
+    [ [ 0, 1 ], [ 0, 0 ], [ 2, 0 ] ]&gt;, in
+    &lt;Quotient of Type G2 Weyl module of highest weight [ 2, 0 ] at prime p = 
+    2&gt; ]
+</pre></div>
+
+<p>Next we construct the submodule of <code class="code">V20</code> generated by the inverse image of the weight zero socle generator in the quotient <code class="code">Q2</code>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">S3 := SubWeylModule(V20,max2[3]);</span>
+&lt;SubWeylModule of dimension 7, generated by elements 
+[ y1*y6*v0+y3*y5*v0+y4^(2)*v0 ] of weights [ [ 0, 0 ] ]&gt;, in
+&lt;Type G2 Weyl module of highest weight [ 2, 0 ] at prime p = 2&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">maxS3 := MaximalVectors(S3); List(maxS3,Weight);</span>
+[ y4*v0 ]
+[ [ 1, 0 ] ]
+</pre></div>
+
+<p>This submodule has only one maximal vector, which means that it has a simple socle of highest weight <span class="Math">[1,0]</span>. Hence <code class="code">S3</code> is an extension of that simple by the trivial module. It is interesting to construct the corresponding quotient of the ambient Weyl module.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">M := QuotientWeylModule(S3); Dim(M);</span>
+&lt;Quotient of Type G2 Weyl module of highest weight [ 2, 0 ] at prime p = 2&gt;
+20
+</pre></div>
+
+<p>This quotient has dimension <span class="Math">20</span>, and should have a simple socle of highest weight <span class="Math">[0,1]</span>, of dimesnion <span class="Math">14</span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">maxM := MaximalVectors(M); List(maxM,Weight);</span>
+[ 1*v0, y1*v0 ]
+[ [ 2, 0 ], [ 0, 1 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SocleSeries(M);</span>
+[ &lt;SubQuotient WeylModule of dimension 14, generated by elements 
+    [ y1*v0 ] of weights [ [ 0, 1 ] ]&gt;, in
+    &lt;Quotient of Type G2 Weyl module of highest weight [ 2, 0 ] at prime p = 
+    2&gt;, &lt;SubQuotient WeylModule of dimension 20, generated by elements 
+    [ y1*v0, 1*v0 ] of weights [ [ 0, 1 ], [ 2, 0 ] ]&gt;, in
+    &lt;Quotient of Type G2 Weyl module of highest weight [ 2, 0 ] at prime p = 
+    2&gt; ]
+</pre></div>
+
+<p>This confirms that <code class="code">M</code> is uniserial length two, in other words an extension of the simple of highest weight <span class="Math">[0,1]</span> by the simple of highest weight <span class="Math">[2,0]</span>. The latter simple is isomorphic to the Frobenius twist of the simple of highest weight <span class="Math">[1,0]</span>.</p>
+
+<p>We conclude from the above calcuations that <code class="code">V20</code> has second radical layer with composition factors of highest weight <span class="Math">[0,0]</span> and <span class="Math">[0,1]</span>. However, the second socle layer is simple of highest weight <span class="Math">[0,0]</span>. Thus, we see that <code class="code">V20</code> is not rigid (its socle series differs from its radical series).</p>
+
+<p>The module <code class="code">M</code> appears in Section 3.7 of <a href="chapBib.html#biBBNPS">[BNPS20]</a>, constructed differently. It plays an important role in the counterexample to Donkin's tilting module conjecture produced in that paper.</p>
+
+<p><a id="X7B6FFCE0817942B8" name="X7B6FFCE0817942B8"></a></p>
+
+<h5>5.1-3 <span class="Heading">The socle of the Weyl module of highest weight $[2,2]$</span></h5>
+
+<p>The key conclusion of the calculations in <a href="chapBib.html#biBBNPS">[BNPS20]</a> is that the Weyl module of highest weight <span class="Math">[2,2]</span> has a non-simple socle, with two composition factors of highest weights <span class="Math">[0,0]</span> and <span class="Math">[0,1]</span>. We can verify that conclusion using <strong class="pkg">GAP</strong>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">V22 := WeylModule(2,[2,2],"G",2);</span>
+&lt;Type G2 Weyl module of highest weight [ 2, 2 ] at prime p = 2&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Dim(V22);</span>
+729
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SocleWeyl(V22);</span>
+***** WARNING: Ambiguous module detected *****
+&lt;SubWeylModule of dimension 15, generated by elements 
+[ y1*y2*y3*y4*y5*v0+y1*y2*y4^(3)*v0+y1*y3*y4*y6*v0, y1*y2*y3*y4*y5*y6*v0 
+ ] of weights [ [ 0, 1 ], [ 0, 0 ] ]&gt;, in
+&lt;Type G2 Weyl module of highest weight [ 2, 2 ] at prime p = 2&gt;
+</pre></div>
+
+<p>This is the same as the socle of the module <code class="code">Q2</code> in the preceding subsection. Notice that <code class="code">V22</code> is ambiguous (it has at least two independent maximal vectors of the same weight). In fact, we can find what they look like.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">max := MaximalVectors(V22); List(max,Weight);</span>
+[ 1*v0, y1*v0, y2*v0, y1^(2)*y2*v0, y1*y2*y3*v0, y2*y4*v0, y1*y2*y4*v0, 
+  y1*y2*y5*v0+y1*y3*y4*v0+y1*y6*v0, y1*y2*y3*y4*v0+y1*y2*y6*v0+y2*y3*y5*v0+y
+    3*y6*v0, y1*y2*y4*y6*v0+y2*y3*y4*y5*v0+y2*y4^(3)*v0+y3*y4*y6*v0, 
+  y1*y2*y3*y4*y5*v0+y1*y2*y4^(3)*v0+y1*y3*y4*y6*v0, 
+  y1*y2*y3^(2)*y4*y5*v0+y2*y4*y5*y6*v0+y3^(3)*y4*y5*v0, y1*y2*y3*y4*y5*y6*v0 ]
+[ [ 2, 2 ], [ 0, 3 ], [ 5, 0 ], [ 1, 2 ], [ 4, 0 ], [ 4, 0 ], [ 2, 1 ], 
+  [ 0, 2 ], [ 3, 0 ], [ 2, 0 ], [ 0, 1 ], [ 1, 0 ], [ 0, 0 ] ]
+</pre></div>
+
+<p>So the ambiguous maximal vectors are the ones of weight <span class="Math">[4,0]</span>. Notice that there is also a maximal vector of weight <span class="Math">[2,0]</span>. It must generate a homomorphic image of the Weyl module <code class="code">V20</code> from the preceding subsection.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">vec := max[10]; Weight(vec);</span>
+y1*y2*y4*y6*v0+y2*y3*y4*y5*v0+y2*y4^(3)*v0+y3*y4*y6*v0
+[ 2, 0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">S := SubWeylModule(V22,vec);</span>
+&lt;SubWeylModule of dimension 20, generated by elements 
+[ y1*y2*y4*y6*v0+y2*y3*y4*y5*v0+y2*y4^(3)*v0+y3*y4*y6*v0 ] of weights 
+[ [ 2, 0 ] ]&gt;, in
+&lt;Type G2 Weyl module of highest weight [ 2, 2 ] at prime p = 2&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">char := Character(S);</span>
+[ [ 2, 0 ], 1, [ 0, 1 ], 1, [ 3, -1 ], 1, [ -1, 1 ], 1, [ 2, -1 ], 1, 
+  [ -2, 2 ], 1, [ 4, -2 ], 1, [ 0, 0 ], 2, [ -4, 2 ], 1, [ 2, -2 ], 1, 
+  [ -2, 0 ], 1, [ 1, 0 ], 1, [ -3, 2 ], 1, [ -2, 1 ], 1, [ 0, -1 ], 1, 
+  [ 3, -2 ], 1, [ 1, -1 ], 1, [ -3, 1 ], 1, [ -1, 0 ], 1 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DecomposeCharacter(char,2,"G",2);</span>
+[ [ 2, 0 ], 1, [ 0, 1 ], 1 ]
+</pre></div>
+
+<p>The above shows that the homomorphic image is isomorphic to the module <code class="code">M</code> construced in the preceding subsection.</p>
+
+<p><a id="X80515539841DB516" name="X80515539841DB516"></a></p>
+
+<h4>5.2 <span class="Heading">Type A 2</span></h4>
+
+<p>We analyze the structure of some Weyl modules in type <span class="Math">A_2</span>.</p>
+
+<p><a id="X85D41F8685185C65" name="X85D41F8685185C65"></a></p>
+
+<h5>5.2-1 <span class="Heading">The Weyl module of highest weight $[7,7]$ in characteristic 2</span></h5>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">V77 := WeylModule(2,[7,7],"A",2);</span>
+&lt;Type A2 Weyl module of highest weight [ 7, 7 ] at prime p = 2&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DecompositionNumbers(V77);</span>
+[ [ 7, 7 ], 1 ]
+</pre></div>
+
+<p>In characteristic <span class="Math">2</span> this is a simple Weyl module. In fact it is a Steinberg module.</p>
+
+<p><a id="X82A46C8F838C9C3A" name="X82A46C8F838C9C3A"></a></p>
+
+<h5>5.2-2 <span class="Heading">The Weyl module of highest weight $[7,7]$ in characteristic 3</span></h5>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">V77 := WeylModule(3,[7,7],"A",2);</span>
+&lt;Type A2 Weyl module of highest weight [ 7, 7 ] at prime p = 3&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DecompositionNumbers(V77);</span>
+[ [ 7, 7 ], 1, [ 6, 6 ], 1, [ 3, 9 ], 1, [ 9, 3 ], 1, [ 4, 7 ], 1, [ 7, 4 ], 
+  1, [ 3, 6 ], 2, [ 6, 3 ], 2, [ 3, 3 ], 1, [ 0, 0 ], 1 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Length(last);</span>
+20
+</pre></div>
+
+<p>In characteristic <span class="Math">3</span> this Weyl module has <span class="Math">10</span> composition factors, two of which have multiplicity <span class="Math">2</span>. This decomposition pattern is not generic. The multiplicities are explained by general results in the paper <a href="chapBib.html#biBDSfilt">[DS87]</a>.</p>
+
+<p><a id="X7C3256DC79410D9C" name="X7C3256DC79410D9C"></a></p>
+
+<h5>5.2-3 <span class="Heading">The Weyl module of highest weight $[7,7]$ in characteristic 5</span></h5>
+
+<p>This Weyl module illustrates one of Jantzen's generic decomposition patterns when the characteristic <span class="Math">p</span> is sufficiently large and the highest weight is in the lowest <span class="Math">p^2</span> alcove and sufficiently far away from its walls.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">V77 := WeylModule(5,[7,7],"A",2);</span>
+&lt;Type A2 Weyl module of highest weight [ 7, 7 ] at prime p = 5&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Dim(V77);</span>
+512
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DecompositionNumbers(V77); Length(last);</span>
+[ [ 7, 7 ], 1, [ 6, 6 ], 1, [ 1, 10 ], 1, [ 10, 1 ], 1, [ 2, 8 ], 1, 
+  [ 8, 2 ], 1, [ 0, 6 ], 1, [ 6, 0 ], 1, [ 1, 1 ], 1 ]
+18
+</pre></div>
+
+<p>This Weyl module has nine composition factors, each of multiplicity one. Let's compute its maximal vectors.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">max77 := MaximalVectors(V77); List(last,Weight);</span>
+[ 1*v0, -2*y1*y2*v0+y3*v0, y1^(3)*v0, y2^(3)*v0, -1*y1^(2)*y3*v0+y1^(3)*y2*v0,
+  y1*y2^(3)*v0, y1^(3)*y2^(3)*y3^(3)*v0+y1^(4)*y2^(4)*y3^(2)*v0 ]
+[ [ 7, 7 ], [ 6, 6 ], [ 1, 10 ], [ 10, 1 ], [ 2, 8 ], [ 8, 2 ], [ 1, 1 ] ]
+</pre></div>
+
+<p>There are seven maximal vectors. Now we compute the socle series. We are going to do it one step at a time, instead of using the <code class="code">SocleSeries</code> command.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">soc1 := SocleWeyl(V77);</span>
+&lt;SubWeylModule of dimension 8, generated by elements 
+[ y1^(3)*y2^(3)*y3^(3)*v0+y1^(4)*y2^(4)*y3^(2)*v0 ] of weights 
+[ [ 1, 1 ] ]&gt;, in
+&lt;Type A2 Weyl module of highest weight [ 7, 7 ] at prime p = 5&gt;
+</pre></div>
+
+<p>The socle is simple, of highest weight <span class="Math">[1,1]</span>. Now let's compute the next socle.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">soc2 := NextSocle(soc1);</span>
+&lt;SubWeylModule of dimension 242, generated by elements 
+[ y1^(3)*y2^(3)*y3^(3)*v0+y1^(4)*y2^(4)*y3^(2)*v0, 
+  -1*y1^(2)*y3*v0+y1^(3)*y2*v0, y1*y2^(3)*v0 ] of weights 
+[ [ 1, 1 ], [ 2, 8 ], [ 8, 2 ] ]&gt;, in
+&lt;Type A2 Weyl module of highest weight [ 7, 7 ] at prime p = 5&gt;
+</pre></div>
+
+<p>This adds two more simples, of highest weight <span class="Math">[2,8]</span> and <span class="Math">[8,2]</span>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">soc3 := NextSocle(soc2);</span>
+&lt;SubWeylModule of dimension 360, generated by elements 
+[ y1^(3)*y2^(3)*y3^(3)*v0+y1^(4)*y2^(4)*y3^(2)*v0, 
+  -1*y1^(2)*y3*v0+y1^(3)*y2*v0, y1*y2^(3)*v0, -2*y1*y2*v0+y3*v0, y1^(3)*v0, 
+  y2^(3)*v0, -2*y1^(2)*y3^(3)*v0+y1^(5)*y2^(3)*v0, 
+  y1^(3)*y2^(5)*v0+y2^(2)*y3^(3)*v0 ] of weights 
+[ [ 1, 1 ], [ 2, 8 ], [ 8, 2 ], [ 6, 6 ], [ 1, 10 ], [ 10, 1 ], [ 0, 6 ], 
+  [ 6, 0 ] ]&gt;, in
+&lt;Type A2 Weyl module of highest weight [ 7, 7 ] at prime p = 5&gt;
+</pre></div>
+
+<p>This socle adds <span class="Math">5</span> additional simples, as indicated.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">soc4 := NextSocle(soc3);</span>
+&lt;SubWeylModule of dimension 512, generated by elements 
+[ y1^(3)*y2^(3)*y3^(3)*v0+y1^(4)*y2^(4)*y3^(2)*v0, 
+  -1*y1^(2)*y3*v0+y1^(3)*y2*v0, y1*y2^(3)*v0, -2*y1*y2*v0+y3*v0, y1^(3)*v0, 
+  y2^(3)*v0, -2*y1^(2)*y3^(3)*v0+y1^(5)*y2^(3)*v0, 
+  y1^(3)*y2^(5)*v0+y2^(2)*y3^(3)*v0, 1*v0 ] of weights 
+[ [ 1, 1 ], [ 2, 8 ], [ 8, 2 ], [ 6, 6 ], [ 1, 10 ], [ 10, 1 ], [ 0, 6 ], 
+  [ 6, 0 ], [ 7, 7 ] ]&gt;, in
+&lt;Type A2 Weyl module of highest weight [ 7, 7 ] at prime p = 5&gt;
+</pre></div>
+
+<p>and finally we arrive at the entire module, of dimension <span class="Math">512</span>. So we have computed the socle series.</p>
+
+<p>These results agree with the papers <a href="chapBib.html#biBIrving">[Irv86]</a> and <a href="chapBib.html#biBDS">[DS85]</a> (see also <a href="chapBib.html#biBDSfilt">[DS87]</a>). One could continue to verify various aspects of the submodule structure as calculated in those papers.</p>
+
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap4.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap6.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>

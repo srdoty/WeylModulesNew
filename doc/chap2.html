@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>GAP (WeylModules) - Chapter 2: Weyl modules</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap2"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap1.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap3.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap2_mj.html">[MathJax on]</a></p>
+<p><a id="X7DA94D8C7F214621" name="X7DA94D8C7F214621"></a></p>
+<div class="ChapSects"><a href="chap2.html#X7DA94D8C7F214621">2 <span class="Heading">Weyl modules</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X8660D150822142AE">2.1 <span class="Heading">Creating Weyl modules</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X78F3334C847F82C0">2.2 <span class="Heading">Creating quotient Weyl modules</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X7D2F36F47F256415">2.3 <span class="Heading">Creating submodules</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X7AED4BBA83011A1F">2.4 <span class="Heading">Weights and weight spaces</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2.html#X8484AE4E812D9263">2.4-1 <span class="Heading">Using <code class="keyw">List</code> with <code class="keyw">Weight</code></span></a>
+</span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X8579590C81A1278F">2.5 <span class="Heading">Maximal vectors</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X7AB5BE4B837528E4">2.6 <span class="Heading">Ambiguity</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X84F7408B7A18DB71">2.7 <span class="Heading">Basis and dimension</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2.html#X86807BA87E0E89CD">2.8 <span class="Heading">Miscellaneous commands</span></a>
+</span>
+</div>
+</div>
+
+<h3>2 <span class="Heading">Weyl modules</span></h3>
+
+<p>This chapter discusses the commands available for computations (in positive characteristic <span class="Math">p</span>) with Weyl modules, quotient Weyl modules, submodules of Weyl modules, and submodules of quotient Weyl modules.</p>
+
+<p>WARNING. In most cases, the dimension of space of maximal vectors of a given dominant weight is either <span class="Math">0</span> or <span class="Math">1</span>. Cases for which there exist two or more independent maximal vectors of the same weight can lead to complications, such as a lack of rigidity in the submodule structure. Such situations are relatively rare (and interesting); the smallest example known to the author occurs in Type <span class="Math">D_4</span> in the Weyl module of highest weight <span class="Math">[0,1,0,0]</span>, as pointed out on page 173 of <a href="chapBib.html#biBCPS">[CPS75]</a>. (I am grateful to Anton Cox for this reference.)</p>
+
+<p>A Weyl module (as in the previous paragraph) with at least one weight space containing multiple (linearly independent) maximal vectors is called <em>ambiguous</em>. Extra care is needed when studying ambiguous Weyl modules.</p>
+
+<p><a id="X8660D150822142AE" name="X8660D150822142AE"></a></p>
+
+<h4>2.1 <span class="Heading">Creating Weyl modules</span></h4>
+
+<p>There are two functions for creating a Weyl module.</p>
+
+
+<pre class="normal">
+
+WeylModule( p, wt, type, rank )
+WeylModule( V, wt )
+
+</pre>
+
+<p>In both forms <var class="Arg">wt</var> is the highest weight of the Weyl module. The function with four arguments specifies the characteristic <var class="Arg">p</var>, the root system <var class="Arg">type</var> (a letter in the range A--G) and its <var class="Arg">rank</var>. In the second form, with two arguments, the function gets the characteristic and underlying root system from an existing Weyl module <var class="Arg">V</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">V:= WeylModule(3, [3,4], "A", 2);</span>
+&lt;Type A2 Weyl module of highest weight [ 3, 4 ] at prime p = 3&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">W:= WeylModule(V, [3,0]);</span>
+&lt;Type A2 Weyl module of highest weight [ 3, 0 ] at prime p = 3&gt;
+</pre></div>
+
+<p>There is also a category of Weyl modules.</p>
+
+
+<pre class="normal">
+
+IsWeylModule( V )
+
+</pre>
+
+<p>This returns true if <var class="Arg">V</var> is a Weyl module and returns false otherwise.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsWeylModule(W);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsWeylModule(4);</span>
+false
+</pre></div>
+
+<p><a id="X78F3334C847F82C0" name="X78F3334C847F82C0"></a></p>
+
+<h4>2.2 <span class="Heading">Creating quotient Weyl modules</span></h4>
+
+<p>Quotients of an existing Weyl module by a submodule are supported. See Section <a href="chap2.html#X7D2F36F47F256415"><span class="RefLink">2.3</span></a> below for methods that create submodules.</p>
+
+
+<pre class="normal">
+
+QuotientWeylModule( S )
+DefiningKernel( Q )
+
+</pre>
+
+<p>The first function returns the quotient module <var class="Arg">V</var>/<var class="Arg">S</var>, where <var class="Arg">V</var> is the ambient Weyl module of which <var class="Arg">S</var> is a submodule. In the latter function, <var class="Arg">Q</var> must be an existing quotient Weyl module and its kernel (a submodule) is returned.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Q := QuotientWeylModule(D);</span>
+&lt;Quotient of Type G2 Weyl module of highest weight [ 2, 0 ] at prime p = 2&gt;
+</pre></div>
+
+<p>In the above, it is assumed that <span class="Math">D</span> is the submodule constructed in the second example of Section <a href="chap2.html#X7D2F36F47F256415"><span class="RefLink">2.3</span></a> below.</p>
+
+<p>There is also a category of quotient Weyl modules.</p>
+
+
+<pre class="normal">
+
+gap&gt; IsQuotientWeylModule( Q )
+
+</pre>
+
+<p>which returns true if <span class="Math">Q</span> is a quotient Weyl module, and returns false otherwise.</p>
+
+<p><a id="X7D2F36F47F256415" name="X7D2F36F47F256415"></a></p>
+
+<h4>2.3 <span class="Heading">Creating submodules</span></h4>
+
+<p>The <strong class="pkg">WeylModules</strong> package includes support for working with submodules. Submodules of ambient modules are created by specifying either a single generator or a list of generators; in the latter case the submodule is the linear sum of the submodules generated by the vectors on the list. The ambient module can be: a Weyl module, a quotient of a Weyl module, or an existing submodule of either a Weyl module or a quotient Weyl module.</p>
+
+
+<pre class="normal">
+
+SubWeylModule( V, vec )
+SubWeylModule( V, lst )
+
+</pre>
+
+<p>This returns a submodule of the given ambient object <var class="Arg">V</var> of one of the forms described above. If the second argument <var class="Arg">vec</var> is a vector, then it returns the submodule of <var class="Arg">V</var> generated by that vector. If the second argument is a list <var class="Arg">lst</var> then it returns the submodule generated by that list of vectors.</p>
+
+<p>WARNING: If the dimension of the ambient module is large, this can take a very long time.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">V := WeylModule(3,[3,3],"A",2);</span>
+&lt;Type A2 Weyl module of highest weight [ 3, 3 ] at prime p = 3&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">m := MaximalVectors(V);</span>
+[ 1*v0, y1*v0, y2*v0, y1^(2)*y2*v0, -1*y1*y2^(2)*v0+y2*y3*v0, 
+  y1*y2*y3*v0+y1^(2)*y2^(2)*v0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(m,Weight);</span>
+[ [ 3, 3 ], [ 1, 4 ], [ 4, 1 ], [ 0, 3 ], [ 3, 0 ], [ 1, 1 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">S := SubWeylModule(V, m[6]);</span>
+&lt;SubWeylModule of dimension 7, generated by elements 
+[ y1*y2*y3*v0+y1^(2)*y2^(2)*v0 ] of weights [ [ 1, 1 ] ]&gt;, in
+&lt;Type A2 Weyl module of highest weight [ 3, 3 ] at prime p = 3&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">S2 := SubWeylModule(V, [m[4],m[5]]);</span>
+&lt;SubWeylModule of dimension 13, generated by elements 
+[ y1^(2)*y2*v0, -1*y1*y2^(2)*v0+y2*y3*v0 ] of weights [ [ 0, 3 ], [ 3, 0 ] 
+ ]&gt;, in
+&lt;Type A2 Weyl module of highest weight [ 3, 3 ] at prime p = 3&gt;
+</pre></div>
+
+<p>An existing submodule remembers its list of generators.</p>
+
+
+<pre class="normal">
+
+Generators( S )
+
+</pre>
+
+<p>returns the list of generators used in creating the submodule <var class="Arg">S</var>. Here, <var class="Arg">S</var> must be either a sub Weyl module or a subquotient.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Generators(S2);</span>
+[ y1^(2)*y2*v0, -1*y1*y2^(2)*v0+y2*y3*v0 ]
+</pre></div>
+
+<p>In the above example, it is assumed that <code class="keyw">S2</code> is the submodule constructed in the preceding example.</p>
+
+<p>There is another function that creates submodules of an existing Weyl module or quotient Weyl module, as a direct sum of a list of existing submodules. The submodules in the list must be linearly independent.</p>
+
+
+<pre class="normal">
+
+SubWeylModuleDirectSum( V, lst )
+
+</pre>
+
+<p>This returns the direct sum of the given list of submodules, as a submodule of the ambient module <var class="Arg">V</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">V := WeylModule(2,[2,0],"G",2);</span>
+&lt;Type G2 Weyl module of highest weight [ 2, 0 ] at prime p = 2&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">m := MaximalVectors(V);</span>
+[ 1*v0, y1*v0, y4*v0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(m,Weight);</span>
+[ [ 2, 0 ], [ 0, 1 ], [ 1, 0 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">S1 := SubWeylModule(V,m[2]);</span>
+&lt;SubWeylModule of dimension 14, generated by elements [ y1*v0 ] of weights 
+[ [ 0, 1 ] ]&gt;, in
+&lt;Type G2 Weyl module of highest weight [ 2, 0 ] at prime p = 2&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">S2 := SubWeylModule(V,m[3]);</span>
+&lt;SubWeylModule of dimension 6, generated by elements [ y4*v0 ] of weights 
+[ [ 1, 0 ] ]&gt;, in
+&lt;Type G2 Weyl module of highest weight [ 2, 0 ] at prime p = 2&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D := SubWeylModuleDirectSum(V,[S1,S2]);</span>
+&lt;SubWeylModule of dimension 20, generated by elements 
+[ y1*v0, y4*v0 ] of weights [ [ 0, 1 ], [ 1, 0 ] ]&gt;, in
+&lt;Type G2 Weyl module of highest weight [ 2, 0 ] at prime p = 2&gt;
+</pre></div>
+
+<p>In the above example, the given Weyl module of type <span class="Math">G_2</span> in characteristic <span class="Math">2</span> has two maximal vectors of different weights in the socle, so it is possible to form the direct sum of the submodules thay generate. In this case, the direct sum coincides with the socle. (The <code class="keyw">SocleWeyl</code> command calls the above to produce the socle directly.)</p>
+
+<p>We also have categories of submodules.</p>
+
+
+<pre class="normal">
+
+IsSubWeylModule ( X )
+IsSubQuotientWeylModule( X )
+
+</pre>
+
+<p>These functions return true if the object is a submodule of an existing Weyl module or existing quotient Weyl module, respectively, and return false otherwise.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsSubWeylModule(D);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsSubQuotientWeylModule(D);</span>
+false
+</pre></div>
+
+<p>Here, we assume that <span class="Math">D</span> is as defined in the preceding example.</p>
+
+<p><a id="X7AED4BBA83011A1F" name="X7AED4BBA83011A1F"></a></p>
+
+<h4>2.4 <span class="Heading">Weights and weight spaces</span></h4>
+
+<p>The following functions are available for computing weights and weight spaces in a given Weyl module, quotient, submodule, or subquotient.</p>
+
+
+<pre class="normal">
+
+Weight( vec )
+Weights( V )
+DominantWeights( V )
+WeightSpaces( V )
+DominantWeightSpaces( V )
+WeightSpace( V, wt )
+
+</pre>
+
+<p>The function <code class="keyw">Weight</code> returns the weight of the given weight vector <var class="Arg">vec</var>. <code class="keyw">Weights</code> returns a list of all the weights of <var class="Arg">V</var>, without multiplicities. <code class="keyw">DominantWeights</code> returns a list of all the dominant weights of <var class="Arg">V</var>, again without multiplicities. <code class="keyw">WeightSpaces</code> returns a list consisting of each weight followed by a basis of weight vectors for the corresponding weight space in <var class="Arg">V</var>, and <code class="keyw">WeightSpace</code> returns a basis for the weight space of the given weight <var class="Arg">wt</var>.</p>
+
+<p>In all of these functions, <var class="Arg">V</var> can be an existing Weyl module, quotient Weyl module, submodule, or subquotient.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">V:= WeylModule(2, [1,0,0], "A", 3);</span>
+&lt;Type A3 Weyl module of highest weight [ 1, 0, 0 ] at prime p = 2&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Weights(V);</span>
+[ [ 1, 0, 0 ], [ -1, 1, 0 ], [ 0, -1, 1 ], [ 0, 0, -1 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DominantWeights(V);</span>
+[ [ 1, 0, 0 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">WeightSpaces(V);</span>
+[ [ 1, 0, 0 ], [ 1*v0 ], [ -1, 1, 0 ], [ y1*v0 ], [ 0, -1, 1 ], [ y4*v0 ],
+[ 0, 0, -1 ], [ y6*v0 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DominantWeightSpaces(V);</span>
+[ [ 1, 0, 0 ], [ 1*v0 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">WeightSpace(V, [-1,1,0]);</span>
+[ y1*v0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">WeightSpace(V, [0,1,0]);</span>
+fail
+</pre></div>
+
+<p>The last command prints <code class="keyw">fail</code> because there are no weight vectors of weight [0,1,0] in the indicated Weyl module.</p>
+
+<p><a id="X8484AE4E812D9263" name="X8484AE4E812D9263"></a></p>
+
+<h5>2.4-1 <span class="Heading">Using <code class="keyw">List</code> with <code class="keyw">Weight</code></span></h5>
+
+<p>The builtin <code class="keyw">List</code> function in <strong class="pkg">GAP</strong> supports mapping with respect to another function as an optional second argument. If <var class="Arg">lst</var> is a given list of weight vectors (for instance a basis of a module) then the function</p>
+
+
+<pre class="normal">
+
+List( lst, Weight )
+
+</pre>
+
+<p>returns a list of the weights of the vectors in <var class="Arg">lst</var>. In other words, it applies <code class="keyw">Weight</code> to each element in <var class="Arg">lst</var>. This can be very handy.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">N := WeylModule(2,[1,0],"A",2);</span>
+&lt;Type A2 Weyl module of highest weight [ 1, 0 ] at prime p = 2&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">base := BasisVecs(N);</span>
+[ 1*v0, y1*v0, y3*v0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(base,Weight);</span>
+[ [ 1, 0 ], [ -1, 1 ], [ 0, -1 ] ]
+</pre></div>
+
+<p>In the above, we compute a basis of weight vectors and the corresponding list of weights for the natural module of type <span class="Math">A_2</span>.</p>
+
+<p><a id="X8579590C81A1278F" name="X8579590C81A1278F"></a></p>
+
+<h4>2.5 <span class="Heading">Maximal vectors</span></h4>
+
+<p>As mentioned at the beginning of this chapter, the commands to compute maximal vectors are fundamental for the <strong class="pkg">WeylModules</strong> package. The command has two basic forms. In both forms, <var class="Arg">V</var> is a given Weyl module, quotient Weyl module, or sub quotient Weyl module. In the second form, <var class="Arg">wt</var> is a specified (dominant) weight.</p>
+
+
+<pre class="normal">
+
+MaximalVectors( V )
+MaximalVectors( V, lst )
+
+</pre>
+
+<p>This command returns a list of maximal vectors in the specified weight space, or, if no weight is specified, a list of all the maximal vectors in the module.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">V := WeylModule(3,[3,3],"A",2);</span>
+&lt;Type A2 Weyl module of highest weight [ 3, 3 ] at prime p = 3&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">m := MaximalVectors(V);</span>
+[ 1*v0, y1*v0, y2*v0, y1^(2)*y2*v0, -1*y1*y2^(2)*v0+y2*y3*v0, 
+  y1*y2*y3*v0+y1^(2)*y2^(2)*v0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(m,Weight);</span>
+[ [ 3, 3 ], [ 1, 4 ], [ 4, 1 ], [ 0, 3 ], [ 3, 0 ], [ 1, 1 ] ]
+m11 := MaximalVectors(V,[1,1]);
+[ y1*y2*y3*v0+y1^(2)*y2^(2)*v0 ]
+</pre></div>
+
+<p>There is also a function for testing a given vector in a Weyl module or a quotient Weyl module, to see if it is maximal or not.</p>
+
+
+<pre class="normal">
+
+IsMaximalVector( V, vec )
+
+</pre>
+
+<p>This returns true of the given <var class="Arg">vec</var> is maximal in <var class="Arg">V</var>, which can be a Weyl module or a quotient Weyl module, and returns false otherwise.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">V;</span>
+&lt;Type A2 Weyl module of highest weight [ 3, 3 ] at prime p = 3&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">m[5];</span>
+-1*y1*y2^(2)*v0+y2*y3*v0
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsMaximalVector(V,m[5]);</span>
+true
+</pre></div>
+
+<p>The above assumes that <span class="Math">V</span> is the Weyl module defined in the previous example, and that <span class="Math">m</span> is the list of its maximal vectors.</p>
+
+<p><a id="X7AB5BE4B837528E4" name="X7AB5BE4B837528E4"></a></p>
+
+<h4>2.6 <span class="Heading">Ambiguity</span></h4>
+
+<p>Recall from the beginning of this chapter that we defined an <em>ambiguous</em> Weyl module to be one which has a weight space containing at least two linearly independent maximal vectors. Extra care is needed when computing with such modules, so the <code class="keyw">MaximalVectors</code> function produces a warning message and tags the module as <code class="keyw">Ambiguous</code>. Here is an example, which was found in <a href="chapBib.html#biBCPS">[CPS75]</a>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">V := WeylModule(2,[0,1,0,0],"D",4);</span>
+&lt;Type D4 Weyl module of highest weight [ 0, 1, 0, 0 ] at prime p = 2&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">m := MaximalVectors(V);</span>
+***** WARNING: Ambiguous module detected *****
+[ 1*v0, y5*y10*v0+y6*y9*v0, y2*y11*v0+y5*y10*v0+y12*v0 ]
+</pre></div>
+
+<p>In such situations, the following commands can be used.</p>
+
+
+<pre class="normal">
+
+IsAmbiguous( V )
+AmbiguousMaxVecs( V )
+
+</pre>
+
+<p>The first function, which returns true or false, checks to see if the given module <var class="Arg">V</var> is ambiguous. The second function returns a list of lists of the ambiguous maximal vectors in the various ambiguous weight spaces. In both functions, <var class="Arg">V</var> is a Weyl module, quotient, submodule. (WHY NOT subquotient??)</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsAmbiguous(V);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">m := AmbiguousMaxVecs(V);</span>
+[ [ y5*y10*v0+y6*y9*v0, y2*y11*v0+y5*y10*v0+y12*v0 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(m[1],Weight);</span>
+[ [ 0, 0, 0, 0 ], [ 0, 0, 0, 0 ] ]
+</pre></div>
+
+<p>Here, we see that <span class="Math">V</span> as above has two maximal vectors of weight zero. This means that the space of homomorphisms from the trivial module into <span class="Math">V</span> is two-dimensional.</p>
+
+<p><a id="X84F7408B7A18DB71" name="X84F7408B7A18DB71"></a></p>
+
+<h4>2.7 <span class="Heading">Basis and dimension</span></h4>
+
+<p>One can compute the dimension or a basis of weight vectors for a given module.</p>
+
+
+<pre class="normal">
+
+Dim( V )
+BasisVecs( V )
+
+</pre>
+
+<p>This returns the dimension and a list of weight vectors, resprectively. The module <var class="Arg">V</var> must be a Weyl module, a submodule, a quotient, or a subquotient.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">V:= WeylModule(2, [1,0], "G", 2);</span>
+&lt;Type G2 Weyl module of highest weight [ 1, 0 ] at prime p = 2&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">b:= BasisVecs(V);</span>
+[ 1*v0, y1*v0, y3*v0, y4*v0, y5*v0, y6*v0, y1*y6*v0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Dim(V);</span>
+7
+</pre></div>
+
+<p><a id="X86807BA87E0E89CD" name="X86807BA87E0E89CD"></a></p>
+
+<h4>2.8 <span class="Heading">Miscellaneous commands</span></h4>
+
+<p>There are a few additional commands available for a Weyl module or a quotient Weyl module.</p>
+
+
+<pre class="normal">
+
+Generator( V )
+TheLieAlgebra( V )
+SimpleLieAlgGens( V )
+TheCharacteristic( V )
+
+</pre>
+
+<p>These commands respectively return the generator, the underlying Lie algebra, a list of the Lie algebra generators, and the characteristic. The third function is only available for a Weyl module (it is used internally by some of the other functions). The Lie algebra is the <em>characteristic zero</em> Lie algebra of the same type as the underlying algebraic group. The module <var class="Arg">V</var> must be either a Weyl module or a quotient Weyl module.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">V:= WeylModule(2, [1,0], "G", 2);</span>
+&lt;Type G2 Weyl module of highest weight [ 1, 0 ] at prime p = 2&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TheLieAlgebra(V);</span>
+&lt;Lie algebra of dimension 14 over Rationals&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g:= Generator(V);</span>
+1*v0
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TheCharacteristic(V);</span>
+2
+</pre></div>
+
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap1.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap3.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>GAP (WeylModules) - Chapter 1: Introduction</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap1"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap0.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap2.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap1_mj.html">[MathJax on]</a></p>
+<p><a id="X7DFB63A97E67C0A1" name="X7DFB63A97E67C0A1"></a></p>
+<div class="ChapSects"><a href="chap1.html#X7DFB63A97E67C0A1">1 <span class="Heading">Introduction</span></a>
+</div>
+
+<h3>1 <span class="Heading">Introduction</span></h3>
+
+<p>This <strong class="pkg">GAP</strong> Package supports digital computer computations with Weyl modules for a given simple simply-connected algebraic group <span class="Math">G</span> in positive characteristic <span class="Math">p</span>. Actually the group <span class="Math">G</span> itself never appears in any of the computations, which take place instead using the <em>algebra of distributions</em> (also known as the <em>hyperalgebra</em>) of <span class="Math">G</span>, taken over the prime field. One should refer to <a href="chapBib.html#biBJantzen">[Jan03]</a> for the definition of the algebra of distributions, and other basic definitions and properties related to Weyl modules.</p>
+
+<p>The algorithms are based on the method of <a href="chapBib.html#biBIrving">[Irv86]</a> (see also <a href="chapBib.html#biBXi">[Xi99]</a>) and build on the existing Lie algebra functionality in <strong class="pkg">GAP</strong>. In principle, one can work with arbitrary weights for an arbitrary (simple) root system; in practice, the functionality is limited by the size of the objects being computed. If your Weyl module has dimension in the thousands, you may have to wait a very long time for certain computations to finish.</p>
+
+<p>The package is possibly most useful for doing computations in characteristic <span class="Math">p</span>, where <span class="Math">p</span> is relatively small relative to the Coxeter number. The general theory of Weyl modules <a href="chapBib.html#biBJantzen">[Jan03]</a> includes a number of basic properties that break down (or are not known to hold) if the characteristic is too small. In such cases, explicit computations are often useful.</p>
+
+<p>Recall that a <em>maximal vector</em> is a weight vector which is killed by the positive unipotent radical; equivalently, it is killed by the positive part of the algebra of distributions.</p>
+
+<p>The main technical idea underlying this package is the following fact: computing all the maximal vectors in a given Weyl module <span class="Math">V</span> classifies the nonzero Weyl modules <span class="Math">W</span> for which a nonzero homomorphism from <span class="Math">W</span> into <span class="Math">V</span> exists. Such homological information is a powerful aid to understanding structural properties of the Weyl module <span class="Math">V</span>. The implementation of this idea involves a brute force search through each dominant weight space, examing all linear combinations (over the prime field) and compiling a list of the ones which are maximal. This exploits the pleasant fact that for Weyl modules of small dimension, the weight spaces tend to be small enough to be manageable.</p>
+
+<p>Versions 1.0 and 1.1 of this package were released in 2009. Their initial development was spurred by work on the paper <a href="chapBib.html#biBBDM">[BDM11]</a>. The discovery of the first counterexample to Donkin's tilting module conjecture, by Bendel, Nakano, Pillen, and Sobaje <a href="chapBib.html#biBBNPS">[BNPS20]</a> motivated the author to make subsequent calculations that led to the realization that the <code class="keyw">SubmoduleStructure</code> function was not reliable. This led to the development of Version 2.0, which eliminates the unreliable command and adds a number of new functions that extend the capabilities of the previous version.</p>
+
+<p>Although most of the functions deal with the simple simply-connected case, there are a few functions for dealing with Schur algebras and symmetric groups. Those commands are limited in scope, and provided mainly as a convenience.</p>
+
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0.html">[Top of Book]</a>&nbsp;  <a href="chap0.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap0.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap2.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0.html">Top</a>  <a href="chap1.html">1</a>  <a href="chap2.html">2</a>  <a href="chap3.html">3</a>  <a href="chap4.html">4</a>  <a href="chap5.html">5</a>  <a href="chap6.html">6</a>  <a href="chapBib.html">Bib</a>  <a href="chapInd.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>

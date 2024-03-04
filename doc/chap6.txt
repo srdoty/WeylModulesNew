@@ -1,0 +1,469 @@
+  
+  [1X6 [33X[0;0YReference: Declarations by File[133X[101X
+  
+  [33X[0;0YThis chapter documents the declarations by file in the [11Xlib[111X folder, following
+  the  load order specified in the file [11Xinit.g[111X. This is provided mainly to aid
+  in subsequent development efforts.[133X
+  
+  
+  [1X6.1 [33X[0;0YContents of weylmodules.gd[133X[101X
+  
+  [1X6.1-1 IsWeylModule[101X
+  
+  [33X[1;0Y[29X[2XIsWeylModule[102X( [3Xarg[103X ) [32X filter[133X
+  [6XReturns:[106X  [33X[0;10Y[10Xtrue[110X or [10Xfalse[110X[133X
+  
+  [1X6.1-2 WeylModule[101X
+  
+  [33X[1;0Y[29X[2XWeylModule[102X( [3Xarg1[103X, [3Xarg2[103X, [3Xarg3[103X, [3Xarg4[103X ) [32X operation[133X
+  
+  [1X6.1-3 WeylModule[101X
+  
+  [33X[1;0Y[29X[2XWeylModule[102X( [3Xarg1[103X, [3Xarg2[103X ) [32X operation[133X
+  
+  [1X6.1-4 IsAmbiguous[101X
+  
+  [33X[1;0Y[29X[2XIsAmbiguous[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.1-5 AmbiguousMaxVecs[101X
+  
+  [33X[1;0Y[29X[2XAmbiguousMaxVecs[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.1-6 TheLieAlgebra[101X
+  
+  [33X[1;0Y[29X[2XTheLieAlgebra[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.1-7 TheCharacteristic[101X
+  
+  [33X[1;0Y[29X[2XTheCharacteristic[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.1-8 BasisVecs[101X
+  
+  [33X[1;0Y[29X[2XBasisVecs[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.1-9 Generator[101X
+  
+  [33X[1;0Y[29X[2XGenerator[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.1-10 Dim[101X
+  
+  [33X[1;0Y[29X[2XDim[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.1-11 Weights[101X
+  
+  [33X[1;0Y[29X[2XWeights[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.1-12 DominantWeights[101X
+  
+  [33X[1;0Y[29X[2XDominantWeights[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.1-13 WeightSpace[101X
+  
+  [33X[1;0Y[29X[2XWeightSpace[102X( [3Xarg1[103X, [3Xarg2[103X ) [32X operation[133X
+  
+  [1X6.1-14 WeightSpaces[101X
+  
+  [33X[1;0Y[29X[2XWeightSpaces[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.1-15 ActOn[101X
+  
+  [33X[1;0Y[29X[2XActOn[102X( [3Xarg1[103X, [3Xarg2[103X, [3Xarg3[103X ) [32X operation[133X
+  
+  [1X6.1-16 DominantWeightSpaces[101X
+  
+  [33X[1;0Y[29X[2XDominantWeightSpaces[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.1-17 Character[101X
+  
+  [33X[1;0Y[29X[2XCharacter[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.1-18 SimpleLieAlgGens[101X
+  
+  [33X[1;0Y[29X[2XSimpleLieAlgGens[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.1-19 IsMaximalVector[101X
+  
+  [33X[1;0Y[29X[2XIsMaximalVector[102X( [3Xarg1[103X, [3Xarg2[103X ) [32X operation[133X
+  
+  [1X6.1-20 MaximalVectors[101X
+  
+  [33X[1;0Y[29X[2XMaximalVectors[102X( [3Xarg1[103X, [3Xarg2[103X ) [32X operation[133X
+  
+  [1X6.1-21 MaximalVectors[101X
+  
+  [33X[1;0Y[29X[2XMaximalVectors[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.1-22 SocleSeries[101X
+  
+  [33X[1;0Y[29X[2XSocleSeries[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.1-23 SimpleQuotient[101X
+  
+  [33X[1;0Y[29X[2XSimpleQuotient[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.1-24 MaximalSubmodule[101X
+  
+  [33X[1;0Y[29X[2XMaximalSubmodule[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.1-25 DecompositionNumbers[101X
+  
+  [33X[1;0Y[29X[2XDecompositionNumbers[102X( [3Xarg[103X ) [32X operation[133X
+  
+  
+  [1X6.2 [33X[0;0YContents of submodules.gd[133X[101X
+  
+  [1X6.2-1 IsSubWeylModule[101X
+  
+  [33X[1;0Y[29X[2XIsSubWeylModule[102X( [3Xarg[103X ) [32X filter[133X
+  [6XReturns:[106X  [33X[0;10Y[10Xtrue[110X or [10Xfalse[110X[133X
+  
+  [1X6.2-2 SubWeylModule[101X
+  
+  [33X[1;0Y[29X[2XSubWeylModule[102X( [3Xarg1[103X, [3Xarg2[103X ) [32X operation[133X
+  
+  [1X6.2-3 SubWeylModule[101X
+  
+  [33X[1;0Y[29X[2XSubWeylModule[102X( [3Xarg1[103X, [3Xarg2[103X ) [32X operation[133X
+  
+  [1X6.2-4 SubWeylModule[101X
+  
+  [33X[1;0Y[29X[2XSubWeylModule[102X( [3Xarg1[103X, [3Xarg2[103X ) [32X operation[133X
+  
+  [1X6.2-5 SubWeylModuleDirectSum[101X
+  
+  [33X[1;0Y[29X[2XSubWeylModuleDirectSum[102X( [3Xarg1[103X, [3Xarg2[103X ) [32X operation[133X
+  
+  [1X6.2-6 IsAmbiguous[101X
+  
+  [33X[1;0Y[29X[2XIsAmbiguous[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.2-7 AmbiguousMaxVecs[101X
+  
+  [33X[1;0Y[29X[2XAmbiguousMaxVecs[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.2-8 Generators[101X
+  
+  [33X[1;0Y[29X[2XGenerators[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.2-9 BasisVecs[101X
+  
+  [33X[1;0Y[29X[2XBasisVecs[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.2-10 Dim[101X
+  
+  [33X[1;0Y[29X[2XDim[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.2-11 AmbientWeylModule[101X
+  
+  [33X[1;0Y[29X[2XAmbientWeylModule[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.2-12 Weights[101X
+  
+  [33X[1;0Y[29X[2XWeights[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.2-13 DominantWeights[101X
+  
+  [33X[1;0Y[29X[2XDominantWeights[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.2-14 WeightSpaces[101X
+  
+  [33X[1;0Y[29X[2XWeightSpaces[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.2-15 Character[101X
+  
+  [33X[1;0Y[29X[2XCharacter[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.2-16 DominantWeightSpaces[101X
+  
+  [33X[1;0Y[29X[2XDominantWeightSpaces[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.2-17 WeightSpace[101X
+  
+  [33X[1;0Y[29X[2XWeightSpace[102X( [3Xarg1[103X, [3Xarg2[103X ) [32X operation[133X
+  
+  [1X6.2-18 IsMaximalVector[101X
+  
+  [33X[1;0Y[29X[2XIsMaximalVector[102X( [3Xarg1[103X, [3Xarg2[103X ) [32X operation[133X
+  
+  [1X6.2-19 MaximalVectors[101X
+  
+  [33X[1;0Y[29X[2XMaximalVectors[102X( [3Xarg1[103X, [3Xarg2[103X ) [32X operation[133X
+  
+  [1X6.2-20 MaximalVectors[101X
+  
+  [33X[1;0Y[29X[2XMaximalVectors[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.2-21 IsWithin[101X
+  
+  [33X[1;0Y[29X[2XIsWithin[102X( [3Xarg1[103X, [3Xarg2[103X ) [32X operation[133X
+  
+  [1X6.2-22 SocleWeyl[101X
+  
+  [33X[1;0Y[29X[2XSocleWeyl[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.2-23 NextSocle[101X
+  
+  [33X[1;0Y[29X[2XNextSocle[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.2-24 GensNextSocle[101X
+  
+  [33X[1;0Y[29X[2XGensNextSocle[102X( [3Xarg[103X ) [32X operation[133X
+  
+  
+  [1X6.3 [33X[0;0YContents of characters.gd[133X[101X
+  
+  [1X6.3-1 Weight[101X
+  
+  [33X[1;0Y[29X[2XWeight[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.3-2 DifferenceCharacter[101X
+  
+  [33X[1;0Y[29X[2XDifferenceCharacter[102X( [3Xarg1[103X, [3Xarg2[103X ) [32X operation[133X
+  
+  [1X6.3-3 ProductCharacter[101X
+  
+  [33X[1;0Y[29X[2XProductCharacter[102X( [3Xarg1[103X, [3Xarg2[103X ) [32X operation[133X
+  
+  [1X6.3-4 DecomposeCharacter[101X
+  
+  [33X[1;0Y[29X[2XDecomposeCharacter[102X( [3Xarg1[103X, [3Xarg2[103X, [3Xarg3[103X, [3Xarg4[103X ) [32X operation[133X
+  
+  [1X6.3-5 SimpleCharacter[101X
+  
+  [33X[1;0Y[29X[2XSimpleCharacter[102X( [3Xarg1[103X, [3Xarg2[103X, [3Xarg3[103X, [3Xarg4[103X ) [32X operation[133X
+  
+  [1X6.3-6 SimpleCharacter[101X
+  
+  [33X[1;0Y[29X[2XSimpleCharacter[102X( [3Xarg1[103X, [3Xarg2[103X ) [32X operation[133X
+  
+  
+  [1X6.4 [33X[0;0YContents of partitions.gd[133X[101X
+  
+  [1X6.4-1 CompositionToWeight[101X
+  
+  [33X[1;0Y[29X[2XCompositionToWeight[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.4-2 WeightToComposition[101X
+  
+  [33X[1;0Y[29X[2XWeightToComposition[102X( [3Xarg1[103X, [3Xarg2[103X ) [32X operation[133X
+  
+  [1X6.4-3 BoundedPartitions[101X
+  
+  [33X[1;0Y[29X[2XBoundedPartitions[102X( [3Xarg1[103X, [3Xarg2[103X, [3Xarg3[103X ) [32X operation[133X
+  
+  [1X6.4-4 BoundedPartitions[101X
+  
+  [33X[1;0Y[29X[2XBoundedPartitions[102X( [3Xarg1[103X, [3Xarg2[103X ) [32X operation[133X
+  
+  [1X6.4-5 pRestrictedPartitions[101X
+  
+  [33X[1;0Y[29X[2XpRestrictedPartitions[102X( [3Xarg1[103X, [3Xarg2[103X ) [32X operation[133X
+  
+  [1X6.4-6 AllPartitions[101X
+  
+  [33X[1;0Y[29X[2XAllPartitions[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.4-7 Conjugate[101X
+  
+  [33X[1;0Y[29X[2XConjugate[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.4-8 pRestricted[101X
+  
+  [33X[1;0Y[29X[2XpRestricted[102X( [3Xarg1[103X, [3Xarg2[103X ) [32X operation[133X
+  
+  [1X6.4-9 pRegular[101X
+  
+  [33X[1;0Y[29X[2XpRegular[102X( [3Xarg1[103X, [3Xarg2[103X ) [32X operation[133X
+  
+  [1X6.4-10 Mullineux[101X
+  
+  [33X[1;0Y[29X[2XMullineux[102X( [3Xarg1[103X, [3Xarg2[103X ) [32X operation[133X
+  
+  [1X6.4-11 pRegularPartitions[101X
+  
+  [33X[1;0Y[29X[2XpRegularPartitions[102X( [3Xarg1[103X, [3Xarg2[103X ) [32X operation[133X
+  
+  
+  [1X6.5 [33X[0;0YContents of quotient.gd[133X[101X
+  
+  [1X6.5-1 IsQuotientWeylModule[101X
+  
+  [33X[1;0Y[29X[2XIsQuotientWeylModule[102X( [3Xarg[103X ) [32X filter[133X
+  [6XReturns:[106X  [33X[0;10Y[10Xtrue[110X or [10Xfalse[110X[133X
+  
+  [1X6.5-2 QuotientWeylModule[101X
+  
+  [33X[1;0Y[29X[2XQuotientWeylModule[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.5-3 AmbientWeylModule[101X
+  
+  [33X[1;0Y[29X[2XAmbientWeylModule[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.5-4 DefiningKernel[101X
+  
+  [33X[1;0Y[29X[2XDefiningKernel[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.5-5 IsAmbiguous[101X
+  
+  [33X[1;0Y[29X[2XIsAmbiguous[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.5-6 AmbiguousMaxVecs[101X
+  
+  [33X[1;0Y[29X[2XAmbiguousMaxVecs[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.5-7 TheLieAlgebra[101X
+  
+  [33X[1;0Y[29X[2XTheLieAlgebra[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.5-8 TheCharacteristic[101X
+  
+  [33X[1;0Y[29X[2XTheCharacteristic[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.5-9 BasisVecs[101X
+  
+  [33X[1;0Y[29X[2XBasisVecs[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.5-10 Generator[101X
+  
+  [33X[1;0Y[29X[2XGenerator[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.5-11 Dim[101X
+  
+  [33X[1;0Y[29X[2XDim[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.5-12 Weights[101X
+  
+  [33X[1;0Y[29X[2XWeights[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.5-13 DominantWeights[101X
+  
+  [33X[1;0Y[29X[2XDominantWeights[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.5-14 WeightSpaces[101X
+  
+  [33X[1;0Y[29X[2XWeightSpaces[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.5-15 Character[101X
+  
+  [33X[1;0Y[29X[2XCharacter[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.5-16 DominantWeightSpaces[101X
+  
+  [33X[1;0Y[29X[2XDominantWeightSpaces[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.5-17 WeightSpace[101X
+  
+  [33X[1;0Y[29X[2XWeightSpace[102X( [3Xarg1[103X, [3Xarg2[103X ) [32X operation[133X
+  
+  [1X6.5-18 ActOn[101X
+  
+  [33X[1;0Y[29X[2XActOn[102X( [3Xarg1[103X, [3Xarg2[103X, [3Xarg3[103X ) [32X operation[133X
+  
+  [1X6.5-19 MaximalVectors[101X
+  
+  [33X[1;0Y[29X[2XMaximalVectors[102X( [3Xarg1[103X, [3Xarg2[103X ) [32X operation[133X
+  
+  [1X6.5-20 MaximalVectors[101X
+  
+  [33X[1;0Y[29X[2XMaximalVectors[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.5-21 SocleSeries[101X
+  
+  [33X[1;0Y[29X[2XSocleSeries[102X( [3Xarg[103X ) [32X operation[133X
+  
+  
+  [1X6.6 [33X[0;0YContents of schuralgebras.gd[133X[101X
+  
+  [1X6.6-1 IsSchurAlgebraWeylModule[101X
+  
+  [33X[1;0Y[29X[2XIsSchurAlgebraWeylModule[102X( [3Xarg[103X ) [32X filter[133X
+  [6XReturns:[106X  [33X[0;10Y[10Xtrue[110X or [10Xfalse[110X[133X
+  
+  [1X6.6-2 SchurAlgebraWeylModule[101X
+  
+  [33X[1;0Y[29X[2XSchurAlgebraWeylModule[102X( [3Xarg1[103X, [3Xarg2[103X ) [32X operation[133X
+  
+  [1X6.6-3 SchurAlgebraDecompositionMatrix[101X
+  
+  [33X[1;0Y[29X[2XSchurAlgebraDecompositionMatrix[102X( [3Xarg1[103X, [3Xarg2[103X, [3Xarg3[103X ) [32X operation[133X
+  
+  [1X6.6-4 SymmetricGroupDecompositionNumbers[101X
+  
+  [33X[1;0Y[29X[2XSymmetricGroupDecompositionNumbers[102X( [3Xarg1[103X, [3Xarg2[103X ) [32X operation[133X
+  
+  [1X6.6-5 SymmetricGroupDecompositionMatrix[101X
+  
+  [33X[1;0Y[29X[2XSymmetricGroupDecompositionMatrix[102X( [3Xarg1[103X, [3Xarg2[103X ) [32X operation[133X
+  
+  
+  [1X6.7 [33X[0;0YContents of subquotient.gd[133X[101X
+  
+  [1X6.7-1 IsSubQuotientWeylModule[101X
+  
+  [33X[1;0Y[29X[2XIsSubQuotientWeylModule[102X( [3Xarg[103X ) [32X filter[133X
+  [6XReturns:[106X  [33X[0;10Y[10Xtrue[110X or [10Xfalse[110X[133X
+  
+  [1X6.7-2 IsWithin[101X
+  
+  [33X[1;0Y[29X[2XIsWithin[102X( [3Xarg1[103X, [3Xarg2[103X ) [32X operation[133X
+  
+  [1X6.7-3 SubWeylModule[101X
+  
+  [33X[1;0Y[29X[2XSubWeylModule[102X( [3Xarg1[103X, [3Xarg2[103X ) [32X operation[133X
+  
+  [1X6.7-4 SubWeylModule[101X
+  
+  [33X[1;0Y[29X[2XSubWeylModule[102X( [3Xarg1[103X, [3Xarg2[103X ) [32X operation[133X
+  
+  [1X6.7-5 SubWeylModule[101X
+  
+  [33X[1;0Y[29X[2XSubWeylModule[102X( [3Xarg1[103X, [3Xarg2[103X ) [32X operation[133X
+  
+  [1X6.7-6 SubWeylModuleDirectSum[101X
+  
+  [33X[1;0Y[29X[2XSubWeylModuleDirectSum[102X( [3Xarg1[103X, [3Xarg2[103X ) [32X operation[133X
+  
+  [1X6.7-7 Generators[101X
+  
+  [33X[1;0Y[29X[2XGenerators[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.7-8 BasisVecs[101X
+  
+  [33X[1;0Y[29X[2XBasisVecs[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.7-9 Dim[101X
+  
+  [33X[1;0Y[29X[2XDim[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.7-10 AmbientQuotient[101X
+  
+  [33X[1;0Y[29X[2XAmbientQuotient[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.7-11 Weights[101X
+  
+  [33X[1;0Y[29X[2XWeights[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.7-12 WeightSpaces[101X
+  
+  [33X[1;0Y[29X[2XWeightSpaces[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.7-13 Character[101X
+  
+  [33X[1;0Y[29X[2XCharacter[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.7-14 DominantWeightSpaces[101X
+  
+  [33X[1;0Y[29X[2XDominantWeightSpaces[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.7-15 WeightSpace[101X
+  
+  [33X[1;0Y[29X[2XWeightSpace[102X( [3Xarg1[103X, [3Xarg2[103X ) [32X operation[133X
+  
+  [1X6.7-16 SocleWeyl[101X
+  
+  [33X[1;0Y[29X[2XSocleWeyl[102X( [3Xarg[103X ) [32X operation[133X
+  
+  [1X6.7-17 NextSocle[101X
+  
+  [33X[1;0Y[29X[2XNextSocle[102X( [3Xarg[103X ) [32X operation[133X
+  

@@ -1,102 +1,91 @@
-#############################################################################
-##  
-##  Demo PackageInfo.g for the GitHubPagesForGAP
-##
-
+#
+# WeylModules: for simple simply-connected algebraic groups
+#
+# This file contains package meta data. For additional information on
+# the meaning and correct usage of these fields, please consult the
+# manual of the "Example" package as well as the comments in its
+# PackageInfo.g file.
+#
 SetPackageInfo( rec(
 
-PackageName := "GitHubPagesForGAP",
-
-Subtitle := "A GitHub Pages generator for GAP packages",
-Version := "0.3",
-Date := "10/11/2019", # dd/mm/yyyy format
-License := "0BSD",
+PackageName := "WeylModules",
+Subtitle := "for simple simply-connected algebraic groups",
+Version := "Version 2.0",
+Date := "29/02/2024", # dd/mm/yyyy format
+License := "GPL-2.0-or-later",
 
 Persons := [
   rec(
-    LastName      := "Horn",
-    FirstNames    := "Max",
-    IsAuthor      := true,
-    IsMaintainer  := true,
-    Email         := "max.horn@uni-siegen.de",
-    WWWHome       := "https://www.quendi.de/math",
-    PostalAddress := Concatenation(
-                       "Department Mathematik\n",
-                       "Universität Siegen\n",
-                       "Walter-Flex-Straße 3\n",
-                       "57072 Siegen\n",
-                       "Germany" ),
-    Place         := "Siegen",
-    Institution   := "Universität Siegen"
-  ),
-
-  rec(
-    LastName      := "Thor",
-    FirstNames    := "A. U.",
-    IsAuthor      := true,
-    IsMaintainer  := false,
-    #Email         := "author@example.com",
-  ),
-
-  rec(
-    LastName      := "Itor",
-    FirstNames    := "Jan",
-    IsAuthor      := false,
-    IsMaintainer  := true,
-    #Email         := "janitor@example.com",
+    FirstNames := "Stephen",
+    LastName := "Doty",
+    WWWHome := "https://doty.math.luc.edu",
+    Email := "doty@math.luc.edu",
+    IsAuthor := true,
+    IsMaintainer := true,
+    PostalAddress := Concatenation( [
+                       "Department of Mathematics and Statistics\n",
+                       "Loyola University Chicago\n",
+                       "Chicago, Illinois 60660 USA" ] ),
+    Place := "Chicago",
+    Institution := "Loyola University Chicago",
   ),
 ],
 
+SourceRepository := rec(
+    Type := "git",
+    URL := "https://github.com/srdoty/WeylModulesNew",
+),
+IssueTrackerURL := Concatenation( ~.SourceRepository.URL, "/issues" ),
+PackageWWWHome  := "https://srdoty.github.io/WeylModulesNew/",
+PackageInfoURL  := Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
+README_URL      := Concatenation( ~.PackageWWWHome, "README.md" ),
+ArchiveURL      := Concatenation( ~.SourceRepository.URL,
+                                 "/releases/download/v", ~.Version,
+                                 "/", ~.PackageName, "-", ~.Version ),
+
+ArchiveFormats := ".tar.gz",
+
+##  Status information. Currently the following cases are recognized:
+##    "accepted"      for successfully refereed packages
+##    "submitted"     for packages submitted for the refereeing
+##    "deposited"     for packages for which the GAP developers agreed
+##                    to distribute them with the core GAP system
+##    "dev"           for development versions of packages
+##    "other"         for all other packages
+##
 Status := "other",
 
-# The following are not strictly necessary in your own PackageInfo.g
-# (in the sense that update.g only looks at the usual fields
-# like PackageWWWHome, ArchiveURL etc.). But they are convenient
-# if you use exactly the scheme for your package website that we propose.
-GithubUser := "gap-system",
-GithubRepository := ~.PackageName,
-GithubWWW := Concatenation("https://github.com/", ~.GithubUser, "/", ~.GithubRepository),
-
-PackageWWWHome := Concatenation("https://", ~.GithubUser, ".github.io/", ~.GithubRepository, "/"),
-README_URL     := Concatenation( ~.PackageWWWHome, "README.md" ),
-PackageInfoURL := Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
-# The following assumes you are using the Github releases system. If not, adjust
-# it accordingly.
-ArchiveURL     := Concatenation(~.GithubWWW,
-                    "/releases/download/v", ~.Version, "/",
-                    ~.GithubRepository, "-", ~.Version),
-
-ArchiveFormats := ".tar.gz .tar.bz2",
-
-AbstractHTML := 
-  "This is a pseudo package that contains no actual\
-  <span class=\"pkgname\">GAP</span> code. Instead, it is a template for other\
-  GAP packages that allows to quickly setup GitHub Pages.",
+AbstractHTML   :=  "",
 
 PackageDoc := rec(
-  BookName  := "GitHubPagesForGAP",
+  BookName  := "WeylModules",
   ArchiveURLSubset := ["doc"],
-  HTMLStart := "doc/chap0.html",
+  HTMLStart := "doc/chap0_mj.html",
   PDFFile   := "doc/manual.pdf",
   SixFile   := "doc/manual.six",
-  LongTitle := "A GitHub Pages generator for GAP packages",
+  LongTitle := "Weyl modules for simple simply-connected algebraic groups",
 ),
 
-# The following dependencies are fake and for testing / demo purposes
 Dependencies := rec(
-  GAP := ">=4.8.1",
-  NeededOtherPackages := [
-    ["GAPDoc", ">= 1.2"],
-    ["IO", ">= 4.1"],
-  ],
-  SuggestedOtherPackages := [["orb", ">= 4.2"]],
-  ExternalConditions := []
+  GAP := ">= 4.11",
+  NeededOtherPackages := [ ],
+  SuggestedOtherPackages := [ ],
+  ExternalConditions := [ ],
 ),
 
 AvailabilityTest := ReturnTrue,
 
-Keywords := ["GitHub Pages", "GAP"]
+TestFile := "tst/testall.g",
 
+AutoDoc := rec(
+  TitlePage := rec(
+    Acknowledgements := "The development of this software was initiated in June 2003 while the author was visiting the Department of Pure Mathematics and Mathematical Statistics (DPMMS) at the University of Cambridge, and continued during subsequent visits to DPMMS in June 2004 and in May through July of 2007. The author was supported by a Yip Fellowship at Magdalene College, Cambridge in 2007. The final stages of development took place in Chicago and in January 2009 at Universität Bielefeld, where the author was supported by a Mercator grant from the Deutsche Forschungsgemeinschaft (DFG). <Br/><Br/>The existence of this software owes much to the gentle prodding of Stuart Martin. Thanks are also due to Yutaka Yoshii for testing an earlier version of the software, and Matt Fayers for supplying his GAP code for computing the Mullineux map. <Br/><Br/>In 2018, Chris Bendel, Dan Nakano, Cornelius Pillen, and Paul Sobaje found the first counterexample to Donkin's tilting module conjecture using this package. Shortly thereafter, the author discovered an error in one of the functions. This spurred a major rewrite in the summer of 2019, resulting in Version 2.0 of the package. The rewriting of the documentation was delayed by the Covid19 Pandemic and inertia, and finally completed in February 2024.",
+    Abstract := "&WeylModules; is a &GAP; Package supporting computer computations with Weyl modules for simple simply-connected algebraic groups.",
+    Copyright := "&copyright; Copyright 2009--2024 by Stephen R. Doty.<Br/>This package is distributed under the terms and conditions of the GNU Public License Version 2 or (at your option) any later version." ),
+),
+                
+Keywords := [ "algebraic groups", "Weyl modules" ],
+                    
 ));
 
 
