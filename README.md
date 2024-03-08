@@ -13,12 +13,12 @@ https://github.com/srdoty/WeylModulesNew.
 After downloading the package, start GAP and then run the following two
 commands to load the package: 
 ```
-gap> SetPackagePath("WeylModules","path/to/your/copy/of/package");
+gap> SetPackagePath("WeylModules","path/to/your/copy");
 gap> LoadPackage("WeylModules");
 ```
 For further details, please see Chapter 76 of the
 [GAP Manual](https://www.gap-system.org/Manuals/doc/ref/chap76.html).
 
-The manual for the WeylModules package can be found in the `doc`
-subdirectory as either `manual.pdf` or `chap0.html` (depending on
-your formatting preference).
+It may be useful to rename the download folder from "WeylModulesNew"
+to "WeylModules". Depending where you put the donload folder, this
+may allow to avoid setting the path every time.

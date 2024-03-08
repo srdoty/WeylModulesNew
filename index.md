@@ -7,7 +7,9 @@ layout: default
 {{site.data.package.abstract}}
 
 The current version of this package is version {{site.data.package.version}}, released on {{site.data.package.date}}.
-For more information, please refer to [the package manual]({{site.data.package.doc-html}}).
+For more information, please refer to
+[the package manual (html)]({{site.data.package.doc-html}}),
+[(pdf)]({{site.data.package.doc-pdf}}). 
 There is also a [README](README.html) file.
 
 {% if site.data.package.license %}
