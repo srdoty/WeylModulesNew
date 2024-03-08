@@ -1,5 +1,5 @@
 name: WeylModules
-version: "Version 2.0"
+version: "2.0"
 license: "GPL-2.0-or-later"
 date: 2024-02-29
 description: |
@@ -21,7 +21,7 @@ packageinfo: https://srdoty.github.io/WeylModulesNew/PackageInfo.g
 
 downloads:
     - name: .tar.gz
-      url: https://github.com/srdoty/WeylModulesNew/releases/download/vVersion 2.0/WeylModules-Version 2.0.tar.gz
+      url: https://github.com/srdoty/WeylModulesNew/releases/download/v2.0/WeylModules-2.0.tar.gz
 
 abstract: |
 
@@ -34,7 +34,7 @@ citeas: |
     <p class='BibEntry'>
     [<span class='BibKey'>Dot24</span>]   <b class='BibAuthor'>Doty, S.</b>,
      <i class='BibTitle'>WeylModules, for simple simply-connected algebraic groups,
-             Version Version 2.0</i>
+             Version 2.0</i>
      (<span class='BibYear'>2024</span>)<br />
     (<span class='BibNote'>GAP package</span>),
     <span class='BibHowpublished'><a href="https://srdoty.github.io/WeylModulesNew/">https://srdoty.github.io/WeylModulesNew/</a></span>.
@@ -42,10 +42,10 @@ citeas: |
     
 
 bibtex: |
-    @misc{ WeylModulesVersion 2.0,
+    @misc{ WeylModules2.0,
       author =           {Doty, S.},
       title =            {{WeylModules},  for  simple simply-connected algebraic
-                          groups, {V}ersion Version 2.0},
+                          groups, {V}ersion 2.0},
       month =            {Feb},
       year =             {2024},
       note =             {GAP package},
