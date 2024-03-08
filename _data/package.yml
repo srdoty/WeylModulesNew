@@ -20,8 +20,8 @@ readme: README.md
 packageinfo: https://srdoty.github.io/WeylModulesNew/PackageInfo.g
 
 downloads:
-    - name: .tar.gz
-      url: https://github.com/srdoty/WeylModulesNew/releases/download/v2.0/WeylModules-2.0.tar.gz
+    - name: .zip
+      url: https://github.com/srdoty/WeylModulesNew/archive/refs/tags/v2.0.zip
 
 abstract: |
 
