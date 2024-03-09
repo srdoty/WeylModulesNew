@@ -19,6 +19,14 @@ gap> LoadPackage("WeylModules");
 For further details, please see Chapter 76 of the
 [GAP Manual](https://www.gap-system.org/Manuals/doc/ref/chap76.html).
 
+The manual for the WeylModules package can be generated in the `doc`
+subdirectory by running the command
+```
+$ gap makedoc.g
+```
+from the download folder. Then look for `doc/manual.pdf` or `doc/chap0.html`
+(depending on your formatting preference).
+
 It may be useful to rename the download folder from "WeylModulesNew"
-to "WeylModules". Depending where you put the donload folder, this
+to "WeylModules". Depending where you put the download folder, this
 may allow to avoid setting the path every time.
