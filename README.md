@@ -8,7 +8,7 @@ in positive characteristic for a simple simply-connected algebraic
 group. 
 
 For updates between releases check the package Web page, at
-https://github.com/srdoty/WeylModulesNew.
+[https://github.com/srdoty/WeylModulesNew](https://github.com/srdoty/WeylModulesNew).
   
 After downloading the package, start GAP and then run the following two
 commands to load the package: 
