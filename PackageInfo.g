@@ -10,7 +10,7 @@ SetPackageInfo( rec(
 
 PackageName := "WeylModules",
 Subtitle := "for simple simply-connected algebraic groups",
-Version := "Version 2.0",
+Version := "2.0",
 Date := "29/02/2024", # dd/mm/yyyy format
 License := "GPL-2.0-or-later",
 
@@ -40,10 +40,9 @@ PackageWWWHome  := "https://srdoty.github.io/WeylModulesNew/",
 PackageInfoURL  := Concatenation( ~.PackageWWWHome, "PackageInfo.g" ),
 README_URL      := Concatenation( ~.PackageWWWHome, "README.md" ),
 ArchiveURL      := Concatenation( ~.SourceRepository.URL,
-                                 "/releases/download/v", ~.Version,
-                                 "/", ~.PackageName, "-", ~.Version ),
-
-ArchiveFormats := ".tar.gz",
+                                 "/archive/refs/tags/v", ~.Version
+                                 ),
+ArchiveFormats := ".zip",
 
 ##  Status information. Currently the following cases are recognized:
 ##    "accepted"      for successfully refereed packages

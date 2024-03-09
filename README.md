@@ -19,6 +19,10 @@ gap> LoadPackage("WeylModules");
 For further details, please see Chapter 76 of the
 [GAP Manual](https://www.gap-system.org/Manuals/doc/ref/chap76.html).
 
-The manual for the WeylModules package can be found in the `doc`
-subdirectory as either `manual.pdf` or `chap0.html` (depending on
-your formatting preference).
+The manual for the WeylModules package can be generated in the `doc`
+subdirectory by running the command
+```
+$ gap makedoc.g
+```
+from the download folder. Then look for `doc/manual.pdf` or `doc/chap0.html`
+(depending on your formatting preference).
