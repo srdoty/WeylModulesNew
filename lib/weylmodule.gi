@@ -240,8 +240,8 @@ function(V)
 InstallMethod(IsMaximalVector, "for a Weyl module and weight vector", true, 
 [IsWeylModule,IsLeftAlgebraModuleElement], 0, 
 function(V,vec)
- # Tests <vec> to see if it is maximal in <V>. See below for a relative
- # version of this function.
+ # Tests <vec> to see if it is maximal in <V>. Not used by any functions!
+ # For now, keep for testing purposes. Deprecate later?   
 
  local rank,j,k,p,zerovec,height,xy,xsimple,ysimple;
 
