@@ -1,1 +1,0 @@
-DeclareOperation( "HighestPrimePower", [IsPosInt,IsInt]);
