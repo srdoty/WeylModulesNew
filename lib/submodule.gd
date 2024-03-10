@@ -37,9 +37,6 @@ DeclareOperation("WeightSpace", [IsSubWeylModule,IsList]);
 # The following command is not documented at this time
 DeclareOperation("SubWeylModule", [IsWeylModule,IsPosInt,IsPosInt,IsList]);
 
-DeclareOperation("IsMaximalVector", 
-        [IsSubWeylModule,IsLeftAlgebraModuleElement]);
-
 DeclareOperation( "MaximalVectors", [IsSubWeylModule,IsList]);
 
 DeclareOperation( "MaximalVectors", [IsSubWeylModule]);

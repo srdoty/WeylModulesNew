@@ -304,30 +304,6 @@ function(V,low,high,wtspace)
  return( fail );
 end );
 
-#############################################################################
-InstallMethod(IsMaximalVector, 
-        "for a sub Weyl module and a weight vector", true, 
-        [IsSubWeylModule,IsLeftAlgebraModuleElement], 0, 
-function(S,vec)
- # Tests <vec> to see if it is maximal in <V>/<S>, for the 
- # given submodule <S>. In other words,
- # if this returns "true" then <vec> is primitive in <V>.
- 
- local V,rank,j,k,p,zerovec,height,xy,xsimple,ysimple;
- V:= AmbientWeylModule(S);
- p:= V!.prime;
- xy:= SimpleLieAlgGens(V); xsimple:=xy[1]; ysimple:=xy[2];
- zerovec:= 0*vec;
- rank:= Length(xsimple);
- height:= HighestPrimePower(p, Sum(V!.highestWeight));
- for j in [1..rank] do 
-     for k in [0..height] do 
-       if not IsWithin(S,(xsimple[j]^(p^k)/Factorial(p^k))^vec mod p) then
-         return(false); fi;
-     od;
- od;
- return(true);
-end );
 
 #############################################################################
 # At the moment, operations depending on the following are not likely
