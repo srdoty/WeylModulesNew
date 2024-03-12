@@ -59,6 +59,8 @@ DeclareOperation( "MaximalVectors", [IsWeylModule]);
 
 DeclareOperation("SocleSeries", [IsWeylModule]);
 
+DeclareOperation("SocleLayers", [IsWeylModule]);
+
 DeclareOperation("SimpleQuotient", [IsWeylModule]);
 
 DeclareOperation("MaximalSubmodule", [IsWeylModule]);

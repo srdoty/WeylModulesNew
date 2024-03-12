@@ -366,6 +366,25 @@ function(V)
 end );
 
 #############################################################################
+InstallMethod(SocleLayers, "for a Weyl module", true, [IsWeylModule], 0,
+function(V)
+    #returns a list of generators of socle layers after
+    #printing their highest weights
+    local ss, soc, k, out, all, start;
+    ss:= SocleSeries(V);
+    Print( "first layer: ", List(Generators(ss[1]),Weight),"\n" );
+    out:=[ Generators(ss[1]) ];
+    for k in [2..Length(ss)] do
+        all:= Generators(ss[k]);
+        start:= 1 + Length(Generators(ss[k-1]));
+        Print("layer ", k, ": ", List(all{[start..Length(all)]}, Weight), 
+              "\n");
+        Add(out, all{[start..Length(all)]});
+    od;
+    return(out);
+end );
+                  
+#############################################################################
 InstallMethod(SimpleQuotient, "for a Weyl module", true, 
 [IsWeylModule], 0, 
 function(V)
