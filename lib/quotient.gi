@@ -48,9 +48,7 @@ InstallMethod(PrintObj, "for quotient Weyl modules", true,
 function(Q)
   local W;
   W:= Q!.WeylModule;
-  Print("<Quotient of Type ",  W!.type, W!.rank, 
-  " Weyl module of highest weight ", 
-  W!.highestWeight, " at prime p = ", W!.prime, ">");
+  Print("Quotient of ", W);
 end );
 
 #############################################################################

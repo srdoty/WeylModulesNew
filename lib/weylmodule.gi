@@ -49,8 +49,7 @@ end );
 InstallMethod(PrintObj, "for Weyl modules", true, 
 [IsWeylModule], 0, 
 function(W)
-  Print("<Type ",  W!.type, W!.rank, " Weyl module of highest weight ", 
-         W!.highestWeight, " at prime p = ", W!.prime, ">");
+  Print("V", W!.highestWeight);
 end );
 
 #############################################################################

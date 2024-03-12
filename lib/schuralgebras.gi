@@ -19,8 +19,7 @@ end );
 InstallMethod(PrintObj, "for Schur algebra Weyl modules", true, 
 [IsSchurAlgebraWeylModule], 0, 
 function(W)
-  Print("<Schur algebra Weyl module of highest weight ", 
-         W!.partition, " at prime p = ", W!.prime, ">");
+  Print("Schur algebra V", W!.partition);
 end );
 
 #############################################################################
