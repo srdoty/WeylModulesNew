@@ -175,7 +175,7 @@ end );
 InstallMethod(PrintObj, "for a sub quotient Weyl module", true,
 [IsSubQuotientWeylModule], 0,
 function(S)
- Print("Subquo of ", S!.quotientWeylModule);
+ Print("Submod of ", S!.quotientWeylModule);
 end );
 
 #############################################################################
