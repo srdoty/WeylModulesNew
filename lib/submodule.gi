@@ -15,15 +15,14 @@ function(W,vec)
     od;   
     SM:=Objectify(NewType(FamilyObj(W), 
        IsSubWeylModule and IsAttributeStoringRep),
-       rec(eltbasis:=lbasis,repbasis:=rowbasis,gens:=[vec],weylModule:=W,
-       maximalVecs:=[], maximalVecsAmbiguous:=[]) );
+       rec(eltbasis:=lbasis,repbasis:=rowbasis,gens:=[vec],weylModule:=W) );
     return(SM);
  fi;
 
  p:= W!.prime;
  wt:= W!.highestWeight;
  height:= HighestPrimePower(p, Sum(wt));
- L:= W!.LieAlgebra;
+ L:= TheLieAlgebra(W);
  g:= LatticeGeneratorsInUEA( L );
  noPosRoots:= Length(ChevalleyBasis(L)[1]);
  gens:= g{ [1..2*noPosRoots] };
@@ -60,8 +59,7 @@ function(W,vec)
  
  SM:=Objectify(NewType(FamilyObj(W), 
      IsSubWeylModule and IsAttributeStoringRep),
-     rec(eltbasis:=lbasis,repbasis:=rowbasis,gens:=[vec],weylModule:=W,
-     maximalVecs:=[], maximalVecsAmbiguous:=[]) );
+     rec(eltbasis:=lbasis,repbasis:=rowbasis,gens:=[vec],weylModule:=W) );
  return(SM);
 end );
 
@@ -74,7 +72,7 @@ function(W,vec)
 
  local V, p, U, rowbasis, lbasis, S, generators, ulbasis, urowbasis, i, SM;
 
- V:=W!.weylModule; p:=V!.prime;
+ V:=W!.weylModule; p:=TheCharacteristic(V);
  lbasis:=ShallowCopy(W!.eltbasis);
  if Length(lbasis) = 0 then  # W is the zero module
     return( SubWeylModule(V,vec) );
@@ -97,7 +95,7 @@ function(W,vec)
  SM:=Objectify(NewType(FamilyObj(V), 
      IsSubWeylModule and IsAttributeStoringRep),
      rec(eltbasis:=lbasis,repbasis:=rowbasis,gens:=generators,
-     weylModule:=V, maximalVecs:=[], maximalVecsAmbiguous:=[]) );
+     weylModule:=V) );
  return(SM);
 end );
 
@@ -111,8 +109,7 @@ function(V,vecs)
  if Length(vecs) = 0 then
      SM:=Objectify(NewType(FamilyObj(V), 
      IsSubWeylModule and IsAttributeStoringRep),
-     rec(eltbasis:=[],repbasis:=[],gens:=[],
-     weylModule:=V, maximalVecs:=[], maximalVecsAmbiguous:=[]) );
+     rec(eltbasis:=[],repbasis:=[],gens:=[],weylModule:=V) );
    return(SM);
  fi;
  
@@ -144,7 +141,7 @@ function(V,inlist)
  SM:= Objectify(NewType(FamilyObj(V), 
       IsSubWeylModule and IsAttributeStoringRep),
       rec(eltbasis:=lbasis,repbasis:=rowbasis,gens:=generators,
-      weylModule:=V, maximalVecs:=[], maximalVecsAmbiguous:=[]) );
+      weylModule:=V) );
  return(SM);
 end );
 
@@ -159,7 +156,7 @@ end );
 InstallMethod(IsAmbiguous,  "for a sub Weyl module", true, 
 [IsSubWeylModule], 0, 
 function(W)
-  if Length(W!.maximalVecsAmbiguous) > 0 then return true; fi;
+  if Length(AmbiguousMaxVecs(W)) > 0 then return true; fi;
   return false;
 end );
 
@@ -167,7 +164,15 @@ end );
 InstallMethod(AmbiguousMaxVecs,  "for a sub Weyl module", true, 
 [IsSubWeylModule], 0, 
 function(W)
-  return(W!.maximalVecsAmbiguous);
+local mvecs,out,k;
+    out:= [ ];
+    mvecs:= MaximalVectors(W);
+    for k in [2..Length(mvecs)] do
+        if Weight(mvecs[k-1]) = Weight(mvecs[k]) then 
+            Add(out,mvecs[k-1]); Add(out,mvecs[k]);
+        fi;
+    od;
+    return(DuplicateFreeList(out));
 end );
 
 #############################################################################
@@ -341,7 +346,7 @@ InstallMethod(MaximalVectors, "for a sub Weyl module and weight", true,
    end; 
 
  V:= AmbientWeylModule(sub);
- p:= V!.prime;
+ p:= TheCharacteristic(V);
  wtspace:= WeightSpace(sub,wt);
  xy:= SimpleLieAlgGens(V); xsimple:=xy[1]; ysimple:=xy[2];
  rank:= Length(xsimple);
@@ -368,10 +373,7 @@ InstallMethod(MaximalVectors, "for a sub Weyl module and weight", true,
    Add(outlist, result);
  od;
  if Length(outlist) > 1 then
-    Add(sub!.maximalVecsAmbiguous, outlist);
-    if Length(sub!.maximalVecsAmbiguous) = 1 then # first time
-       Print("***** WARNING: Ambiguous submodule detected *****\n");
-    fi;
+   Print("***** WARNING: Ambiguous submodule detected *****\n");
  fi; 
  return(outlist);
 end );  
@@ -380,11 +382,10 @@ end );
 InstallMethod(MaximalVectors, "for a sub Weyl module", true, 
 [IsSubWeylModule], 0, 
 function(S)
- # Finds a maximal vector in each weight space of given submodule <S>, 
- # if possible 
- local V,k,max,wts,out;
- V:= AmbientWeylModule(S);
- if S!.maximalVecs = [] then   
+   # Finds a maximal vector in each weight space of given submodule <S>, 
+   # if possible 
+   local V,k,max,wts,out;
+   V:= AmbientWeylModule(S);
    wts:= DominantWeights(S);
    out:= [ ];
    for k in [1..Length(wts)] do
@@ -393,11 +394,7 @@ function(S)
        Append(out, max);
      fi;
    od;
-   S!.maximalVecs:= out; #remember for next time
    return( out );
- else
-   return( S!.maximalVecs );
- fi;
 end );
 
 #############################################################################
@@ -424,7 +421,7 @@ InstallMethod(SocleWeyl, "for a Weyl module", true,
 function(V)
  # Returns the socle of <V> 
  local mvecs,outlist,p,s,b,dima,dimb,k;
- p:= V!.prime;
+ p:= TheCharacteristic(V);
  outlist:= []; 
  mvecs:= MaximalVectors(V);
  if Length(mvecs) = 1 then   # V is simple

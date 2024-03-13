@@ -44,11 +44,11 @@ function(Q,vec)
  fi;
 
  h:= Q!.homomorphism;
- p:= W!.prime;
+ p:= TheCharacteristic(W);
  wt:= W!.highestWeight;
  height:= HighestPrimePower(p, Sum(wt));
 
- L:= W!.LieAlgebra;
+ L:= TheLieAlgebra(W);
  g:= LatticeGeneratorsInUEA( L );
  noPosRoots:= Length(ChevalleyBasis(L)[1]);
  gens:= g{ [1..2*noPosRoots] };
@@ -292,7 +292,7 @@ function(Q)
  
  local outlist, v, mvecs, s, V, p, b, dima, dimb;
  
- V:= Q!.WeylModule; p:=V!.prime;
+ V:= Q!.WeylModule; p:=TheCharacteristic(V);
  outlist:= []; 
  mvecs:= MaximalVectors(Q);
  for v in mvecs do

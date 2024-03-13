@@ -7,7 +7,7 @@ gap> MaximalVectors(V);
 gap> IsAmbiguous(V);
 true
 gap> AmbiguousMaxVecs(V);
-[ [ y1*y3*v0, y4*v0 ] ]
+[ y1*y3*v0, y4*v0 ]
 gap> SimpleQuotient(V);
 Quotient of V[ 3, 0 ]
 gap> Dim(V);

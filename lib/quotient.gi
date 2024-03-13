@@ -11,12 +11,12 @@ function(S)
      record:= Objectify(NewType( FamilyObj(V), 
              IsQuotientWeylModule and IsAttributeStoringRep ), 
              rec(WeylModule:=V,kernel:=S,quotient:=V,homomorphism:=[], 
-             cosetReps:=BasisVecs(V),maximalVecs:=[],maximalVecsAmbiguous:=[]) 
+             cosetReps:=BasisVecs(V)) 
       );
       return(record);
  fi;
 
- p:= V!.prime;
+ p:= TheCharacteristic(V);
  submodBasis:= BasisVecs(S);
  rowbasis := S!.repbasis;
  SS:= VectorSpace(GF(p), rowbasis);
@@ -39,7 +39,7 @@ function(S)
  record:= Objectify(NewType( FamilyObj(V), 
              IsQuotientWeylModule and IsAttributeStoringRep ), 
              rec(WeylModule:=V,kernel:=S,quotient:=Q,homomorphism:=h, 
-             cosetReps:=cosetreps,maximalVecs:=[],maximalVecsAmbiguous:=[]) 
+             cosetReps:=cosetreps) 
       );
  return(record);
 end );
@@ -73,14 +73,23 @@ end );
 InstallMethod(IsAmbiguous,  "for a quotient Weyl module", true, 
 [IsQuotientWeylModule], 0, 
 function(W)
-  if Length(W!.maximalVecsAmbiguous) > 0 then return true; fi;
+    if Length(AmbiguousMaxVecs(W)) > 0 then return true; fi;
+    return false;
 end );
 
 #############################################################################
 InstallMethod(AmbiguousMaxVecs,  "for a quotient Weyl module", true, 
 [IsQuotientWeylModule], 0, 
 function(W)
-  return(W!.maximalVecsAmbiguous);
+    local mvecs,out,k;
+    out:= [ ];
+    mvecs:= MaximalVectors(W);
+    for k in [2..Length(mvecs)] do
+        if Weight(mvecs[k-1]) = Weight(mvecs[k]) then 
+            Add(out,mvecs[k-1]); Add(out,mvecs[k]);
+        fi;
+    od;
+    return(DuplicateFreeList(out));
 end );
 
 #############################################################################
@@ -291,10 +300,7 @@ function(Q,wt)
    Add(outlist, result);
  od;
  if Length(outlist) > 1 then
-    Add(Q!.maximalVecsAmbiguous, outlist);
-    if Length(Q!.maximalVecsAmbiguous) = 1 then # first time
-       Print("***** WARNING: Ambiguous quotient module detected *****\n");
-    fi;
+    Print("***** WARNING: Ambiguous quotient module detected *****\n");
  fi; 
  return(outlist);
 end );  
@@ -308,7 +314,7 @@ function(Q)
  # module <Q>, if possible.
  
  local k,max,wts,out;
- if Q!.maximalVecs = [] then   
+ 
    wts:= DominantWeights(Q);
    out:= [ ];
    for k in [1..Length(wts)] do
@@ -317,11 +323,7 @@ function(Q)
        Append(out, max);
      fi;
    od;
-   Q!.maximalVecs:= out; #remember for next time
    return( out );
- else
-   return Q!.maximalVecs; 
- fi;   
 end );
 
 #############################################################################

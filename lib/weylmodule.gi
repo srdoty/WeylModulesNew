@@ -17,10 +17,8 @@ function(p, wt, t, r)
   L:= SimpleLieAlgebra(t,r,Rationals);
   V:= HighestWeightModule(L, wt);
   W:= Objectify(NewType( FamilyObj(V), 
-                         IsWeylModule and IsAttributeStoringRep ), 
-              rec(prime:=p,highestWeight:=wt,type:=t,rank:=r,LieAlgebra:=L,
-                  module:=V,maximalVecs:=[],maximalVecsAmbiguous:=[],
-		  simpleQuotient:=[]) 
+              IsWeylModule and IsAttributeStoringRep ), 
+              rec(prime:=p,highestWeight:=wt,type:=t,rank:=r,module:=V)
               );
   return(W);
 end );
@@ -33,17 +31,15 @@ function(M, wt)
 # returns a Weyl module of highest weight <wt> of the same type as <M>
 # in particular, with the SAME underlying Lie algebra  
   local V, W, L,p,t,r;
-  L:= M!.LieAlgebra;
   p:= M!.prime;
   t:= M!.type;
   r:= M!.rank;
+  L:= SimpleLieAlgebra(t,r,Rationals);
   V:= HighestWeightModule(L, wt);
   W:= Objectify(NewType( FamilyObj(V), 
-                         IsWeylModule and IsAttributeStoringRep ), 
-              rec(prime:=p,highestWeight:=wt,type:=t,rank:=r,LieAlgebra:=L,
-                  module:=V,maximalVecs:=[],maximalVecsAmbiguous:=[],
-		  simpleQuotient:=[])  
-      );
+              IsWeylModule and IsAttributeStoringRep ), 
+              rec(prime:=p,highestWeight:=wt,type:=t,rank:=r,module:=V)
+              );
   return(W);
 end );
 
@@ -58,7 +54,7 @@ end );
 InstallMethod(IsAmbiguous,  "for a Weyl module", true, 
 [IsWeylModule], 0, 
 function(W)
-  if Length(W!.maximalVecsAmbiguous) > 0 then return true; fi;
+  if Length(AmbiguousMaxVecs(W)) > 0 then return true; fi;
   return false; # otherwise
 end );
 
@@ -66,14 +62,26 @@ end );
 InstallMethod(AmbiguousMaxVecs,  "for a Weyl module", true, 
 [IsWeylModule], 0, 
 function(W)
-  return(W!.maximalVecsAmbiguous);
+    local mvecs,out,k;
+    out:= [ ];
+    mvecs:= MaximalVectors(W);
+    for k in [2..Length(mvecs)] do
+        if Weight(mvecs[k-1]) = Weight(mvecs[k]) then 
+            Add(out,mvecs[k-1]); Add(out,mvecs[k]);
+        fi;
+    od;
+    return(DuplicateFreeList(out));
 end );
 
 #############################################################################
 InstallMethod(TheLieAlgebra,  "for a Weyl module", true, 
 [IsWeylModule], 0, 
 function(W)
-  return(W!.LieAlgebra);
+  local L,t,r;
+  t:= W!.type;
+  r:= W!.rank;
+  L:= SimpleLieAlgebra(t,r,Rationals);
+  return(L);
 end );
 
 #############################################################################
@@ -225,7 +233,7 @@ InstallMethod(SimpleLieAlgGens,
 function(V)
    # returns xsimple & ysimple
    local L, rank, noPosRoots, k, g, xsimple, ysimple;
-   L:=V!.LieAlgebra;
+   L:= TheLieAlgebra(V);
    g:= LatticeGeneratorsInUEA( L );
    rank:= Length(CanonicalGenerators(RootSystem(L))[1]);
    noPosRoots:= Length(ChevalleyBasis(L)[1]);
@@ -318,10 +326,7 @@ InstallMethod(MaximalVectors, "for a Weyl module and weight", true,
    Add(outlist, result);
  od;
  if Length(outlist) > 1 then
-    Add(V!.maximalVecsAmbiguous, outlist);
-    if Length(V!.maximalVecsAmbiguous) = 1 then # first time
-       Print("***** WARNING: Ambiguous module detected *****\n");
-    fi;
+   Print("***** WARNING: Ambiguous module detected *****\n");
  fi; 
  return(outlist);
 end );  
@@ -334,7 +339,6 @@ function(V)
  # Finds a maximal vector in each weight space of given Weyl module <V>, 
  # if possible 
  local k,max,wts,out;
- if V!.maximalVecs = [] then   
    wts:= DominantWeights(V);
    out:= [ ];
    for k in [1..Length(wts)] do
@@ -343,11 +347,7 @@ function(V)
        Append(out, max);
      fi;
    od;
-   V!.maximalVecs:= out; #remember for next time
    return( out );
- else
-   return( V!.maximalVecs );
- fi;
 end );
 
 #############################################################################
@@ -393,9 +393,6 @@ function(V)
  # returns the quotient of the given Weyl module by the maximal submodule
  local mvecs,S,Q;
 
- Q:= V!.simpleQuotient;
- if Q <> [ ] then return(Q[1]); fi;
- # else compute and save it as follows
  S:=SubWeylModule(V,[ ]); # zero module
  mvecs:= MaximalVectors(V);
  if Length(mvecs) = 1 then
@@ -407,7 +404,6 @@ function(V)
     Q:=QuotientWeylModule(S);
     mvecs:=MaximalVectors(Q);
  od;
- Add(V!.simpleQuotient, Q); # save it
  return(Q);
 end );
 
