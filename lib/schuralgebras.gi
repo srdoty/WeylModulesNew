@@ -9,8 +9,9 @@ function(p,mu)
    if n=1 then n:=2; Add(mu, 0); fi; #n must be at least 2!
    r:= Sum(mu);
    V:= WeylModule(p, CompositionToWeight(mu), "A", n-1);
-   W:= Objectify(NewType( FamilyObj(V), IsSchurAlgebraWeylModule ), 
-              rec(prime:=p,partition:=mu,degree:=r,size:=n,module:=V) 
+   W:= Objectify(NewType( FamilyObj(V), 
+       IsSchurAlgebraWeylModule and IsAttributeStoringRep ), 
+       rec(prime:=p,partition:=mu,degree:=r,size:=n,module:=V) 
               );
   return(W);
 end );
