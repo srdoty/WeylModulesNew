@@ -16,7 +16,8 @@ function(p, wt, t, r)
   local V, W, L;
   L:= SimpleLieAlgebra(t,r,Rationals);
   V:= HighestWeightModule(L, wt);
-  W:= Objectify(NewType( FamilyObj(V), IsWeylModule ), 
+  W:= Objectify(NewType( FamilyObj(V), 
+                         IsWeylModule and IsAttributeStoringRep ), 
               rec(prime:=p,highestWeight:=wt,type:=t,rank:=r,LieAlgebra:=L,
                   module:=V,maximalVecs:=[],maximalVecsAmbiguous:=[],
 		  simpleQuotient:=[]) 
@@ -37,7 +38,8 @@ function(M, wt)
   t:= M!.type;
   r:= M!.rank;
   V:= HighestWeightModule(L, wt);
-  W:= Objectify(NewType( FamilyObj(V), IsWeylModule ), 
+  W:= Objectify(NewType( FamilyObj(V), 
+                         IsWeylModule and IsAttributeStoringRep ), 
               rec(prime:=p,highestWeight:=wt,type:=t,rank:=r,LieAlgebra:=L,
                   module:=V,maximalVecs:=[],maximalVecsAmbiguous:=[],
 		  simpleQuotient:=[])  

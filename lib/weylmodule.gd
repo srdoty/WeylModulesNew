@@ -29,7 +29,7 @@ DeclareOperation( "BasisVecs", [IsWeylModule]);
 
 DeclareOperation( "Generator", [IsWeylModule]);
 
-DeclareOperation( "Dim", [IsWeylModule]);
+DeclareOperation( "Dim", [IsWeylModule] );
 
 DeclareOperation( "Weights", [IsWeylModule]);
 
@@ -57,9 +57,9 @@ DeclareOperation( "MaximalVectors", [IsWeylModule,IsList]);
 
 DeclareOperation( "MaximalVectors", [IsWeylModule]);
 
-DeclareOperation("SocleSeries", [IsWeylModule]);
+DeclareAttribute("SocleSeries", IsWeylModule );
 
-DeclareOperation("SocleLayers", [IsWeylModule]);
+DeclareAttribute("SocleLayers", IsWeylModule );
 
 DeclareOperation("SimpleQuotient", [IsWeylModule]);
 

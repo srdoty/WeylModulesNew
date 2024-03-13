@@ -8,7 +8,8 @@ function(S)
 
  V:= S!.weylModule;
  if Dim(S) = 0 then
-     record:= Objectify(NewType( FamilyObj(V), IsQuotientWeylModule ), 
+     record:= Objectify(NewType( FamilyObj(V), 
+             IsQuotientWeylModule and IsAttributeStoringRep ), 
              rec(WeylModule:=V,kernel:=S,quotient:=V,homomorphism:=[], 
              cosetReps:=BasisVecs(V),maximalVecs:=[],maximalVecsAmbiguous:=[]) 
       );
@@ -35,7 +36,8 @@ function(S)
    Add(cosetreps, result);
  od;
 
- record:= Objectify(NewType( FamilyObj(V), IsQuotientWeylModule ), 
+ record:= Objectify(NewType( FamilyObj(V), 
+             IsQuotientWeylModule and IsAttributeStoringRep ), 
              rec(WeylModule:=V,kernel:=S,quotient:=Q,homomorphism:=h, 
              cosetReps:=cosetreps,maximalVecs:=[],maximalVecsAmbiguous:=[]) 
       );
