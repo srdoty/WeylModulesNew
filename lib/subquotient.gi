@@ -36,7 +36,8 @@ function(Q,vec)
     for v in lbasis do
        Add(rowbasis, Image(h, RowVec(W,v)));  # MODIFIED 3 Mar 2024
     od;   
-    SM:=Objectify(NewType(FamilyObj(Q), IsSubQuotientWeylModule),
+    SM:=Objectify(NewType(FamilyObj(Q), 
+     IsSubQuotientWeylModule and IsAttributeStoringRep),
      rec(eltbasis:=lbasis,repbasis:=rowbasis,gens:=[vec],
      quotientWeylModule:=Q) );
     return(SM);
@@ -82,7 +83,8 @@ function(Q,vec)
     j:= j+1;
  od;
 
- SM:=Objectify(NewType(FamilyObj(Q), IsSubQuotientWeylModule),
+ SM:=Objectify(NewType(FamilyObj(Q), 
+     IsSubQuotientWeylModule and IsAttributeStoringRep),
      rec(eltbasis:=lbasis,repbasis:=rowbasis,gens:=[vec],
      quotientWeylModule:=Q) );
  return(SM);
@@ -118,7 +120,8 @@ function(W,vec)
    fi;
  od;
 
- SM:=Objectify(NewType(FamilyObj(Q), IsSubQuotientWeylModule),
+ SM:=Objectify(NewType(FamilyObj(Q), 
+     IsSubQuotientWeylModule and IsAttributeStoringRep),
      rec(eltbasis:=lbasis,repbasis:=rowbasis,gens:=generators,
      quotientWeylModule:=Q) );
  return(SM);
@@ -133,7 +136,8 @@ function(Q,vecs)
 
  local S,v,SM;
  if Length(vecs) = 0 then
-    SM:=Objectify(NewType(FamilyObj(Q), IsSubQuotientWeylModule),
+     SM:=Objectify(NewType(FamilyObj(Q), 
+     IsSubQuotientWeylModule and IsAttributeStoringRep),
      rec(eltbasis:=[],repbasis:=[],gens:=[],
      quotientWeylModule:=Q) );
  return(SM);
@@ -164,9 +168,10 @@ function(Q,inlist)
     Assert(0,Q = S!.quotientWeylModule);
  od;
 
- SM:= Objectify(NewType(FamilyObj(Q), IsSubQuotientWeylModule),
-     rec(eltbasis:=lbasis,repbasis:=rowbasis,gens:=generators,
-     quotientWeylModule:=Q) );
+ SM:= Objectify(NewType(FamilyObj(Q), 
+      IsSubQuotientWeylModule and IsAttributeStoringRep),
+      rec(eltbasis:=lbasis,repbasis:=rowbasis,gens:=generators,
+      quotientWeylModule:=Q) );
  return(SM);
 end );
 

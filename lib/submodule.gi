@@ -13,7 +13,8 @@ function(W,vec)
     for v in lbasis do
        Add(rowbasis, RowVec(W,v));
     od;   
-    SM:=Objectify(NewType(FamilyObj(W), IsSubWeylModule),
+    SM:=Objectify(NewType(FamilyObj(W), 
+       IsSubWeylModule and IsAttributeStoringRep),
        rec(eltbasis:=lbasis,repbasis:=rowbasis,gens:=[vec],weylModule:=W,
        maximalVecs:=[], maximalVecsAmbiguous:=[]) );
     return(SM);
@@ -57,7 +58,8 @@ function(W,vec)
     j:= j+1;
  od;
  
- SM:=Objectify(NewType(FamilyObj(W), IsSubWeylModule),
+ SM:=Objectify(NewType(FamilyObj(W), 
+     IsSubWeylModule and IsAttributeStoringRep),
      rec(eltbasis:=lbasis,repbasis:=rowbasis,gens:=[vec],weylModule:=W,
      maximalVecs:=[], maximalVecsAmbiguous:=[]) );
  return(SM);
@@ -92,7 +94,8 @@ function(W,vec)
    fi;
  od;
 
- SM:=Objectify(NewType(FamilyObj(V), IsSubWeylModule),
+ SM:=Objectify(NewType(FamilyObj(V), 
+     IsSubWeylModule and IsAttributeStoringRep),
      rec(eltbasis:=lbasis,repbasis:=rowbasis,gens:=generators,
      weylModule:=V, maximalVecs:=[], maximalVecsAmbiguous:=[]) );
  return(SM);
@@ -106,7 +109,8 @@ function(V,vecs)
 
  local S, v, SM;
  if Length(vecs) = 0 then
-   SM:=Objectify(NewType(FamilyObj(V), IsSubWeylModule),
+     SM:=Objectify(NewType(FamilyObj(V), 
+     IsSubWeylModule and IsAttributeStoringRep),
      rec(eltbasis:=[],repbasis:=[],gens:=[],
      weylModule:=V, maximalVecs:=[], maximalVecsAmbiguous:=[]) );
    return(SM);
@@ -137,9 +141,10 @@ function(V,inlist)
     Assert(0,V = S!.weylModule);
  od;
 
- SM:= Objectify(NewType(FamilyObj(V), IsSubWeylModule),
-     rec(eltbasis:=lbasis,repbasis:=rowbasis,gens:=generators,
-     weylModule:=V, maximalVecs:=[], maximalVecsAmbiguous:=[]) );
+ SM:= Objectify(NewType(FamilyObj(V), 
+      IsSubWeylModule and IsAttributeStoringRep),
+      rec(eltbasis:=lbasis,repbasis:=rowbasis,gens:=generators,
+      weylModule:=V, maximalVecs:=[], maximalVecsAmbiguous:=[]) );
  return(SM);
 end );
 

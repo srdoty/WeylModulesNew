@@ -17,7 +17,7 @@ DeclareOperation( "WeylModule", [IsPosInt, IsList, IsString, IsPosInt] );
 
 DeclareOperation( "WeylModule", [IsWeylModule,IsList] );
 
-DeclareOperation( "IsAmbiguous",  [IsWeylModule]);
+DeclareOperation( "IsAmbiguous",  [IsWeylModule] );
 
 DeclareOperation( "AmbiguousMaxVecs",  [IsWeylModule]);
 
