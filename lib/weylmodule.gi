@@ -325,9 +325,6 @@ InstallMethod(MaximalVectors, "for a Weyl module and weight", true,
    od;
    Add(outlist, result);
  od;
- if Length(outlist) > 1 then
-   Print("***** WARNING: Ambiguous module detected *****\n");
- fi; 
  return(outlist);
 end );  
 

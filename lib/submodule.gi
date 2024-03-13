@@ -372,9 +372,6 @@ InstallMethod(MaximalVectors, "for a sub Weyl module and weight", true,
    od;
    Add(outlist, result);
  od;
- if Length(outlist) > 1 then
-   Print("***** WARNING: Ambiguous submodule detected *****\n");
- fi; 
  return(outlist);
 end );  
 

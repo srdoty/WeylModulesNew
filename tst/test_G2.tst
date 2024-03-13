@@ -1,7 +1,6 @@
 gap> V:=WeylModule(2,[3,0],"G",2);
 V[ 3, 0 ]
 gap> MaximalVectors(V);
-***** WARNING: Ambiguous module detected *****
 [ 1*v0, y1*y3*v0, y4*v0, y1*y4*v0, y1*y3*y4*v0+y1*y6*v0+y3*y5*v0, 
   y1*y4*y6*v0+y3*y4*y5*v0+y4^(3)*v0 ]
 gap> IsAmbiguous(V);
@@ -63,7 +62,6 @@ gap> Character(V);
   [ -5, 2 ], 1, [ 3, -3 ], 1, [ -2, 0 ], 2, [ 1, -2 ], 1, [ -4, 1 ], 1, 
   [ -1, -1 ], 1, [ -3, 0 ], 1 ]
 gap> SocleSeries(V);
-***** WARNING: Ambiguous quotient module detected *****
 [ Submod of V[ 3, 0 ], Submod of V[ 3, 0 ], Submod of V[ 3, 0 ], 
   Submod of V[ 3, 0 ], Submod of V[ 3, 0 ], Submod of V[ 3, 0 ] ]
 gap> SocleLayers(V);

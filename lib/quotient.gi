@@ -299,9 +299,6 @@ function(Q,wt)
    od;
    Add(outlist, result);
  od;
- if Length(outlist) > 1 then
-    Print("***** WARNING: Ambiguous quotient module detected *****\n");
- fi; 
  return(outlist);
 end );  
 
