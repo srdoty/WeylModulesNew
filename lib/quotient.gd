@@ -38,7 +38,7 @@ DeclareOperation( "ActOn", [IsQuotientWeylModule,IsUEALatticeElement,
 
 DeclareOperation( "MaximalVectors", [IsQuotientWeylModule,IsList]);
 
-DeclareOperation( "MaximalVectors", [IsQuotientWeylModule]);
+DeclareAttribute( "MaximalVectors", IsQuotientWeylModule );
 
 DeclareAttribute( "SocleSeries", IsQuotientWeylModule );
 

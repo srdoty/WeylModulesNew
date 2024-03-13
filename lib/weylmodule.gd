@@ -55,7 +55,7 @@ DeclareOperation( "IsMaximalVector", [IsWeylModule,IsLeftAlgebraModuleElement]);
 
 DeclareOperation( "MaximalVectors", [IsWeylModule,IsList]);
 
-DeclareOperation( "MaximalVectors", [IsWeylModule]);
+DeclareAttribute( "MaximalVectors", IsWeylModule );
 
 DeclareAttribute("SocleSeries", IsWeylModule );
 

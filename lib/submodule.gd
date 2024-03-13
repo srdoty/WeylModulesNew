@@ -39,7 +39,7 @@ DeclareOperation("SubWeylModule", [IsWeylModule,IsPosInt,IsPosInt,IsList]);
 
 DeclareOperation( "MaximalVectors", [IsSubWeylModule,IsList]);
 
-DeclareOperation( "MaximalVectors", [IsSubWeylModule]);
+DeclareAttribute( "MaximalVectors", IsSubWeylModule );
 
 DeclareOperation( "IsWithin", [IsSubWeylModule,IsLeftAlgebraModuleElement]);
 
