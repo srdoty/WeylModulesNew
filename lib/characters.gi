@@ -219,7 +219,7 @@ function(p, wt, t, r)
  frob:= function(lambda)
    # Frobenius twist of SimpleCharacter of highest weight lambda
    local ch, j;
-   ch:= SimpleCharacter(p,lambda,t,r);
+   ch:= ShallowCopy(SimpleCharacter(p,lambda,t,r));
    for j in [2,4..Length(ch)] do ch[j-1]:= p*ch[j-1]; od;
    return(ch);
  end;

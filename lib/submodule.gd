@@ -10,27 +10,27 @@ DeclareOperation("SubWeylModule", [IsWeylModule,IsList]);
 
 DeclareOperation("SubWeylModuleDirectSum", [IsWeylModule,IsList]);
 
-DeclareOperation( "IsAmbiguous",  [IsSubWeylModule]);
+DeclareAttribute( "IsAmbiguous", IsSubWeylModule );
 
-DeclareOperation( "AmbiguousMaxVecs",  [IsSubWeylModule]);
+DeclareAttribute( "AmbiguousMaxVecs", IsSubWeylModule );
 
 DeclareOperation("Generators", [IsSubWeylModule]);
 
 DeclareOperation("BasisVecs", [IsSubWeylModule]);
 
-DeclareOperation("Dim", [IsSubWeylModule]);
+DeclareAttribute("Dim", IsSubWeylModule );
 
 DeclareOperation("AmbientWeylModule", [IsSubWeylModule]);
 
-DeclareOperation("Weights", [IsSubWeylModule]);
+DeclareAttribute("Weights", IsSubWeylModule );
 
-DeclareOperation("DominantWeights", [IsSubWeylModule]);
+DeclareAttribute("DominantWeights", IsSubWeylModule );
 
-DeclareOperation("WeightSpaces", [IsSubWeylModule]);
+DeclareAttribute("WeightSpaces", IsSubWeylModule );
 
-DeclareOperation("Character", [IsSubWeylModule]);
+DeclareAttribute("Character", IsSubWeylModule );
 
-DeclareOperation("DominantWeightSpaces", [IsSubWeylModule]);
+DeclareAttribute("DominantWeightSpaces", IsSubWeylModule );
 
 DeclareOperation("WeightSpace", [IsSubWeylModule,IsList]);
 

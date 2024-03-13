@@ -17,11 +17,11 @@ DeclareOperation( "WeylModule", [IsPosInt, IsList, IsString, IsPosInt] );
 
 DeclareOperation( "WeylModule", [IsWeylModule,IsList] );
 
-DeclareOperation( "IsAmbiguous",  [IsWeylModule] );
+DeclareAttribute( "IsAmbiguous",  IsWeylModule );
 
-DeclareOperation( "AmbiguousMaxVecs",  [IsWeylModule]);
+DeclareAttribute( "AmbiguousMaxVecs", IsWeylModule );
 
-DeclareOperation( "TheLieAlgebra",  [IsWeylModule]);
+DeclareAttribute( "TheLieAlgebra",  IsWeylModule );
 
 DeclareOperation( "TheCharacteristic", [IsWeylModule]); 
 
@@ -29,22 +29,22 @@ DeclareOperation( "BasisVecs", [IsWeylModule]);
 
 DeclareOperation( "Generator", [IsWeylModule]);
 
-DeclareOperation( "Dim", [IsWeylModule] );
+DeclareAttribute( "Dim", IsWeylModule );
 
-DeclareOperation( "Weights", [IsWeylModule]);
+DeclareAttribute( "Weights", IsWeylModule );
 
-DeclareOperation( "DominantWeights", [IsWeylModule]);
+DeclareAttribute( "DominantWeights", IsWeylModule );
 
 DeclareOperation( "WeightSpace", [IsWeylModule,IsList]);
 
-DeclareOperation( "WeightSpaces", [IsWeylModule]);
+DeclareAttribute( "WeightSpaces", IsWeylModule );
 
 DeclareOperation("ActOn", 
      [IsWeylModule, IsUEALatticeElement, IsLeftAlgebraModuleElement]);
 
-DeclareOperation( "DominantWeightSpaces", [IsWeylModule]);
+DeclareAttribute( "DominantWeightSpaces", IsWeylModule );
 
-DeclareOperation( "Character", [IsWeylModule]);
+DeclareAttribute( "Character", IsWeylModule );
 
 # The following operation is not documented at this time
 DeclareOperation( "RowVec", [IsWeylModule,IsLeftAlgebraModuleElement]);
@@ -61,17 +61,17 @@ DeclareAttribute("SocleSeries", IsWeylModule );
 
 DeclareAttribute("SocleLayers", IsWeylModule );
 
-DeclareOperation("SimpleQuotient", [IsWeylModule]);
+DeclareAttribute("SimpleQuotient", IsWeylModule );
 
-DeclareOperation("MaximalSubmodule", [IsWeylModule]);
-
-# The following command is not documented at this time
-DeclareOperation("SimpleTopFactorCharacter", [IsWeylModule]);
+DeclareAttribute("MaximalSubmodule", IsWeylModule );
 
 # The following command is not documented at this time
-DeclareOperation("SimpleTopFactorDim", [IsWeylModule]);
+DeclareAttribute("SimpleTopFactorCharacter", IsWeylModule );
 
-DeclareOperation("DecompositionNumbers", [IsWeylModule]);
+# The following command is not documented at this time
+DeclareAttribute("SimpleTopFactorDim", IsWeylModule );
+
+DeclareAttribute("DecompositionNumbers", IsWeylModule );
 
 
 

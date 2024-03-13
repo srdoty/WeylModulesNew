@@ -7,11 +7,11 @@ DeclareOperation( "AmbientWeylModule", [IsQuotientWeylModule]);
 
 DeclareOperation( "DefiningKernel", [IsQuotientWeylModule]);
 
-DeclareOperation( "IsAmbiguous",  [IsQuotientWeylModule]);
+DeclareAttribute( "IsAmbiguous",  IsQuotientWeylModule );
 
-DeclareOperation( "AmbiguousMaxVecs",  [IsQuotientWeylModule]);
+DeclareAttribute( "AmbiguousMaxVecs",  IsQuotientWeylModule );
 
-DeclareOperation( "TheLieAlgebra", [IsQuotientWeylModule]);
+DeclareAttribute( "TheLieAlgebra", IsQuotientWeylModule );
 
 DeclareOperation( "TheCharacteristic", [IsQuotientWeylModule]);
 
@@ -19,17 +19,17 @@ DeclareOperation( "BasisVecs", [IsQuotientWeylModule]);
 
 DeclareOperation( "Generator", [IsQuotientWeylModule]);
 
-DeclareOperation( "Dim", [IsQuotientWeylModule]);
+DeclareAttribute( "Dim", IsQuotientWeylModule );
 
-DeclareOperation( "Weights", [IsQuotientWeylModule]);
+DeclareAttribute( "Weights", IsQuotientWeylModule );
 
-DeclareOperation( "DominantWeights", [IsQuotientWeylModule]);
+DeclareAttribute( "DominantWeights", IsQuotientWeylModule );
 
-DeclareOperation( "WeightSpaces", [IsQuotientWeylModule]);
+DeclareAttribute( "WeightSpaces", IsQuotientWeylModule );
 
-DeclareOperation( "Character", [IsQuotientWeylModule]);
+DeclareAttribute( "Character", IsQuotientWeylModule );
 
-DeclareOperation( "DominantWeightSpaces", [IsQuotientWeylModule]);
+DeclareAttribute( "DominantWeightSpaces", IsQuotientWeylModule );
 
 DeclareOperation( "WeightSpace", [IsQuotientWeylModule,IsList]);
 

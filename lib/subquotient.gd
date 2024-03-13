@@ -19,17 +19,17 @@ DeclareOperation("Generators", [IsSubQuotientWeylModule]);
 
 DeclareOperation("BasisVecs", [IsSubQuotientWeylModule]);
 
-DeclareOperation("Dim", [IsSubQuotientWeylModule]);
+DeclareAttribute("Dim", IsSubQuotientWeylModule );
 
 DeclareOperation("AmbientQuotient", [IsSubQuotientWeylModule]);
 
-DeclareOperation("Weights", [IsSubQuotientWeylModule]);
+DeclareAttribute("Weights", IsSubQuotientWeylModule );
 
-DeclareOperation("WeightSpaces", [IsSubQuotientWeylModule]);
+DeclareAttribute("WeightSpaces", IsSubQuotientWeylModule );
 
-DeclareOperation("Character", [IsSubQuotientWeylModule]);
+DeclareAttribute("Character", IsSubQuotientWeylModule );
 
-DeclareOperation("DominantWeightSpaces", [IsSubQuotientWeylModule]);
+DeclareAttribute("DominantWeightSpaces", IsSubQuotientWeylModule );
 
 DeclareOperation("WeightSpace", [IsSubQuotientWeylModule,IsList]);
 
