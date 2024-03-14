@@ -484,3 +484,18 @@ function(S)
 end );
 
 #############################################################################
+InstallMethod(DecompositionNumbers, "for a sub Weyl module", true, 
+[IsSubWeylModule], 0, 
+function(S)
+ # returns the decomposition numbers of the given sub Weyl module
+
+ local V, ch, p, t, r, m, wt, mult, ms, decnums;
+ V:= AmbientWeylModule(S);   
+ p:= TheCharacteristic(V);
+ r:= V!.rank;
+ t:=V!.type;
+ ch:=Character(S);
+ return DecomposeCharacter(ch,p,t,r);
+end );     
+
+#############################################################################

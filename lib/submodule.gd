@@ -49,3 +49,5 @@ DeclareOperation("NextSocle", [IsSubWeylModule]);
 
 DeclareOperation("GensNextSocle", [IsSubWeylModule]);
 
+DeclareAttribute("DecompositionNumbers", IsSubWeylModule );
+

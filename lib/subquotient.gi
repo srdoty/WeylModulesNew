@@ -354,3 +354,19 @@ function(S)
  return ans;
 end );
 
+#############################################################################
+InstallMethod(DecompositionNumbers, "for a sub quotient Weyl module", true, 
+[IsSubQuotientWeylModule], 0, 
+function(S)
+ # returns the decomposition numbers of the given sub quotient Weyl module
+
+ local V, ch, p, t, r, m, wt, mult, ms, decnums;
+ V:= AmbientWeylModule(S!.quotientWeylModule);   
+ p:= TheCharacteristic(V);
+ r:= V!.rank;
+ t:=V!.type;
+ ch:=Character(S);
+ return DecomposeCharacter(ch,p,t,r);
+end );     
+
+#############################################################################

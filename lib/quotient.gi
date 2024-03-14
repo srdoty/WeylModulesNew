@@ -371,3 +371,18 @@ function(V)
 end );
 
 #############################################################################
+InstallMethod(DecompositionNumbers, "for a quotient Weyl module", true, 
+[IsQuotientWeylModule], 0, 
+function(Q)
+ # returns the decomposition numbers of the given quotient Weyl module
+
+ local V, ch, p, t, r, m, wt, mult, ms, decnums;
+ V:= AmbientWeylModule(Q);    
+ p:= TheCharacteristic(V);
+ r:= V!.rank;
+ t:=V!.type;
+ ch:=Character(Q);
+ return DecomposeCharacter(ch,p,t,r);
+end );     
+
+#############################################################################

@@ -38,3 +38,6 @@ DeclareOperation("WeightSpace", [IsSubQuotientWeylModule,IsList]);
 DeclareOperation("SocleWeyl", [IsQuotientWeylModule]);
 
 DeclareOperation("NextSocle", [IsSubQuotientWeylModule]);
+
+DeclareAttribute("DecompositionNumbers", IsSubQuotientWeylModule );
+

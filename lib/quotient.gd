@@ -45,3 +45,5 @@ DeclareAttribute( "SocleSeries", IsQuotientWeylModule );
 DeclareAttribute( "GensSocleLayers", IsQuotientWeylModule );
 
 DeclareOperation( "PrintSocleLayers", [IsQuotientWeylModule] );
+
+DeclareAttribute("DecompositionNumbers", IsQuotientWeylModule );
