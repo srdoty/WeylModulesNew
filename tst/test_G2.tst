@@ -64,16 +64,14 @@ gap> Character(V);
 gap> SocleSeries(V);
 [ Submod of V[ 3, 0 ], Submod of V[ 3, 0 ], Submod of V[ 3, 0 ], 
   Submod of V[ 3, 0 ], Submod of V[ 3, 0 ], Submod of V[ 3, 0 ] ]
-gap> SocleLayers(V);
-first layer: [ [ 0, 1 ], [ 1, 0 ], [ 0, 0 ] ]
-layer 2: [ [ 2, 0 ], [ 0, 0 ] ]
-layer 3: [ [ 2, 0 ] ]
-layer 4: [ [ 0, 0 ] ]
-layer 5: [ [ 1, 0 ] ]
-layer 6: [ [ 3, 0 ] ]
-[ [ y1*y4*v0, y1*y3*y4*v0+y1*y6*v0+y3*y5*v0, 
-      y1*y4*y6*v0+y3*y4*y5*v0+y4^(3)*v0 ], [ y4*v0, y1^(2)*y3*y6*v0 ], 
-  [ y1*y3*v0 ], [ y5*y6*v0 ], [ y1*y6*v0+y4^(2)*v0 ], [ 1*v0 ] ]
+gap> PrintSocleLayers(V);
+Printing highest weights of composition factors of V[ 3, 0 ]
+Layer 1: [ [ 0, 1 ], [ 1, 0 ], [ 0, 0 ] ]
+Layer 2: [ [ 2, 0 ], [ 0, 0 ] ]
+Layer 3: [ [ 2, 0 ] ]
+Layer 4: [ [ 0, 0 ] ]
+Layer 5: [ [ 1, 0 ] ]
+Layer 6: [ [ 3, 0 ] ]
 gap> MaximalSubmodule(V);
 Submod of V[ 3, 0 ]
 gap> DecompositionNumbers(V);
@@ -130,15 +128,14 @@ gap> SocleSeries(Q);
 [ Submod of Quotient of V[ 3, 0 ], Submod of Quotient of V[ 3, 0 ], 
   Submod of Quotient of V[ 3, 0 ], Submod of Quotient of V[ 3, 0 ], 
   Submod of Quotient of V[ 3, 0 ], Submod of Quotient of V[ 3, 0 ] ]
-gap> SocleLayers(Q);
-first layer: [ [ 1, 0 ] ]
-layer 2: [ [ 0, 0 ] ]
-layer 3: [ [ 2, 0 ] ]
-layer 4: [ [ 0, 0 ] ]
-layer 5: [ [ 1, 0 ] ]
-layer 6: [ [ 3, 0 ] ]
-[ [ y1*y6*v0+y3*y5*v0 ], [ y1^(2)*y3*y6*v0 ], [ y1*y3*v0 ], [ y5*y6*v0 ], 
-  [ y1*y6*v0+y4^(2)*v0 ], [ 1*v0 ] ]
+gap> PrintSocleLayers(Q);
+Printing highest weights of composition factors of Quotient of V[ 3, 0 ]
+Layer 1: [ [ 1, 0 ] ]
+Layer 2: [ [ 0, 0 ] ]
+Layer 3: [ [ 2, 0 ] ]
+Layer 4: [ [ 0, 0 ] ]
+Layer 5: [ [ 1, 0 ] ]
+Layer 6: [ [ 3, 0 ] ]
 gap> mQ:=MaximalVectors(Q);
 [ 1*v0, y1*y3*v0, y1*y6*v0+y3*y5*v0 ]
 gap> subQ:=SubWeylModule(Q,m[2]);

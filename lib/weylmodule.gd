@@ -59,7 +59,9 @@ DeclareAttribute( "MaximalVectors", IsWeylModule );
 
 DeclareAttribute("SocleSeries", IsWeylModule );
 
-DeclareAttribute("SocleLayers", IsWeylModule );
+DeclareAttribute("GensSocleLayers", IsWeylModule );
+
+DeclareOperation("PrintSocleLayers", [IsWeylModule] );
 
 DeclareAttribute("SimpleQuotient", IsWeylModule );
 

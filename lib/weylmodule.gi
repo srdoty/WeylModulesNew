@@ -365,24 +365,32 @@ function(V)
 end );
 
 #############################################################################
-InstallMethod(SocleLayers, "for a Weyl module", true, [IsWeylModule], 0,
+InstallMethod(GensSocleLayers, "for a Weyl module", true, [IsWeylModule], 0,
 function(V)
-    #returns a list of generators of socle layers after
-    #printing their highest weights
+    #returns a list of lists of generators of the socle layers
     local ss, soc, k, out, all, start;
     ss:= SocleSeries(V);
-    Print( "first layer: ", List(Generators(ss[1]),Weight),"\n" );
     out:=[ Generators(ss[1]) ];
     for k in [2..Length(ss)] do
         all:= Generators(ss[k]);
         start:= 1 + Length(Generators(ss[k-1]));
-        Print("layer ", k, ": ", List(all{[start..Length(all)]}, Weight), 
-              "\n");
         Add(out, all{[start..Length(all)]});
     od;
     return(out);
 end );
-                  
+
+InstallMethod(PrintSocleLayers, "for a Weyl module", true, [IsWeylModule], 0,
+function(V)
+    # prints the highest weights of the composition factors for 
+    # each socle layer, one by one
+    local sl, k;
+    sl:= GensSocleLayers(V);
+    Print( "Printing highest weights of composition factors of ", V, "\n");
+    for k in [1..Length(sl)] do
+        Print("Layer ", k, ": ", List(sl[k], Weight), "\n");
+    od;
+end );
+                      
 #############################################################################
 InstallMethod(SimpleQuotient, "for a Weyl module", true, 
 [IsWeylModule], 0, 
