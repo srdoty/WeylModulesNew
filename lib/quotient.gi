@@ -50,7 +50,7 @@ InstallMethod(PrintObj, "for quotient Weyl modules", true,
 function(Q)
   local W;
   W:= Q!.WeylModule;
-  Print("Quotient of ", W);
+  Print(Dim(Q), "-dimensional quotient of ", W);
 end );
 
 #############################################################################

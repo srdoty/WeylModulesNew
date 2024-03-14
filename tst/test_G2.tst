@@ -8,7 +8,7 @@ true
 gap> AmbiguousMaxVecs(V);
 [ y1*y3*v0, y4*v0 ]
 gap> SimpleQuotient(V);
-Quotient of V[ 3, 0 ]
+36-dimensional quotient of V[ 3, 0 ]
 gap> Dim(V);
 77
 gap> Generator(V);
@@ -62,8 +62,9 @@ gap> Character(V);
   [ -5, 2 ], 1, [ 3, -3 ], 1, [ -2, 0 ], 2, [ 1, -2 ], 1, [ -4, 1 ], 1, 
   [ -1, -1 ], 1, [ -3, 0 ], 1 ]
 gap> SocleSeries(V);
-[ Submod of V[ 3, 0 ], Submod of V[ 3, 0 ], Submod of V[ 3, 0 ], 
-  Submod of V[ 3, 0 ], Submod of V[ 3, 0 ], Submod of V[ 3, 0 ] ]
+[ 21-dimensional submod of V[ 3, 0 ], 28-dimensional submod of V[ 3, 0 ], 
+  34-dimensional submod of V[ 3, 0 ], 35-dimensional submod of V[ 3, 0 ], 
+  41-dimensional submod of V[ 3, 0 ], 77-dimensional submod of V[ 3, 0 ] ]
 gap> PrintSocleLayers(V);
 Printing highest weights of composition factors of V[ 3, 0 ]
 Layer 1: [ [ 0, 1 ], [ 1, 0 ], [ 0, 0 ] ]
@@ -73,7 +74,7 @@ Layer 4: [ [ 0, 0 ] ]
 Layer 5: [ [ 1, 0 ] ]
 Layer 6: [ [ 3, 0 ] ]
 gap> MaximalSubmodule(V);
-Submod of V[ 3, 0 ]
+41-dimensional submod of V[ 3, 0 ]
 gap> DecompositionNumbers(V);
 [ [ 3, 0 ], 1, [ 2, 0 ], 2, [ 0, 1 ], 1, [ 1, 0 ], 2, [ 0, 0 ], 3 ]
 gap> SimpleTopFactorCharacter(V);
@@ -87,7 +88,7 @@ gap> m:=MaximalVectors(V);
 [ 1*v0, y1*y3*v0, y4*v0, y1*y4*v0, y1*y3*y4*v0+y1*y6*v0+y3*y5*v0, 
   y1*y4*y6*v0+y3*y4*y5*v0+y4^(3)*v0 ]
 gap> S:=SubWeylModule(V,m[3]);
-Submod of V[ 3, 0 ]
+21-dimensional submod of V[ 3, 0 ]
 gap> MaximalVectors(S);
 [ y4*v0, y1*y4*v0, y1*y4*y6*v0+y3*y4*y5*v0+y4^(3)*v0 ]
 gap> Dim(S);
@@ -104,9 +105,9 @@ gap> Character(S);
   [ -2, 0 ], 1, [ 1, 0 ], 1, [ -3, 2 ], 1, [ -2, 1 ], 1, [ 0, -1 ], 1, 
   [ 3, -2 ], 1, [ 1, -1 ], 1, [ -3, 1 ], 1, [ -1, 0 ], 1 ]
 gap> Q:=QuotientWeylModule(S);
-Quotient of V[ 3, 0 ]
+56-dimensional quotient of V[ 3, 0 ]
 gap> DefiningKernel(Q);
-Submod of V[ 3, 0 ]
+21-dimensional submod of V[ 3, 0 ]
 gap> Generators(DefiningKernel(Q));
 [ y4*v0 ]
 gap> Dim(Q);
@@ -125,11 +126,15 @@ gap> Character(Q);
 gap> MaximalVectors(Q);
 [ 1*v0, y1*y3*v0, y1*y6*v0+y3*y5*v0 ]
 gap> SocleSeries(Q);
-[ Submod of Quotient of V[ 3, 0 ], Submod of Quotient of V[ 3, 0 ], 
-  Submod of Quotient of V[ 3, 0 ], Submod of Quotient of V[ 3, 0 ], 
-  Submod of Quotient of V[ 3, 0 ], Submod of Quotient of V[ 3, 0 ] ]
+[ 6-dimensional submod of 56-dimensional quotient of V[ 3, 0 ], 
+  7-dimensional submod of 56-dimensional quotient of V[ 3, 0 ], 
+  13-dimensional submod of 56-dimensional quotient of V[ 3, 0 ], 
+  14-dimensional submod of 56-dimensional quotient of V[ 3, 0 ], 
+  20-dimensional submod of 56-dimensional quotient of V[ 3, 0 ], 
+  56-dimensional submod of 56-dimensional quotient of V[ 3, 0 ] ]
 gap> PrintSocleLayers(Q);
-Printing highest weights of composition factors of Quotient of V[ 3, 0 ]
+Printing highest weights of composition factors of 
+56-dimensional quotient of V[ 3, 0 ]
 Layer 1: [ [ 1, 0 ] ]
 Layer 2: [ [ 0, 0 ] ]
 Layer 3: [ [ 2, 0 ] ]
@@ -139,7 +144,7 @@ Layer 6: [ [ 3, 0 ] ]
 gap> mQ:=MaximalVectors(Q);
 [ 1*v0, y1*y3*v0, y1*y6*v0+y3*y5*v0 ]
 gap> subQ:=SubWeylModule(Q,m[2]);
-Submod of Quotient of V[ 3, 0 ]
+13-dimensional submod of 56-dimensional quotient of V[ 3, 0 ]
 gap> Character(subQ);
 [ [ 2, 0 ], 1, [ 1, 0 ], 1, [ -1, 1 ], 1, [ 2, -1 ], 1, [ -2, 2 ], 1, 
   [ 4, -2 ], 1, [ 0, 0 ], 1, [ -4, 2 ], 1, [ 2, -2 ], 1, [ -2, 0 ], 1, 

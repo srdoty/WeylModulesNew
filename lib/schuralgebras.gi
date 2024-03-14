@@ -20,7 +20,7 @@ end );
 InstallMethod(PrintObj, "for Schur algebra Weyl modules", true, 
 [IsSchurAlgebraWeylModule], 0, 
 function(W)
-  Print("Schur algebra V", W!.partition);
+  Print("Schur algebra module V", W!.partition);
 end );
 
 #############################################################################

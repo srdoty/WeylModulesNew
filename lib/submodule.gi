@@ -149,7 +149,7 @@ end );
 InstallMethod(PrintObj, "for a sub Weyl module", true,
 [IsSubWeylModule], 0,
 function(S)
- Print("Submod of ", S!.weylModule);
+ Print(Dim(S), "-dimensional submod of ", S!.weylModule);
 end );
 
 #############################################################################

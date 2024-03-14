@@ -180,7 +180,7 @@ end );
 InstallMethod(PrintObj, "for a sub quotient Weyl module", true,
 [IsSubQuotientWeylModule], 0,
 function(S)
- Print("Submod of ", S!.quotientWeylModule);
+ Print(Dim(S),"-dimensional submod of ", S!.quotientWeylModule);
 end );
 
 #############################################################################
