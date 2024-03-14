@@ -223,6 +223,19 @@ function(S)
 end );
 
 #############################################################################
+InstallMethod(DominantWeights, "for a sub quotient Weyl module", true, 
+[IsSubQuotientWeylModule], 0, 
+function(V)
+ # returns a list of the dominant weight space labels of <V>
+ local out,item;
+ out:= [];
+ for item in Weights(V) do
+   if IsDominant(item) then Add(out, item); fi;
+ od;
+ return(out);
+end );
+
+#############################################################################
 InstallMethod(WeightSpaces, "for a sub quotient Weyl module", true,
 [IsSubQuotientWeylModule], 0,
 function(S)

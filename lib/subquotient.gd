@@ -25,6 +25,8 @@ DeclareOperation("AmbientQuotient", [IsSubQuotientWeylModule]);
 
 DeclareAttribute("Weights", IsSubQuotientWeylModule );
 
+DeclareAttribute("DominantWeights", IsSubQuotientWeylModule );
+
 DeclareAttribute("WeightSpaces", IsSubQuotientWeylModule );
 
 DeclareAttribute("Character", IsSubQuotientWeylModule );
