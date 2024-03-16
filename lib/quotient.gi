@@ -364,7 +364,7 @@ function(V)
     # each socle layer, one by one
     local sl, k;
     sl:= GensSocleLayers(V);
-    Print( "Printing highest weights of composition factors of ", V, "\n");
+    Print( "Printing highest weights of simples in socle layers of ", V, "\n");
     for k in [1..Length(sl)] do
         Print("Layer ", k, ": ", List(sl[k], Weight), "\n");
     od;

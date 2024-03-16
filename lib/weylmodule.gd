@@ -75,5 +75,11 @@ DeclareAttribute("SimpleTopFactorDim", IsWeylModule );
 
 DeclareAttribute("DecompositionNumbers", IsWeylModule );
 
+DeclareAttribute("LengthTwoQuotient", IsWeylModule );
 
+DeclareOperation("LengthTwoQuotient", 
+                 [IsWeylModule,IsLeftAlgebraModuleElement] );
+
+DeclareOperation("LengthTwoQuotient", 
+                 [IsWeylModule,IsList] );
 

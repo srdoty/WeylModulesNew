@@ -385,7 +385,7 @@ function(V)
     # each socle layer, one by one
     local sl, k;
     sl:= GensSocleLayers(V);
-    Print( "Printing highest weights of composition factors of ", V, "\n");
+    Print( "Printing highest weights of simples in socle layers of ", V, "\n");
     for k in [1..Length(sl)] do
         Print("Layer ", k, ": ", List(sl[k], Weight), "\n");
     od;
@@ -456,5 +456,66 @@ function(V)
  ch:=Character(V);
  return DecomposeCharacter(ch,p,t,r);
 end );     
+
+#############################################################################
+InstallMethod(LengthTwoQuotient, "for a Weyl module", true,
+[IsWeylModule], 0, 
+function(V)
+ # returns a quotient of <V> with socle series of length two
+ local ss,Q;
+ ss:= SocleSeries(V);
+ if Length(ss) = 2 then
+    return(V);
+ fi;
+ if Length(ss) = 1 then
+     Print("This module is simple - nothing to do!");
+ fi;
+ 
+ while Length(ss) > 2 do
+    Q:=QuotientWeylModule(ss[Length(ss)-2]);
+    ss:= SocleSeries(Q);
+ od;
+ return(Q);
+end );
+
+# Enhancement of the above:
+
+InstallMethod(LengthTwoQuotient, "for a Weyl module and vector", true,
+[IsWeylModule,IsLeftAlgebraModuleElement], 0,
+function(V,vec)
+ # returns a length <= 2 quotient of <V> with <vec> in its kernel
+ local ss,S,Q,g;
+ S:= SubWeylModule(V,vec);   
+ Q:= QuotientWeylModule(S);
+ ss:= SocleSeries(Q);
+ 
+ while Length(ss) > 2 do
+    g:=Generators(ss[Length(ss)-2]);
+    Add(g,vec);   # make sure <vec> stays in the kernel
+    S:=SubWeylModule(V,g);
+    Q:=QuotientWeylModule(S);
+    ss:= SocleSeries(Q);
+ od;
+ return(Q);
+end );
+
+InstallMethod(LengthTwoQuotient, "for a Weyl module and list of vectors", 
+true, [IsWeylModule,IsList], 0,
+function(V,veclist)
+ # returns a length <= 2 quotient of <V> with <veclist> in its kernel
+ local ss,S,Q,g;
+ S:= SubWeylModule(V,veclist);   
+ Q:= QuotientWeylModule(S);
+ ss:= SocleSeries(Q);
+ 
+ while Length(ss) > 2 do
+    g:=Generators(ss[Length(ss)-2]);
+    g:=Concatenation(g,veclist);   # make sure <veclist> stays in the kernel
+    S:=SubWeylModule(V,g);
+    Q:=QuotientWeylModule(S);
+    ss:= SocleSeries(Q);
+ od;
+ return(Q);
+end );
 
 #############################################################################

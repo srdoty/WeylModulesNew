@@ -66,7 +66,7 @@ gap> SocleSeries(V);
   34-dimensional submod of V[ 3, 0 ], 35-dimensional submod of V[ 3, 0 ], 
   41-dimensional submod of V[ 3, 0 ], 77-dimensional submod of V[ 3, 0 ] ]
 gap> PrintSocleLayers(V);
-Printing highest weights of composition factors of V[ 3, 0 ]
+Printing highest weights of simples in socle layers of V[ 3, 0 ]
 Layer 1: [ [ 0, 1 ], [ 1, 0 ], [ 0, 0 ] ]
 Layer 2: [ [ 2, 0 ], [ 0, 0 ] ]
 Layer 3: [ [ 2, 0 ] ]
@@ -133,7 +133,7 @@ gap> SocleSeries(Q);
   20-dimensional submod of 56-dimensional quotient of V[ 3, 0 ], 
   56-dimensional submod of 56-dimensional quotient of V[ 3, 0 ] ]
 gap> PrintSocleLayers(Q);
-Printing highest weights of composition factors of 
+Printing highest weights of simples in socle layers of 
 56-dimensional quotient of V[ 3, 0 ]
 Layer 1: [ [ 1, 0 ] ]
 Layer 2: [ [ 0, 0 ] ]
