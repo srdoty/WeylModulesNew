@@ -524,11 +524,11 @@ function(V,S)
     # returns a list of extension quotients of <V> (length 2 with 
     # 2 simple composition factors) that include <S> in their defining kernel
     local Q,U,g,gens,k,out;
+    out:= [ ];
     Q:= LengthTwoQuotient(V,S);
     g:= GensSocleLayers(Q);
-    Assert(1, Length(g) = 2); # sanity check
-    if Length(g[1]) = 1 then
-        return([Q]);
+    if Length(g) = 2 and Length(g[1]) = 1 then
+        Add(out,Q); return(out);
     fi;
     gens:= g[1]; out:=[ ];
     for k in [1..Length(gens)] do
