@@ -8,6 +8,8 @@ DeclareOperation( "SubWeylModule",
 
 DeclareOperation("SubWeylModule", [IsWeylModule,IsList]);
 
+DeclareOperation("SubWeylModule", [IsSubWeylModule,IsList]);
+
 DeclareOperation("SubWeylModuleDirectSum", [IsWeylModule,IsList]);
 
 DeclareAttribute( "IsAmbiguous", IsSubWeylModule );
