@@ -499,3 +499,46 @@ function(S)
 end );     
 
 #############################################################################
+InstallMethod(LengthTwoQuotient, "for a Weyl module and submodule", 
+true, [IsWeylModule,IsSubWeylModule], 0,
+function(V,S)
+ # returns a length <= 2 quotient of <V> with <S> in its kernel
+ local ss,Q,g,k;
+ Q:= QuotientWeylModule(S);
+ ss:= SocleSeries(Q);
+ 
+ while Length(ss) > 2 do
+    g:=Generators(ss[Length(ss)-2]);
+    for k in [1..Length(g)] do
+        S:=SubWeylModule(S,g[k]);
+    od;
+    Q:=QuotientWeylModule(S);
+    ss:= SocleSeries(Q);
+ od;
+ return(Q);
+end );
+
+InstallMethod(Extensions, "for a Weyl module and submodule",
+true, [IsWeylModule,IsSubWeylModule], 0,
+function(V,S)
+    # returns a list of extension quotients of <V> (length 2 with 
+    # 2 simple composition factors) that include <S> in their defining kernel
+    local Q,U,g,gens,k,out;
+    Q:= LengthTwoQuotient(V,S);
+    g:= GensSocleLayers(Q);
+    Assert(1, Length(g) = 2); # sanity check
+    if Length(g[1]) = 1 then
+        return([Q]);
+    fi;
+    gens:= g[1]; out:=[ ];
+    for k in [1..Length(gens)] do
+        U:= SubWeylModule(S,gens[k]);
+        Q:= LengthTwoQuotient(V,U);
+        g:= GensSocleLayers(Q);
+        Assert(1, Length(g) <= 2); # sanity check
+        if Length(g) = 2 and Length(g[1]) = 1 then
+            Add(out,Q);
+        fi;
+    od;
+    return(out);
+end );

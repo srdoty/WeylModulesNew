@@ -51,3 +51,6 @@ DeclareOperation("GensNextSocle", [IsSubWeylModule]);
 
 DeclareAttribute("DecompositionNumbers", IsSubWeylModule );
 
+DeclareOperation("LengthTwoQuotient", [IsWeylModule,IsSubWeylModule] );
+
+DeclareOperation("Extensions", [IsWeylModule,IsSubWeylModule] );
