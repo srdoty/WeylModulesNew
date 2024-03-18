@@ -10,8 +10,9 @@ DeclareOperation( "SubWeylModule",
 DeclareOperation( "SubWeylModule", 
             [IsSubQuotientWeylModule,IsLeftAlgebraModuleElement]);
 
-DeclareOperation( "SubWeylModule", 
-            [IsQuotientWeylModule,IsList]);
+DeclareOperation( "SubWeylModule", [IsQuotientWeylModule,IsList]);
+
+DeclareOperation( "SubWeylModule", [IsSubQuotientWeylModule,IsList]);
 
 DeclareOperation("SubWeylModuleDirectSum", [IsQuotientWeylModule,IsList]);
 

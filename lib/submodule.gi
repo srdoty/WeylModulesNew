@@ -459,8 +459,12 @@ InstallMethod(NextSocle, "for a sub Weyl module", true,
 [IsSubWeylModule], 0, 
 function(S)
  # Returns the next socle of V (the submodule that maps onto soc(V/S))
-
- local Q,gens;
+ local V,Q,gens;
+ V:= AmbientWeylModule(S);
+ if Dim(S) = Dim(V) then
+     return(S);
+ fi;
+ 
  Q:= QuotientWeylModule(S);
  gens:= Generators(SocleWeyl(Q));
  return SubWeylModule(S, gens);
