@@ -28,14 +28,15 @@ InstallMethod(DecompositionNumbers, "for a Schur algebra Weyl module", true,
 [IsSchurAlgebraWeylModule], 0, 
 function(W)
    # returns the decomposition numbers of W using partition notation
-   local V, d, k, dec;
+   local V, d, k, dec, out;
    d:= W!.degree;
    V:= W!.module;
-   dec:= DecompositionNumbers(V);
+   dec:= DecompositionNumbers(V); out:= [ ];
    for k in [2,4..Length(dec)] do
-      dec[k-1]:= WeightToComposition(d, dec[k-1]);
+       Add(out, WeightToComposition(d, dec[k-1]));
+       Add(out, dec[k]);
    od;
-   return dec;
+   return out;
 end );
 
 #############################################################################
