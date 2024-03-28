@@ -1,4 +1,10 @@
 #############################################################################
+##
+#W  misc.gi          WeylModules GAP package              S.R. Doty
+##
+##  This file contains miscellaneous operations.
+##
+#############################################################################
 InstallMethod(HighestPrimePower,
 "for a prime and a positive integer", true,
 [IsPosInt,IsInt], 0,

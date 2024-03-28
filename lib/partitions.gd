@@ -1,3 +1,11 @@
+#############################################################################
+##
+#W  partitions.gd          WeylModules GAP package              S.R. Doty
+##
+##  This file contains declarations related to partition notation in Type A.
+##
+#############################################################################
+
 DeclareOperation("CompositionToWeight", [IsList]);
 
 DeclareOperation("WeightToComposition", [IsInt, IsList]);

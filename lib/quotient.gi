@@ -1,4 +1,10 @@
 #############################################################################
+##
+#W  quotient.gi          WeylModules GAP package              S.R. Doty
+##
+##  This file contains operations for quotients of Weyl modules.
+##
+#############################################################################
 InstallMethod(QuotientWeylModule, 
 "for a sub Weyl module", true, [IsSubWeylModule], 0, 
 function(S) 
@@ -236,11 +242,7 @@ function(Q,x,v)
  return(ans);
 end );
 
-#############################################################################
-# At the moment, operations depending on the following are not likely
-# to work if we obtain more than one independent maximal vector in the
-# given weight space. Such ambiguous vectors are stored in the module,
-# and a warning message is issued in such a case.
+
 #############################################################################
 InstallMethod(MaximalVectors, "for a quotient Weyl module and a weight", true, 
 [IsQuotientWeylModule,IsList], 0, 

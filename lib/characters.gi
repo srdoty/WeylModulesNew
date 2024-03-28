@@ -1,3 +1,12 @@
+#############################################################################
+##
+#W  characters.gi          WeylModules GAP package              S.R. Doty
+##
+##  This file contains the declarations related to characters of 
+##  Weyl modules, weight spaces, simple characters, etc.
+##
+#############################################################################
+
 # The following function is not documented at this time
 #############################################################################
 InstallMethod(SortedCharacter, "for a list of weights and multiplicities",

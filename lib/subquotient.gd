@@ -1,3 +1,11 @@
+#############################################################################
+##
+#W  subquotient.gd          WeylModules GAP package              S.R. Doty
+##
+##  This file contains declarations for submodules of quotient Weyl modules.
+##
+#############################################################################
+
 DeclareCategory( "IsSubQuotientWeylModule", 
   CategoryCollections(IsLeftAlgebraModuleElement) );
 

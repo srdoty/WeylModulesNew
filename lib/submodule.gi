@@ -1,4 +1,9 @@
-
+#############################################################################
+##
+#W  submodule.gi          WeylModules GAP package              S.R. Doty
+##
+##  This file contains operations for submodules of Weyl modules.
+##
 #############################################################################
 InstallMethod(SubWeylModule, "for a Weyl module and vector", true, 
 [IsWeylModule,IsLeftAlgebraModuleElement], 0, 
@@ -332,11 +337,6 @@ function(V,low,high,wtspace)
 end );
 
 
-#############################################################################
-# At the moment, operations depending on the following are not likely
-# to work if we obtain more than one independent maximal vector in the
-# given weight space. In such a case, the multiple maximal vectors in
-# question are stored in the Weyl module, and a warning is printed.
 #############################################################################
 InstallMethod(MaximalVectors, "for a sub Weyl module and weight", true,
 [IsSubWeylModule,IsList], 0, function(sub,wt)

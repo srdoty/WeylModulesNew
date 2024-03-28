@@ -1,4 +1,10 @@
 #############################################################################
+##
+#W  partitions.gi          WeylModules GAP package              S.R. Doty
+##
+##  This file contains operations related to partition notation in Type A.
+##
+#############################################################################
 InstallMethod(CompositionToWeight, "for a list", true, 
 [IsList], 0, 
 function(mu)

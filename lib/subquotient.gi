@@ -1,4 +1,10 @@
 #############################################################################
+##
+#W  subquotient.gi          WeylModules GAP package              S.R. Doty
+##
+##  This file contains operations for submodules of quotient Weyl modules.
+##
+#############################################################################
 InstallMethod(IsWithin, 
 "for a sub quotient Weyl module and a given weight vector", true, 
 [IsSubQuotientWeylModule,IsLeftAlgebraModuleElement], 0, 

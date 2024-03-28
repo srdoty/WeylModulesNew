@@ -1,3 +1,11 @@
+#############################################################################
+##
+#W  quotient.gd          WeylModules GAP package              S.R. Doty
+##
+##  This file contains declarations for quotients of Weyl modules.
+##
+#############################################################################
+
 DeclareCategory( "IsQuotientWeylModule", 
   CategoryCollections(IsLeftAlgebraModuleElement) );
 

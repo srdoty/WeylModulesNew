@@ -1,12 +1,9 @@
 #############################################################################
 ##
-#W  weylmod.gd                   GAP package              S.R. Doty
-##
-##
-#Y  Copyright (C)  2009,  S.R. Doty
+#W  weylmod.gd          WeylModules GAP package              S.R. Doty
 ##
 ##  This file contains the declaration of attributes, properties, and
-##  operations for Weyl modules, simple characters, etc.
+##  operations for Weyl modules.
 ##
 #############################################################################
 

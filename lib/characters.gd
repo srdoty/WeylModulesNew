@@ -1,3 +1,12 @@
+#############################################################################
+##
+#W  characters.gd          WeylModules GAP package              S.R. Doty
+##
+##  This file contains the declarations related to characters of 
+##  Weyl modules, weight spaces, simple characters, etc.
+##
+#############################################################################
+
 # The following command is not documented at this time
 DeclareOperation( "SortedCharacter", [IsList] );
 
@@ -16,10 +25,8 @@ DeclareOperation( "IsRestrictedWeight", [IsPosInt, IsList] );
 
 DeclareOperation("ProductCharacter", [IsList,IsList]);
 
-
 DeclareOperation("DecomposeCharacter", [IsList, IsPosInt,
     IsString, IsPosInt]);
-
 
 DeclareOperation( "SimpleCharacter", [IsPosInt, IsList, IsString, IsPosInt] );
 

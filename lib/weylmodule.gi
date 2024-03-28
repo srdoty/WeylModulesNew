@@ -1,12 +1,9 @@
 #############################################################################
 ##
-#W  weylmod.gi                   GAP package              S.R. Doty
+#W  weylmod.gi          WeylModules GAP package              S.R. Doty
 ##
-##
-#Y  Copyright (C)  2009,  S.R. Doty
-##
-##  This file contains the implementation of methods for
-##  Weyl modules, simple characters, etc.
+##  This file contains the declaration of attributes, properties, and
+##  operations for Weyl modules.
 ##
 #############################################################################
 InstallMethod(WeylModule, 
@@ -268,11 +265,6 @@ function(V,vec)
  return(true);
 end );
 
-#############################################################################
-# At the moment, operations depending on the following are not likely
-# to work if we obtain more than one independent maximal vector in the
-# given weight space. In such a case, the multiple maximal vectors in
-# question are stored in the Weyl module, and a warning is printed.
 #############################################################################
 InstallMethod(MaximalVectors, "for a Weyl module and weight", true,
 [IsWeylModule,IsList], 0, function(V,wt)

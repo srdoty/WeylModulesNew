@@ -1,4 +1,10 @@
 #############################################################################
+##
+#W  schuralgebras.gi          WeylModules GAP package              S.R. Doty
+##
+##  This file contains operations for Schur algebra Weyl modules.
+##
+#############################################################################
 InstallMethod(SchurAlgebraWeylModule, "for a prime and a partition", true,
 [IsInt, IsList], 0, 
 function(p,mu)
