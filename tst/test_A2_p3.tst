@@ -148,3 +148,80 @@ gap> LengthTwoQuotient(W,S);
 27-dimensional quotient of V[ 6, 0 ]
 gap> Extensions(W,S);
 [ 27-dimensional quotient of V[ 6, 0 ] ]
+gap> Q:= QuotientWeylModule(S);
+27-dimensional quotient of V[ 6, 0 ]
+gap> IsQuotientWeylModule(Q);
+true
+gap> DecompositionNumbers(Q);
+[ [ 6, 0 ], 1, [ 4, 1 ], 1 ]
+gap> AmbientWeylModule(Q);
+V[ 6, 0 ]
+gap> DefiningKernel(Q);
+1-dimensional submod of V[ 6, 0 ]
+gap> IsAmbiguous(Q);
+false
+gap> AmbiguousMaxVecs(Q);
+[  ]
+gap> TheLieAlgebra(Q);
+<Lie algebra of dimension 8 over Rationals>
+gap> TheCharacteristic(Q);
+3
+gap> BasisVecs(Q);
+[ 1*v0, y1*v0, y3*v0, y1^(2)*v0, y1*y3*v0, y1^(3)*v0, y3^(2)*v0, 
+  y1^(2)*y3*v0, y1^(4)*v0, y1*y3^(2)*v0, y1^(3)*y3*v0, y1^(5)*v0, y3^(3)*v0, 
+  y1^(4)*y3*v0, y1^(6)*v0, y1*y3^(3)*v0, y1^(3)*y3^(2)*v0, y1^(5)*y3*v0, 
+  y3^(4)*v0, y1^(2)*y3^(3)*v0, y1^(4)*y3^(2)*v0, y1*y3^(4)*v0, 
+  y1^(3)*y3^(3)*v0, y3^(5)*v0, y1^(2)*y3^(4)*v0, y1*y3^(5)*v0, y3^(6)*v0 ]
+gap> Generator(Q);
+1*v0
+gap> Dim(Q);
+27
+gap> Weights(Q);
+[ [ 6, 0 ], [ 4, 1 ], [ 5, -1 ], [ 2, 2 ], [ 3, 0 ], [ 0, 3 ], [ 4, -2 ], 
+  [ 1, 1 ], [ -2, 4 ], [ 2, -1 ], [ -1, 2 ], [ -4, 5 ], [ 3, -3 ], [ -3, 3 ], 
+  [ -6, 6 ], [ 1, -2 ], [ -2, 1 ], [ -5, 4 ], [ 2, -4 ], [ -1, -1 ], 
+  [ -4, 2 ], [ 0, -3 ], [ -3, 0 ], [ 1, -5 ], [ -2, -2 ], [ -1, -4 ], 
+  [ 0, -6 ] ]
+gap> DominantWeights(Q);
+[ [ 6, 0 ], [ 4, 1 ], [ 2, 2 ], [ 3, 0 ], [ 0, 3 ], [ 1, 1 ] ]
+gap> WeightSpaces(Q);
+[ [ 6, 0 ], [ 1*v0 ], [ 4, 1 ], [ y1*v0 ], [ 5, -1 ], [ y3*v0 ], [ 2, 2 ], 
+  [ y1^(2)*v0 ], [ 3, 0 ], [ y1*y3*v0 ], [ 0, 3 ], [ y1^(3)*v0 ], [ 4, -2 ], 
+  [ y3^(2)*v0 ], [ 1, 1 ], [ y1^(2)*y3*v0 ], [ -2, 4 ], [ y1^(4)*v0 ], 
+  [ 2, -1 ], [ y1*y3^(2)*v0 ], [ -1, 2 ], [ y1^(3)*y3*v0 ], [ -4, 5 ], 
+  [ y1^(5)*v0 ], [ 3, -3 ], [ y3^(3)*v0 ], [ -3, 3 ], [ y1^(4)*y3*v0 ], 
+  [ -6, 6 ], [ y1^(6)*v0 ], [ 1, -2 ], [ y1*y3^(3)*v0 ], [ -2, 1 ], 
+  [ y1^(3)*y3^(2)*v0 ], [ -5, 4 ], [ y1^(5)*y3*v0 ], [ 2, -4 ], 
+  [ y3^(4)*v0 ], [ -1, -1 ], [ y1^(2)*y3^(3)*v0 ], [ -4, 2 ], 
+  [ y1^(4)*y3^(2)*v0 ], [ 0, -3 ], [ y1*y3^(4)*v0 ], [ -3, 0 ], 
+  [ y1^(3)*y3^(3)*v0 ], [ 1, -5 ], [ y3^(5)*v0 ], [ -2, -2 ], 
+  [ y1^(2)*y3^(4)*v0 ], [ -1, -4 ], [ y1*y3^(5)*v0 ], [ 0, -6 ], 
+  [ y3^(6)*v0 ] ]
+gap> DominantWeightSpaces(Q);
+[ [ 6, 0 ], [ 1*v0 ], [ 4, 1 ], [ y1*v0 ], [ 2, 2 ], [ y1^(2)*v0 ], [ 3, 0 ], 
+  [ y1*y3*v0 ], [ 0, 3 ], [ y1^(3)*v0 ], [ 1, 1 ], [ y1^(2)*y3*v0 ] ]
+gap> Character(Q);
+[ [ 6, 0 ], 1, [ 4, 1 ], 1, [ 5, -1 ], 1, [ 2, 2 ], 1, [ 3, 0 ], 1, [ 0, 3 ], 
+  1, [ 4, -2 ], 1, [ 1, 1 ], 1, [ -2, 4 ], 1, [ 2, -1 ], 1, [ -1, 2 ], 1, 
+  [ -4, 5 ], 1, [ 3, -3 ], 1, [ -3, 3 ], 1, [ -6, 6 ], 1, [ 1, -2 ], 1, 
+  [ -2, 1 ], 1, [ -5, 4 ], 1, [ 2, -4 ], 1, [ -1, -1 ], 1, [ -4, 2 ], 1, 
+  [ 0, -3 ], 1, [ -3, 0 ], 1, [ 1, -5 ], 1, [ -2, -2 ], 1, [ -1, -4 ], 1, 
+  [ 0, -6 ], 1 ]
+gap> WeightSpace(Q,[4,1]);
+[ y1*v0 ]
+gap> MaximalVectors(Q,[4,1]);
+[ y1*v0 ]
+gap> MaximalVectors(Q,[3,3]);
+[  ]
+gap> MaximalVectors(Q);
+[ 1*v0, y1*v0 ]
+gap> SocleSeries(Q);
+[ 21-dimensional submod of 27-dimensional quotient of V[ 6, 0 ], 
+  27-dimensional submod of 27-dimensional quotient of V[ 6, 0 ] ]
+gap> GensSocleLayers(Q);
+[ [ y1*v0 ], [ 1*v0 ] ]
+gap> PrintSocleLayers(Q);
+Printing highest weights of simples in socle layers of 
+27-dimensional quotient of V[ 6, 0 ]
+Layer 1: [ [ 4, 1 ] ]
+Layer 2: [ [ 6, 0 ] ]
