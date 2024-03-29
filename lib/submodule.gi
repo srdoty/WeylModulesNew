@@ -365,7 +365,9 @@ InstallMethod(MaximalVectors, "for a sub Weyl module and weight", true,
    od;
    return( TransposedMatMutable(tA) );
    end; 
-
+ 
+ if not (wt in DominantWeights(sub)) then return []; fi;
+     
  V:= AmbientWeylModule(sub);
  p:= TheCharacteristic(V);
  wtspace:= WeightSpace(sub,wt);

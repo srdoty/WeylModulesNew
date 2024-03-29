@@ -53,7 +53,7 @@ DeclareAttribute( "MaximalVectors", IsSubWeylModule );
 
 DeclareOperation( "IsWithin", [IsSubWeylModule,IsLeftAlgebraModuleElement]);
 
-DeclareOperation("SocleWeyl", [IsWeylModule]);
+DeclareAttribute("SocleWeyl", IsWeylModule );
 
 DeclareOperation("NextSocle", [IsSubWeylModule]);
 

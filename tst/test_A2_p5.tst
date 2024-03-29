@@ -73,3 +73,5 @@ gap> LengthTwoQuotient(V,g[2]);
 116-dimensional quotient of V[ 5, 5 ]
 gap> WeightSpace(W,[0,0]);
 [ y1*y2*v0, y3*v0 ]
+gap> SubWeylModule(V,[]);
+0-dimensional submod of V[ 5, 5 ]

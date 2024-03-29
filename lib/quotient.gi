@@ -273,7 +273,9 @@ function(Q,wt)
    od;
    return( TransposedMatMutable(tA) );
    end; 
-
+ 
+ if not (wt in DominantWeights(Q)) then return []; fi;
+ 
  V:= AmbientWeylModule(Q);
  wtspace:= WeightSpace(Q,wt);
  p:= V!.prime;

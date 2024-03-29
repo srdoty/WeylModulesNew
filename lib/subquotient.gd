@@ -44,7 +44,7 @@ DeclareAttribute("DominantWeightSpaces", IsSubQuotientWeylModule );
 
 DeclareOperation("WeightSpace", [IsSubQuotientWeylModule,IsList]);
 
-DeclareOperation("SocleWeyl", [IsQuotientWeylModule]);
+DeclareAttribute("SocleWeyl", IsQuotientWeylModule );
 
 DeclareOperation("NextSocle", [IsSubQuotientWeylModule]);
 

@@ -291,6 +291,7 @@ InstallMethod(MaximalVectors, "for a Weyl module and weight", true,
    return( TransposedMatMutable(tA) );
    end; 
 
+ if not (wt in DominantWeights(V)) then return []; fi;    
  p:= V!.prime;
  wtspace:= WeightSpace(V,wt);
  xy:= SimpleLieAlgGens(V); xsimple:=xy[1]; ysimple:=xy[2];
