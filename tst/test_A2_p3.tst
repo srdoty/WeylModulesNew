@@ -213,7 +213,7 @@ gap> MaximalVectors(Q,[4,1]);
 [ y1*v0 ]
 gap> MaximalVectors(Q,[3,3]);
 [  ]
-gap> MaximalVectors(Q);
+gap> m:= MaximalVectors(Q);
 [ 1*v0, y1*v0 ]
 gap> SocleSeries(Q);
 [ 21-dimensional submod of 27-dimensional quotient of V[ 6, 0 ], 
@@ -225,3 +225,86 @@ Printing highest weights of simples in socle layers of
 27-dimensional quotient of V[ 6, 0 ]
 Layer 1: [ [ 4, 1 ] ]
 Layer 2: [ [ 6, 0 ] ]
+gap> S:= SubWeylModule(Q,m[2]);
+21-dimensional submod of 27-dimensional quotient of V[ 6, 0 ]
+gap> SubWeylModule(S,m[1]);
+27-dimensional submod of 27-dimensional quotient of V[ 6, 0 ]
+gap> SubWeylModule(S,[]);
+21-dimensional submod of 27-dimensional quotient of V[ 6, 0 ]
+gap> SubWeylModule(Q,[m[2]]);
+21-dimensional submod of 27-dimensional quotient of V[ 6, 0 ]
+gap> IsSubQuotientWeylModule(S);
+true
+gap> Generators(S);
+[ y1*v0 ]
+gap> BasisVecs(S);
+[ y1*v0, -1*y1^(2)*v0, -1*y3*v0, y1*y3*v0, y1^(4)*v0, y1*y3^(3)*v0, 
+  -1*y1^(2)*y3*v0, -1*y1^(5)*v0, -1*y1^(2)*y3^(3)*v0, y3^(2)*v0, 
+  -1*y1^(3)*y3*v0, -1*y3^(4)*v0, -1*y1*y3^(2)*v0, y1^(4)*y3*v0, y1*y3^(4)*v0, 
+  -1*y1^(5)*y3*v0, -1*y1^(2)*y3^(4)*v0, y1^(3)*y3^(2)*v0, y3^(5)*v0, 
+  -1*y1^(4)*y3^(2)*v0, -1*y1*y3^(5)*v0 ]
+gap> Dim(S);
+21
+gap> AmbientQuotient(S);
+27-dimensional quotient of V[ 6, 0 ]
+gap> Weights(S);
+[ [ 4, 1 ], [ 2, 2 ], [ 5, -1 ], [ 3, 0 ], [ -2, 4 ], [ 1, -2 ], [ 1, 1 ], 
+  [ -4, 5 ], [ -1, -1 ], [ 4, -2 ], [ -1, 2 ], [ 2, -4 ], [ 2, -1 ], 
+  [ -3, 3 ], [ 0, -3 ], [ -5, 4 ], [ -2, -2 ], [ -2, 1 ], [ 1, -5 ], 
+  [ -4, 2 ], [ -1, -4 ] ]
+gap> DominantWeights(S);
+[ [ 4, 1 ], [ 2, 2 ], [ 3, 0 ], [ 1, 1 ] ]
+gap> WeightSpaces(S);
+[ [ 4, 1 ], [ y1*v0 ], [ 2, 2 ], [ -1*y1^(2)*v0 ], [ 5, -1 ], [ -1*y3*v0 ], 
+  [ 3, 0 ], [ y1*y3*v0 ], [ -2, 4 ], [ y1^(4)*v0 ], [ 1, -2 ], 
+  [ y1*y3^(3)*v0 ], [ 1, 1 ], [ -1*y1^(2)*y3*v0 ], [ -4, 5 ], 
+  [ -1*y1^(5)*v0 ], [ -1, -1 ], [ -1*y1^(2)*y3^(3)*v0 ], [ 4, -2 ], 
+  [ y3^(2)*v0 ], [ -1, 2 ], [ -1*y1^(3)*y3*v0 ], [ 2, -4 ], [ -1*y3^(4)*v0 ], 
+  [ 2, -1 ], [ -1*y1*y3^(2)*v0 ], [ -3, 3 ], [ y1^(4)*y3*v0 ], [ 0, -3 ], 
+  [ y1*y3^(4)*v0 ], [ -5, 4 ], [ -1*y1^(5)*y3*v0 ], [ -2, -2 ], 
+  [ -1*y1^(2)*y3^(4)*v0 ], [ -2, 1 ], [ y1^(3)*y3^(2)*v0 ], [ 1, -5 ], 
+  [ y3^(5)*v0 ], [ -4, 2 ], [ -1*y1^(4)*y3^(2)*v0 ], [ -1, -4 ], 
+  [ -1*y1*y3^(5)*v0 ] ]
+gap> DominantWeightSpaces(S);
+[ [ 4, 1 ], [ y1*v0 ], [ 2, 2 ], [ -1*y1^(2)*v0 ], [ 3, 0 ], [ y1*y3*v0 ], 
+  [ 1, 1 ], [ -1*y1^(2)*y3*v0 ] ]
+gap> Character(S);
+[ [ 4, 1 ], 1, [ 2, 2 ], 1, [ 5, -1 ], 1, [ 3, 0 ], 1, [ -2, 4 ], 1, 
+  [ 1, -2 ], 1, [ 1, 1 ], 1, [ -4, 5 ], 1, [ -1, -1 ], 1, [ 4, -2 ], 1, 
+  [ -1, 2 ], 1, [ 2, -4 ], 1, [ 2, -1 ], 1, [ -3, 3 ], 1, [ 0, -3 ], 1, 
+  [ -5, 4 ], 1, [ -2, -2 ], 1, [ -2, 1 ], 1, [ 1, -5 ], 1, [ -4, 2 ], 1, 
+  [ -1, -4 ], 1 ]
+gap> WeightSpace(S,[3,0]);
+[ y1*y3*v0 ]
+gap> SocleWeyl(Q);
+21-dimensional submod of 27-dimensional quotient of V[ 6, 0 ]
+gap> NextSocle(S);
+27-dimensional submod of 27-dimensional quotient of V[ 6, 0 ]
+gap> DecompositionNumbers(S);
+[ [ 4, 1 ], 1 ]
+gap> V:= WeylModule(3,[1,0],"A",2);
+V[ 1, 0 ]
+gap> ch:= ProductCharacter(Character(V),Character(V));
+[ [ 2, 0 ], 1, [ 0, 1 ], 2, [ 1, -1 ], 2, [ -2, 2 ], 1, [ -1, 0 ], 2, 
+  [ 0, -2 ], 1 ]
+gap> DecomposeCharacter(ch,3,"A",2);
+[ [ 2, 0 ], 1, [ 0, 1 ], 1 ]
+gap> ch:= ProductCharacter(ch,Character(V));
+[ [ 3, 0 ], 1, [ 1, 1 ], 3, [ 2, -1 ], 3, [ -1, 2 ], 3, [ 0, 0 ], 6, 
+  [ 1, -2 ], 3, [ -3, 3 ], 1, [ -2, 1 ], 3, [ -1, -1 ], 3, [ 0, -3 ], 1 ]
+gap> DecomposeCharacter(ch,3,"A",2);
+[ [ 3, 0 ], 1, [ 1, 1 ], 3, [ 0, 0 ], 3 ]
+gap> SimpleCharacter(3,[3,0],"A",2);
+[ [ 3, 0 ], 1, [ -3, 3 ], 1, [ 0, -3 ], 1 ]
+gap> SimpleCharacter(V,[3,0]);
+[ [ 3, 0 ], 1, [ -3, 3 ], 1, [ 0, -3 ], 1 ]
+gap> V:= SchurAlgebraWeylModule(3,[2,1,0]);
+Schur algebra module V[ 2, 1, 0 ]
+gap> DecompositionNumbers(V);
+[ [ 2, 1, 0 ], 1, [ 1, 1, 1 ], 1 ]
+gap> IsSchurAlgebraWeylModule(V);
+true
+gap> SchurAlgebraDecompositionMatrix(3,3,3);
+[ [ 1, 1, 0 ], [ 0, 1, 1 ], [ 0, 0, 1 ] ]
+gap> SymmetricGroupDecompositionMatrix(3,3);
+[ [ 1, 0 ], [ 1, 1 ], [ 0, 1 ] ]
