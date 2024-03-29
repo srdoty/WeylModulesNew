@@ -3,6 +3,8 @@ gap> V:= WeylModule(3,[3,3],"A",2);
 V[ 3, 3 ]
 gap> W:= WeylModule(V,[6,0]);
 V[ 6, 0 ]
+gap> IsWeylModule(V);
+true
 gap> Character(SocleWeyl(W));
 [ [ 0, 0 ], 1 ]
 gap> Dim(W);
@@ -90,3 +92,59 @@ gap> WeightSpace(W,[0,0]);
 [ y1^(2)*y3^(2)*v0 ]
 gap> SubWeylModule(W,[]);
 0-dimensional submod of V[ 6, 0 ]
+gap> S:= SocleWeyl(W);
+1-dimensional submod of V[ 6, 0 ]
+gap> IsSubWeylModule(S);
+true
+gap> DecompositionNumbers(SubWeylModule(W,m[2]));
+[ [ 4, 1 ], 1, [ 0, 0 ], 1 ]
+gap> DecompositionNumbers(SubWeylModule(S,m[2]));
+[ [ 4, 1 ], 1, [ 0, 0 ], 1 ]
+gap> DecompositionNumbers(SubWeylModule(W,[m[2],m[3]]));
+[ [ 4, 1 ], 1, [ 0, 0 ], 1 ]
+gap> DecompositionNumbers(SubWeylModule(S,[m[2],m[3]]));
+[ [ 4, 1 ], 1, [ 0, 0 ], 1 ]
+gap> AmbiguousMaxVecs(S);
+[  ]
+gap> IsAmbiguous(S);
+false
+gap> MaximalVectors(S);
+[ y1^(2)*y3^(2)*v0 ]
+gap> Dim(S);
+1
+gap> Weights(S);
+[ [ 0, 0 ] ]
+gap> DominantWeights(S);
+[ [ 0, 0 ] ]
+gap> WeightSpaces(S);
+[ [ 0, 0 ], [ y1^(2)*y3^(2)*v0 ] ]
+gap> DominantWeightSpaces(S);
+[ [ 0, 0 ], [ y1^(2)*y3^(2)*v0 ] ]
+gap> Character(S);
+[ [ 0, 0 ], 1 ]
+gap> DecompositionNumbers(S);
+[ [ 0, 0 ], 1 ]
+gap> Generators(S);
+[ y1^(2)*y3^(2)*v0 ]
+gap> BasisVecs(S);
+[ y1^(2)*y3^(2)*v0 ]
+gap> AmbientWeylModule(S);
+V[ 6, 0 ]
+gap> WeightSpace(S,[0,0]);
+[ y1^(2)*y3^(2)*v0 ]
+gap> MaximalVectors(S,[0,0]);
+[ y1^(2)*y3^(2)*v0 ]
+gap> MaximalVectors(S,[1,0]);
+[  ]
+gap> IsWithin(S,m[3]);
+true
+gap> IsWithin(S,m[2]);
+false
+gap> NextSocle(S);
+22-dimensional submod of V[ 6, 0 ]
+gap> GensNextSocle(S);
+[ y1*v0 ]
+gap> LengthTwoQuotient(W,S);
+27-dimensional quotient of V[ 6, 0 ]
+gap> Extensions(W,S);
+[ 27-dimensional quotient of V[ 6, 0 ] ]
