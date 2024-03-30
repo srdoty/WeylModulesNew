@@ -8,6 +8,6 @@ if fail = LoadPackage("AutoDoc", "2018.02.14") then
 fi;
 
 AutoDoc( rec( scaffold := true,
-                autodoc := rec( scan_dirs := ["autodoc_sources"] ) ) );
+         autodoc := rec( scan_dirs := ["autodoc_sources"] ) ) );
 QUIT;
 
