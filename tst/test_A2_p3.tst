@@ -88,6 +88,11 @@ gap> LengthTwoQuotient(W,g[1]);
 27-dimensional quotient of V[ 6, 0 ]
 gap> LengthTwoQuotient(W,g[2]);
 6-dimensional quotient of V[ 6, 0 ]
+gap> simple:= WeylModule(3,[1,0],"A",2);
+V[ 1, 0 ]
+gap> LengthTwoQuotient(simple);
+This module is simple - nothing to do!
+V[ 1, 0 ]
 gap> WeightSpace(W,[0,0]);
 [ y1^(2)*y3^(2)*v0 ]
 gap> SubWeylModule(W,[]);
