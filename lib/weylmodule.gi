@@ -461,7 +461,8 @@ function(V)
     return(V);
  fi;
  if Length(ss) = 1 then
-     Print("This module is simple - nothing to do!");
+     Print("This module is simple - nothing to do!\n");
+     return(V);
  fi;
  
  while Length(ss) > 2 do
