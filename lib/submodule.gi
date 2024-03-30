@@ -233,6 +233,20 @@ function(S)
 end );
 
 #############################################################################
+InstallMethod(TheCharacteristic, "for a sub Weyl module", true,
+[IsSubWeylModule], 0,
+function(S)
+    return( TheCharacteristic(AmbientWeylModule(S)) );
+end );
+
+#############################################################################
+InstallMethod(TheLieAlgebra, "for a sub Weyl module", true,
+[IsSubWeylModule], 0,
+function(S)
+    return( TheLieAlgebra(AmbientWeylModule(S)) );
+end );
+
+#############################################################################
 InstallMethod(Weights, "for a sub Weyl module", true, 
 [IsSubWeylModule], 0, 
 function(S)

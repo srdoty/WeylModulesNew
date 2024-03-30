@@ -240,6 +240,20 @@ function(S)
 end );
 
 #############################################################################
+InstallMethod(TheCharacteristic, "for a sub quotient Weyl module", true,
+[IsSubQuotientWeylModule], 0,
+function(S)
+ return( TheCharacteristic(AmbientQuotient(S)) );
+end );
+
+#############################################################################
+InstallMethod(TheLieAlgebra, "for a sub quotient Weyl module", true,
+[IsSubQuotientWeylModule], 0,
+function(S)
+ return( TheLieAlgebra(AmbientQuotient(S)) );
+end );
+
+#############################################################################
 InstallMethod(Weights, "for a sub quotient Weyl module", true, 
 [IsSubQuotientWeylModule], 0, 
 function(S)

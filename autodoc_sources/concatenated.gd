@@ -259,6 +259,12 @@ DeclareAttribute("Dim", IsSubWeylModule );
 DeclareOperation("AmbientWeylModule", [IsSubWeylModule]);
 
 #!
+DeclareOperation("TheCharacteristic", [IsSubWeylModule] );
+
+#!
+DeclareAttribute("TheLieAlgebra", IsSubWeylModule );
+
+#!
 DeclareAttribute("Weights", IsSubWeylModule );
 
 #!
@@ -350,6 +356,12 @@ DeclareAttribute("Dim", IsSubQuotientWeylModule );
 
 #!
 DeclareOperation("AmbientQuotient", [IsSubQuotientWeylModule]);
+
+#!
+DeclareOperation("TheCharacteristic", [IsSubQuotientWeylModule]);
+
+#!
+DeclareAttribute("TheLieAlgebra", IsSubQuotientWeylModule );
 
 #!
 DeclareAttribute("Weights", IsSubQuotientWeylModule );
