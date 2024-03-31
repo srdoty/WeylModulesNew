@@ -5,12 +5,12 @@
 ##  This file contains declarations for Schur algebra Weyl modules.
 ##
 #############################################################################
-#! @Section Contents of schuralgebra.gd
 
-#!
+
+
 DeclareCategory("IsSchurAlgebraWeylModule", IsWeylModule );
 
-#!
+
 DeclareOperation("SchurAlgebraWeylModule", [IsInt, IsList]);
 
 ###########################################################################
@@ -22,11 +22,11 @@ DeclareOperation("SchurAlgebraWeylModule", [IsInt, IsList]);
 #doing so leads to a warning error, but everything still works.
 ###########################################################################
 
-#!
+
 DeclareOperation("SchurAlgebraDecompositionMatrix", [IsInt, IsInt, IsInt]);
 
-#!
+
 DeclareOperation("SymmetricGroupDecompositionNumbers", [IsInt, IsList]);
 
-#!
+
 DeclareOperation("SymmetricGroupDecompositionMatrix", [IsInt, IsInt]);
