@@ -106,7 +106,9 @@ DeclareOperation( "TheCharacteristic", [IsWeylModule]);
 
 #! @ChapterInfo Weyl modules, Common operations
 #! @Description In all the above commands, <A>V</A> is a given Weyl module, 
-#! quotient, submodule, or subquotient and <A>wt</A> is a weight.
+#! quotient, submodule, or subquotient 
+#! (see <Ref Sect="Section_Constructors"/>)
+#! and <A>wt</A> is a weight.
 #! @Arguments V
 #! @Group Common operations
 DeclareAttribute( "TheLieAlgebra",  IsWeylModule );
