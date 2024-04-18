@@ -550,11 +550,16 @@ end );
 InstallMethod(Extensions, "for a Weyl module and submodule",
 true, [IsWeylModule,IsSubWeylModule], 0,
 function(V,S)
-    # returns a list of extension quotients of <V> (length 2 with 
-    # 2 simple composition factors) that include <S> in their defining kernel
+    # returns a list of extension quotients of <V> (with 2 simple composition
+    # factors) that include <S> in their defining kernel
     local Q,U,g,gens,k,out;
     out:= [ ];
-    Q:= LengthTwoQuotient(V,S);
+    if Dim(S) = 0 then
+        Q:= V;
+    else 
+        Q:= LengthTwoQuotient(V,S);
+    fi;
+   
     g:= GensSocleLayers(Q);
     if Length(g) = 2 and Length(g[1]) = 1 then
         Add(out,Q); return(out);

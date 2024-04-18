@@ -119,10 +119,10 @@ DeclareAttribute( "TheLieAlgebra",  IsWeylModule );
 # The following operation is not documented at this time
 DeclareOperation( "RowVec", [IsWeylModule,IsLeftAlgebraModuleElement]);
 
-
+# The following operation is not documented at this time
 DeclareOperation( "SimpleLieAlgGens", [IsWeylModule]);
 
-
+# The following operation is not documented at this time
 DeclareOperation( "IsMaximalVector", [IsWeylModule,IsLeftAlgebraModuleElement]);
 
 #! @ChapterInfo Weyl modules, Common operations
