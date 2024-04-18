@@ -63,19 +63,20 @@ mainly as a convenience.
 This chapter discusses the commands available for computations (in
 positive characteristic $p$) with Weyl modules, quotient Weyl modules,
 submodules of Weyl modules, and submodules of quotient Weyl modules.
+Here the underlying Lie algebra is simply-connected and simple.
 
 
 WARNING. In most cases, the dimension of space of maximal vectors
 of a given dominant weight is either $0$ or $1$. Cases for which there
 exist two or more independent maximal vectors of the same weight can
 lead to complications, such as a lack of rigidity in the submodule
-structure.  Such situations are relatively rare (and interesting); the
-smallest example known to the author occurs in Type $D_4$ in the Weyl
+structure.  Such situations are relatively rare (and interesting). 
+An example in Type $D_4$ is the Weyl
 module of highest weight $[0,1,0,0]$, as pointed out on page 173 of
 <Cite Key = "CPS"/>. (I am grateful to Anton Cox for this reference.)
 
 A Weyl module (as in the previous paragraph) with at least one weight
-space containing multiple (linearly independent) maximal vectors is
+space containing multiple linearly independent maximal vectors is
 called **ambiguous**. Extra care is needed when studying ambiguous
 modules.
 
@@ -133,14 +134,13 @@ has the indicated type.
 
 @Section Common operations
 This section documents the operations and attributes that are common
-to more than one type of object discussed in section
-<Ref Label="Constructors" Style="Number"/> above.
+to more than one type of Weyl module object. 
+
 
 @Subsection all four types
 @BeginGroup Common operations
 @GroupTitle Operations common to all four types
 @EndGroup Common operations
-
 
 
 @Subsection three types
@@ -149,6 +149,26 @@ to more than one type of object discussed in section
 @EndGroup three types
 
 
+@Subsection two types
+@BeginGroup two types
+@GroupTitle Operations on Weyl modules and their quotients
+@EndGroup two types
 
 
+@Section Unique operations
+@SectionTitle Operations unique to Weyl modules
+This section documents the operations that can only be applied to an
+existing Weyl module $V$. These operations are not available for submodules,
+quotients, or subquotients.
 
+@Subsection LengthTwoQuotient
+@BeginGroup LengthTwoQuotient
+@GroupTitle Length two quotients of Weyl modules
+@EndGroup LengthTwoQuotient
+
+
+@Section Unique ops for quotients
+@SectionTitle Operations unique to quotient Weyl modules
+
+@Section Unique ops for submodules
+@SectionTitle Operations unique to submodules

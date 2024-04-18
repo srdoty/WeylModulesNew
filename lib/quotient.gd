@@ -7,25 +7,39 @@
 #############################################################################
 
 
-#!@ChapterInfo Weyl_modules, Filters
+#! @ChapterInfo Weyl_modules, Filters
 #! @Group IsQuotientWeylModule
 #! @Arguments V
 DeclareCategory( "IsQuotientWeylModule", 
   CategoryCollections(IsLeftAlgebraModuleElement) );
 
-#! @Description
-#! Constructs the quotient module $V/S$ corresponding to the given 
-#! submodule $S$.  Here $V$ is the ambient Weyl module of the given $S$.
+#! @ChapterInfo Weyl_modules, Constructors
+#! @Group QuotientWeylModule
 #! @Returns a QuotientWeylModule
 #! @Arguments S
-#! @Group QuotientWeylModule
-#! @ChapterInfo Weyl_modules, Constructors
+#! @Description
+#! Constructs the quotient module $V/S$ corresponding to the given 
+#! submodule <A>S</A>.  Here <K>V</K> is the ambient Weyl module of the 
+#! given <A>S</A>. 
+#! Quotient Weyl modules are attribute-storing objects.
 DeclareOperation( "QuotientWeylModule", [IsSubWeylModule] );
 
-
+#! @ChapterInfo Weyl_modules, Unique ops for quotients
+#! @Returns a Weyl module
+#! @Arguments Q
+#! @Description
+#! This returns the ambient Weyl module <K>V</K> corresponding to the given 
+#! quotient <A>Q</A>.  
 DeclareOperation( "AmbientWeylModule", [IsQuotientWeylModule]);
 
-
+#! @ChapterInfo Weyl_modules, Unique ops for quotients
+#! @Returns a submodule
+#! @Arguments Q
+#! @Description
+#! This returns the kernel corresponding to the given 
+#! quotient <A>Q</A>. In other words, it returns the submodule <K>S</K>
+#! such that $Q$ is isomorphic to $V/S$, where <K>V</K> is the ambient 
+#! Weyl module.
 DeclareOperation( "DefiningKernel", [IsQuotientWeylModule]);
 
 
@@ -36,7 +50,6 @@ DeclareAttribute( "AmbiguousMaxVecs",  IsQuotientWeylModule );
 
 
 DeclareAttribute( "TheLieAlgebra", IsQuotientWeylModule );
-
 
 DeclareOperation( "TheCharacteristic", [IsQuotientWeylModule]);
 
