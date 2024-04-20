@@ -529,18 +529,16 @@ end );
 
 #############################################################################
 InstallMethod(LengthTwoQuotient, "for a Weyl module and submodule", 
-true, [IsWeylModule,IsSubWeylModule], 0,
-function(V,S)
- # returns a length <= 2 quotient of <V> with <S> in its kernel
- local ss,Q,g,k;
+true, [IsSubWeylModule], 0,
+function(S)
+ # returns a quotient of <V> with <S> in its kernel that has socle 
+ # length at most 2
+ local ss,Q,g,k;   
  Q:= QuotientWeylModule(S);
  ss:= SocleSeries(Q);
- 
  while Length(ss) > 2 do
     g:=Generators(ss[Length(ss)-2]);
-    for k in [1..Length(g)] do
-        S:=SubWeylModule(S,g[k]);
-    od;
+    S:=SubWeylModule(S,g);  # extend S by the list g of gens
     Q:=QuotientWeylModule(S);
     ss:= SocleSeries(Q);
  od;
@@ -548,16 +546,20 @@ function(V,S)
 end );
 
 InstallMethod(Extensions, "for a Weyl module and submodule",
-true, [IsWeylModule,IsSubWeylModule], 0,
-function(V,S)
-    # returns a list of extension quotients of <V> (with 2 simple composition
-    # factors) that include <S> in their defining kernel
-    local Q,U,g,gens,k,out;
+true, [IsSubWeylModule], 0,
+function(S)
+    # returns a list of extension-realizing quotients of <V> 
+    # that include <S> in their defining kernel. A quotient is
+    # an extension (non-split) iff it has socle length 2 and has
+    # exactly two simple composition factors.
+    local V,Q,U,g,gens,k,out;
+    V:= AmbientWeylModule(S);
+    
     out:= [ ];
     if Dim(S) = 0 then
         Q:= V;
     else 
-        Q:= LengthTwoQuotient(V,S);
+        Q:= LengthTwoQuotient(S);
     fi;
    
     g:= GensSocleLayers(Q);
@@ -567,7 +569,7 @@ function(V,S)
     gens:= g[1]; out:=[ ];
     for k in [1..Length(gens)] do
         U:= SubWeylModule(S,gens[k]);
-        Q:= LengthTwoQuotient(V,U);
+        Q:= LengthTwoQuotient(U);
         g:= GensSocleLayers(Q);
         Assert(1, Length(g) <= 2); # sanity check
         if Length(g) = 2 and Length(g[1]) = 1 then
