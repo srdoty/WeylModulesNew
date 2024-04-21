@@ -161,14 +161,13 @@ This section documents the operations that can only be applied to an
 existing Weyl module $V$. These operations are not available for submodules,
 quotients, or subquotients.
 
-@Subsection LengthTwoQuotient
-@BeginGroup LengthTwoQuotient
-@GroupTitle Length two quotients of Weyl modules
-@EndGroup LengthTwoQuotient
-
-
 @Section Unique ops for quotients
 @SectionTitle Operations unique to quotient Weyl modules
 
 @Section Unique ops for submodules
 @SectionTitle Operations unique to submodules
+
+@Subsection TwoFactorQuotientsContaining
+@BeginGroup TwoFactorQuotientsContaining
+@GroupTitle Quotients of Weyl modules with two composition factors and given kernel
+@EndGroup TwoFactorQuotientsContaining

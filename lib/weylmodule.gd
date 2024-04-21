@@ -192,32 +192,7 @@ DeclareAttribute("SimpleTopFactorCharacter", IsWeylModule );
 # The following command is not documented at this time
 DeclareAttribute("SimpleTopFactorDim", IsWeylModule );
 
-#! @ChapterInfo Weyl modules, Unique operations
-#! @Description `LengthTwoQuotient` tries to construct a quotient
-#! of the given Weyl module <A>V</A> with at most two composition factors.
-#! Such a quotient realizes a non-split extension of the simple top
-#! factor by some other simple composition factor. The first form looks
-#! for such a quotient where the kernel contains the next to last proper 
-#! socle series submodule.
-#! @Arguments V
-#! @Group LengthTwoQuotient
-DeclareAttribute("LengthTwoQuotient", IsWeylModule );
 
-#! @ChapterInfo Weyl modules, Unique operations
-#! @Description The second form of the command attempts to find 
-#! such a quotient, where the kernel contains the generator <A>v</A>.
-#! @Arguments V,v
-#! @Group LengthTwoQuotient
-DeclareOperation("LengthTwoQuotient", 
-                 [IsWeylModule,IsLeftAlgebraModuleElement] );
-
-#! @ChapterInfo Weyl modules, Unique operations
-#! @Description The third form of the command attempts to find 
-#! such a quotient, where the kernel contains the given <A>list</A> of vectors.
-#! @Arguments V,list
-#! @Group LengthTwoQuotient
-DeclareOperation("LengthTwoQuotient", 
-                 [IsWeylModule,IsList] );
 
 
 

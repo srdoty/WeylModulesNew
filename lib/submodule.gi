@@ -528,7 +528,7 @@ function(S)
 end );     
 
 #############################################################################
-InstallMethod(LengthTwoQuotient, "for a Weyl module and submodule", 
+InstallMethod(SocleLengthTwoQuotient, "for a Weyl module and submodule", 
 true, [IsSubWeylModule], 0,
 function(S)
  # returns a quotient of <V> with <S> in its kernel that has socle 
@@ -545,7 +545,7 @@ function(S)
  return(Q);
 end );
 
-InstallMethod(Extensions, "for a Weyl module and submodule",
+InstallMethod(TwoFactorQuotientsContaining, "for a Weyl module and submodule",
 true, [IsSubWeylModule], 0,
 function(S)
     # returns a list of extension-realizing quotients of <V> 
@@ -559,7 +559,7 @@ function(S)
     if Dim(S) = 0 then
         Q:= V;
     else 
-        Q:= LengthTwoQuotient(S);
+        Q:= SocleLengthTwoQuotient(S);
     fi;
    
     g:= GensSocleLayers(Q);
@@ -569,7 +569,7 @@ function(S)
     gens:= g[1]; out:=[ ];
     for k in [1..Length(gens)] do
         U:= SubWeylModule(S,gens[k]);
-        Q:= LengthTwoQuotient(U);
+        Q:= SocleLengthTwoQuotient(U);
         g:= GensSocleLayers(Q);
         Assert(1, Length(g) <= 2); # sanity check
         if Length(g) = 2 and Length(g[1]) = 1 then

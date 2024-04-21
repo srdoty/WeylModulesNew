@@ -150,22 +150,22 @@ DeclareAttribute("DecompositionNumbers", IsSubWeylModule );
 
 #! @ChapterInfo Weyl_modules, Unique operations
 #! @Description
-#! This function computes the largest quotient of the ambient Weyl 
+#! The first function returns the largest quotient of the ambient Weyl 
 #! module <A>V</A>
 #! with socle series length at most two such that <A>S</A> lies in the 
 #! defining kernel. 
-#! @Returns a QuotientWeylModule
 #! @Arguments S
-#! @Group LengthTwoQuotient
-DeclareAttribute("LengthTwoQuotient", IsSubWeylModule );
+#! @Group TwoFactorQuotientsContaining
+DeclareAttribute("SocleLengthTwoQuotient", IsSubWeylModule );
 
 #! @ChapterInfo Weyl_modules, Unique operations
 #! @Description
-#! This function returns a list of extension quotients of the ambient 
-#! Weyl module <A>V</A>
-#! (quotients with exactly two composition factors) 
-#! that contain <A>S</A> in their defining kernel. 
-#! @Returns a list
+#! The second function returns a list of quotients of the ambient 
+#! Weyl module <A>V</A> with exactly two composition factors 
+#! that contain <A>S</A> in their defining kernel. Such quotients
+#! realize non-split extensions of the simple at the top of <A>V</A>.
+#! Even when <A>S</A> is the trivial module, we do not claim that the
+#! output will give <E>all</E> the extensions. 
 #! @Arguments S
-#! @Group LengthTwoQuotient
-DeclareAttribute("Extensions", IsSubWeylModule );
+#! @Group TwoFactorQuotientsContaining
+DeclareAttribute("TwoFactorQuotientsContaining", IsSubWeylModule );
