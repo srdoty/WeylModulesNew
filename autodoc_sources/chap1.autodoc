@@ -167,7 +167,5 @@ quotients, or subquotients.
 @Section Unique ops for submodules
 @SectionTitle Operations unique to submodules
 
-@Subsection TwoFactorQuotientsContaining
-@BeginGroup TwoFactorQuotientsContaining
-@GroupTitle Quotients of Weyl modules with two composition factors and given kernel
-@EndGroup TwoFactorQuotientsContaining
+@Section Unique ops for subquotients
+@SectionTitle Operations unique to subquotients

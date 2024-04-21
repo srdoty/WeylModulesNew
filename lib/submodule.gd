@@ -129,10 +129,10 @@ DeclareAttribute("SocleWeyl", IsWeylModule );
 
 #! @ChapterInfo Weyl_modules, Unique ops for submodules
 #! @Description
-#! This function returns the maximal submodule <A>T</A> containing the given
-#! submodule <A>S</A> such that $T/S$ is semisimple. If $S$ happens to be an
-#! element of the socle series then the function returns the next element in
-#! the socle series.
+#! This function returns the maximal submodule <A>T</A> containing 
+#! the given submodule <A>S</A> such that $T/S$ is semisimple. 
+#! If <A>S</A> happens to be an element of the socle series then 
+#! the function returns the next element in the socle series.
 #! @Returns a SubWeylModule
 #! @Arguments S
 DeclareOperation("NextSocle", [IsSubWeylModule]);
@@ -148,24 +148,23 @@ DeclareOperation("GensNextSocle", [IsSubWeylModule]);
 
 DeclareAttribute("DecompositionNumbers", IsSubWeylModule );
 
-#! @ChapterInfo Weyl_modules, Unique operations
+#! @ChapterInfo Weyl_modules, Unique ops for submodules
 #! @Description
-#! The first function returns the largest quotient of the ambient Weyl 
-#! module <A>V</A>
-#! with socle series length at most two such that <A>S</A> lies in the 
-#! defining kernel. 
+#! This function returns a quotient of the ambient Weyl 
+#! module <A>V</A> with socle series length at most two such 
+#! that <A>S</A> lies in its defining kernel. 
 #! @Arguments S
-#! @Group TwoFactorQuotientsContaining
+#! @Returns a QoutientWeylModule
 DeclareAttribute("SocleLengthTwoQuotient", IsSubWeylModule );
 
-#! @ChapterInfo Weyl_modules, Unique operations
+#! @ChapterInfo Weyl_modules, Unique ops for submodules
 #! @Description
-#! The second function returns a list of quotients of the ambient 
+#! This returns a list of quotients of the ambient 
 #! Weyl module <A>V</A> with exactly two composition factors 
 #! that contain <A>S</A> in their defining kernel. Such quotients
 #! realize non-split extensions of the simple at the top of <A>V</A>.
 #! Even when <A>S</A> is the trivial module, we do not claim that the
-#! output will give <E>all</E> the extensions. 
+#! output will give <E>all</E> of the extensions. 
 #! @Arguments S
-#! @Group TwoFactorQuotientsContaining
+#! @Returns a list of QuotientWeylModules
 DeclareAttribute("TwoFactorQuotientsContaining", IsSubWeylModule );

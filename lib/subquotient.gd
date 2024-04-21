@@ -72,7 +72,12 @@ DeclareOperation("BasisVecs", [IsSubQuotientWeylModule]);
 
 DeclareAttribute("Dim", IsSubQuotientWeylModule );
 
-
+#! @ChapterInfo Weyl_modules, Unique ops for subquotients
+#! @Description
+#! This function returns the ambient quotient Weyl module containing the given
+#! subquotient <A>S</A>.
+#! @Returns a QuotientWeylModule
+#! @Arguments S
 DeclareOperation("AmbientQuotient", [IsSubQuotientWeylModule]);
 
 
@@ -99,10 +104,22 @@ DeclareAttribute("DominantWeightSpaces", IsSubQuotientWeylModule );
 
 DeclareOperation("WeightSpace", [IsSubQuotientWeylModule,IsList]);
 
-
+#! @ChapterInfo Weyl_modules, Unique ops for quotients
+#! @Description
+#! This function returns the socle of the given quotient Weyl module
+#! <A>Q</A>.
+#! @Returns a SubQuotientWeylModule
+#! @Arguments Q
 DeclareAttribute("SocleWeyl", IsQuotientWeylModule );
 
-
+#! @ChapterInfo Weyl_modules, Unique ops for subquotients
+#! @Description
+#! This function returns the maximal subquotient <A>T</A> containing 
+#! the given subquotient <A>S</A> such that $T/S$ is semisimple. 
+#! If <A>S</A> happens to be an element of the socle series then the 
+#! function returns the next element in the socle series.
+#! @Returns a SubQuotientWeylModule
+#! @Arguments S
 DeclareOperation("NextSocle", [IsSubQuotientWeylModule]);
 
 
