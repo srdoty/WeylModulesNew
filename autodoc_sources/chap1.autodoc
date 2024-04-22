@@ -156,16 +156,49 @@ to more than one type of Weyl module object.
 
 
 @Section Unique operations
-@SectionTitle Operations unique to Weyl modules
+@SectionTitle Operations on Weyl modules
 This section documents the operations that can only be applied to an
 existing Weyl module $V$. These operations are not available for submodules,
 quotients, or subquotients.
 
 @Section Unique ops for quotients
-@SectionTitle Operations unique to quotient Weyl modules
+@SectionTitle Operations on quotients
 
 @Section Unique ops for submodules
-@SectionTitle Operations unique to submodules
+@SectionTitle Operations on submodules
 
 @Section Unique ops for subquotients
-@SectionTitle Operations unique to subquotients
+@SectionTitle Operations on subquotients
+
+
+@Chapter Weights and Characters
+
+@Section Weights
+
+@Section Characters
+
+
+@Chapter Schur Algebras
+
+The decomposition numbers for the algebraic group $SL_n$ of type
+$A_{n−1}$ determine the decomposition numbers for the corresponding
+Schur algebras, and thus also determine the decomposition numbers for
+symmetric groups. People working with Schur algebras and symmetric
+groups often prefer to use partitions to label highest
+weights. Although it is trivial to convert between $SL_n$ weight
+notation and partition notation, for the sake of convenience, we
+provide a few functions that perform such conversions, and various
+other functions related to Schur algebras and symmetric groups.
+
+NOTE. The functions for symmetric groups are quite slow, so readers
+interested in symmetric group computations may want to look elsewhere
+for more effcient tools.
+
+
+@Section Constructor
+
+@Section Decomposition matrices
+
+@Section Partitions
+
+
