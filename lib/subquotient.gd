@@ -14,6 +14,13 @@ DeclareCategory( "IsSubQuotientWeylModule",
   CategoryCollections(IsLeftAlgebraModuleElement) );
 
 
+#! @ChapterInfo Weyl modules, Operations on subquotients
+#! @Group IsWithin4SQ
+#! @Arguments T,v
+#! @Returns true or false
+#! @Description 
+#! This returns <K>true</K> if and only if the given vector <A>v</A> lies in 
+#! the given subquotient <A>T</A>.
 DeclareOperation( "IsWithin", 
             [IsSubQuotientWeylModule,IsLeftAlgebraModuleElement]);
 
@@ -63,65 +70,95 @@ DeclareOperation( "SubWeylModule", [IsSubQuotientWeylModule,IsList]);
 #! @Group SubQuotientWeylModule
 DeclareOperation("SubWeylModuleDirectSum", [IsQuotientWeylModule,IsList]);
 
-
+#! @ChapterInfo Weyl modules, Operations on subquotients
+#! @Group Generators4SQ
+#! @Arguments T
+#! @Returns a list
+#! @Description 
+#! This returns a list of generators for the given subquotient <A>T</A>.
 DeclareOperation("Generators", [IsSubQuotientWeylModule]);
 
-
+#! @ChapterInfo Weyl modules, Operations common to all four types
+#! @Arguments T
+#! @Group BasisVecs
 DeclareOperation("BasisVecs", [IsSubQuotientWeylModule]);
 
-
+#! @ChapterInfo Weyl modules, Operations common to all four types
+#! @Arguments T
+#! @Group Dim
 DeclareAttribute("Dim", IsSubQuotientWeylModule );
 
-#! @ChapterInfo Weyl_modules, Unique ops for subquotients
+#! @ChapterInfo Weyl_modules, Operations on subquotients
+#! @Group AmbientQuotient4SQ
+#! @Returns a QuotientWeylModule
+#! @Arguments T
 #! @Description
 #! This function returns the ambient quotient Weyl module containing the given
 #! subquotient <A>S</A>.
-#! @Returns a QuotientWeylModule
-#! @Arguments S
 DeclareOperation("AmbientQuotient", [IsSubQuotientWeylModule]);
 
-
+#! @ChapterInfo Weyl modules, Operations common to all four types
+#! @Arguments T
+#! @Group TheCharacteristic
 DeclareOperation("TheCharacteristic", [IsSubQuotientWeylModule]);
 
-
+#! @ChapterInfo Weyl modules, Operations common to all four types
+#! @Arguments T
+#! @Group TheLieAlgebra
 DeclareAttribute("TheLieAlgebra", IsSubQuotientWeylModule );
 
-
+#! @ChapterInfo Weyl modules, Operations common to all four types
+#! @Arguments T
+#! @Group Weights
 DeclareAttribute("Weights", IsSubQuotientWeylModule );
 
-
+#! @ChapterInfo Weyl modules, Operations common to all four types
+#! @Arguments T
+#! @Group DominantWeights
 DeclareAttribute("DominantWeights", IsSubQuotientWeylModule );
 
-
+#! @ChapterInfo Weyl modules, Operations common to all four types
+#! @Arguments T
+#! @Group WeightSpaces
 DeclareAttribute("WeightSpaces", IsSubQuotientWeylModule );
 
-
+#! @ChapterInfo Weyl modules, Operations common to all four types
+#! @Arguments T
+#! @Group Character
 DeclareAttribute("Character", IsSubQuotientWeylModule );
 
-
+#! @ChapterInfo Weyl modules, Operations common to all four types
+#! @Arguments T
+#! @Group DominantWeightSpaces
 DeclareAttribute("DominantWeightSpaces", IsSubQuotientWeylModule );
 
-
+#! @ChapterInfo Weyl modules, Operations common to all four types
+#! @Arguments T,wt
+#! @Group WeightSpace
 DeclareOperation("WeightSpace", [IsSubQuotientWeylModule,IsList]);
 
-#! @ChapterInfo Weyl_modules, Unique ops for quotients
+#! @ChapterInfo Weyl_modules, Operations on quotients
+#! @Group SocleWeyl4Q
+#! @Returns a SubQuotientWeylModule
+#! @Arguments Q
 #! @Description
 #! This function returns the socle of the given quotient Weyl module
 #! <A>Q</A>.
-#! @Returns a SubQuotientWeylModule
-#! @Arguments Q
 DeclareAttribute("SocleWeyl", IsQuotientWeylModule );
 
-#! @ChapterInfo Weyl_modules, Unique ops for subquotients
+#! @ChapterInfo Weyl_modules, Operations on subquotients
+#! @Group NextSocle4SQ
+#! @Returns a SubQuotientWeylModule
+#! @Arguments T
 #! @Description
 #! This function returns the maximal subquotient <A>T</A> containing 
 #! the given subquotient <A>S</A> such that $T/S$ is semisimple. 
 #! If <A>S</A> happens to be an element of the socle series then the 
 #! function returns the next element in the socle series.
-#! @Returns a SubQuotientWeylModule
-#! @Arguments S
 DeclareOperation("NextSocle", [IsSubQuotientWeylModule]);
 
-
+#! @ChapterInfo Weyl modules, Operations common to all four types
+#! @Arguments T
+#! @Group DecompositionNumbers
 DeclareAttribute("DecompositionNumbers", IsSubQuotientWeylModule );
 

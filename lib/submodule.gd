@@ -56,22 +56,36 @@ DeclareOperation("SubWeylModule", [IsSubWeylModule,IsList]);
 #! @Group SubWeylModule
 DeclareOperation("SubWeylModuleDirectSum", [IsWeylModule,IsList]);
 
-
+#! @ChapterInfo Weyl modules, Three types
+#! @Arguments S
+#! @Group IsAmbiguous
 DeclareAttribute( "IsAmbiguous", IsSubWeylModule );
 
-
+#! @ChapterInfo Weyl modules, Three types
+#! @Arguments S
+#! @Group AmbiguousMaxVecs
 DeclareAttribute( "AmbiguousMaxVecs", IsSubWeylModule );
 
-
+#! @ChapterInfo Weyl modules, Operations on submodules
+#! @Group Generators4Sub
+#! @Arguments S
+#! @Returns a list
+#! @Description 
+#! Returns a list of generators of the given submodule <A>S</A>. 
 DeclareOperation("Generators", [IsSubWeylModule]);
 
-
+#! @ChapterInfo Weyl modules, Operations common to all four types
+#! @Arguments S
+#! @Group BasisVecs
 DeclareOperation("BasisVecs", [IsSubWeylModule]);
 
-
+#! @ChapterInfo Weyl modules, Operations common to all four types
+#! @Arguments S
+#! @Group Dim
 DeclareAttribute("Dim", IsSubWeylModule );
 
-#! @ChapterInfo Weyl_modules, Unique ops for submodules
+#! @ChapterInfo Weyl_modules, Operations on submodules
+#! @Group Ambient4Sub
 #! @Description
 #! This function returns the ambient Weyl module containing the given
 #! submodule <A>S</A>.
@@ -79,85 +93,115 @@ DeclareAttribute("Dim", IsSubWeylModule );
 #! @Arguments S
 DeclareOperation("AmbientWeylModule", [IsSubWeylModule]);
 
-
+#! @ChapterInfo Weyl modules, Operations common to all four types
+#! @Arguments S
+#! @Group TheCharacteristic
 DeclareOperation("TheCharacteristic", [IsSubWeylModule] );
 
-
+#! @ChapterInfo Weyl modules, Operations common to all four types
+#! @Arguments S
+#! @Group TheLieAlgebra
 DeclareAttribute("TheLieAlgebra", IsSubWeylModule );
 
-
+#! @ChapterInfo Weyl modules, Operations common to all four types
+#! @Arguments S
+#! @Group Weights
 DeclareAttribute("Weights", IsSubWeylModule );
 
-
+#! @ChapterInfo Weyl modules, Operations common to all four types
+#! @Arguments S
+#! @Group DominantWeights
 DeclareAttribute("DominantWeights", IsSubWeylModule );
 
-
+#! @ChapterInfo Weyl modules, Operations common to all four types
+#! @Arguments S
+#! @Group WeightSpaces
 DeclareAttribute("WeightSpaces", IsSubWeylModule );
 
-
+#! @ChapterInfo Weyl modules, Operations common to all four types
+#! @Arguments S
+#! @Group Character
 DeclareAttribute("Character", IsSubWeylModule );
 
-
+#! @ChapterInfo Weyl modules, Operations common to all four types
+#! @Arguments S
+#! @Group DominantWeightSpaces
 DeclareAttribute("DominantWeightSpaces", IsSubWeylModule );
 
-
+#! @ChapterInfo Weyl modules, Operations common to all four types
+#! @Arguments S,wt
+#! @Group WeightSpace
 DeclareOperation("WeightSpace", [IsSubWeylModule,IsList]);
 
 # The following command is not documented at this time
 DeclareOperation("SubWeylModule", [IsWeylModule,IsPosInt,IsPosInt,IsList]);
 
-
+#! @ChapterInfo Weyl modules, Three types
+#! @Arguments S,wt
+#! @Group MaximalVectors
 DeclareOperation( "MaximalVectors", [IsSubWeylModule,IsList]);
 
-
+#! @ChapterInfo Weyl modules, Three types
+#! @Arguments S
+#! @Group MaximalVectors
 DeclareAttribute( "MaximalVectors", IsSubWeylModule );
 
-#! @ChapterInfo Weyl_modules, Unique ops for submodules
+#! @ChapterInfo Weyl_modules, Operations on submodules
+#! @Group IsWithin4Sub
+#! @Returns true or false
+#! @Arguments S,v
 #! @Description
 #! This function returns <K>true</K> if and only if the given 
 #! vector <A>v</A> lies in the given submodule <A>S</A>. 
-#! @Returns true or false
-#! @Arguments S,v
 DeclareOperation( "IsWithin", [IsSubWeylModule,IsLeftAlgebraModuleElement]);
 
-#! @ChapterInfo Weyl_modules, Unique operations
+#! @ChapterInfo Weyl_modules, Operations on Weyl modules
+#! @Group SocleWeyl
+#! @Arguments V
+#! @Returns a SubWeylModule
 #! @Description
 #! This function returns the socle of the given Weyl module <A>V</A>.
-#! @Returns a SubWeylModule
-#! @Arguments V
 DeclareAttribute("SocleWeyl", IsWeylModule );
 
-#! @ChapterInfo Weyl_modules, Unique ops for submodules
+#! @ChapterInfo Weyl_modules, Operations on submodules
+#! @Group NextSocle
+#! @Returns a SubWeylModule
+#! @Arguments S
 #! @Description
 #! This function returns the maximal submodule <A>T</A> containing 
 #! the given submodule <A>S</A> such that $T/S$ is semisimple. 
 #! If <A>S</A> happens to be an element of the socle series then 
 #! the function returns the next element in the socle series.
-#! @Returns a SubWeylModule
-#! @Arguments S
 DeclareOperation("NextSocle", [IsSubWeylModule]);
 
-#! @ChapterInfo Weyl_modules, Unique ops for submodules
+#! @ChapterInfo Weyl_modules, Operations on submodules
+#! @Group GensNextSocle
+#! @Returns a list
+#! @Arguments S
 #! @Description
 #! This function returns a list of generators of the submodule returned by
 #! `NextSocle(S)`.
-#! @Returns a list
-#! @Arguments S
 DeclareOperation("GensNextSocle", [IsSubWeylModule]);
 
-
+#! @ChapterInfo Weyl modules, Operations common to all four types
+#! @Arguments S
+#! @Group DecompositionNumbers
 DeclareAttribute("DecompositionNumbers", IsSubWeylModule );
 
-#! @ChapterInfo Weyl_modules, Unique ops for submodules
+#! @ChapterInfo Weyl_modules, Operations on submodules
+#! @Group SocleLengthTwoQuotient
+#! @Arguments S
+#! @Returns a QuotientWeylModule
 #! @Description
 #! This function returns a quotient of the ambient Weyl 
 #! module <A>V</A> with socle series length at most two such 
 #! that <A>S</A> lies in its defining kernel. 
-#! @Arguments S
-#! @Returns a QoutientWeylModule
 DeclareAttribute("SocleLengthTwoQuotient", IsSubWeylModule );
 
-#! @ChapterInfo Weyl_modules, Unique ops for submodules
+#! @ChapterInfo Weyl_modules, Operations on submodules
+#! @Group TwoFactorQuotientsContaining
+#! @Arguments S
+#! @Returns a list of QuotientWeylModules
 #! @Description
 #! This returns a list of quotients of the ambient 
 #! Weyl module <A>V</A> with exactly two composition factors 
@@ -165,6 +209,4 @@ DeclareAttribute("SocleLengthTwoQuotient", IsSubWeylModule );
 #! realize non-split extensions of the simple at the top of <A>V</A>.
 #! Even when <A>S</A> is the trivial module, we do not claim that the
 #! output will give <E>all</E> of the extensions. 
-#! @Arguments S
-#! @Returns a list of QuotientWeylModules
 DeclareAttribute("TwoFactorQuotientsContaining", IsSubWeylModule );

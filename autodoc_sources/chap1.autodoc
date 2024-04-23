@@ -85,7 +85,7 @@ modules.
 @SectionLabel Constructors
 Here we consider functions that create Weyl modules, quotients of Weyl
 modules, submodules of Weyl modules, and submodules of quotient Weyl
-modules.
+modules. 
 
 @Subsection Weyl modules
 @BeginGroup WeylModule
@@ -132,43 +132,233 @@ has the indicated type.
 @GroupTitle IsSubQuotientWeylModule
 @EndGroup IsSubQuotientWeylModule
 
-@Section Common operations
-This section documents the operations and attributes that are common
-to more than one type of Weyl module object. 
+@Section Operations common to all four types
+
+This section documents operations and attributes that can be applied
+to Weyl modules, quotients, submodules, and subquotients. In the
+following, <A>V</A> is a Weyl module, <A>Q</A> is a quotient, <A>S</A>
+is a submodule, and <A>T</A> is a subquotient. Section <Ref
+Sect="Section_Constructors"/> documents the constructors for these
+objects. Furthermore, <A>wt</A> is a weight.
+
+@Subsection BasisVecs 
+@BeginGroup BasisVecs
+@GroupTitle BasisVecs
+@EndGroup BasisVecs
+
+@Subsection Character 
+@BeginGroup Character
+@GroupTitle Character
+@EndGroup Character
+
+@Subsection DecompositionNumbers 
+@BeginGroup DecompositionNumbers
+@GroupTitle DecompositionNumbers
+@EndGroup DecompositionNumbers
+
+@Subsection Dim 
+@BeginGroup Dim
+@GroupTitle Dim
+@EndGroup Dim
+
+@Subsection DominantWeights 
+@BeginGroup DominantWeights
+@GroupTitle DominantWeights
+@EndGroup DominantWeights
+
+@Subsection DominantWeightSpaces 
+@BeginGroup DominantWeightSpaces
+@GroupTitle DominantWeightSpaces
+@EndGroup DominantWeightSpaces
+
+@Subsection Weights 
+@BeginGroup Weights
+@GroupTitle Weights
+@EndGroup Weights
+
+@Subsection WeightSpaces 
+@BeginGroup WeightSpaces
+@GroupTitle WeightSpaces
+@EndGroup WeightSpaces
+
+@Subsection WeightSpace 
+@BeginGroup WeightSpace
+@GroupTitle WeightSpace
+@EndGroup WeightSpace
+
+@Subsection TheCharacteristic 
+@BeginGroup TheCharacteristic
+@GroupTitle TheCharacteristic
+@EndGroup TheCharacteristic
+
+@Subsection TheLieAlgebra 
+@BeginGroup TheLieAlgebra
+@GroupTitle TheLieAlgebra
+@EndGroup TheLieAlgebra
 
 
-@Subsection all four types
-@BeginGroup Common operations
-@GroupTitle Operations common to all four types
-@EndGroup Common operations
+@Section Three types
+@SectionTitle Operations common to Weyl modules, submodules, and quotients
+
+In the following, <A>Q</A> is a quotient Weyl module, <A>S</A> is a
+submodule, and <A>V</A> is a Weyl module.
 
 
-@Subsection three types
-@BeginGroup three types
-@GroupTitle Operations common to Weyl modules, submodules, and quotients
-@EndGroup three types
+@Subsection MaximalVectors 
+@BeginGroup MaximalVectors
+@GroupTitle MaximalVectors
+@EndGroup MaximalVectors
+
+@Subsection IsAmbiguous 
+@BeginGroup IsAmbiguous
+@GroupTitle IsAmbiguous
+@EndGroup IsAmbiguous
+
+@Subsection AmbiguousMaxVecs 
+@BeginGroup AmbiguousMaxVecs
+@GroupTitle AmbiguousMaxVecs
+@EndGroup AmbiguousMaxVecs
 
 
-@Subsection two types
-@BeginGroup two types
-@GroupTitle Operations on Weyl modules and their quotients
-@EndGroup two types
+@Section Operations on Weyl modules and their quotients
+
+In the following, <A>Q</A> is a quotient Weyl module and <A>V</A> is a
+Weyl module.
+
+@Subsection ActOn 
+@BeginGroup ActOn 
+@GroupTitle ActOn 
+@EndGroup ActOn 
+
+@Subsection Generator 
+@BeginGroup Generator
+@GroupTitle Generator
+@EndGroup Generator
+
+@Subsection GensSocleLayers 
+@BeginGroup GensSocleLayers
+@GroupTitle GensSocleLayers
+@EndGroup GensSocleLayers
+
+@Subsection PrintSocleLayers 
+@BeginGroup PrintSocleLayers
+@GroupTitle PrintSocleLayers
+@EndGroup PrintSocleLayers
+
+@Subsection SocleSeries 
+@BeginGroup SocleSeries
+@GroupTitle SocleSeries
+@EndGroup SocleSeries
 
 
-@Section Unique operations
-@SectionTitle Operations on Weyl modules
+@Section Operations on Weyl modules
+
 This section documents the operations that can only be applied to an
-existing Weyl module $V$. These operations are not available for submodules,
-quotients, or subquotients.
+existing Weyl module <A>V</A>. These operations are not available for
+submodules, quotients, or subquotients.
 
-@Section Unique ops for quotients
-@SectionTitle Operations on quotients
+@Subsection MaximalSubmodule
+@BeginGroup MaximalSubmodule
+@GroupTitle MaximalSubmodule
+@EndGroup MaximalSubmodule
 
-@Section Unique ops for submodules
-@SectionTitle Operations on submodules
+@Subsection SimpleQuotient
+@BeginGroup SimpleQuotient
+@GroupTitle SimpleQuotient
+@EndGroup SimpleQuotient
 
-@Section Unique ops for subquotients
-@SectionTitle Operations on subquotients
+
+@Subsection SocleWeyl
+@BeginGroup SocleWeyl
+@GroupTitle SocleWeyl
+@EndGroup SocleWeyl
+
+
+@Section Operations on quotients
+
+In the following, <A>Q</A> is a quotient Weyl module.
+
+@Subsection AmbientWeylModule
+@BeginGroup Ambient4Q
+@GroupTitle AmbientWeylModule
+@EndGroup Ambient4Q
+
+@Subsection DefiningKernel
+@BeginGroup DefiningKernel
+@GroupTitle DefiningKernel
+@EndGroup DefiningKernel
+
+@Subsection SocleWeyl
+@BeginGroup SocleWeyl4Q
+@GroupTitle SocleWeyl
+@EndGroup SocleWeyl4Q
+
+
+@Section Operations on submodules
+
+In the following, <A>S</A> is a submodule.
+
+@Subsection AmbientWeylModule
+@BeginGroup Ambient4Sub
+@GroupTitle AmbientWeylModule
+@EndGroup Ambient4Sub
+
+@Subsection Generators
+@BeginGroup Generators4Sub
+@GroupTitle Generators
+@EndGroup Generators4Sub
+
+@Subsection IsWithin
+@BeginGroup IsWithin4Sub
+@GroupTitle IsWithin
+@EndGroup IsWithin4Sub
+
+@Subsection NextSocle
+@BeginGroup NextSocle
+@GroupTitle NextSocle
+@EndGroup NextSocle
+
+@Subsection GensNextSocle
+@BeginGroup GensNextSocle
+@GroupTitle GensNextSocle
+@EndGroup GensNextSocle
+
+@Subsection SocleLengthTwoQuotient
+@BeginGroup SocleLengthTwoQuotient
+@GroupTitle SocleLengthTwoQuotient
+@EndGroup SocleLengthTwoQuotient
+
+@Subsection TwoFactorQuotientsContaining
+@BeginGroup TwoFactorQuotientsContaining
+@GroupTitle TwoFactorQuotientsContaining
+@EndGroup TwoFactorQuotientsContaining
+
+
+@Section Operations on subquotients
+
+In the following, <A>T</A> is a subquotient.
+
+@Subsection AmbientQuotient
+@BeginGroup AmbientQuotient4SQ
+@GroupTitle AmbientQuotient
+@EndGroup AmbientQuotient4SQ
+
+@Subsection Generators
+@BeginGroup Generators4SQ
+@GroupTitle Generators
+@EndGroup Generators4SQ
+
+@Subsection IsWithin
+@BeginGroup IsWithin4SQ
+@GroupTitle IsWithin
+@EndGroup IsWithin4SQ
+
+@Subsection NextSocle
+@BeginGroup NextSocle4SQ
+@GroupTitle NextSocle
+@EndGroup NextSocle4SQ
+
+
 
 
 @Chapter Weights and Characters
@@ -179,7 +369,6 @@ quotients, or subquotients.
 
 
 @Chapter Schur Algebras
-
 The decomposition numbers for the algebraic group $SL_n$ of type
 $A_{n−1}$ determine the decomposition numbers for the corresponding
 Schur algebras, and thus also determine the decomposition numbers for

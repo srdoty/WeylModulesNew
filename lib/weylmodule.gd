@@ -44,73 +44,71 @@ DeclareOperation( "WeylModule", [IsPosInt, IsList, IsString, IsPosInt] );
 DeclareOperation( "WeylModule", [IsWeylModule,IsList] );
 
 
-#! @ChapterInfo Weyl modules, Common operations
+#! @ChapterInfo Weyl modules, Operations common to all four types
 #! @Arguments V
-#! @Group Common operations
+#! @Group BasisVecs
 DeclareOperation( "BasisVecs", [IsWeylModule]);
 
-#! @ChapterInfo Weyl modules, Common operations
+#! @ChapterInfo Weyl modules, Operations common to all four types
 #! @Arguments V
-#! @Group Common operations
+#! @Group Character
 DeclareAttribute( "Character", IsWeylModule );
 
-#! @ChapterInfo Weyl modules, Common operations
+#! @ChapterInfo Weyl modules, Operations common to all four types
 #! @Arguments V
-#! @Group Common operations
+#! @Group DecompositionNumbers
 DeclareAttribute("DecompositionNumbers", IsWeylModule );
 
-#! @ChapterInfo Weyl modules, Common operations
+#! @ChapterInfo Weyl modules, Operations common to all four types
 #! @Arguments V
-#! @Group Common operations
+#! @Group Dim
 DeclareAttribute( "Dim", IsWeylModule );
 
-#! @ChapterInfo Weyl modules, Common operations
+#! @ChapterInfo Weyl modules, Operations common to all four types
 #! @Arguments V
-#! @Group Common operations
+#! @Group DominantWeights
 DeclareAttribute( "DominantWeights", IsWeylModule );
 
-#! @ChapterInfo Weyl modules, Common operations
+#! @ChapterInfo Weyl modules, Operations common to all four types
 #! @Arguments V
-#! @Group Common operations
+#! @Group DominantWeightSpaces
 DeclareAttribute( "DominantWeightSpaces", IsWeylModule );
 
-#! @ChapterInfo Weyl modules, Common operations
+#! @ChapterInfo Weyl modules, Operations on Weyl modules and their quotients
 #! @Arguments V
-#! @Group Common operations
+#! @Group Generator
 DeclareOperation( "Generator", [IsWeylModule]);
 
-#! @ChapterInfo Weyl modules, Common operations
+#! @ChapterInfo Weyl modules, Operations common to all four types
 #! @Arguments V
-#! @Group Common operations
+#! @Group Weights
 DeclareAttribute( "Weights", IsWeylModule );
 
-#! @ChapterInfo Weyl modules, Common operations
+#! @ChapterInfo Weyl modules, Operations common to all four types
 #! @Arguments V,wt
-#! @Group Common operations
+#! @Group WeightSpace
 DeclareOperation( "WeightSpace", [IsWeylModule,IsList]);
 
-#! @ChapterInfo Weyl modules, Common operations
+#! @ChapterInfo Weyl modules, Operations common to all four types
 #! @Arguments V
-#! @Group Common operations
+#! @Group WeightSpaces
 DeclareAttribute( "WeightSpaces", IsWeylModule );
 
-
+#! @ChapterInfo Weyl modules, Operations on Weyl modules and their quotients
+#! @Arguments V,u,v
+#! @Group ActOn
 DeclareOperation("ActOn", 
      [IsWeylModule, IsUEALatticeElement, IsLeftAlgebraModuleElement]);
 
 
-#! @ChapterInfo Weyl modules, Common operations
+#! @ChapterInfo Weyl modules, Operations common to all four types
 #! @Arguments V
-#! @Group Common operations
+#! @Group TheCharacteristic
 DeclareOperation( "TheCharacteristic", [IsWeylModule]); 
 
-#! @ChapterInfo Weyl modules, Common operations
-#! @Description In all the above commands, <A>V</A> is a given Weyl module, 
-#! quotient, submodule, or subquotient 
-#! (see <Ref Sect="Section_Constructors"/>)
-#! and <A>wt</A> is a weight.
+#! @ChapterInfo Weyl modules, Operations common to all four types
 #! @Arguments V
-#! @Group Common operations
+#! @Group TheLieAlgebra
 DeclareAttribute( "TheLieAlgebra",  IsWeylModule );
 
 
@@ -125,63 +123,65 @@ DeclareOperation( "SimpleLieAlgGens", [IsWeylModule]);
 # The following operation is not documented at this time
 DeclareOperation( "IsMaximalVector", [IsWeylModule,IsLeftAlgebraModuleElement]);
 
-#! @ChapterInfo Weyl modules, Common operations
+#! @ChapterInfo Weyl modules, Three types
 #! @Arguments V,wt
-#! @Group three types
+#! @Group MaximalVectors
 DeclareOperation( "MaximalVectors", [IsWeylModule,IsList]);
 
-#! @ChapterInfo Weyl modules, Common operations
+#! @ChapterInfo Weyl modules, Three types
 #! @Arguments V
-#! @Group three types
+#! @Group MaximalVectors
 DeclareAttribute( "MaximalVectors", IsWeylModule );
 
-#! @ChapterInfo Weyl modules, Common operations
+#! @ChapterInfo Weyl modules, Three types
 #! @Arguments V
-#! @Group three types
+#! @Group IsAmbiguous
 DeclareAttribute( "IsAmbiguous",  IsWeylModule );
 
-#! @ChapterInfo Weyl modules, Common operations
+#! @ChapterInfo Weyl modules, Three types
 #! @Description Here <A>V</A> is a given Weyl module, submodule, or quotient 
 #! and <A>wt</A> is a given weight. The module is ambiguous if it has two or 
 #! more linearly independent maximal vectors of the same weight. The function 
 #! `AmbiguousMaxVecs` lists a basis for the subspace of ambiguous maximal 
 #! vectors. 
 #! @Arguments V
-#! @Group three types
+#! @Group AmbiguousMaxVecs
 DeclareAttribute( "AmbiguousMaxVecs", IsWeylModule );
 
-#! @ChapterInfo Weyl modules, Common operations
+#! @ChapterInfo Weyl modules, Operations on Weyl modules and their quotients
 #! @Description Here <A>V</A> is a given Weyl module or quotient Weyl module.
 #! `SocleSeries` returns the socle series of <A>V</A>, as a list of submodules
 #! of <A>V</A>.
 #! @Arguments V
-#! @Group two types
+#! @Group SocleSeries
 DeclareAttribute("SocleSeries", IsWeylModule );
 
-#! @ChapterInfo Weyl modules, Common operations
+#! @ChapterInfo Weyl modules, Operations on Weyl modules and their quotients
 #! @Description `GensSocleLayers` returns a list of lists, such that
 #! the $i$th list gives a list of generators of the $i$th socle.
 #! @Arguments V
-#! @Group two types
+#! @Group GensSocleLayers
 DeclareAttribute("GensSocleLayers", IsWeylModule );
 
-#! @ChapterInfo Weyl modules, Common operations
+#! @ChapterInfo Weyl modules, Operations on Weyl modules and their quotients
 #! @Description `PrintSocleLayers` prints the weights of the generators
 #! of the socle layers corresponding to the output of the previous command.
 #! @Arguments V
-#! @Group two types
+#! @Group PrintSocleLayers
 DeclareOperation("PrintSocleLayers", [IsWeylModule] );
 
 
 
-#! @ChapterInfo Weyl modules, Unique operations
+#! @ChapterInfo Weyl modules, Operations on Weyl modules
 #! @Arguments V
+#! @Group MaximalSubmodule
 #! @Returns The unique maximal submodule of the Weyl module <A>V</A>.
 DeclareAttribute("MaximalSubmodule", IsWeylModule );
 
 
-#! @ChapterInfo Weyl modules, Unique operations
+#! @ChapterInfo Weyl modules, Operations on Weyl modules
 #! @Arguments V
+#! @Group SimpleQuotient
 #! @Returns The simple quotient by the unique maximal submodule of 
 #! the Weyl module <A>V</A>.
 DeclareAttribute("SimpleQuotient", IsWeylModule );
