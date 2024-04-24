@@ -83,9 +83,10 @@ modules.
 
 @Section Constructors
 @SectionLabel Constructors
+
 Here we consider functions that create Weyl modules, quotients of Weyl
 modules, submodules of Weyl modules, and submodules of quotient Weyl
-modules. 
+modules (subquotients). 
 
 @Subsection Weyl modules
 @BeginGroup WeylModule
@@ -109,7 +110,7 @@ modules.
 
 
 @Section Filters
-The following filters can be used to query whether or not the object $V$
+The following filters can be used to query whether or not an object
 has the indicated type. 
 
 @Subsection IsWeylModule
@@ -133,6 +134,7 @@ has the indicated type.
 @EndGroup IsSubQuotientWeylModule
 
 @Section Operations common to all four types
+@SectionLabel 4types
 
 This section documents operations and attributes that can be applied
 to Weyl modules, quotients, submodules, and subquotients. In the
@@ -140,6 +142,26 @@ following, <A>V</A> is a Weyl module, <A>Q</A> is a quotient, <A>S</A>
 is a submodule, and <A>T</A> is a subquotient. Section <Ref
 Sect="Section_Constructors"/> documents the constructors for these
 objects. Furthermore, <A>wt</A> is a weight.
+
+In all the examples in this section, we take <A>V</A>, <A>S</A>,
+<A>Q</A>, and <A>T</A> to be as follows.
+@BeginExampleSession
+gap> V:=WeylModule(V,[4,0]);
+V[ 4, 0 ]
+gap> Dim(V);
+15
+gap> m:= MaximalVectors(V);
+[ 1*v0, y1*v0 ]
+gap> S:= SubWeylModule(V,m[2]);
+9-dimensional submod of V[ 4, 0 ]
+gap> Q:= QuotientWeylModule(S);
+6-dimensional quotient of V[ 4, 0 ]
+gap> mm:= MaximalVectors(Q);
+[ 1*v0, y1^(2)*v0 ]
+gap> T:= SubWeylModule(Q, mm[2]);
+3-dimensional submod of 6-dimensional quotient of V[ 4, 0 ]
+@EndExampleSession
+
 
 @Subsection BasisVecs 
 @BeginGroup BasisVecs
@@ -250,12 +272,17 @@ Weyl module.
 @GroupTitle SocleSeries
 @EndGroup SocleSeries
 
+@Subsection SocleWeyl
+@BeginGroup SocleWeyl
+@GroupTitle SocleWeyl
+@EndGroup SocleWeyl
+
 
 @Section Operations on Weyl modules
 
-This section documents the operations that can only be applied to an
-existing Weyl module <A>V</A>. These operations are not available for
-submodules, quotients, or subquotients.
+This section documents additional operations that can be applied to an
+existing Weyl module <A>V</A>.
+
 
 @Subsection MaximalSubmodule
 @BeginGroup MaximalSubmodule
@@ -267,11 +294,6 @@ submodules, quotients, or subquotients.
 @GroupTitle SimpleQuotient
 @EndGroup SimpleQuotient
 
-
-@Subsection SocleWeyl
-@BeginGroup SocleWeyl
-@GroupTitle SocleWeyl
-@EndGroup SocleWeyl
 
 
 @Section Operations on quotients
@@ -288,10 +310,6 @@ In the following, <A>Q</A> is a quotient Weyl module.
 @GroupTitle DefiningKernel
 @EndGroup DefiningKernel
 
-@Subsection SocleWeyl
-@BeginGroup SocleWeyl4Q
-@GroupTitle SocleWeyl
-@EndGroup SocleWeyl4Q
 
 
 @Section Operations on submodules
@@ -362,10 +380,22 @@ In the following, <A>T</A> is a subquotient.
 
 
 @Chapter Weights and Characters
+This chapter documents additional functions available for computation of
+weights and characters.
 
 @Section Weights
 
 @Section Characters
+
+We have already seen a function `Character` in the preceding chapter,
+that computes the (formal) character of a given Weyl module, quotient,
+submodule, or subquotient. We now consider some additional functions
+for computing characters.
+
+
+@BeginGroup SimpleCharacter
+@GroupTitle SimpleCharacter
+@EndGroup SimpleCharacter
 
 
 @Chapter Schur Algebras

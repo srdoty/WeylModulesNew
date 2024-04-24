@@ -76,22 +76,23 @@ DeclareOperation( "DifferenceCharacter", [IsList,IsList]);
 DeclareOperation("ProductCharacter", [IsList,IsList]);
 
 #! @ChapterInfo Weights and Characters, Characters
+#! @Group SimpleCharacter
 #! @Returns a list (a character)
 #! @Arguments p,wt,typ,rk
 #! @Description
-#! This computes the simple character of highest weight <A>wt</A> in 
+#! The first form computes the simple character of highest weight <A>wt</A> in 
 #! characteristic <A>p</A>. The arguments <A>typ</A> and <A>rk</A> specify
-#! the type and rank of the underlying root system. (See the following
-#! for a variant of this function.)
+#! the type and rank of the underlying root system. 
 DeclareOperation( "SimpleCharacter", [IsPosInt, IsList, IsString, IsPosInt] );
 
 #! @ChapterInfo Weights and Characters, Characters
+#! @Group SimpleCharacter
 #! @Returns a list (a character)
 #! @Arguments V,wt
 #! @Description
-#! If <A>V</A> is a given
-#! Weyl module of highest weight <A>wt</A> 
-#! then this function returns the character of its unique top
-#! composition factor (that is, the character of the quotient by the unique
+#! If <A>V</A> is a given Weyl module of highest weight <A>wt</A> 
+#! then the second form of this function returns the character of 
+#! its unique top composition factor 
+#! (that is, the character of the quotient by the unique
 #! maximal submodule).
 DeclareOperation( "SimpleCharacter", [IsWeylModule, IsList] );

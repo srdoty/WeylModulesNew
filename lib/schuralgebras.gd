@@ -39,7 +39,10 @@ DeclareOperation("SchurAlgebraWeylModule", [IsInt, IsList]);
 #! @Arguments p,n,r
 #! @Description
 #! Returns the decomposition matrix for the Schur algebra $S(n,r)$ in
-#! characteristc <A>p</A>. Rows and columns are indexed by WHAT?????
+#! characteristc <A>p</A>. 
+#! The rows and columns of the matrix are indexed by the partitions 
+#! produced by `BoundedPartitions(n,r)` ordered the same as in the
+#! output of that function.
 DeclareOperation("SchurAlgebraDecompositionMatrix", [IsInt, IsInt, IsInt]);
 
 #! @ChapterInfo Schur Algebras, Decomposition matrices
@@ -52,9 +55,14 @@ DeclareOperation("SymmetricGroupDecompositionNumbers", [IsInt, IsList]);
 
 #! @ChapterInfo Schur Algebras, Decomposition matrices
 #! @Returns a matrix
-#! @Arguments p,r
+#! @Arguments p,n
 #! @Description
 #! Returns the decomposition matrix for the symmetric group 
-#! on <A>r</A> letters in
-#! characteristc <A>p</A>. Rows and columns are indexed by WHAT?????
+#! on <A>n</A> letters in characteristc <A>p</A>.
+#! The rows of the matrix are labeled by the partitions of <A>n</A> 
+#! in the order produced by `AllPartitions(n)`, and the columns are 
+#! labeled by the <A>p</A>-restricted partitions of <A>n</A>.
+#! NOTE. 
+#! &GAP; has a built-in `Partitions` function that also gives all 
+#! the partitions of <A>n</A>, but the ordering is different. 
 DeclareOperation("SymmetricGroupDecompositionMatrix", [IsInt, IsInt]);

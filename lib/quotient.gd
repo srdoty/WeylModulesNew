@@ -6,7 +6,6 @@
 ##
 #############################################################################
 
-
 #! @ChapterInfo Weyl_modules, Filters
 #! @Group IsQuotientWeylModule
 #! @Arguments V
@@ -20,7 +19,13 @@ DeclareCategory( "IsQuotientWeylModule",
 #! @Description
 #! Constructs the quotient module $V/S$ corresponding to the given 
 #! submodule <A>S</A>.  Here <K>V</K> is the ambient Weyl module of the 
-#! given <A>S</A>. 
+#! given submodule <A>S</A>. 
+#! @BeginExampleSession
+#! gap> W:= WeylModule(2,[2,0],"A",2);
+#! V[ 2, 0 ]
+#! gap> Q:= QuotientWeylModule(SocleWeyl(W));
+#! 3-dimensional quotient of V[ 2, 0 ]
+#! @EndExampleSession
 #! Quotient Weyl modules are attribute-storing objects.
 DeclareOperation( "QuotientWeylModule", [IsSubWeylModule] );
 
