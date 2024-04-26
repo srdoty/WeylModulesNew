@@ -9,6 +9,7 @@
 
 
 #! @ChapterInfo Schur Algebras, Partitions
+#! @Group CompositionToWeight
 #! @Returns a list (a weight)
 #! @Arguments mu
 #! @Description
@@ -17,6 +18,7 @@
 DeclareOperation("CompositionToWeight", [IsList]);
 
 #! @ChapterInfo Schur Algebras, Partitions
+#! @Group WeightToComposition
 #! @Returns a list (a composition)
 #! @Arguments r,wt
 #! @Description
@@ -27,6 +29,7 @@ DeclareOperation("WeightToComposition", [IsInt, IsList]);
 
 
 #! @ChapterInfo Schur Algebras, Partitions
+#! @Group AllPartitions
 #! @Returns a list of partitions
 #! @Arguments n
 #! @Description
@@ -34,6 +37,7 @@ DeclareOperation("WeightToComposition", [IsInt, IsList]);
 DeclareOperation("AllPartitions", [IsInt]);
 
 #! @ChapterInfo Schur Algebras, Partitions
+#! @Group Conjugate
 #! @Returns a list (a partition)
 #! @Arguments ptn
 #! @Description
@@ -42,6 +46,7 @@ DeclareOperation("Conjugate", [IsList]);
 
 
 #! @ChapterInfo Schur Algebras, Partitions
+#! @Group BoundedPartitions
 #! @Returns a list of partitions
 #! @Arguments n,r,s
 #! @Description
@@ -50,15 +55,19 @@ DeclareOperation("Conjugate", [IsList]);
 DeclareOperation("BoundedPartitions", [IsInt, IsInt, IsInt]);
 
 #! @ChapterInfo Schur Algebras, Partitions
+#! @Group BoundedPartitions
 #! @Returns a list of partitions
 #! @Arguments n,r
 #! @Description
-#! Returns a list of <A>n</A> part partitions of degree <A>r</A>. 
-#! `BoundedPartitions(n,r)` is equivalent to `BoundedPartitions(n,r,r)`.
+#! The second form returns a list of <A>n</A> part partitions of 
+#! degree <A>r</A>. 
+#! Note that `BoundedPartitions(n,r)` is equivalent 
+#! to `BoundedPartitions(n,r,r)`.
 DeclareOperation("BoundedPartitions", [IsInt, IsInt]);
 
 
 #! @ChapterInfo Schur Algebras, Partitions
+#! @Group pRestricted
 #! @Returns true or false
 #! @Arguments p,ptn
 #! @Description
@@ -67,6 +76,7 @@ DeclareOperation("BoundedPartitions", [IsInt, IsInt]);
 DeclareOperation("pRestricted", [IsPosInt, IsList]);
 
 #! @ChapterInfo Schur Algebras, Partitions
+#! @Group pRegular
 #! @Returns true or false
 #! @Arguments p,ptn
 #! @Description
@@ -76,6 +86,7 @@ DeclareOperation("pRegular", [IsPosInt, IsList]);
 
 
 #! @ChapterInfo Schur Algebras, Partitions
+#! @Group pRestrictedPartitions
 #! @Returns a list
 #! @Arguments p,n
 #! @Description
@@ -83,6 +94,7 @@ DeclareOperation("pRegular", [IsPosInt, IsList]);
 DeclareOperation("pRestrictedPartitions", [IsInt, IsInt]);
 
 #! @ChapterInfo Schur Algebras, Partitions
+#! @Group pRegularPartitions
 #! @Returns a list
 #! @Arguments p,n
 #! @Description
@@ -90,6 +102,7 @@ DeclareOperation("pRestrictedPartitions", [IsInt, IsInt]);
 DeclareOperation("pRegularPartitions", [IsPosInt, IsPosInt]);
 
 #! @ChapterInfo Schur Algebras, Partitions
+#! @Group Mullineux
 #! @Returns a list
 #! @Arguments p,mu
 #! @Description

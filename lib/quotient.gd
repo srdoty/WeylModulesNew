@@ -35,7 +35,14 @@ DeclareOperation( "QuotientWeylModule", [IsSubWeylModule] );
 #! @Group Ambient4Q
 #! @Description
 #! This returns the ambient Weyl module <K>V</K> corresponding to the given 
-#! quotient <A>Q</A>.  
+#! quotient <A>Q</A>. 
+#! 
+#! In the following example, we assume that <A>Q</A> is the same as the
+#! quotient module defined in the preceding example.
+#! @BeginExampleSession
+#! gap> AmbientWeylModule(Q);
+#! V[ 3, 0 ]
+#! @EndExampleSession
 DeclareOperation( "AmbientWeylModule", [IsQuotientWeylModule]);
 
 #! @ChapterInfo Weyl_modules, Operations on quotients
@@ -47,6 +54,13 @@ DeclareOperation( "AmbientWeylModule", [IsQuotientWeylModule]);
 #! quotient <A>Q</A>. In other words, it returns the submodule <K>S</K>
 #! such that $Q$ is isomorphic to $V/S$, where <K>V</K> is the ambient 
 #! Weyl module.
+#! 
+#! In the following example, we assume that <A>Q</A> is the same as the
+#! quotient module in the preceding example.
+#! @BeginExampleSession
+#! gap> DefiningKernel(Q);
+#! 7-dimensional submod of V[ 3, 0 ]
+#! @EndExampleSession
 DeclareOperation( "DefiningKernel", [IsQuotientWeylModule]);
 
 #! @ChapterInfo Weyl modules, Operations on Weyl modules and their quotients

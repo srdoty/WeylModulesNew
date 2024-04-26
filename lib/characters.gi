@@ -265,12 +265,5 @@ function(p, wt, t, r)
  fi;
 end);
 
-#############################################################################
-InstallMethod(SimpleCharacter, 
-"for a WeylModule <V> and a highest weight <wt>",
-true, [IsWeylModule, IsList], 0, 
-function(V, wt)
- # Returns the simple char of h.w. <wt> of the same type as V  
- return SimpleCharacter(V!.prime, wt, V!.type, V!.rank);
-end );
+
 

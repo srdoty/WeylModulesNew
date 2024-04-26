@@ -6,8 +6,8 @@
 ##
 #############################################################################
 
-
 #! @ChapterInfo Schur Algebras, Constructor
+#! @Group IsSchurAlgebraWeylModule
 #! @Returns true or false
 #! @Arguments V
 #! @Description
@@ -16,6 +16,7 @@
 DeclareCategory("IsSchurAlgebraWeylModule", IsWeylModule );
 
 #! @ChapterInfo Schur Algebras, Constructor
+#! @Group SchurAlgebraWeylModule
 #! @Returns a Weyl module
 #! @Arguments p,ptn
 #! @Description
@@ -24,6 +25,8 @@ DeclareCategory("IsSchurAlgebraWeylModule", IsWeylModule );
 #! which may be padded by zeros as necessary, defines the underlying $GL_n$
 #! and the Schur algebra degree.
 DeclareOperation("SchurAlgebraWeylModule", [IsInt, IsList]);
+
+
 
 ###########################################################################
 #note - the following operation has ALREADY been declared, so no need 
@@ -35,6 +38,7 @@ DeclareOperation("SchurAlgebraWeylModule", [IsInt, IsList]);
 ###########################################################################
 
 #! @ChapterInfo Schur Algebras, Decomposition matrices
+#! @Group SchurAlgebraDecompositionMatrix
 #! @Returns a matrix
 #! @Arguments p,n,r
 #! @Description
@@ -46,6 +50,7 @@ DeclareOperation("SchurAlgebraWeylModule", [IsInt, IsList]);
 DeclareOperation("SchurAlgebraDecompositionMatrix", [IsInt, IsInt, IsInt]);
 
 #! @ChapterInfo Schur Algebras, Decomposition matrices
+#! @Group SymmetricGroupDecompositionNumbers
 #! @Returns a list
 #! @Arguments p,ptn
 #! @Description
@@ -54,6 +59,7 @@ DeclareOperation("SchurAlgebraDecompositionMatrix", [IsInt, IsInt, IsInt]);
 DeclareOperation("SymmetricGroupDecompositionNumbers", [IsInt, IsList]);
 
 #! @ChapterInfo Schur Algebras, Decomposition matrices
+#! @Group SymmetricGroupDecompositionMatrix
 #! @Returns a matrix
 #! @Arguments p,n
 #! @Description

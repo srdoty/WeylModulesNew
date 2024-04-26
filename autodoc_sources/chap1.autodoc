@@ -357,9 +357,9 @@ In the following, <A>S</A> is a submodule.
 In the following, <A>T</A> is a subquotient.
 
 @Subsection AmbientQuotient
-@BeginGroup AmbientQuotient4SQ
+@BeginGroup AmbientQuotient
 @GroupTitle AmbientQuotient
-@EndGroup AmbientQuotient4SQ
+@EndGroup AmbientQuotient
 
 @Subsection Generators
 @BeginGroup Generators4SQ
@@ -387,12 +387,27 @@ weights and characters.
 
 @Section Characters
 
-We have already seen a function `Character` in the preceding chapter,
-that computes the (formal) character of a given Weyl module, quotient,
+We have already seen the function <Ref Oper="Character"/>, that
+computes the (formal) character of a given Weyl module, quotient,
 submodule, or subquotient. We now consider some additional functions
 for computing characters.
 
+@Subsection DecomposeCharacter
+@BeginGroup DecomposeCharacter
+@GroupTitle DecomposeCharacter
+@EndGroup DecomposeCharacter
 
+@Subsection DifferenceCharacter
+@BeginGroup DifferenceCharacter
+@GroupTitle DifferenceCharacter
+@EndGroup DifferenceCharacter
+
+@Subsection ProductCharacter
+@BeginGroup ProductCharacter
+@GroupTitle ProductCharacter
+@EndGroup ProductCharacter
+
+@Subsection SimpleCharacter
 @BeginGroup SimpleCharacter
 @GroupTitle SimpleCharacter
 @EndGroup SimpleCharacter
@@ -409,15 +424,100 @@ notation and partition notation, for the sake of convenience, we
 provide a few functions that perform such conversions, and various
 other functions related to Schur algebras and symmetric groups.
 
-NOTE. The functions for symmetric groups are quite slow, so readers
+NOTE. The <Ref Oper="SymmetricGroupDecompositionMatrix"/> function
+for symmetric group decomposition numbers is quite slow, so readers
 interested in symmetric group computations may want to look elsewhere
 for more effcient tools.
 
 
-@Section Constructor
+@Section Constructor and filter
+
+Weyl modules for a Schur algebra are constructed by the following. 
+
+@Subsection SchurAlgebraWeylModule
+@BeginGroup SchurAlgebraWeylModule
+@GroupTitle SchurAlgebraWeylModule
+@EndGroup SchurAlgebraWeylModule
+
+@Subsection IsSchurAlgebraWeylModule
+@BeginGroup IsSchurAlgebraWeylModule
+@GroupTitle IsSchurAlgebraWeylModule
+@EndGroup IsSchurAlgebraWeylModule
+
 
 @Section Decomposition matrices
+Decomposition matrices for Schur algebras and symmteric groups in
+positive characteristic can be computed.
+
+@Subsection SchurAlgebraDecompositionMatrix
+@BeginGroup SchurAlgebraDecompositionMatrix
+@GroupTitle SchurAlgebraDecompositionMatrix
+@EndGroup SchurAlgebraDecompositionMatrix
+
+@Subsection SymmetricGroupDecompositionNumbers
+@BeginGroup SymmetricGroupDecompositionNumbers
+@GroupTitle SymmetricGroupDecompositionNumbers
+@EndGroup SymmetricGroupDecompositionNumbers
+
+@Subsection SymmetricGroupDecompositionMatrix
+@BeginGroup SymmetricGroupDecompositionMatrix
+@GroupTitle SymmetricGroupDecompositionMatrix
+@EndGroup SymmetricGroupDecompositionMatrix
 
 @Section Partitions
 
+This section documents a number of functions for converting between
+weights and partitions, as well as other related functions.
 
+
+@Subsection CompositionToWeight
+@BeginGroup CompositionToWeight
+@GroupTitle CompositionToWeight
+@EndGroup CompositionToWeight
+
+@Subsection WeightToComposition
+@BeginGroup WeightToComposition
+@GroupTitle WeightToComposition
+@EndGroup WeightToComposition
+
+@Subsection AllPartitions
+@BeginGroup AllPartitions
+@GroupTitle AllPartitions
+@EndGroup AllPartitions
+
+
+@Subsection BoundedPartitions
+@BeginGroup BoundedPartitions
+@GroupTitle BoundedPartitions
+@EndGroup BoundedPartitions
+
+@Subsection Conjugate
+@BeginGroup Conjugate
+@GroupTitle Conjugate
+@EndGroup Conjugate
+
+
+@Subsection pRegular
+@BeginGroup pRegular
+@GroupTitle pRegular
+@EndGroup pRegular
+
+@Subsection pRegularPartitions
+@BeginGroup pRegularPartitions
+@GroupTitle pRegularPartitions
+@EndGroup pRegularPartitions
+
+@Subsection pRestricted
+@BeginGroup pRestricted
+@GroupTitle pRestricted
+@EndGroup pRestricted
+
+@Subsection pRestrictedPartitions
+@BeginGroup pRestrictedPartitions
+@GroupTitle pRestrictedPartitions
+@EndGroup pRestrictedPartitions
+
+@Subsection Mullineux
+@BeginGroup Mullineux
+@GroupTitle Mullineux
+@EndGroup Mullineux

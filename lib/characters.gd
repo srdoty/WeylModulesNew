@@ -46,6 +46,7 @@ DeclareOperation( "IsRestrictedWeight", [IsPosInt, IsList] );
 
 
 #! @ChapterInfo Weights and Characters, Characters
+#! @Group DecomposeCharacter
 #! @Returns a list (of simple highest weights and their multiplicities)
 #! @Arguments ch,p,typ,rk
 #! @Description
@@ -54,25 +55,53 @@ DeclareOperation( "IsRestrictedWeight", [IsPosInt, IsList] );
 #! obtaining the decomposition numbers of the module. Here it is necessary
 #! to specify the characteristic <A>p</A> and root system 
 #! (of type <A>typ</A> and rank <A>rk</A>) for the simple characters.
+#! For instance, this can be used to decompose tensor products.
+#! @BeginExampleSession
+#! gap> V:= WeylModule(2,[2,0],"A",2);
+#! V[ 2, 0 ]
+#! gap> ch:= ProductCharacter(Character(V),Character(V));
+#! [ [ 4, 0 ], 1, [ 2, 1 ], 2, [ 3, -1 ], 2, [ 0, 2 ], 3, [ 1, 0 ], 4, 
+#!   [ 2, -2 ], 3, [ -2, 3 ], 2, [ -1, 1 ], 4, [ 0, -1 ], 4, [ 1, -3 ], 2, 
+#!   [ -4, 4 ], 1, [ -3, 2 ], 2, [ -2, 0 ], 3, [ -1, -2 ], 2, [ 0, -4 ], 1 ]
+#! gap> DecomposeCharacter(ch,2,"A",2);
+#! [ [ 4, 0 ], 1, [ 2, 1 ], 2, [ 0, 2 ], 3, [ 1, 0 ], 2 ]
+#! @EndExampleSession
 DeclareOperation("DecomposeCharacter", [IsList, IsPosInt,
     IsString, IsPosInt]);
 
 #! @ChapterInfo Weights and Characters, Characters
+#! @Group DifferenceCharacter
 #! @Returns a list (a character)
 #! @Arguments ch1,ch2
 #! @Description
 #! If <A>ch1</A> and <A>ch2</A> are given characters, this function 
 #! returns their formal difference character. It is used in the 
 #! definition of the `DecomposeCharacter` function.
+#! @BeginExampleSession
+#! gap> DifferenceCharacter(Character(V),Character(V));
+#! [  ]
+#! @EndExampleSession
+#! The empty list here implements the zero character.
 DeclareOperation( "DifferenceCharacter", [IsList,IsList]);
 
 #! @ChapterInfo Weights and Characters, Characters
+#! @Group ProductCharacter
 #! @Returns a list (a character)
 #! @Arguments ch1,ch2
 #! @Description
 #! Returns the product character of its inputs  <A>ch1</A> and <A>ch2</A>. 
 #! If <A>ch1</A> and <A>ch2</A> are characters of modules then the output
 #! of this function is the character of the tensor product of the modules.
+#! @BeginExampleSession
+#! gap> V:= WeylModule(2,[2,0],"A",2);
+#! V[ 2, 0 ]
+#! gap> ch:= ProductCharacter(Character(V),Character(V));
+#! [ [ 4, 0 ], 1, [ 2, 1 ], 2, [ 3, -1 ], 2, [ 0, 2 ], 3, [ 1, 0 ], 4, 
+#!   [ 2, -2 ], 3, [ -2, 3 ], 2, [ -1, 1 ], 4, [ 0, -1 ], 4, [ 1, -3 ], 2, 
+#!   [ -4, 4 ], 1, [ -3, 2 ], 2, [ -2, 0 ], 3, [ -1, -2 ], 2, [ 0, -4 ], 1 ]
+#! @EndExampleSession
+#! By applying the function <Ref Oper="DecomposeCharacter"/> we can 
+#! decompose tensor products in positive characteristic.
 DeclareOperation("ProductCharacter", [IsList,IsList]);
 
 #! @ChapterInfo Weights and Characters, Characters
@@ -80,19 +109,21 @@ DeclareOperation("ProductCharacter", [IsList,IsList]);
 #! @Returns a list (a character)
 #! @Arguments p,wt,typ,rk
 #! @Description
-#! The first form computes the simple character of highest weight <A>wt</A> in 
+#! Computes the simple character of highest weight <A>wt</A> in 
 #! characteristic <A>p</A>. The arguments <A>typ</A> and <A>rk</A> specify
-#! the type and rank of the underlying root system. 
+#! the type and rank of the underlying root system. The function uses
+#! Steinberg's tensor product theorem. 
+#! @BeginExampleSession
+#! gap> SimpleCharacter(2,[2,0],"A",2);
+#! [ [ 2, 0 ], 1, [ -2, 2 ], 1, [ 0, -2 ], 1 ]
+#! @EndExampleSession
+#! Another way to compute the same result is to compute the `Character`
+#! of the output of `SimpleQuotient(V)`, where `V` is the WeylModule in
+#! the same characteristic and root system with the same highest weight.
+#! @BeginExampleSession
+#! gap> V:= WeylModule(2,[2,0],"A",2);
+#! gap> Character(SimpleQuotient(V));
+#! [ [ 2, 0 ], 1, [ -2, 2 ], 1, [ 0, -2 ], 1 ]
+#! @EndExampleSession
 DeclareOperation( "SimpleCharacter", [IsPosInt, IsList, IsString, IsPosInt] );
 
-#! @ChapterInfo Weights and Characters, Characters
-#! @Group SimpleCharacter
-#! @Returns a list (a character)
-#! @Arguments V,wt
-#! @Description
-#! If <A>V</A> is a given Weyl module of highest weight <A>wt</A> 
-#! then the second form of this function returns the character of 
-#! its unique top composition factor 
-#! (that is, the character of the quotient by the unique
-#! maximal submodule).
-DeclareOperation( "SimpleCharacter", [IsWeylModule, IsList] );

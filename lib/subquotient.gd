@@ -19,8 +19,18 @@ DeclareCategory( "IsSubQuotientWeylModule",
 #! @Arguments T,v
 #! @Returns true or false
 #! @Description 
-#! This returns <K>true</K> if and only if the given vector <A>v</A> lies in 
-#! the given subquotient <A>T</A>.
+#! This returns <K>true</K> if and only if the image of the given 
+#! vector <A>v</A> 
+#! (under the quotient map from the ambient Weyl module to 
+#! the ambient quotient) lies in the given subquotient <A>T</A>. 
+#! In the next example, we assume that `subQ`, `Q`, and `m` are 
+#! as defined in the example for <Ref Oper="AmbientQuotient"/> above.
+#! @BeginExampleSession
+#! gap> IsWithin(subQ,m[2]);
+#! true
+#! gap> IsWithin(subQ, Generator(Q));
+#! false
+#! @EndExampleSession
 DeclareOperation( "IsWithin", 
             [IsSubQuotientWeylModule,IsLeftAlgebraModuleElement]);
 
@@ -89,6 +99,13 @@ DeclareOperation("SubWeylModuleDirectSum", [IsQuotientWeylModule,IsList]);
 #! @Returns a list
 #! @Description 
 #! This returns a list of generators for the given subquotient <A>T</A>.
+#! In the next example, we assume that `subQ` is the subquotient constructed
+#! in the example for the <Ref Oper="AmbientQuotient"/> command, documented 
+#! above.
+#! @BeginExampleSession
+#! gap> Generators(subQ);
+#! [ y4*v0 ]
+#! @EndExampleSession
 DeclareOperation("Generators", [IsSubQuotientWeylModule]);
 
 #! @ChapterInfo Weyl modules, Operations common to all four types
@@ -115,12 +132,25 @@ DeclareOperation("BasisVecs", [IsSubQuotientWeylModule]);
 DeclareAttribute("Dim", IsSubQuotientWeylModule );
 
 #! @ChapterInfo Weyl_modules, Operations on subquotients
-#! @Group AmbientQuotient4SQ
+#! @Group AmbientQuotient
 #! @Returns a QuotientWeylModule
 #! @Arguments T
 #! @Description
-#! This function returns the ambient quotient Weyl module containing the given
-#! subquotient <A>S</A>.
+#! This function returns the ambient quotient Weyl module containing 
+#! the given subquotient <A>T</A>.
+#! @BeginExampleSession
+#! gap> W:= WeylModule(2,[3,0],"G",2);
+#! V[ 3, 0 ]
+#! gap> m:= AmbiguousMaxVecs(W); List(m, Weight);
+#! [ y1*y3*v0, y4*v0 ]
+#! [ [ 2, 0 ], [ 2, 0 ] ]
+#! gap> Q:= QuotientWeylModule(SubWeylModule(W,m[1]));
+#! 64-dimensional quotient of V[ 3, 0 ]
+#! gap> subQ:= SubWeylModule(Q, m[2]);
+#! 21-dimensional submod of 64-dimensional quotient of V[ 3, 0 ]
+#! gap> AmbientQuotient(subQ);
+#! 64-dimensional quotient of V[ 3, 0 ]
+#! @EndExampleSession
 DeclareOperation("AmbientQuotient", [IsSubQuotientWeylModule]);
 
 #! @ChapterInfo Weyl modules, Operations common to all four types
@@ -177,6 +207,18 @@ DeclareAttribute("SocleWeyl", IsQuotientWeylModule );
 #! the given subquotient <A>S</A> such that $T/S$ is semisimple. 
 #! If <A>S</A> happens to be an element of the socle series then the 
 #! function returns the next element in the socle series.
+#!
+#! In the next example, we assume that `subQ` is the subquotient constructed
+#! in the example for the <Ref Oper="AmbientQuotient"/> command, documented 
+#! above.
+#! @BeginExampleSession
+#! gap> DecompositionNumbers(subQ);
+#! [ [ 2, 0 ], 1, [ 0, 1 ], 1, [ 0, 0 ], 1 ]
+#! gap> N:= NextSocle(subQ);
+#! 22-dimensional submod of 64-dimensional quotient of V[ 3, 0 ]
+#! gap> DecompositionNumbers(N);
+#! [ [ 2, 0 ], 1, [ 0, 1 ], 1, [ 0, 0 ], 2 ]
+#! @EndExampleSession
 DeclareOperation("NextSocle", [IsSubQuotientWeylModule]);
 
 #! @ChapterInfo Weyl modules, Operations common to all four types
