@@ -180,7 +180,7 @@ function(e,pa)
   local r,newr,prim,newpa,row,i;
   #applies the e-Mullineux map to pa
   if pRegular(e,pa) =false then
-       Print("e-singular!\n");
+       Print("p-singular!\n");
   elif pa=[] or e=2 then
        return pa;
   else

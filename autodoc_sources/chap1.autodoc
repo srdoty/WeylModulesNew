@@ -467,7 +467,7 @@ positive characteristic can be computed.
 @Section Partitions
 
 This section documents a number of functions for converting between
-weights and partitions, as well as other related functions.
+weights and partitions (in type A) as well as other related functions.
 
 
 @Subsection CompositionToWeight
