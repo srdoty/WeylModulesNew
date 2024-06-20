@@ -11,7 +11,7 @@ SetPackageInfo( rec(
 PackageName := "WeylModules",
 Subtitle := "for simple simply-connected algebraic groups",
 Version := "2.1",
-Date := "20/06/2024", # dd/mm/yyyy format
+Date := "21/06/2024", # dd/mm/yyyy format
 License := "GPL-2.0-or-later",
 
 Persons := [
