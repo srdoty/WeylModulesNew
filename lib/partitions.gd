@@ -169,7 +169,7 @@ DeclareOperation("pRestrictedPartitions", [IsInt, IsInt]);
 #! in characteristic <A>p</A>.
 #! @BeginExampleSession
 #! gap> Mullineux(2,[1,1,1]);
-#! e-singular!
+#! p-singular!
 #! gap> Mullineux(2,[3]);
 #! [ 3 ]
 #! gap> Mullineux(3,[3]);
