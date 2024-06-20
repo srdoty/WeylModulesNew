@@ -1,5 +1,7 @@
 @Chapter Introduction
 
+@Section Purpose
+
 This &GAP; Package supports digital computer computations with
 Weyl modules for a given simple simply-connected algebraic group $G$
 in positive characteristic $p$. Actually the group $G$ itself never
@@ -42,20 +44,38 @@ which are maximal. This exploits the pleasant fact that for Weyl
 modules of small dimension, the weight spaces tend to be small enough
 to be manageable.
 
-Versions 1.0 and 1.1 of this package were released in 2009. Their
-initial development was spurred by work on the paper <Cite
-Key="BDM"/>.  The discovery of the first counterexample to Donkin's
-tilting module conjecture, by Bendel, Nakano, Pillen, and Sobaje <Cite
-Key="BNPS"/> motivated the author to make subsequent calculations that
-led to the realization that the <K>SubmoduleStructure</K> function was
-not reliable. This led to the development of Version 2.0, which
-eliminates the unreliable command and adds a number of new functions
-that extend the capabilities of the previous version.
- 
 Although most of the functions deal with the simple simply-connected
 case, there are a few functions for dealing with Schur algebras and
 symmetric groups. Those commands are limited in scope, and provided
 mainly as a convenience.
+
+
+@Section Counterexample to Donkin's conjecture
+
+In 2019, Chris Bendel, Dan Nakano, Cornelius Pillen, and
+Paul Sobaje <Cite Key="BNPS"/> found the first counterexample to
+Donkin's tilting module conjecture using this package. This
+important advance led to further development of the package.
+
+
+@Section ChangeLog
+
+The initial release was Version 1.0 in 2009. 
+
+1. Versions 1.0 and 1.1 were released in 2009. The initial development
+was spurred by work on the paper <Cite Key="BDM"/>.
+
+2. Version 2.0 was released on 29 February 2024. The
+<K>SubmoduleStructure</K> command was eliminated. Support was added
+for subquotients.
+
+3. Version 2.1 (this version) was released on 21 June 2024.  The
+documentation was completely rewritten. There is more support for
+submodules and subquotients, including the new functions:
+<K>SocleLengthTwoQuotient</K>,
+<K>TwoFactorQuotientsContaining</K>.    
+These can be used to obtain Ext information about a Weyl module. 
+
 
 
 @Chapter Weyl modules
