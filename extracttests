@@ -1,0 +1,16 @@
+#!/bin/bash
+
+awk '/#! @BeginExampleSession/{ f=1; next } /#! @EndExampleSession/{ f=0 } f' $1 > tst/uncut_examples.tst
+
+cut -c4- tst/uncut_examples.tst > tst/manual_examples.tst
+rm tst/uncut_examples.tst
+
+################################################################
+# To run this, cd into the main folder for the package and run:
+#
+# $ ./extracttests lib/<file>.gd   # create testfile
+# gap loadpackage.g
+# gap> Test("tst/manual_examples.tst");
+#
+################################################################
+

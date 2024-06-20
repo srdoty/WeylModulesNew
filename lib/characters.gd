@@ -122,6 +122,7 @@ DeclareOperation("ProductCharacter", [IsList,IsList]);
 #! the same characteristic and root system with the same highest weight.
 #! @BeginExampleSession
 #! gap> V:= WeylModule(2,[2,0],"A",2);
+#! V[ 2, 0 ]
 #! gap> Character(SimpleQuotient(V));
 #! [ [ 2, 0 ], 1, [ -2, 2 ], 1, [ 0, -2 ], 1 ]
 #! @EndExampleSession
