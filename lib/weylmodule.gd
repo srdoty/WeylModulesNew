@@ -235,6 +235,29 @@ DeclareAttribute( "WeightSpaces", IsWeylModule );
 #! @ChapterInfo Weyl modules, Operations on Weyl modules and their quotients
 #! @Arguments V,u,v
 #! @Group ActOn
+#! @Returns An element of the Weyl module or quotient 
+#! @Description This function returns the result of acting by the 
+#! hyperalgebra element <A>u</A> on the given vector <A>v</A>. 
+#! Here <A>v</A> must be an element of
+#! the given Weyl module <A>V</A> or quotient Weyl module <A>Q</A>. 
+#! The command <K>LatticeGeneratorsInUEA</K> is a pre-existing &GAP;
+#! command; see the chapter on Lie algebras in the &GAP; reference 
+#! manual for further details. The lattice generators are regarded as
+#! standard generators of the hyperalgebra for computing the action.
+#! @BeginExampleSession
+#! gap> V:= WeylModule(2, [1,0], "G", 2);
+#! V[ 1, 0 ]
+#! gap> L:= TheLieAlgebra(V);
+#! <Lie algebra of dimension 14 over Rationals>
+#! gap>  g:= LatticeGeneratorsInUEA(L);
+#! [ y1, y2, y3, y4, y5, y6, x1, x2, x3, x4, x5, x6, ( h13/1 ), ( h14/1 ) ]
+#! gap> b:= BasisVecs(V);
+#! [ 1*v0, y1*v0, y3*v0, y4*v0, y5*v0, y6*v0, y1*y6*v0 ]
+#! gap> ActOn(V, g[1]^2 + g[7], b[1]);
+#! 0*v0
+#! gap> ActOn(V, g[1]*g[6], b[1]);
+#! y1*y6*v0
+#! @EndExampleSession
 DeclareOperation("ActOn", 
      [IsWeylModule, IsUEALatticeElement, IsLeftAlgebraModuleElement]);
 

@@ -180,6 +180,18 @@ gap> V:= WeylModule(2,[3,0],"G",2);
 V[ 3, 0 ]
 gap> AmbiguousMaxVecs(V);
 [ y1*y3*v0, y4*v0 ]
+gap> V:= WeylModule(2, [1,0], "G", 2);
+V[ 1, 0 ]
+gap> L:= TheLieAlgebra(V);
+<Lie algebra of dimension 14 over Rationals>
+gap>  g:= LatticeGeneratorsInUEA(L);
+[ y1, y2, y3, y4, y5, y6, x1, x2, x3, x4, x5, x6, ( h13/1 ), ( h14/1 ) ]
+gap> b:= BasisVecs(V);
+[ 1*v0, y1*v0, y3*v0, y4*v0, y5*v0, y6*v0, y1*y6*v0 ]
+gap> ActOn(V, g[1]^2 + g[7], b[1]);
+0*v0
+gap> ActOn(V, g[1]*g[6], b[1]);
+y1*y6*v0
 gap> V:= WeylModule(2,[3,0],"G",2);
 V[ 3, 0 ]
 gap> Generator(V);
