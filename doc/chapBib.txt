@@ -14,23 +14,8 @@
   of  Lie  type.  I[117X,  [18XInst.  Hautes  \'{E}tudes  Sci.  Publ. Math.[118X, 45 (1975),
   169--191.
   
-  [[20XDS85[120X]  [16XDoty,  S.  R.  and  Sullivan, J. B.[116X, [17XThe submodule structure of Weyl
-  modules for SL_3[117X, [18XJ. Algebra[118X, [19X96[119X, 1 (1985), 78--93.
-  
-  [[20XDS87[120X]   [16XDoty,   S.   R.  and  Sullivan,  J.  B.[116X,  [17XFiltration  patterns  for
-  representations  of  algebraic groups and their Frobenius kernels[117X, [18XMath. Z.[118X,
-  [19X195[119X, 3 (1987), 391--407.
-  
-  [[20XGre07[120X]  [16XGreen, J. A.[116X, [17XPolynomial representations of GL_n[117X, Springer, Berlin,
-  augmented  edition,  Lecture  Notes in Mathematics, [19X830[119X (2007), x+161 pages,
-  ((With  an  appendix  on Schensted correspondence and Littelmann paths by K.
-  Erdmann, Green and M. Schocker)).
-  
   [[20XIrv86[120X]  [16XIrving,  R. S.[116X, [17XThe structure of certain highest weight modules for
   SL_3[117X, [18XJ. Algebra[118X, [19X99[119X, 2 (1986), 438--457.
-  
-  [[20XJam78[120X]  [16XJames,  G.  D.[116X,  [17XThe representation theory of the symmetric groups[117X,
-  Springer, Berlin, Lecture Notes in Mathematics, [19X682[119X (1978), v+156 pages.
   
   [[20XJan03[120X]  [16XJantzen,  J.  C.[116X,  [17XRepresentations  of  algebraic  groups[117X, American
   Mathematical  Society,  Providence, RI, Second edition, Mathematical Surveys

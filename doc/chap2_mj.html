@@ -18,464 +18,1141 @@
 <body class="chap2"  onload="jscontent()">
 
 
-<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chap5_mj.html">5</a>  <a href="chap6_mj.html">6</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
 
 <div class="chlinkprevnexttop">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap1_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap3_mj.html">[Next Chapter]</a>&nbsp;  </div>
 
 <p id="mathjaxlink" class="pcenter"><a href="chap2.html">[MathJax off]</a></p>
 <p><a id="X7DA94D8C7F214621" name="X7DA94D8C7F214621"></a></p>
 <div class="ChapSects"><a href="chap2_mj.html#X7DA94D8C7F214621">2 <span class="Heading">Weyl modules</span></a>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X8660D150822142AE">2.1 <span class="Heading">Creating Weyl modules</span></a>
-</span>
-</div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X78F3334C847F82C0">2.2 <span class="Heading">Creating quotient Weyl modules</span></a>
-</span>
-</div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X7D2F36F47F256415">2.3 <span class="Heading">Creating submodules</span></a>
-</span>
-</div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X7AED4BBA83011A1F">2.4 <span class="Heading">Weights and weight spaces</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X86EC0F0A78ECBC10">2.1 <span class="Heading">Constructors</span></a>
 </span>
 <div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X8484AE4E812D9263">2.4-1 <span class="Heading">Using <code class="keyw">List</code> with <code class="keyw">Weight</code></span></a>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X8559E5C5867FB091">2.1-1 <span class="Heading">WeylModule</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7893DF5B807DF77F">2.1-2 <span class="Heading">QuotientWeylModule</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X87BB881B83E8678D">2.1-3 <span class="Heading">SubWeylModule</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X870B2DE381DD2B06">2.1-4 <span class="Heading">SubQuotientWeylModule</span></a>
 </span>
 </div></div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X8579590C81A1278F">2.5 <span class="Heading">Maximal vectors</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X84EFA4C07D4277BB">2.2 <span class="Heading">Filters</span></a>
 </span>
-</div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X7AB5BE4B837528E4">2.6 <span class="Heading">Ambiguity</span></a>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7C3D6BB17AFD771C">2.2-1 <span class="Heading">IsWeylModule</span></a>
 </span>
-</div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X84F7408B7A18DB71">2.7 <span class="Heading">Basis and dimension</span></a>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X85565F29822787B3">2.2-2 <span class="Heading">IsQuotientWeylModule</span></a>
 </span>
-</div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X86807BA87E0E89CD">2.8 <span class="Heading">Miscellaneous commands</span></a>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X8605C1E3792ED051">2.2-3 <span class="Heading">IsSubWeylModule</span></a>
 </span>
-</div>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X86683ABB79EE0363">2.2-4 <span class="Heading">IsSubQuotientWeylModule</span></a>
+</span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X80A0DB15862DA0BC">2.3 <span class="Heading">Operations common to all four types</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X86F495008280EC28">2.3-1 <span class="Heading">BasisVecs</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7BF731DC84FF733A">2.3-2 <span class="Heading">Character</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X837F199C864C8E6C">2.3-3 <span class="Heading">DecompositionNumbers</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X85F55996829581A4">2.3-4 <span class="Heading">Dim</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7D8522E37ED1024A">2.3-5 <span class="Heading">DominantWeights</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7A90A9A57E545164">2.3-6 <span class="Heading">DominantWeightSpaces</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X82C5F58D8788C097">2.3-7 <span class="Heading">Weights</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X84202B3E82DC1872">2.3-8 <span class="Heading">WeightSpaces</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7B02B8F5792DE9EC">2.3-9 <span class="Heading">WeightSpace</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X877A8CC986C47534">2.3-10 <span class="Heading">TheCharacteristic</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X8472B03E8370745D">2.3-11 <span class="Heading">TheLieAlgebra</span></a>
+</span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X7EA0987D85E1974F">2.4 <span class="Heading">Operations common to Weyl modules, submodules, and quotients</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7E2F4CF283259D48">2.4-1 <span class="Heading">MaximalVectors</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X817578D179F5F3C4">2.4-2 <span class="Heading">IsAmbiguous</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7A7BCF4F781B617D">2.4-3 <span class="Heading">AmbiguousMaxVecs</span></a>
+</span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X86B8CB98847B8296">2.5 <span class="Heading">Operations on Weyl modules and their quotients</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7EA043B481E8841B">2.5-1 <span class="Heading">ActOn</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7E6A7D687C0EEF17">2.5-2 <span class="Heading">Generator</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X86C3D00A841C0587">2.5-3 <span class="Heading">GensSocleLayers</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7CD1B4CA81C711EA">2.5-4 <span class="Heading">PrintSocleLayers</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X84A724267E6F136D">2.5-5 <span class="Heading">SocleSeries</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X79C52EB184D3B8D7">2.5-6 <span class="Heading">SocleWeyl</span></a>
+</span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X851311EE81C86683">2.6 <span class="Heading">Operations on Weyl modules</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X79D8492F7B32876C">2.6-1 <span class="Heading">MaximalSubmodule</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7940ABBC78D7D4F6">2.6-2 <span class="Heading">SimpleQuotient</span></a>
+</span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X872C504F86A3EBC0">2.7 <span class="Heading">Operations on quotients</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X808DA4D1782F4884">2.7-1 <span class="Heading">AmbientWeylModule</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7A339C557FAB2FA9">2.7-2 <span class="Heading">DefiningKernel</span></a>
+</span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X7EC2B8FC855E0F64">2.8 <span class="Heading">Operations on submodules</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X808DA4D1782F4884">2.8-1 <span class="Heading">AmbientWeylModule</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7BD5B55C802805B4">2.8-2 <span class="Heading">Generators</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X796F6BF77AE2D92E">2.8-3 <span class="Heading">IsWithin</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7EAA82567AA01643">2.8-4 <span class="Heading">NextSocle</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X8745CE1C7EF10F5F">2.8-5 <span class="Heading">GensNextSocle</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7DCA6B8D82655007">2.8-6 <span class="Heading">SocleLengthTwoQuotient</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X83EA4E2B78CBF8C8">2.8-7 <span class="Heading">TwoFactorQuotientsContaining</span></a>
+</span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X8659C44E86717B4D">2.9 <span class="Heading">Operations on subquotients</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7E6D5710874F7D0B">2.9-1 <span class="Heading">AmbientQuotient</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7BD5B55C802805B4">2.9-2 <span class="Heading">Generators</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X796F6BF77AE2D92E">2.9-3 <span class="Heading">IsWithin</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7EAA82567AA01643">2.9-4 <span class="Heading">NextSocle</span></a>
+</span>
+</div></div>
 </div>
 
 <h3>2 <span class="Heading">Weyl modules</span></h3>
 
-<p>This chapter discusses the commands available for computations (in positive characteristic <span class="SimpleMath">\(p\)</span>) with Weyl modules, quotient Weyl modules, submodules of Weyl modules, and submodules of quotient Weyl modules.</p>
+<p>This chapter discusses the commands available for computations (in positive characteristic <span class="SimpleMath">\(p\)</span>) with Weyl modules, quotient Weyl modules, submodules of Weyl modules, and submodules of quotient Weyl modules. Here the underlying Lie algebra is simply-connected and simple.</p>
 
-<p>WARNING. In most cases, the dimension of space of maximal vectors of a given dominant weight is either <span class="SimpleMath">\(0\)</span> or <span class="SimpleMath">\(1\)</span>. Cases for which there exist two or more independent maximal vectors of the same weight can lead to complications, such as a lack of rigidity in the submodule structure. Such situations are relatively rare (and interesting); the smallest example known to the author occurs in Type <span class="SimpleMath">\(D_4\)</span> in the Weyl module of highest weight <span class="SimpleMath">\([0,1,0,0]\)</span>, as pointed out on page 173 of <a href="chapBib_mj.html#biBCPS">[CPS75]</a>. (I am grateful to Anton Cox for this reference.)</p>
+<p>WARNING. In most cases, the dimension of space of maximal vectors of a given dominant weight is either <span class="SimpleMath">\(0\)</span> or <span class="SimpleMath">\(1\)</span>. Cases for which there exist two or more independent maximal vectors of the same weight can lead to complications, such as a lack of rigidity in the submodule structure. Such situations are relatively rare (and interesting). An example in Type <span class="SimpleMath">\(D_4\)</span> is the Weyl module of highest weight <span class="SimpleMath">\([0,1,0,0]\)</span>, as pointed out on page 173 of <a href="chapBib_mj.html#biBCPS">[CPS75]</a>. (I am grateful to Anton Cox for this reference.)</p>
 
-<p>A Weyl module (as in the previous paragraph) with at least one weight space containing multiple (linearly independent) maximal vectors is called <em>ambiguous</em>. Extra care is needed when studying ambiguous Weyl modules.</p>
+<p>A Weyl module (as in the previous paragraph) with at least one weight space containing multiple linearly independent maximal vectors is called <em>ambiguous</em>. Extra care is needed when studying ambiguous modules.</p>
 
-<p><a id="X8660D150822142AE" name="X8660D150822142AE"></a></p>
+<p><a id="X86EC0F0A78ECBC10" name="X86EC0F0A78ECBC10"></a></p>
 
-<h4>2.1 <span class="Heading">Creating Weyl modules</span></h4>
+<h4>2.1 <span class="Heading">Constructors</span></h4>
 
-<p>There are two functions for creating a Weyl module.</p>
+<p>Here we consider functions that create Weyl modules, quotients of Weyl modules, submodules of Weyl modules, and submodules of quotient Weyl modules (subquotients).</p>
 
+<p><a id="X8559E5C5867FB091" name="X8559E5C5867FB091"></a></p>
 
-<pre class="normal">
+<h5>2.1-1 <span class="Heading">WeylModule</span></h5>
 
-WeylModule( p, wt, type, rank )
-WeylModule( V, wt )
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; WeylModule</code>( <var class="Arg">p</var>, <var class="Arg">wt</var>, <var class="Arg">t</var>, <var class="Arg">r</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; WeylModule</code>( <var class="Arg">V</var>, <var class="Arg">wt</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a WeylModule</p>
 
-</pre>
-
-<p>In both forms <var class="Arg">wt</var> is the highest weight of the Weyl module. The function with four arguments specifies the characteristic <var class="Arg">p</var>, the root system <var class="Arg">type</var> (a letter in the range A--G) and its <var class="Arg">rank</var>. In the second form, with two arguments, the function gets the characteristic and underlying root system from an existing Weyl module <var class="Arg">V</var>.</p>
+<p>The first form of the command (with four arguments) constructs a Weyl module of highest weight <var class="Arg">wt</var> in characteristic <var class="Arg">p</var> of type <var class="Arg">t</var> and rank <var class="Arg">r</var>. The second form of the command (with two arguments) constructs a Weyl module of highest weight <var class="Arg">wt</var> of the same characteristic and root system as the first parameter <var class="Arg">V</var>, which must be an existing Weyl module.</p>
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">V:= WeylModule(3, [3,4], "A", 2);</span>
-&lt;Type A2 Weyl module of highest weight [ 3, 4 ] at prime p = 3&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">W:= WeylModule(V, [3,0]);</span>
-&lt;Type A2 Weyl module of highest weight [ 3, 0 ] at prime p = 3&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">V:= WeylModule(2,[1,0],"A",2);</span>
+V[ 1, 0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">W:= WeylModule(V,[1,2]);</span>
+V[ 1, 2 ]
 </pre></div>
 
-<p>There is also a category of Weyl modules.</p>
+<p>Weyl modules are attribute-storing objects (they remember their attributes after the first time they are computed).</p>
 
+<p><a id="X7893DF5B807DF77F" name="X7893DF5B807DF77F"></a></p>
 
-<pre class="normal">
+<h5>2.1-2 <span class="Heading">QuotientWeylModule</span></h5>
 
-IsWeylModule( V )
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; QuotientWeylModule</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a QuotientWeylModule</p>
 
-</pre>
-
-<p>This returns true if <var class="Arg">V</var> is a Weyl module and returns false otherwise.</p>
+<p>Constructs the quotient module <span class="SimpleMath">\(V/S\)</span> corresponding to the given submodule <var class="Arg">S</var>. Here <code class="keyw">V</code> is the ambient Weyl module of the given submodule <var class="Arg">S</var>.</p>
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsWeylModule(W);</span>
-true
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsWeylModule(4);</span>
-false
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">W:= WeylModule(2,[2,0],"A",2);</span>
+V[ 2, 0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Q:= QuotientWeylModule(SocleWeyl(W));</span>
+3-dimensional quotient of V[ 2, 0 ]
 </pre></div>
 
-<p><a id="X78F3334C847F82C0" name="X78F3334C847F82C0"></a></p>
+<p>Quotient Weyl modules are attribute-storing objects.</p>
 
-<h4>2.2 <span class="Heading">Creating quotient Weyl modules</span></h4>
+<p><a id="X87BB881B83E8678D" name="X87BB881B83E8678D"></a></p>
 
-<p>Quotients of an existing Weyl module by a submodule are supported. See Section <a href="chap2_mj.html#X7D2F36F47F256415"><span class="RefLink">2.3</span></a> below for methods that create submodules.</p>
+<h5>2.1-3 <span class="Heading">SubWeylModule</span></h5>
 
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SubWeylModule</code>( <var class="Arg">V</var>, <var class="Arg">v</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SubWeylModule</code>( <var class="Arg">S</var>, <var class="Arg">v</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SubWeylModule</code>( <var class="Arg">V</var>, <var class="Arg">list</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SubWeylModule</code>( <var class="Arg">S</var>, <var class="Arg">list</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SubWeylModuleDirectSum</code>( <var class="Arg">V</var>, <var class="Arg">list</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a SubWeylModule</p>
 
-<pre class="normal">
-
-QuotientWeylModule( S )
-DefiningKernel( Q )
-
-</pre>
-
-<p>The first function returns the quotient module <var class="Arg">V</var>/<var class="Arg">S</var>, where <var class="Arg">V</var> is the ambient Weyl module of which <var class="Arg">S</var> is a submodule. In the latter function, <var class="Arg">Q</var> must be an existing quotient Weyl module and its kernel (a submodule) is returned.</p>
+<p>Submodules are attribute-storing objects. The first form constructs the submodule of the given Weyl module <var class="Arg">V</var> generated by the given element <var class="Arg">v</var>. The second form constructs the submodule (of the ambient Weyl module) generated by the given submodule <var class="Arg">S</var> and given element <var class="Arg">v</var>. The third form constructs the submodule of the given Weyl module <var class="Arg">V</var> generated by the given element <var class="Arg">list</var> of elements. The fourth form constructs the submodule generated by the given submodule <var class="Arg">S</var> and given <var class="Arg">list</var> of elements. The fifth form constructs the submodule of the Weyl module <var class="Arg">V</var> which is the direct sum of the given list of submodules (which are assumed to be linearly independent, without checking).</p>
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Q := QuotientWeylModule(D);</span>
-&lt;Quotient of Type G2 Weyl module of highest weight [ 2, 0 ] at prime p = 2&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">W:= WeylModule(2,[2,0],"A",2);</span>
+V[ 2, 0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">m:= MaximalVectors(W);</span>
+[ 1*v0, y1*v0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">S:= SubWeylModule(W, m[2]);</span>
+3-dimensional submod of V[ 2, 0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SubWeylModule(S, m[1]);</span>
+6-dimensional submod of V[ 2, 0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SubWeylModule(W, m);</span>
+6-dimensional submod of V[ 2, 0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SubWeylModule(S, m);</span>
+6-dimensional submod of V[ 2, 0 ]
 </pre></div>
 
-<p>In the above, it is assumed that <span class="SimpleMath">\(D\)</span> is the submodule constructed in the second example of Section <a href="chap2_mj.html#X7D2F36F47F256415"><span class="RefLink">2.3</span></a> below.</p>
+<p><a id="X870B2DE381DD2B06" name="X870B2DE381DD2B06"></a></p>
 
-<p>There is also a category of quotient Weyl modules.</p>
+<h5>2.1-4 <span class="Heading">SubQuotientWeylModule</span></h5>
 
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SubWeylModule</code>( <var class="Arg">Q</var>, <var class="Arg">v</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SubWeylModule</code>( <var class="Arg">S</var>, <var class="Arg">v</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SubWeylModule</code>( <var class="Arg">Q</var>, <var class="Arg">list</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SubWeylModule</code>( <var class="Arg">S</var>, <var class="Arg">list</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SubWeylModuleDirectSum</code>( <var class="Arg">Q</var>, <var class="Arg">list</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a SubQuotientWeylModule</p>
 
-<pre class="normal">
-
-gap&gt; IsQuotientWeylModule( Q )
-
-</pre>
-
-<p>which returns true if <span class="SimpleMath">\(Q\)</span> is a quotient Weyl module, and returns false otherwise.</p>
-
-<p><a id="X7D2F36F47F256415" name="X7D2F36F47F256415"></a></p>
-
-<h4>2.3 <span class="Heading">Creating submodules</span></h4>
-
-<p>The <strong class="pkg">WeylModules</strong> package includes support for working with submodules. Submodules of ambient modules are created by specifying either a single generator or a list of generators; in the latter case the submodule is the linear sum of the submodules generated by the vectors on the list. The ambient module can be: a Weyl module, a quotient of a Weyl module, or an existing submodule of either a Weyl module or a quotient Weyl module.</p>
-
-
-<pre class="normal">
-
-SubWeylModule( V, vec )
-SubWeylModule( V, lst )
-
-</pre>
-
-<p>This returns a submodule of the given ambient object <var class="Arg">V</var> of one of the forms described above. If the second argument <var class="Arg">vec</var> is a vector, then it returns the submodule of <var class="Arg">V</var> generated by that vector. If the second argument is a list <var class="Arg">lst</var> then it returns the submodule generated by that list of vectors.</p>
-
-<p>WARNING: If the dimension of the ambient module is large, this can take a very long time.</p>
+<p>Subquotients are attribute-storing objects. The first form constructs the submodule of the given quotient Weyl module <var class="Arg">Q</var> generated by the given element <var class="Arg">v</var>. The second form constructs the subquotient Weyl module (of the ambient quotient) generated by the given subquotient <var class="Arg">S</var> and given element <var class="Arg">v</var>. The third form constructs the submodule of the given quotient Weyl module <var class="Arg">Q</var> generated by the given element <var class="Arg">list</var> of elements. The fourth form constructs the subquotient Weyl module generated by the given subquotient <var class="Arg">S</var> and given <var class="Arg">list</var> of elements. The fifth form constructs the submodule of the quotient Weyl module <var class="Arg">Q</var> which is the direct sum of the given <var class="Arg">list</var> of subquotients (which are assumed to be linearly independent, without checking).</p>
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">V := WeylModule(3,[3,3],"A",2);</span>
-&lt;Type A2 Weyl module of highest weight [ 3, 3 ] at prime p = 3&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">m := MaximalVectors(V);</span>
-[ 1*v0, y1*v0, y2*v0, y1^(2)*y2*v0, -1*y1*y2^(2)*v0+y2*y3*v0, 
-  y1*y2*y3*v0+y1^(2)*y2^(2)*v0 ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(m,Weight);</span>
-[ [ 3, 3 ], [ 1, 4 ], [ 4, 1 ], [ 0, 3 ], [ 3, 0 ], [ 1, 1 ] ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">S := SubWeylModule(V, m[6]);</span>
-&lt;SubWeylModule of dimension 7, generated by elements 
-[ y1*y2*y3*v0+y1^(2)*y2^(2)*v0 ] of weights [ [ 1, 1 ] ]&gt;, in
-&lt;Type A2 Weyl module of highest weight [ 3, 3 ] at prime p = 3&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">S2 := SubWeylModule(V, [m[4],m[5]]);</span>
-&lt;SubWeylModule of dimension 13, generated by elements 
-[ y1^(2)*y2*v0, -1*y1*y2^(2)*v0+y2*y3*v0 ] of weights [ [ 0, 3 ], [ 3, 0 ] 
- ]&gt;, in
-&lt;Type A2 Weyl module of highest weight [ 3, 3 ] at prime p = 3&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">W:= WeylModule(2,[2,0],"A",2);</span>
+V[ 2, 0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Q:= QuotientWeylModule(SocleWeyl(W));</span>
+3-dimensional quotient of V[ 2, 0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">m:= MaximalVectors(Q);</span>
+[ 1*v0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">S:= SubWeylModule(Q,m[1]);</span>
+3-dimensional submod of 3-dimensional quotient of V[ 2, 0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SubWeylModule(Q,m);</span>
+3-dimensional submod of 3-dimensional quotient of V[ 2, 0 ]
 </pre></div>
 
-<p>An existing submodule remembers its list of generators.</p>
+<p><a id="X84EFA4C07D4277BB" name="X84EFA4C07D4277BB"></a></p>
 
+<h4>2.2 <span class="Heading">Filters</span></h4>
 
-<pre class="normal">
+<p>The following filters can be used to query whether or not an object has the indicated type.</p>
 
-Generators( S )
+<p><a id="X7C3D6BB17AFD771C" name="X7C3D6BB17AFD771C"></a></p>
 
-</pre>
+<h5>2.2-1 <span class="Heading">IsWeylModule</span></h5>
 
-<p>returns the list of generators used in creating the submodule <var class="Arg">S</var>. Here, <var class="Arg">S</var> must be either a sub Weyl module or a subquotient.</p>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsWeylModule</code>( <var class="Arg">V</var> )</td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="code">true</code> or <code class="code">false</code></p>
 
+<p><a id="X85565F29822787B3" name="X85565F29822787B3"></a></p>
 
-<div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Generators(S2);</span>
-[ y1^(2)*y2*v0, -1*y1*y2^(2)*v0+y2*y3*v0 ]
-</pre></div>
+<h5>2.2-2 <span class="Heading">IsQuotientWeylModule</span></h5>
 
-<p>In the above example, it is assumed that <code class="keyw">S2</code> is the submodule constructed in the preceding example.</p>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsQuotientWeylModule</code>( <var class="Arg">V</var> )</td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="code">true</code> or <code class="code">false</code></p>
 
-<p>There is another function that creates submodules of an existing Weyl module or quotient Weyl module, as a direct sum of a list of existing submodules. The submodules in the list must be linearly independent.</p>
+<p><a id="X8605C1E3792ED051" name="X8605C1E3792ED051"></a></p>
 
+<h5>2.2-3 <span class="Heading">IsSubWeylModule</span></h5>
 
-<pre class="normal">
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSubWeylModule</code>( <var class="Arg">V</var> )</td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="code">true</code> or <code class="code">false</code></p>
 
-SubWeylModuleDirectSum( V, lst )
+<p><a id="X86683ABB79EE0363" name="X86683ABB79EE0363"></a></p>
 
-</pre>
+<h5>2.2-4 <span class="Heading">IsSubQuotientWeylModule</span></h5>
 
-<p>This returns the direct sum of the given list of submodules, as a submodule of the ambient module <var class="Arg">V</var>.</p>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsSubQuotientWeylModule</code>( <var class="Arg">V</var> )</td><td class="tdright">(&nbsp;filter&nbsp;)</td></tr></table></div>
+<p>Returns: <code class="code">true</code> or <code class="code">false</code></p>
 
+<p><a id="X80A0DB15862DA0BC" name="X80A0DB15862DA0BC"></a></p>
 
-<div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">V := WeylModule(2,[2,0],"G",2);</span>
-&lt;Type G2 Weyl module of highest weight [ 2, 0 ] at prime p = 2&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">m := MaximalVectors(V);</span>
-[ 1*v0, y1*v0, y4*v0 ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(m,Weight);</span>
-[ [ 2, 0 ], [ 0, 1 ], [ 1, 0 ] ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">S1 := SubWeylModule(V,m[2]);</span>
-&lt;SubWeylModule of dimension 14, generated by elements [ y1*v0 ] of weights 
-[ [ 0, 1 ] ]&gt;, in
-&lt;Type G2 Weyl module of highest weight [ 2, 0 ] at prime p = 2&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">S2 := SubWeylModule(V,m[3]);</span>
-&lt;SubWeylModule of dimension 6, generated by elements [ y4*v0 ] of weights 
-[ [ 1, 0 ] ]&gt;, in
-&lt;Type G2 Weyl module of highest weight [ 2, 0 ] at prime p = 2&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">D := SubWeylModuleDirectSum(V,[S1,S2]);</span>
-&lt;SubWeylModule of dimension 20, generated by elements 
-[ y1*v0, y4*v0 ] of weights [ [ 0, 1 ], [ 1, 0 ] ]&gt;, in
-&lt;Type G2 Weyl module of highest weight [ 2, 0 ] at prime p = 2&gt;
-</pre></div>
+<h4>2.3 <span class="Heading">Operations common to all four types</span></h4>
 
-<p>In the above example, the given Weyl module of type <span class="SimpleMath">\(G_2\)</span> in characteristic <span class="SimpleMath">\(2\)</span> has two maximal vectors of different weights in the socle, so it is possible to form the direct sum of the submodules thay generate. In this case, the direct sum coincides with the socle. (The <code class="keyw">SocleWeyl</code> command calls the above to produce the socle directly.)</p>
+<p>This section documents operations and attributes that can be applied to Weyl modules, quotients, submodules, and subquotients. In the following, <var class="Arg">V</var> is a Weyl module, <var class="Arg">Q</var> is a quotient, <var class="Arg">S</var> is a submodule, and <var class="Arg">T</var> is a subquotient. Section <a href="chap2_mj.html#X86EC0F0A78ECBC10"><span class="RefLink">2.1</span></a> documents the constructors for these objects. Furthermore, <var class="Arg">wt</var> is a weight.</p>
 
-<p>We also have categories of submodules.</p>
-
-
-<pre class="normal">
-
-IsSubWeylModule ( X )
-IsSubQuotientWeylModule( X )
-
-</pre>
-
-<p>These functions return true if the object is a submodule of an existing Weyl module or existing quotient Weyl module, respectively, and return false otherwise.</p>
+<p>In all the examples in this section, we take <var class="Arg">V</var>, <var class="Arg">S</var>, <var class="Arg">Q</var>, and <var class="Arg">T</var> to be as follows.</p>
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsSubWeylModule(D);</span>
-true
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsSubQuotientWeylModule(D);</span>
-false
-</pre></div>
-
-<p>Here, we assume that <span class="SimpleMath">\(D\)</span> is as defined in the preceding example.</p>
-
-<p><a id="X7AED4BBA83011A1F" name="X7AED4BBA83011A1F"></a></p>
-
-<h4>2.4 <span class="Heading">Weights and weight spaces</span></h4>
-
-<p>The following functions are available for computing weights and weight spaces in a given Weyl module, quotient, submodule, or subquotient.</p>
-
-
-<pre class="normal">
-
-Weight( vec )
-Weights( V )
-DominantWeights( V )
-WeightSpaces( V )
-DominantWeightSpaces( V )
-WeightSpace( V, wt )
-
-</pre>
-
-<p>The function <code class="keyw">Weight</code> returns the weight of the given weight vector <var class="Arg">vec</var>. <code class="keyw">Weights</code> returns a list of all the weights of <var class="Arg">V</var>, without multiplicities. <code class="keyw">DominantWeights</code> returns a list of all the dominant weights of <var class="Arg">V</var>, again without multiplicities. <code class="keyw">WeightSpaces</code> returns a list consisting of each weight followed by a basis of weight vectors for the corresponding weight space in <var class="Arg">V</var>, and <code class="keyw">WeightSpace</code> returns a basis for the weight space of the given weight <var class="Arg">wt</var>.</p>
-
-<p>In all of these functions, <var class="Arg">V</var> can be an existing Weyl module, quotient Weyl module, submodule, or subquotient.</p>
-
-
-<div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">V:= WeylModule(2, [1,0,0], "A", 3);</span>
-&lt;Type A3 Weyl module of highest weight [ 1, 0, 0 ] at prime p = 2&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Weights(V);</span>
-[ [ 1, 0, 0 ], [ -1, 1, 0 ], [ 0, -1, 1 ], [ 0, 0, -1 ] ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DominantWeights(V);</span>
-[ [ 1, 0, 0 ] ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">WeightSpaces(V);</span>
-[ [ 1, 0, 0 ], [ 1*v0 ], [ -1, 1, 0 ], [ y1*v0 ], [ 0, -1, 1 ], [ y4*v0 ],
-[ 0, 0, -1 ], [ y6*v0 ] ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DominantWeightSpaces(V);</span>
-[ [ 1, 0, 0 ], [ 1*v0 ] ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">WeightSpace(V, [-1,1,0]);</span>
-[ y1*v0 ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">WeightSpace(V, [0,1,0]);</span>
-fail
-</pre></div>
-
-<p>The last command prints <code class="keyw">fail</code> because there are no weight vectors of weight [0,1,0] in the indicated Weyl module.</p>
-
-<p><a id="X8484AE4E812D9263" name="X8484AE4E812D9263"></a></p>
-
-<h5>2.4-1 <span class="Heading">Using <code class="keyw">List</code> with <code class="keyw">Weight</code></span></h5>
-
-<p>The builtin <code class="keyw">List</code> function in <strong class="pkg">GAP</strong> supports mapping with respect to another function as an optional second argument. If <var class="Arg">lst</var> is a given list of weight vectors (for instance a basis of a module) then the function</p>
-
-
-<pre class="normal">
-
-List( lst, Weight )
-
-</pre>
-
-<p>returns a list of the weights of the vectors in <var class="Arg">lst</var>. In other words, it applies <code class="keyw">Weight</code> to each element in <var class="Arg">lst</var>. This can be very handy.</p>
-
-
-<div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">N := WeylModule(2,[1,0],"A",2);</span>
-&lt;Type A2 Weyl module of highest weight [ 1, 0 ] at prime p = 2&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">base := BasisVecs(N);</span>
-[ 1*v0, y1*v0, y3*v0 ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(base,Weight);</span>
-[ [ 1, 0 ], [ -1, 1 ], [ 0, -1 ] ]
-</pre></div>
-
-<p>In the above, we compute a basis of weight vectors and the corresponding list of weights for the natural module of type <span class="SimpleMath">\(A_2\)</span>.</p>
-
-<p><a id="X8579590C81A1278F" name="X8579590C81A1278F"></a></p>
-
-<h4>2.5 <span class="Heading">Maximal vectors</span></h4>
-
-<p>As mentioned at the beginning of this chapter, the commands to compute maximal vectors are fundamental for the <strong class="pkg">WeylModules</strong> package. The command has two basic forms. In both forms, <var class="Arg">V</var> is a given Weyl module, quotient Weyl module, or sub quotient Weyl module. In the second form, <var class="Arg">wt</var> is a specified (dominant) weight.</p>
-
-
-<pre class="normal">
-
-MaximalVectors( V )
-MaximalVectors( V, lst )
-
-</pre>
-
-<p>This command returns a list of maximal vectors in the specified weight space, or, if no weight is specified, a list of all the maximal vectors in the module.</p>
-
-
-<div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">V := WeylModule(3,[3,3],"A",2);</span>
-&lt;Type A2 Weyl module of highest weight [ 3, 3 ] at prime p = 3&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">m := MaximalVectors(V);</span>
-[ 1*v0, y1*v0, y2*v0, y1^(2)*y2*v0, -1*y1*y2^(2)*v0+y2*y3*v0, 
-  y1*y2*y3*v0+y1^(2)*y2^(2)*v0 ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(m,Weight);</span>
-[ [ 3, 3 ], [ 1, 4 ], [ 4, 1 ], [ 0, 3 ], [ 3, 0 ], [ 1, 1 ] ]
-m11 := MaximalVectors(V,[1,1]);
-[ y1*y2*y3*v0+y1^(2)*y2^(2)*v0 ]
-</pre></div>
-
-<p>There is also a function for testing a given vector in a Weyl module or a quotient Weyl module, to see if it is maximal or not.</p>
-
-
-<pre class="normal">
-
-IsMaximalVector( V, vec )
-
-</pre>
-
-<p>This returns true of the given <var class="Arg">vec</var> is maximal in <var class="Arg">V</var>, which can be a Weyl module or a quotient Weyl module, and returns false otherwise.</p>
-
-
-<div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">V;</span>
-&lt;Type A2 Weyl module of highest weight [ 3, 3 ] at prime p = 3&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">m[5];</span>
--1*y1*y2^(2)*v0+y2*y3*v0
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsMaximalVector(V,m[5]);</span>
-true
-</pre></div>
-
-<p>The above assumes that <span class="SimpleMath">\(V\)</span> is the Weyl module defined in the previous example, and that <span class="SimpleMath">\(m\)</span> is the list of its maximal vectors.</p>
-
-<p><a id="X7AB5BE4B837528E4" name="X7AB5BE4B837528E4"></a></p>
-
-<h4>2.6 <span class="Heading">Ambiguity</span></h4>
-
-<p>Recall from the beginning of this chapter that we defined an <em>ambiguous</em> Weyl module to be one which has a weight space containing at least two linearly independent maximal vectors. Extra care is needed when computing with such modules, so the <code class="keyw">MaximalVectors</code> function produces a warning message and tags the module as <code class="keyw">Ambiguous</code>. Here is an example, which was found in <a href="chapBib_mj.html#biBCPS">[CPS75]</a>.</p>
-
-
-<div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">V := WeylModule(2,[0,1,0,0],"D",4);</span>
-&lt;Type D4 Weyl module of highest weight [ 0, 1, 0, 0 ] at prime p = 2&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">m := MaximalVectors(V);</span>
-***** WARNING: Ambiguous module detected *****
-[ 1*v0, y5*y10*v0+y6*y9*v0, y2*y11*v0+y5*y10*v0+y12*v0 ]
-</pre></div>
-
-<p>In such situations, the following commands can be used.</p>
-
-
-<pre class="normal">
-
-IsAmbiguous( V )
-AmbiguousMaxVecs( V )
-
-</pre>
-
-<p>The first function, which returns true or false, checks to see if the given module <var class="Arg">V</var> is ambiguous. The second function returns a list of lists of the ambiguous maximal vectors in the various ambiguous weight spaces. In both functions, <var class="Arg">V</var> is a Weyl module, quotient, submodule. (WHY NOT subquotient??)</p>
-
-
-<div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsAmbiguous(V);</span>
-true
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">m := AmbiguousMaxVecs(V);</span>
-[ [ y5*y10*v0+y6*y9*v0, y2*y11*v0+y5*y10*v0+y12*v0 ] ]
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(m[1],Weight);</span>
-[ [ 0, 0, 0, 0 ], [ 0, 0, 0, 0 ] ]
-</pre></div>
-
-<p>Here, we see that <span class="SimpleMath">\(V\)</span> as above has two maximal vectors of weight zero. This means that the space of homomorphisms from the trivial module into <span class="SimpleMath">\(V\)</span> is two-dimensional.</p>
-
-<p><a id="X84F7408B7A18DB71" name="X84F7408B7A18DB71"></a></p>
-
-<h4>2.7 <span class="Heading">Basis and dimension</span></h4>
-
-<p>One can compute the dimension or a basis of weight vectors for a given module.</p>
-
-
-<pre class="normal">
-
-Dim( V )
-BasisVecs( V )
-
-</pre>
-
-<p>This returns the dimension and a list of weight vectors, resprectively. The module <var class="Arg">V</var> must be a Weyl module, a submodule, a quotient, or a subquotient.</p>
-
-
-<div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">V:= WeylModule(2, [1,0], "G", 2);</span>
-&lt;Type G2 Weyl module of highest weight [ 1, 0 ] at prime p = 2&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">b:= BasisVecs(V);</span>
-[ 1*v0, y1*v0, y3*v0, y4*v0, y5*v0, y6*v0, y1*y6*v0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">V:=WeylModule(V,[4,0]);</span>
+V[ 4, 0 ]
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Dim(V);</span>
-7
+15
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">m:= MaximalVectors(V);</span>
+[ 1*v0, y1*v0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">S:= SubWeylModule(V,m[2]);</span>
+9-dimensional submod of V[ 4, 0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Q:= QuotientWeylModule(S);</span>
+6-dimensional quotient of V[ 4, 0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">mm:= MaximalVectors(Q);</span>
+[ 1*v0, y1^(2)*v0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">T:= SubWeylModule(Q, mm[2]);</span>
+3-dimensional submod of 6-dimensional quotient of V[ 4, 0 ]
 </pre></div>
 
-<p><a id="X86807BA87E0E89CD" name="X86807BA87E0E89CD"></a></p>
+<p><a id="X86F495008280EC28" name="X86F495008280EC28"></a></p>
 
-<h4>2.8 <span class="Heading">Miscellaneous commands</span></h4>
+<h5>2.3-1 <span class="Heading">BasisVecs</span></h5>
 
-<p>There are a few additional commands available for a Weyl module or a quotient Weyl module.</p>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BasisVecs</code>( <var class="Arg">Q</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BasisVecs</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BasisVecs</code>( <var class="Arg">T</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; BasisVecs</code>( <var class="Arg">V</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
 
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BasisVecs(V);</span>
+[ 1*v0, y1*v0, y3*v0, y1^(2)*v0, y1*y3*v0, y1^(3)*v0, y3^(2)*v0, 
+  y1^(2)*y3*v0, y1^(4)*v0, y1*y3^(2)*v0, y1^(3)*y3*v0, y3^(3)*v0, 
+  y1^(2)*y3^(2)*v0, y1*y3^(3)*v0, y3^(4)*v0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BasisVecs(S);</span>
+[ y1*v0, y3*v0, y1*y3*v0, y1^(3)*v0, y1*y3^(2)*v0, y1^(2)*y3*v0, y3^(3)*v0, 
+  y1^(3)*y3*v0, y1*y3^(3)*v0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BasisVecs(Q);</span>
+[ 1*v0, y1^(2)*v0, y3^(2)*v0, y1^(4)*v0, y1^(2)*y3^(2)*v0, y3^(4)*v0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">BasisVecs(T);</span>
+[ y1^(2)*v0, y3^(2)*v0, y1^(2)*y3^(2)*v0 ]
+</pre></div>
 
-<pre class="normal">
+<p><a id="X7BF731DC84FF733A" name="X7BF731DC84FF733A"></a></p>
 
-Generator( V )
-TheLieAlgebra( V )
-SimpleLieAlgGens( V )
-TheCharacteristic( V )
+<h5>2.3-2 <span class="Heading">Character</span></h5>
 
-</pre>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Character</code>( <var class="Arg">Q</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Character</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Character</code>( <var class="Arg">T</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Character</code>( <var class="Arg">V</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: a list</p>
 
-<p>These commands respectively return the generator, the underlying Lie algebra, a list of the Lie algebra generators, and the characteristic. The third function is only available for a Weyl module (it is used internally by some of the other functions). The Lie algebra is the <em>characteristic zero</em> Lie algebra of the same type as the underlying algebraic group. The module <var class="Arg">V</var> must be either a Weyl module or a quotient Weyl module.</p>
+<p>This function returns the character (as a list of weights and their multiplicities) of the given module.</p>
 
 
 <div class="example"><pre>
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">V:= WeylModule(2, [1,0], "G", 2);</span>
-&lt;Type G2 Weyl module of highest weight [ 1, 0 ] at prime p = 2&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TheLieAlgebra(V);</span>
-&lt;Lie algebra of dimension 14 over Rationals&gt;
-<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g:= Generator(V);</span>
-1*v0
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Character(V);</span>
+[ [ 4, 0 ], 1, [ 2, 1 ], 1, [ 3, -1 ], 1, [ 0, 2 ], 1, [ 1, 0 ], 1, 
+  [ -2, 3 ], 1, [ 2, -2 ], 1, [ -1, 1 ], 1, [ -4, 4 ], 1, [ 0, -1 ], 1, 
+  [ -3, 2 ], 1, [ 1, -3 ], 1, [ -2, 0 ], 1, [ -1, -2 ], 1, [ 0, -4 ], 1 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Character(Q);</span>
+[ [ 4, 0 ], 1, [ 0, 2 ], 1, [ 2, -2 ], 1, [ -4, 4 ], 1, [ -2, 0 ], 1, 
+  [ 0, -4 ], 1 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Character(S);</span>
+[ [ 2, 1 ], 1, [ 3, -1 ], 1, [ 1, 0 ], 1, [ -2, 3 ], 1, [ 0, -1 ], 1, 
+  [ -1, 1 ], 1, [ 1, -3 ], 1, [ -3, 2 ], 1, [ -1, -2 ], 1 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Character(T);</span>
+[ [ 0, 2 ], 1, [ 2, -2 ], 1, [ -2, 0 ], 1 ]
+</pre></div>
+
+<p><a id="X837F199C864C8E6C" name="X837F199C864C8E6C"></a></p>
+
+<h5>2.3-3 <span class="Heading">DecompositionNumbers</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DecompositionNumbers</code>( <var class="Arg">Q</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DecompositionNumbers</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DecompositionNumbers</code>( <var class="Arg">T</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DecompositionNumbers</code>( <var class="Arg">V</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: a list</p>
+
+<p>Returns a list of highest weights of simple composition factors (in the underlying characteristic) and their corresponding multiplicities in the given module.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DecompositionNumbers(V);</span>
+[ [ 4, 0 ], 1, [ 2, 1 ], 1, [ 0, 2 ], 1 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DecompositionNumbers(Q);</span>
+[ [ 4, 0 ], 1, [ 0, 2 ], 1 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DecompositionNumbers(S);</span>
+[ [ 2, 1 ], 1 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DecompositionNumbers(T);</span>
+[ [ 0, 2 ], 1 ]
+</pre></div>
+
+<p><a id="X85F55996829581A4" name="X85F55996829581A4"></a></p>
+
+<h5>2.3-4 <span class="Heading">Dim</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Dim</code>( <var class="Arg">Q</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Dim</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Dim</code>( <var class="Arg">T</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Dim</code>( <var class="Arg">V</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: an integer (the dimension of the module)</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Dim(V);</span>
+15
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Dim(Q);</span>
+6
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Dim(S);</span>
+9
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Dim(T);</span>
+3
+</pre></div>
+
+<p><a id="X7D8522E37ED1024A" name="X7D8522E37ED1024A"></a></p>
+
+<h5>2.3-5 <span class="Heading">DominantWeights</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DominantWeights</code>( <var class="Arg">Q</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DominantWeights</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DominantWeights</code>( <var class="Arg">T</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DominantWeights</code>( <var class="Arg">V</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: a list</p>
+
+<p>This function lists the dominant weights occurring in the given module (with nonzero multiplicity). The multiplicities are not given.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DominantWeights(V);</span>
+[ [ 4, 0 ], [ 2, 1 ], [ 0, 2 ], [ 1, 0 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DominantWeights(Q);</span>
+[ [ 4, 0 ], [ 0, 2 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DominantWeights(S);</span>
+[ [ 2, 1 ], [ 1, 0 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DominantWeights(T);</span>
+[ [ 0, 2 ] ]
+</pre></div>
+
+<p><a id="X7A90A9A57E545164" name="X7A90A9A57E545164"></a></p>
+
+<h5>2.3-6 <span class="Heading">DominantWeightSpaces</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DominantWeightSpaces</code>( <var class="Arg">Q</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DominantWeightSpaces</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DominantWeightSpaces</code>( <var class="Arg">T</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DominantWeightSpaces</code>( <var class="Arg">V</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: a list</p>
+
+<p>The output of this function is a list consisting of a weight followed by a list of basis vectors for the corresponding weight space.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DominantWeightSpaces(V);</span>
+[ [ 4, 0 ], [ 1*v0 ], [ 2, 1 ], [ y1*v0 ], [ 0, 2 ], [ y1^(2)*v0 ], [ 1, 0 ], 
+  [ y1*y3*v0 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DominantWeightSpaces(Q);</span>
+[ [ 4, 0 ], [ 1*v0 ], [ 0, 2 ], [ y1^(2)*v0 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DominantWeightSpaces(S);</span>
+[ [ 2, 1 ], [ y1*v0 ], [ 1, 0 ], [ y1*y3*v0 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DominantWeightSpaces(T);</span>
+[ [ 0, 2 ], [ y1^(2)*v0 ] ]
+</pre></div>
+
+<p><a id="X82C5F58D8788C097" name="X82C5F58D8788C097"></a></p>
+
+<h5>2.3-7 <span class="Heading">Weights</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Weights</code>( <var class="Arg">Q</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Weights</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Weights</code>( <var class="Arg">T</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Weights</code>( <var class="Arg">V</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: a list</p>
+
+<p>Lists the weights in the given module.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Weights(V);</span>
+[ [ 4, 0 ], [ 2, 1 ], [ 3, -1 ], [ 0, 2 ], [ 1, 0 ], [ -2, 3 ], [ 2, -2 ], 
+  [ -1, 1 ], [ -4, 4 ], [ 0, -1 ], [ -3, 2 ], [ 1, -3 ], [ -2, 0 ], 
+  [ -1, -2 ], [ 0, -4 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Weights(Q);</span>
+[ [ 4, 0 ], [ 0, 2 ], [ 2, -2 ], [ -4, 4 ], [ -2, 0 ], [ 0, -4 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Weights(S);</span>
+[ [ 2, 1 ], [ 3, -1 ], [ 1, 0 ], [ -2, 3 ], [ 0, -1 ], [ -1, 1 ], [ 1, -3 ], 
+  [ -3, 2 ], [ -1, -2 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Weights(T);</span>
+[ [ 0, 2 ], [ 2, -2 ], [ -2, 0 ] ]
+</pre></div>
+
+<p><a id="X84202B3E82DC1872" name="X84202B3E82DC1872"></a></p>
+
+<h5>2.3-8 <span class="Heading">WeightSpaces</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; WeightSpaces</code>( <var class="Arg">Q</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; WeightSpaces</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; WeightSpaces</code>( <var class="Arg">T</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; WeightSpaces</code>( <var class="Arg">V</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: a list</p>
+
+<p>Computes a list consisting of weights followed by a basis of their corresponding weight spaces, for each weight of the given module.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">WeightSpaces(V);</span>
+[ [ 4, 0 ], [ 1*v0 ], [ 2, 1 ], [ y1*v0 ], [ 3, -1 ], [ y3*v0 ], [ 0, 2 ], 
+  [ y1^(2)*v0 ], [ 1, 0 ], [ y1*y3*v0 ], [ -2, 3 ], [ y1^(3)*v0 ], [ 2, -2 ], 
+  [ y3^(2)*v0 ], [ -1, 1 ], [ y1^(2)*y3*v0 ], [ -4, 4 ], [ y1^(4)*v0 ], 
+  [ 0, -1 ], [ y1*y3^(2)*v0 ], [ -3, 2 ], [ y1^(3)*y3*v0 ], [ 1, -3 ], 
+  [ y3^(3)*v0 ], [ -2, 0 ], [ y1^(2)*y3^(2)*v0 ], [ -1, -2 ], 
+  [ y1*y3^(3)*v0 ], [ 0, -4 ], [ y3^(4)*v0 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">WeightSpaces(Q);</span>
+[ [ 4, 0 ], [ 1*v0 ], [ 0, 2 ], [ y1^(2)*v0 ], [ 2, -2 ], [ y3^(2)*v0 ], 
+  [ -4, 4 ], [ y1^(4)*v0 ], [ -2, 0 ], [ y1^(2)*y3^(2)*v0 ], [ 0, -4 ], 
+  [ y3^(4)*v0 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">WeightSpaces(S);</span>
+[ [ 2, 1 ], [ y1*v0 ], [ 3, -1 ], [ y3*v0 ], [ 1, 0 ], [ y1*y3*v0 ], 
+  [ -2, 3 ], [ y1^(3)*v0 ], [ 0, -1 ], [ y1*y3^(2)*v0 ], [ -1, 1 ], 
+  [ y1^(2)*y3*v0 ], [ 1, -3 ], [ y3^(3)*v0 ], [ -3, 2 ], [ y1^(3)*y3*v0 ], 
+  [ -1, -2 ], [ y1*y3^(3)*v0 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">WeightSpaces(T);</span>
+[ [ 0, 2 ], [ y1^(2)*v0 ], [ 2, -2 ], [ y3^(2)*v0 ], [ -2, 0 ], 
+  [ y1^(2)*y3^(2)*v0 ] ]
+</pre></div>
+
+<p><a id="X7B02B8F5792DE9EC" name="X7B02B8F5792DE9EC"></a></p>
+
+<h5>2.3-9 <span class="Heading">WeightSpace</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; WeightSpace</code>( <var class="Arg">Q</var>, <var class="Arg">wt</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; WeightSpace</code>( <var class="Arg">S</var>, <var class="Arg">wt</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; WeightSpace</code>( <var class="Arg">T</var>, <var class="Arg">wt</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; WeightSpace</code>( <var class="Arg">V</var>, <var class="Arg">wt</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a list</p>
+
+<p>Gives a basis for the weight space of the given weight <var class="Arg">wt</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">WeightSpace(V, [2,1]);</span>
+[ y1*v0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">WeightSpace(Q, [2,1]);</span>
+[  ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">WeightSpace(S, [2,1]);</span>
+[ y1*v0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">WeightSpace(T, [2,-2]);</span>
+[ y3^(2)*v0 ]
+</pre></div>
+
+<p><a id="X877A8CC986C47534" name="X877A8CC986C47534"></a></p>
+
+<h5>2.3-10 <span class="Heading">TheCharacteristic</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TheCharacteristic</code>( <var class="Arg">Q</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TheCharacteristic</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TheCharacteristic</code>( <var class="Arg">T</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TheCharacteristic</code>( <var class="Arg">V</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: an integer</p>
+
+<p>Gives the characteristic of the base field.</p>
+
+
+<div class="example"><pre>
 <span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TheCharacteristic(V);</span>
 2
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TheCharacteristic(Q);</span>
+2
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TheCharacteristic(S);</span>
+2
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TheCharacteristic(T);</span>
+2
+</pre></div>
+
+<p><a id="X8472B03E8370745D" name="X8472B03E8370745D"></a></p>
+
+<h5>2.3-11 <span class="Heading">TheLieAlgebra</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TheLieAlgebra</code>( <var class="Arg">Q</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TheLieAlgebra</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TheLieAlgebra</code>( <var class="Arg">T</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TheLieAlgebra</code>( <var class="Arg">V</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: a Lie algebra</p>
+
+<p>Gives the underlying Lie algebra for the given module.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TheLieAlgebra(V);</span>
+&lt;Lie algebra of dimension 8 over Rationals&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TheLieAlgebra(Q);</span>
+&lt;Lie algebra of dimension 8 over Rationals&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TheLieAlgebra(S);</span>
+&lt;Lie algebra of dimension 8 over Rationals&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">TheLieAlgebra(T);</span>
+&lt;Lie algebra of dimension 8 over Rationals&gt;
+</pre></div>
+
+<p>The <strong class="pkg">GAP</strong> manual gives additional operations for various properties and attributes of such Lie algebras and their enveloping algebras.</p>
+
+<p><a id="X7EA0987D85E1974F" name="X7EA0987D85E1974F"></a></p>
+
+<h4>2.4 <span class="Heading">Operations common to Weyl modules, submodules, and quotients</span></h4>
+
+<p>In the following, <var class="Arg">Q</var> is a quotient Weyl module, <var class="Arg">S</var> is a submodule, and <var class="Arg">V</var> is a Weyl module.</p>
+
+<p><a id="X7E2F4CF283259D48" name="X7E2F4CF283259D48"></a></p>
+
+<h5>2.4-1 <span class="Heading">MaximalVectors</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MaximalVectors</code>( <var class="Arg">Q</var>, <var class="Arg">wt</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MaximalVectors</code>( <var class="Arg">Q</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MaximalVectors</code>( <var class="Arg">S</var>, <var class="Arg">wt</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MaximalVectors</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MaximalVectors</code>( <var class="Arg">V</var>, <var class="Arg">wt</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MaximalVectors</code>( <var class="Arg">V</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: a list</p>
+
+<p>Returns a list of linearly independent maximal vectors for the given dominant weight <var class="Arg">wt</var> or for all dominant weights of the module. The maximal vectors of a particular weight form a basis of the space of maximal vectors of that weight.</p>
+
+<p>In the following example, we assume that <var class="Arg">V</var>, <var class="Arg">Q</var>, and <var class="Arg">S</var> are the same modules as defined in the example at the beginning of Section <a href="chap2_mj.html#X80A0DB15862DA0BC"><span class="RefLink">2.3</span></a>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MaximalVectors(V);</span>
+[ 1*v0, y1*v0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">m:= MaximalVectors(V);</span>
+[ 1*v0, y1*v0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(m, Weight);</span>
+[ [ 4, 0 ], [ 2, 1 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MaximalVectors(V, [2,1]);</span>
+[ y1*v0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">m:= MaximalVectors(Q);</span>
+[ 1*v0, y1^(2)*v0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(m, Weight);</span>
+[ [ 4, 0 ], [ 0, 2 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MaximalVectors(Q, [0,2]);</span>
+[ y1^(2)*v0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">m:= MaximalVectors(S);</span>
+[ y1*v0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(m, Weight);</span>
+[ [ 2, 1 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MaximalVectors(S, [2,1]);</span>
+[ y1*v0 ]
+</pre></div>
+
+<p><a id="X817578D179F5F3C4" name="X817578D179F5F3C4"></a></p>
+
+<h5>2.4-2 <span class="Heading">IsAmbiguous</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAmbiguous</code>( <var class="Arg">Q</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAmbiguous</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsAmbiguous</code>( <var class="Arg">V</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: true or false</p>
+
+<p>The module is ambiguous if it has two or more linearly independent maximal vectors of the same weight.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">V:= WeylModule(2,[3,0],"G",2);</span>
+V[ 3, 0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsAmbiguous(V);</span>
+true
+</pre></div>
+
+<p><a id="X7A7BCF4F781B617D" name="X7A7BCF4F781B617D"></a></p>
+
+<h5>2.4-3 <span class="Heading">AmbiguousMaxVecs</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AmbiguousMaxVecs</code>( <var class="Arg">Q</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AmbiguousMaxVecs</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AmbiguousMaxVecs</code>( <var class="Arg">V</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: a list</p>
+
+<p>This function lists a basis for the subspace of ambiguous maximal vectors.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">V:= WeylModule(2,[3,0],"G",2);</span>
+V[ 3, 0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AmbiguousMaxVecs(V);</span>
+[ y1*y3*v0, y4*v0 ]
+</pre></div>
+
+<p><a id="X86B8CB98847B8296" name="X86B8CB98847B8296"></a></p>
+
+<h4>2.5 <span class="Heading">Operations on Weyl modules and their quotients</span></h4>
+
+<p>In the following, <var class="Arg">Q</var> is a quotient Weyl module and <var class="Arg">V</var> is a Weyl module.</p>
+
+<p><a id="X7EA043B481E8841B" name="X7EA043B481E8841B"></a></p>
+
+<h5>2.5-1 <span class="Heading">ActOn</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ActOn</code>( <var class="Arg">Q</var>, <var class="Arg">u</var>, <var class="Arg">v</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; ActOn</code>( <var class="Arg">V</var>, <var class="Arg">u</var>, <var class="Arg">v</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: An element of the Weyl module or quotient</p>
+
+<p>This function returns the result of acting by the hyperalgebra element <var class="Arg">u</var> on the given vector <var class="Arg">v</var>. Here <var class="Arg">v</var> must be an element of the given Weyl module <var class="Arg">V</var> or quotient Weyl module <var class="Arg">Q</var>. The command <code class="keyw">LatticeGeneratorsInUEA</code> is a pre-existing <strong class="pkg">GAP</strong> command; see the chapter on Lie algebras in the <strong class="pkg">GAP</strong> reference manual for further details. The lattice generators are regarded as standard generators of the hyperalgebra for computing the action.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">V:= WeylModule(2, [1,0], "G", 2);</span>
+V[ 1, 0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">L:= TheLieAlgebra(V);</span>
+&lt;Lie algebra of dimension 14 over Rationals&gt;
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput"> g:= LatticeGeneratorsInUEA(L);</span>
+[ y1, y2, y3, y4, y5, y6, x1, x2, x3, x4, x5, x6, ( h13/1 ), ( h14/1 ) ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">b:= BasisVecs(V);</span>
+[ 1*v0, y1*v0, y3*v0, y4*v0, y5*v0, y6*v0, y1*y6*v0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ActOn(V, g[1]^2 + g[7], b[1]);</span>
+0*v0
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ActOn(V, g[1]*g[6], b[1]);</span>
+y1*y6*v0
+</pre></div>
+
+<p><a id="X7E6A7D687C0EEF17" name="X7E6A7D687C0EEF17"></a></p>
+
+<h5>2.5-2 <span class="Heading">Generator</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Generator</code>( <var class="Arg">Q</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Generator</code>( <var class="Arg">V</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a highest weight vector</p>
+
+<p>This returns a generating vector of the given module.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">V:= WeylModule(2,[3,0],"G",2);</span>
+V[ 3, 0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Generator(V);</span>
+1*v0
+</pre></div>
+
+<p><a id="X86C3D00A841C0587" name="X86C3D00A841C0587"></a></p>
+
+<h5>2.5-3 <span class="Heading">GensSocleLayers</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GensSocleLayers</code>( <var class="Arg">Q</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GensSocleLayers</code>( <var class="Arg">V</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: a list</p>
+
+<p>Returns a list of lists, such that the <span class="SimpleMath">\(i\)</span>th list gives a list of generators of the <span class="SimpleMath">\(i\)</span>th module in the socle series of the input.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">V:= WeylModule(2,[3,0],"G",2);</span>
+V[ 3, 0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">GensSocleLayers(V);</span>
+[ [ y1*y4*v0, y1*y3*y4*v0+y1*y6*v0+y3*y5*v0, 
+      y1*y4*y6*v0+y3*y4*y5*v0+y4^(3)*v0 ], [ y4*v0, y1^(2)*y3*y6*v0 ], 
+  [ y1*y3*v0 ], [ y5*y6*v0 ], [ y1*y6*v0+y4^(2)*v0 ], [ 1*v0 ] ]
+</pre></div>
+
+<p><a id="X7CD1B4CA81C711EA" name="X7CD1B4CA81C711EA"></a></p>
+
+<h5>2.5-4 <span class="Heading">PrintSocleLayers</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PrintSocleLayers</code>( <var class="Arg">Q</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; PrintSocleLayers</code>( <var class="Arg">V</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: nothing</p>
+
+<p>Prints the weights of the generators of the socle layers corresponding to the output of the previous command. These are the highest weights of the simple composition factors in each socle layer.</p>
+
+<p>In the following example, we assume that <var class="Arg">V</var> is the same Weyl module defined in the preceding example.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PrintSocleLayers(V);</span>
+Printing highest weights of simples in socle layers of V[ 3, 0 ]
+Layer 1: [ [ 0, 1 ], [ 1, 0 ], [ 0, 0 ] ]
+Layer 2: [ [ 2, 0 ], [ 0, 0 ] ]
+Layer 3: [ [ 2, 0 ] ]
+Layer 4: [ [ 0, 0 ] ]
+Layer 5: [ [ 1, 0 ] ]
+Layer 6: [ [ 3, 0 ] ]
+</pre></div>
+
+<p><a id="X84A724267E6F136D" name="X84A724267E6F136D"></a></p>
+
+<h5>2.5-5 <span class="Heading">SocleSeries</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SocleSeries</code>( <var class="Arg">Q</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SocleSeries</code>( <var class="Arg">V</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: a list</p>
+
+<p>Returns the socle series of its input module, as a list of submodules.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">V:= WeylModule(2,[3,0],"G",2);</span>
+V[ 3, 0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SocleSeries(V);</span>
+[ 21-dimensional submod of V[ 3, 0 ], 28-dimensional submod of V[ 3, 0 ], 
+  34-dimensional submod of V[ 3, 0 ], 35-dimensional submod of V[ 3, 0 ], 
+  41-dimensional submod of V[ 3, 0 ], 77-dimensional submod of V[ 3, 0 ] ]
+</pre></div>
+
+<p><a id="X79C52EB184D3B8D7" name="X79C52EB184D3B8D7"></a></p>
+
+<h5>2.5-6 <span class="Heading">SocleWeyl</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SocleWeyl</code>( <var class="Arg">V</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SocleWeyl</code>( <var class="Arg">Q</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: a submodule</p>
+
+<p>This function returns the socle of the given module.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">V:= WeylModule(2,[3,0],"G",2);</span>
+V[ 3, 0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">SocleWeyl(V);</span>
+21-dimensional submod of V[ 3, 0 ]
+</pre></div>
+
+<p><a id="X851311EE81C86683" name="X851311EE81C86683"></a></p>
+
+<h4>2.6 <span class="Heading">Operations on Weyl modules</span></h4>
+
+<p>This section documents additional operations that can be applied to an existing Weyl module <var class="Arg">V</var>.</p>
+
+<p><a id="X79D8492F7B32876C" name="X79D8492F7B32876C"></a></p>
+
+<h5>2.6-1 <span class="Heading">MaximalSubmodule</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; MaximalSubmodule</code>( <var class="Arg">V</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: a submodule</p>
+
+<p>Calculates and returns the unique maximal submodule of the given Weyl module <var class="Arg">V</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">V:= WeylModule(3,[3,0],"A",2);</span>
+V[ 3, 0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">MaximalSubmodule(V);</span>
+7-dimensional submod of V[ 3, 0 ]
+</pre></div>
+
+<p><a id="X7940ABBC78D7D4F6" name="X7940ABBC78D7D4F6"></a></p>
+
+<h5>2.6-2 <span class="Heading">SimpleQuotient</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SimpleQuotient</code>( <var class="Arg">V</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: a quotient Weyl module</p>
+
+<p>Calculates and returns the simple quotient by the unique maximal submodule of the given Weyl module.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">V:= WeylModule(3,[3,0],"A",2);</span>
+V[ 3, 0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Q:= SimpleQuotient(V);</span>
+3-dimensional quotient of V[ 3, 0 ]
+</pre></div>
+
+<p><a id="X872C504F86A3EBC0" name="X872C504F86A3EBC0"></a></p>
+
+<h4>2.7 <span class="Heading">Operations on quotients</span></h4>
+
+<p>In the following, <var class="Arg">Q</var> is a quotient Weyl module.</p>
+
+<p><a id="X808DA4D1782F4884" name="X808DA4D1782F4884"></a></p>
+
+<h5>2.7-1 <span class="Heading">AmbientWeylModule</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AmbientWeylModule</code>( <var class="Arg">Q</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a Weyl module</p>
+
+<p>This returns the ambient Weyl module <code class="keyw">V</code> corresponding to the given quotient <var class="Arg">Q</var>.</p>
+
+<p>In the following example, we assume that <var class="Arg">Q</var> is the same as the quotient module defined in the preceding example.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AmbientWeylModule(Q);</span>
+V[ 3, 0 ]
+</pre></div>
+
+<p><a id="X7A339C557FAB2FA9" name="X7A339C557FAB2FA9"></a></p>
+
+<h5>2.7-2 <span class="Heading">DefiningKernel</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; DefiningKernel</code>( <var class="Arg">Q</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a submodule</p>
+
+<p>This returns the kernel corresponding to the given quotient <var class="Arg">Q</var>. In other words, it returns the submodule <code class="keyw">S</code> such that <span class="SimpleMath">\(Q\)</span> is isomorphic to <span class="SimpleMath">\(V/S\)</span>, where <code class="keyw">V</code> is the ambient Weyl module.</p>
+
+<p>In the following example, we assume that <var class="Arg">Q</var> is the same as the quotient module in the preceding example.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DefiningKernel(Q);</span>
+7-dimensional submod of V[ 3, 0 ]
+</pre></div>
+
+<p><a id="X7EC2B8FC855E0F64" name="X7EC2B8FC855E0F64"></a></p>
+
+<h4>2.8 <span class="Heading">Operations on submodules</span></h4>
+
+<p>In the following, <var class="Arg">S</var> is a submodule.</p>
+
+<p><a id="X808DA4D1782F4884" name="X808DA4D1782F4884"></a></p>
+
+<h5>2.8-1 <span class="Heading">AmbientWeylModule</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AmbientWeylModule</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a Weyl module</p>
+
+<p>This function returns the ambient Weyl module containing the given submodule <var class="Arg">S</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">V:= WeylModule(3,[3,0],"A",2);</span>
+V[ 3, 0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">S:= MaximalSubmodule(V);</span>
+7-dimensional submod of V[ 3, 0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AmbientWeylModule(S);</span>
+V[ 3, 0 ]
+</pre></div>
+
+<p><a id="X7BD5B55C802805B4" name="X7BD5B55C802805B4"></a></p>
+
+<h5>2.8-2 <span class="Heading">Generators</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Generators</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a list</p>
+
+<p>Returns a list of generators of the given submodule <var class="Arg">S</var>. In the following example, we assume that <var class="Arg">S</var> is the same as in the preceding example.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Generators(S);</span>
+[ y1*v0 ]
+</pre></div>
+
+<p><a id="X796F6BF77AE2D92E" name="X796F6BF77AE2D92E"></a></p>
+
+<h5>2.8-3 <span class="Heading">IsWithin</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsWithin</code>( <var class="Arg">S</var>, <var class="Arg">v</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: true or false</p>
+
+<p>This function returns <code class="keyw">true</code> if and only if the given vector <var class="Arg">v</var> lies in the given submodule <var class="Arg">S</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">V:= WeylModule(3,[3,0],"A",2);</span>
+V[ 3, 0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">S:= MaximalSubmodule(V);</span>
+7-dimensional submod of V[ 3, 0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g:= Generators(S);</span>
+[ y1*v0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsWithin(S, g[1]);</span>
+true
+</pre></div>
+
+<p><a id="X7EAA82567AA01643" name="X7EAA82567AA01643"></a></p>
+
+<h5>2.8-4 <span class="Heading">NextSocle</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NextSocle</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a SubWeylModule</p>
+
+<p>This function returns the maximal submodule <var class="Arg">T</var> containing the given submodule <var class="Arg">S</var> such that <span class="SimpleMath">\(T/S\)</span> is semisimple. If <var class="Arg">S</var> happens to be an element of the socle series then the function returns the next element in the socle series.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">W:= WeylModule(2,[3,0],"G",2);</span>
+V[ 3, 0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g:= Generators(SocleWeyl(W)); </span>
+[ y1*y4*v0, y1*y3*y4*v0+y1*y6*v0+y3*y5*v0, y1*y4*y6*v0+y3*y4*y5*v0+y4^(3)*v0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">S:= SubWeylModule(W, g[1]);</span>
+14-dimensional submod of V[ 3, 0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">T:= NextSocle(S);</span>
+21-dimensional submod of V[ 3, 0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DecompositionNumbers(T);</span>
+[ [ 0, 1 ], 1, [ 1, 0 ], 1, [ 0, 0 ], 1 ]
+</pre></div>
+
+<p>In the above example, <var class="Arg">S</var> is a simple submodule of the socle, and <code class="code">NextSocle(S)</code> computes an extension of it by two simples.</p>
+
+<p><a id="X8745CE1C7EF10F5F" name="X8745CE1C7EF10F5F"></a></p>
+
+<h5>2.8-5 <span class="Heading">GensNextSocle</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; GensNextSocle</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a list</p>
+
+<p>This function returns a list of generators of the submodule returned by <code class="code">NextSocle(S)</code>. In the example below, <var class="Arg">S</var> is the submodule constructed in the preceding example.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">g:= GensNextSocle(S);</span>
+[ y1*y6*v0+y3*y5*v0, y4^(3)*v0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">List(g, Weight);</span>
+[ [ 1, 0 ], [ 0, 0 ] ]
+</pre></div>
+
+<p><a id="X7DCA6B8D82655007" name="X7DCA6B8D82655007"></a></p>
+
+<h5>2.8-6 <span class="Heading">SocleLengthTwoQuotient</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; SocleLengthTwoQuotient</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: a QuotientWeylModule</p>
+
+<p>This function returns a quotient of the ambient Weyl module <var class="Arg">V</var> with socle series length at most two such that <var class="Arg">S</var> lies in its defining kernel.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">W:= WeylModule(2,[3,0],"G",2);</span>
+V[ 3, 0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">ss:= SocleSeries(W);</span>
+[ 21-dimensional submod of V[ 3, 0 ], 28-dimensional submod of V[ 3, 0 ], 
+  34-dimensional submod of V[ 3, 0 ], 35-dimensional submod of V[ 3, 0 ], 
+  41-dimensional submod of V[ 3, 0 ], 77-dimensional submod of V[ 3, 0 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">amv:= AmbiguousMaxVecs(W);</span>
+[ y1*y3*v0, y4*v0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Q1:= SocleLengthTwoQuotient(ss[4]);</span>
+42-dimensional quotient of V[ 3, 0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PrintSocleLayers(Q1);</span>
+Printing highest weights of simples in socle layers of 
+42-dimensional quotient of V[ 3, 0 ]
+Layer 1: [ [ 1, 0 ] ]
+Layer 2: [ [ 3, 0 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Q2:= SocleLengthTwoQuotient(SubWeylModule(W,amv[1]+amv[2]));</span>
+48-dimensional quotient of V[ 3, 0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PrintSocleLayers(Q2);</span>
+Printing highest weights of simples in socle layers of 
+48-dimensional quotient of V[ 3, 0 ]
+Layer 1: [ [ 2, 0 ], [ 1, 0 ] ]
+Layer 2: [ [ 3, 0 ] ]
+</pre></div>
+
+<p>Here we see an example of an ambiguous Weyl module with different quotients of socle length two.</p>
+
+<p><a id="X83EA4E2B78CBF8C8" name="X83EA4E2B78CBF8C8"></a></p>
+
+<h5>2.8-7 <span class="Heading">TwoFactorQuotientsContaining</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; TwoFactorQuotientsContaining</code>( <var class="Arg">S</var> )</td><td class="tdright">(&nbsp;attribute&nbsp;)</td></tr></table></div>
+<p>Returns: a list of QuotientWeylModules</p>
+
+<p>This returns a list of quotients of the ambient Weyl module, each having exactly two composition factors, each of which contain <var class="Arg">S</var> in their defining kernel. Such quotients realize non-split extensions of the simple top composition factor of <var class="Arg">V</var>. NOTE. Even when <var class="Arg">S</var> is the trivial module, we do not claim that the output will give <em>all</em> of the extensions.</p>
+
+<p>In the following example, we assume that <code class="code">W</code>, <code class="code">amv</code> are as defined in the preceding example.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Q:= TwoFactorQuotientsContaining(SubWeylModule(W,amv[1]+amv[2]));</span>
+[ 42-dimensional quotient of V[ 3, 0 ], 42-dimensional quotient of V[ 3, 0 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PrintSocleLayers(Q[1]);</span>
+Printing highest weights of simples in socle layers of 
+42-dimensional quotient of V[ 3, 0 ]
+Layer 1: [ [ 1, 0 ] ]
+Layer 2: [ [ 3, 0 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">PrintSocleLayers(Q[2]);</span>
+Printing highest weights of simples in socle layers of 
+42-dimensional quotient of V[ 3, 0 ]
+Layer 1: [ [ 2, 0 ] ]
+Layer 2: [ [ 3, 0 ] ]
+</pre></div>
+
+<p>Here we see that the ambient Weyl module has at least two non-isomorphic extensions realized in its second radical. Comparing with information from an earlier example (see <code class="func">PrintSocleLayers</code> (<a href="chap2_mj.html#X7CD1B4CA81C711EA"><span class="RefLink">2.5-4</span></a>)) reveals that the Weyl module in question is non-rigid (its socle and radical series do not coincide).</p>
+
+<p><a id="X8659C44E86717B4D" name="X8659C44E86717B4D"></a></p>
+
+<h4>2.9 <span class="Heading">Operations on subquotients</span></h4>
+
+<p>In the following, <var class="Arg">T</var> is a subquotient.</p>
+
+<p><a id="X7E6D5710874F7D0B" name="X7E6D5710874F7D0B"></a></p>
+
+<h5>2.9-1 <span class="Heading">AmbientQuotient</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; AmbientQuotient</code>( <var class="Arg">T</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a QuotientWeylModule</p>
+
+<p>This function returns the ambient quotient Weyl module containing the given subquotient <var class="Arg">T</var>.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">W:= WeylModule(2,[3,0],"G",2);</span>
+V[ 3, 0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">m:= AmbiguousMaxVecs(W); List(m, Weight);</span>
+[ y1*y3*v0, y4*v0 ]
+[ [ 2, 0 ], [ 2, 0 ] ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Q:= QuotientWeylModule(SubWeylModule(W,m[1]));</span>
+64-dimensional quotient of V[ 3, 0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">subQ:= SubWeylModule(Q, m[2]);</span>
+21-dimensional submod of 64-dimensional quotient of V[ 3, 0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">AmbientQuotient(subQ);</span>
+64-dimensional quotient of V[ 3, 0 ]
+</pre></div>
+
+<p><a id="X7BD5B55C802805B4" name="X7BD5B55C802805B4"></a></p>
+
+<h5>2.9-2 <span class="Heading">Generators</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; Generators</code>( <var class="Arg">T</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a list</p>
+
+<p>This returns a list of generators for the given subquotient <var class="Arg">T</var>. In the next example, we assume that <code class="code">subQ</code> is the subquotient constructed in the example for the <code class="func">AmbientQuotient</code> (<a href="chap2_mj.html#X7E6D5710874F7D0B"><span class="RefLink">2.9-1</span></a>) command, documented above.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Generators(subQ);</span>
+[ y4*v0 ]
+</pre></div>
+
+<p><a id="X796F6BF77AE2D92E" name="X796F6BF77AE2D92E"></a></p>
+
+<h5>2.9-3 <span class="Heading">IsWithin</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; IsWithin</code>( <var class="Arg">T</var>, <var class="Arg">v</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: true or false</p>
+
+<p>This returns <code class="keyw">true</code> if and only if the image of the given vector <var class="Arg">v</var> (under the quotient map from the ambient Weyl module to the ambient quotient) lies in the given subquotient <var class="Arg">T</var>. In the next example, we assume that <code class="code">subQ</code>, <code class="code">Q</code>, and <code class="code">m</code> are as defined in the example for <code class="func">AmbientQuotient</code> (<a href="chap2_mj.html#X7E6D5710874F7D0B"><span class="RefLink">2.9-1</span></a>) above.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsWithin(subQ,m[2]);</span>
+true
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">IsWithin(subQ, Generator(Q));</span>
+false
+</pre></div>
+
+<p><a id="X7EAA82567AA01643" name="X7EAA82567AA01643"></a></p>
+
+<h5>2.9-4 <span class="Heading">NextSocle</span></h5>
+
+<div class="func"><table class="func" width="100%"><tr><td class="tdleft"><code class="func">&#8227; NextSocle</code>( <var class="Arg">T</var> )</td><td class="tdright">(&nbsp;operation&nbsp;)</td></tr></table></div>
+<p>Returns: a SubQuotientWeylModule</p>
+
+<p>This function returns the maximal subquotient <var class="Arg">T</var> containing the given subquotient <var class="Arg">S</var> such that <span class="SimpleMath">\(T/S\)</span> is semisimple. If <var class="Arg">S</var> happens to be an element of the socle series then the function returns the next element in the socle series.</p>
+
+<p>In the next example, we assume that <code class="code">subQ</code> is the subquotient constructed in the example for the <code class="func">AmbientQuotient</code> (<a href="chap2_mj.html#X7E6D5710874F7D0B"><span class="RefLink">2.9-1</span></a>) command, documented above.</p>
+
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DecompositionNumbers(subQ);</span>
+[ [ 2, 0 ], 1, [ 0, 1 ], 1, [ 0, 0 ], 1 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">N:= NextSocle(subQ);</span>
+22-dimensional submod of 64-dimensional quotient of V[ 3, 0 ]
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">DecompositionNumbers(N);</span>
+[ [ 2, 0 ], 1, [ 0, 1 ], 1, [ 0, 0 ], 2 ]
 </pre></div>
 
 
 <div class="chlinkprevnextbot">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap1_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap3_mj.html">[Next Chapter]</a>&nbsp;  </div>
 
 
-<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chap5_mj.html">5</a>  <a href="chap6_mj.html">6</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
 
 <hr />
 <p class="foot">generated by <a href="http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>

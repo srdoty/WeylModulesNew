@@ -1,6 +1,9 @@
   
   [1X1 [33X[0;0YIntroduction[133X[101X
   
+  
+  [1X1.1 [33X[0;0YPurpose[133X[101X
+  
   [33X[0;0YThis  [5XGAP[105X  Package  supports digital computer computations with Weyl modules
   for   a   given  simple  simply-connected  algebraic  group  [23XG[123X  in  positive
   characteristic  [23Xp[123X.  Actually  the group [23XG[123X itself never appears in any of the
@@ -37,17 +40,33 @@
   modules  of small dimension, the weight spaces tend to be small enough to be
   manageable.[133X
   
-  [33X[0;0YVersions  1.0  and  1.1 of this package were released in 2009. Their initial
-  development  was  spurred by work on the paper [BDM11]. The discovery of the
-  first  counterexample  to  Donkin's  tilting  module  conjecture, by Bendel,
-  Nakano,  Pillen, and Sobaje [BNPS20] motivated the author to make subsequent
-  calculations  that  led  to  the  realization  that  the  [9XSubmoduleStructure[109X
-  function was not reliable. This led to the development of Version 2.0, which
-  eliminates  the  unreliable  command and adds a number of new functions that
-  extend the capabilities of the previous version.[133X
-  
   [33X[0;0YAlthough  most  of the functions deal with the simple simply-connected case,
   there  are  a  few  functions  for dealing with Schur algebras and symmetric
   groups.  Those  commands  are  limited  in  scope,  and provided mainly as a
   convenience.[133X
+  
+  
+  [1X1.2 [33X[0;0YCounterexample to Donkin's conjecture[133X[101X
+  
+  [33X[0;0YIn  2019,  Chris  Bendel,  Dan  Nakano,  Cornelius  Pillen,  and Paul Sobaje
+  [BNPS20]   found   the  first  counterexample  to  Donkin's  tilting  module
+  conjecture  using  this  package.  This  important  advance  led  to further
+  development of the package.[133X
+  
+  
+  [1X1.3 [33X[0;0YChangeLog[133X[101X
+  
+  [33X[0;0YThe initial release was Version 1.0 in 2009.[133X
+  
+  [33X[0;0Y1.  Versions  1.0 and 1.1 were released in 2009. The initial development was
+  spurred by work on the paper [BDM11].[133X
+  
+  [33X[0;0Y2.  Version  2.0  was  released  on 29 February 2024. The [9XSubmoduleStructure[109X
+  command was eliminated. Support was added for subquotients.[133X
+  
+  [33X[0;0Y3.   Version   2.1  (this  version)  was  released  on  21  June  2024.  The
+  documentation was completely rewritten. There is more support for submodules
+  and  subquotients,  including  the  new  functions:  [9XSocleLengthTwoQuotient[109X,
+  [9XTwoFactorQuotientsContaining[109X.  These  can  be used to obtain Ext information
+  about a Weyl module.[133X
   

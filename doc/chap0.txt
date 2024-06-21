@@ -6,10 +6,10 @@
                  [1X for simple simply-connected algebraic groups [101X
   
   
-                                  Version 2.0
+                                      2.1
   
   
-                                29 February 2024
+                                  21 June 2024
   
   
                                   Stephen Doty
@@ -50,14 +50,8 @@
   from the Deutsche Forschungsgemeinschaft (DFG).[133X
   [33X[0;0YThe  existence  of  this software owes much to the gentle prodding of Stuart
   Martin.  Thanks are also due to Yutaka Yoshii for testing an earlier version
-  of  the  software,  and Matt Fayers for supplying his GAP code for computing
+  of  the  software,  and Matt Fayers for supplying his [5XGAP[105X code for computing
   the Mullineux map.[133X
-  [33X[0;0YIn  2018,  Chris Bendel, Dan Nakano, Cornelius Pillen, and Paul Sobaje found
-  the  first  counterexample  to Donkin's tilting module conjecture using this
-  package.  Shortly  thereafter,  the author discovered an error in one of the
-  functions.  This spurred a major rewrite in the summer of 2019, resulting in
-  Version  2.0  of the package. The rewriting of the documentation was delayed
-  by the Covid19 Pandemic and inertia, and finally completed in February 2024.[133X
   
   
   -------------------------------------------------------
@@ -66,157 +60,89 @@
   [1XContents (WeylModules)[101X
   
   1 [33X[0;0YIntroduction[133X
+    1.1 [33X[0;0YPurpose[133X
+    1.2 [33X[0;0YCounterexample to Donkin's conjecture[133X
+    1.3 [33X[0;0YChangeLog[133X
   2 [33X[0;0YWeyl modules[133X
-    2.1 [33X[0;0YCreating Weyl modules[133X
-    2.2 [33X[0;0YCreating quotient Weyl modules[133X
-    2.3 [33X[0;0YCreating submodules[133X
-    2.4 [33X[0;0YWeights and weight spaces[133X
-      2.4-1 [33X[0;0YUsing [9XList[109X with [9XWeight[109X[133X
-    2.5 [33X[0;0YMaximal vectors[133X
-    2.6 [33X[0;0YAmbiguity[133X
-    2.7 [33X[0;0YBasis and dimension[133X
-    2.8 [33X[0;0YMiscellaneous commands[133X
-  3 [33X[0;0YCharacters and structure[133X
-    3.1 [33X[0;0YCharacters[133X
-    3.2 [33X[0;0YDecomposition numbers[133X
-    3.3 [33X[0;0YThe maximal submodule and simple quotient[133X
-    3.4 [33X[0;0YThe socle series[133X
-    3.5 [33X[0;0YTesting membership[133X
-    3.6 [33X[0;0YThe ambient module[133X
-    3.7 [33X[0;0YActing on a vector[133X
-  4 [33X[0;0YSchur algebras and symmetric groups[133X
-    4.1 [33X[0;0YCompositions and weights[133X
-    4.2 [33X[0;0YBounded partitions[133X
-    4.3 [33X[0;0YListing partitions[133X
-    4.4 [33X[0;0YSchur algebras[133X
-    4.5 [33X[0;0YSymmetric groups[133X
-    4.6 [33X[0;0YThe Mullineux correspondence[133X
-  5 [33X[0;0YCase studies[133X
-    5.1 [33X[0;0YType G 2 in characteristic 2[133X
-      5.1-1 [33X[0;0YDimensions of restricted simples[133X
-      5.1-2 [33X[0;0YStructure of the Weyl module of highest weight $[2,0]$[133X
-      5.1-3 [33X[0;0YThe socle of the Weyl module of highest weight $[2,2]$[133X
-    5.2 [33X[0;0YType A 2[133X
-      5.2-1 [33X[0;0YThe Weyl module of highest weight $[7,7]$ in characteristic 2[133X
-      5.2-2 [33X[0;0YThe Weyl module of highest weight $[7,7]$ in characteristic 3[133X
-      5.2-3 [33X[0;0YThe Weyl module of highest weight $[7,7]$ in characteristic 5[133X
-  6 [33X[0;0YReference: Declarations by File[133X
-    6.1 [33X[0;0YContents of weylmodules.gd[133X
-      6.1-1 IsWeylModule
-      6.1-2 WeylModule
-      6.1-3 WeylModule
-      6.1-4 IsAmbiguous
-      6.1-5 AmbiguousMaxVecs
-      6.1-6 TheLieAlgebra
-      6.1-7 TheCharacteristic
-      6.1-8 BasisVecs
-      6.1-9 Generator
-      6.1-10 Dim
-      6.1-11 Weights
-      6.1-12 DominantWeights
-      6.1-13 WeightSpace
-      6.1-14 WeightSpaces
-      6.1-15 ActOn
-      6.1-16 DominantWeightSpaces
-      6.1-17 Character
-      6.1-18 SimpleLieAlgGens
-      6.1-19 IsMaximalVector
-      6.1-20 MaximalVectors
-      6.1-21 MaximalVectors
-      6.1-22 SocleSeries
-      6.1-23 SimpleQuotient
-      6.1-24 MaximalSubmodule
-      6.1-25 DecompositionNumbers
-    6.2 [33X[0;0YContents of submodules.gd[133X
-      6.2-1 IsSubWeylModule
-      6.2-2 SubWeylModule
-      6.2-3 SubWeylModule
-      6.2-4 SubWeylModule
-      6.2-5 SubWeylModuleDirectSum
-      6.2-6 IsAmbiguous
-      6.2-7 AmbiguousMaxVecs
-      6.2-8 Generators
-      6.2-9 BasisVecs
-      6.2-10 Dim
-      6.2-11 AmbientWeylModule
-      6.2-12 Weights
-      6.2-13 DominantWeights
-      6.2-14 WeightSpaces
-      6.2-15 Character
-      6.2-16 DominantWeightSpaces
-      6.2-17 WeightSpace
-      6.2-18 IsMaximalVector
-      6.2-19 MaximalVectors
-      6.2-20 MaximalVectors
-      6.2-21 IsWithin
-      6.2-22 SocleWeyl
-      6.2-23 NextSocle
-      6.2-24 GensNextSocle
-    6.3 [33X[0;0YContents of characters.gd[133X
-      6.3-1 Weight
-      6.3-2 DifferenceCharacter
-      6.3-3 ProductCharacter
-      6.3-4 DecomposeCharacter
-      6.3-5 SimpleCharacter
-      6.3-6 SimpleCharacter
-    6.4 [33X[0;0YContents of partitions.gd[133X
-      6.4-1 CompositionToWeight
-      6.4-2 WeightToComposition
-      6.4-3 BoundedPartitions
-      6.4-4 BoundedPartitions
-      6.4-5 pRestrictedPartitions
-      6.4-6 AllPartitions
-      6.4-7 Conjugate
-      6.4-8 pRestricted
-      6.4-9 pRegular
-      6.4-10 Mullineux
-      6.4-11 pRegularPartitions
-    6.5 [33X[0;0YContents of quotient.gd[133X
-      6.5-1 IsQuotientWeylModule
-      6.5-2 QuotientWeylModule
-      6.5-3 AmbientWeylModule
-      6.5-4 DefiningKernel
-      6.5-5 IsAmbiguous
-      6.5-6 AmbiguousMaxVecs
-      6.5-7 TheLieAlgebra
-      6.5-8 TheCharacteristic
-      6.5-9 BasisVecs
-      6.5-10 Generator
-      6.5-11 Dim
-      6.5-12 Weights
-      6.5-13 DominantWeights
-      6.5-14 WeightSpaces
-      6.5-15 Character
-      6.5-16 DominantWeightSpaces
-      6.5-17 WeightSpace
-      6.5-18 ActOn
-      6.5-19 MaximalVectors
-      6.5-20 MaximalVectors
-      6.5-21 SocleSeries
-    6.6 [33X[0;0YContents of schuralgebras.gd[133X
-      6.6-1 IsSchurAlgebraWeylModule
-      6.6-2 SchurAlgebraWeylModule
-      6.6-3 SchurAlgebraDecompositionMatrix
-      6.6-4 SymmetricGroupDecompositionNumbers
-      6.6-5 SymmetricGroupDecompositionMatrix
-    6.7 [33X[0;0YContents of subquotient.gd[133X
-      6.7-1 IsSubQuotientWeylModule
-      6.7-2 IsWithin
-      6.7-3 SubWeylModule
-      6.7-4 SubWeylModule
-      6.7-5 SubWeylModule
-      6.7-6 SubWeylModuleDirectSum
-      6.7-7 Generators
-      6.7-8 BasisVecs
-      6.7-9 Dim
-      6.7-10 AmbientQuotient
-      6.7-11 Weights
-      6.7-12 WeightSpaces
-      6.7-13 Character
-      6.7-14 DominantWeightSpaces
-      6.7-15 WeightSpace
-      6.7-16 SocleWeyl
-      6.7-17 NextSocle
+    2.1 [33X[0;0YConstructors[133X
+      2.1-1 [33X[0;0YWeylModule[133X
+      2.1-2 [33X[0;0YQuotientWeylModule[133X
+      2.1-3 [33X[0;0YSubWeylModule[133X
+      2.1-4 [33X[0;0YSubQuotientWeylModule[133X
+    2.2 [33X[0;0YFilters[133X
+      2.2-1 [33X[0;0YIsWeylModule[133X
+      2.2-2 [33X[0;0YIsQuotientWeylModule[133X
+      2.2-3 [33X[0;0YIsSubWeylModule[133X
+      2.2-4 [33X[0;0YIsSubQuotientWeylModule[133X
+    2.3 [33X[0;0YOperations common to all four types[133X
+      2.3-1 [33X[0;0YBasisVecs[133X
+      2.3-2 [33X[0;0YCharacter[133X
+      2.3-3 [33X[0;0YDecompositionNumbers[133X
+      2.3-4 [33X[0;0YDim[133X
+      2.3-5 [33X[0;0YDominantWeights[133X
+      2.3-6 [33X[0;0YDominantWeightSpaces[133X
+      2.3-7 [33X[0;0YWeights[133X
+      2.3-8 [33X[0;0YWeightSpaces[133X
+      2.3-9 [33X[0;0YWeightSpace[133X
+      2.3-10 [33X[0;0YTheCharacteristic[133X
+      2.3-11 [33X[0;0YTheLieAlgebra[133X
+    2.4 [33X[0;0YOperations common to Weyl modules, submodules, and quotients[133X
+      2.4-1 [33X[0;0YMaximalVectors[133X
+      2.4-2 [33X[0;0YIsAmbiguous[133X
+      2.4-3 [33X[0;0YAmbiguousMaxVecs[133X
+    2.5 [33X[0;0YOperations on Weyl modules and their quotients[133X
+      2.5-1 [33X[0;0YActOn[133X
+      2.5-2 [33X[0;0YGenerator[133X
+      2.5-3 [33X[0;0YGensSocleLayers[133X
+      2.5-4 [33X[0;0YPrintSocleLayers[133X
+      2.5-5 [33X[0;0YSocleSeries[133X
+      2.5-6 [33X[0;0YSocleWeyl[133X
+    2.6 [33X[0;0YOperations on Weyl modules[133X
+      2.6-1 [33X[0;0YMaximalSubmodule[133X
+      2.6-2 [33X[0;0YSimpleQuotient[133X
+    2.7 [33X[0;0YOperations on quotients[133X
+      2.7-1 [33X[0;0YAmbientWeylModule[133X
+      2.7-2 [33X[0;0YDefiningKernel[133X
+    2.8 [33X[0;0YOperations on submodules[133X
+      2.8-1 [33X[0;0YAmbientWeylModule[133X
+      2.8-2 [33X[0;0YGenerators[133X
+      2.8-3 [33X[0;0YIsWithin[133X
+      2.8-4 [33X[0;0YNextSocle[133X
+      2.8-5 [33X[0;0YGensNextSocle[133X
+      2.8-6 [33X[0;0YSocleLengthTwoQuotient[133X
+      2.8-7 [33X[0;0YTwoFactorQuotientsContaining[133X
+    2.9 [33X[0;0YOperations on subquotients[133X
+      2.9-1 [33X[0;0YAmbientQuotient[133X
+      2.9-2 [33X[0;0YGenerators[133X
+      2.9-3 [33X[0;0YIsWithin[133X
+      2.9-4 [33X[0;0YNextSocle[133X
+  3 [33X[0;0YWeights and Characters[133X
+    3.1 [33X[0;0YWeights[133X
+      3.1-1 Weight
+    3.2 [33X[0;0YCharacters[133X
+      3.2-1 [33X[0;0YDecomposeCharacter[133X
+      3.2-2 [33X[0;0YDifferenceCharacter[133X
+      3.2-3 [33X[0;0YProductCharacter[133X
+      3.2-4 [33X[0;0YSimpleCharacter[133X
+  4 [33X[0;0YSchur Algebras[133X
+    4.1 [33X[0;0YConstructor and filter[133X
+      4.1-1 [33X[0;0YSchurAlgebraWeylModule[133X
+      4.1-2 [33X[0;0YIsSchurAlgebraWeylModule[133X
+    4.2 [33X[0;0YDecomposition matrices[133X
+      4.2-1 [33X[0;0YSchurAlgebraDecompositionMatrix[133X
+      4.2-2 [33X[0;0YSymmetricGroupDecompositionNumbers[133X
+      4.2-3 [33X[0;0YSymmetricGroupDecompositionMatrix[133X
+    4.3 [33X[0;0YPartitions[133X
+      4.3-1 [33X[0;0YCompositionToWeight[133X
+      4.3-2 [33X[0;0YWeightToComposition[133X
+      4.3-3 [33X[0;0YAllPartitions[133X
+      4.3-4 [33X[0;0YBoundedPartitions[133X
+      4.3-5 [33X[0;0YConjugate[133X
+      4.3-6 [33X[0;0YpRegular[133X
+      4.3-7 [33X[0;0YpRegularPartitions[133X
+      4.3-8 [33X[0;0YpRestricted[133X
+      4.3-9 [33X[0;0YpRestrictedPartitions[133X
+      4.3-10 [33X[0;0YMullineux[133X
   
   
   [32X

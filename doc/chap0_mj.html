@@ -18,7 +18,7 @@
 <body class="chap0"  onload="jscontent()">
 
 
-<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chap5_mj.html">5</a>  <a href="chap6_mj.html">6</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
 
 <div class="chlinkprevnexttop">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap1_mj.html">[Next Chapter]</a>&nbsp;  </div>
 
@@ -32,10 +32,10 @@
 <h2>for simple simply-connected algebraic groups</h2>
 
 <p>
-    Version 2.0</p>
+    2.1</p>
 
 <p>
-    29 February 2024
+    21 June 2024
   </p>
 
 </div>
@@ -61,7 +61,7 @@
 
 <p><a id="X82A988D47DFAFCFA" name="X82A988D47DFAFCFA"></a></p>
 <h3>Acknowledgements</h3>
-<p>The development of this software was initiated in June 2003 while the author was visiting the Department of Pure Mathematics and Mathematical Statistics (DPMMS) at the University of Cambridge, and continued during subsequent visits to DPMMS in June 2004 and in May through July of 2007. The author was supported by a Yip Fellowship at Magdalene College, Cambridge in 2007. The final stages of development took place in Chicago and in January 2009 at Universität Bielefeld, where the author was supported by a Mercator grant from the Deutsche Forschungsgemeinschaft (DFG). <br /> <br /> The existence of this software owes much to the gentle prodding of Stuart Martin. Thanks are also due to Yutaka Yoshii for testing an earlier version of the software, and Matt Fayers for supplying his GAP code for computing the Mullineux map. <br /> <br /> In 2018, Chris Bendel, Dan Nakano, Cornelius Pillen, and Paul Sobaje found the first counterexample to Donkin's tilting module conjecture using this package. Shortly thereafter, the author discovered an error in one of the functions. This spurred a major rewrite in the summer of 2019, resulting in Version 2.0 of the package. The rewriting of the documentation was delayed by the Covid19 Pandemic and inertia, and finally completed in February 2024.</p>
+<p>The development of this software was initiated in June 2003 while the author was visiting the Department of Pure Mathematics and Mathematical Statistics (DPMMS) at the University of Cambridge, and continued during subsequent visits to DPMMS in June 2004 and in May through July of 2007. The author was supported by a Yip Fellowship at Magdalene College, Cambridge in 2007. The final stages of development took place in Chicago and in January 2009 at Universität Bielefeld, where the author was supported by a Mercator grant from the Deutsche Forschungsgemeinschaft (DFG). <br /> <br /> The existence of this software owes much to the gentle prodding of Stuart Martin. Thanks are also due to Yutaka Yoshii for testing an earlier version of the software, and Matt Fayers for supplying his <strong class="pkg">GAP</strong> code for computing the Mullineux map.</p>
 
 <p><a id="X8537FEB07AF2BEC8" name="X8537FEB07AF2BEC8"></a></p>
 
@@ -69,238 +69,201 @@
 <h3>Contents<a id="contents" name="contents"></a></h3>
 
 <div class="ContChap"><a href="chap1_mj.html#X7DFB63A97E67C0A1">1 <span class="Heading">Introduction</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap1_mj.html#X78E0A9867DABCE86">1.1 <span class="Heading">Purpose</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap1_mj.html#X827341F67ADF7E70">1.2 <span class="Heading">Counterexample to Donkin's conjecture</span></a>
+</span>
+</div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap1_mj.html#X7E44B8BF82F87046">1.3 <span class="Heading">ChangeLog</span></a>
+</span>
+</div>
 </div>
 <div class="ContChap"><a href="chap2_mj.html#X7DA94D8C7F214621">2 <span class="Heading">Weyl modules</span></a>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X8660D150822142AE">2.1 <span class="Heading">Creating Weyl modules</span></a>
-</span>
-</div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X78F3334C847F82C0">2.2 <span class="Heading">Creating quotient Weyl modules</span></a>
-</span>
-</div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X7D2F36F47F256415">2.3 <span class="Heading">Creating submodules</span></a>
-</span>
-</div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X7AED4BBA83011A1F">2.4 <span class="Heading">Weights and weight spaces</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X86EC0F0A78ECBC10">2.1 <span class="Heading">Constructors</span></a>
 </span>
 <div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X8484AE4E812D9263">2.4-1 <span class="Heading">Using <code class="keyw">List</code> with <code class="keyw">Weight</code></span></a>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X8559E5C5867FB091">2.1-1 <span class="Heading">WeylModule</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7893DF5B807DF77F">2.1-2 <span class="Heading">QuotientWeylModule</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X87BB881B83E8678D">2.1-3 <span class="Heading">SubWeylModule</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X870B2DE381DD2B06">2.1-4 <span class="Heading">SubQuotientWeylModule</span></a>
 </span>
 </div></div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X8579590C81A1278F">2.5 <span class="Heading">Maximal vectors</span></a>
-</span>
-</div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X7AB5BE4B837528E4">2.6 <span class="Heading">Ambiguity</span></a>
-</span>
-</div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X84F7408B7A18DB71">2.7 <span class="Heading">Basis and dimension</span></a>
-</span>
-</div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X86807BA87E0E89CD">2.8 <span class="Heading">Miscellaneous commands</span></a>
-</span>
-</div>
-</div>
-<div class="ContChap"><a href="chap3_mj.html#X8216AAFD7A08A4C4">3 <span class="Heading">Characters and structure</span></a>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap3_mj.html#X7CCB304878D99999">3.1 <span class="Heading">Characters</span></a>
-</span>
-</div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap3_mj.html#X81B34497828786F5">3.2 <span class="Heading">Decomposition numbers</span></a>
-</span>
-</div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap3_mj.html#X84A271A87AEDFEFF">3.3 <span class="Heading">The maximal submodule and simple quotient</span></a>
-</span>
-</div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap3_mj.html#X797CCD317F9335F3">3.4 <span class="Heading">The socle series</span></a>
-</span>
-</div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap3_mj.html#X7AC6F00B84D3A8D1">3.5 <span class="Heading">Testing membership</span></a>
-</span>
-</div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap3_mj.html#X828EC5987B937531">3.6 <span class="Heading">The ambient module</span></a>
-</span>
-</div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap3_mj.html#X8367EF0D80FD6F87">3.7 <span class="Heading">Acting on a vector</span></a>
-</span>
-</div>
-</div>
-<div class="ContChap"><a href="chap4_mj.html#X7817A3B07E17884E">4 <span class="Heading">Schur algebras and symmetric groups</span></a>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4_mj.html#X82C9B62E81E4B44F">4.1 <span class="Heading">Compositions and weights</span></a>
-</span>
-</div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4_mj.html#X7D3C52B382720016">4.2 <span class="Heading">Bounded partitions</span></a>
-</span>
-</div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4_mj.html#X83A8D18080E546E4">4.3 <span class="Heading">Listing partitions</span></a>
-</span>
-</div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4_mj.html#X802799E57A84025C">4.4 <span class="Heading">Schur algebras</span></a>
-</span>
-</div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4_mj.html#X7BE4F15F78127B12">4.5 <span class="Heading">Symmetric groups</span></a>
-</span>
-</div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4_mj.html#X78EDAF2F86560B70">4.6 <span class="Heading">The Mullineux correspondence</span></a>
-</span>
-</div>
-</div>
-<div class="ContChap"><a href="chap5_mj.html#X833CC02B84DBBBE2">5 <span class="Heading">Case studies</span></a>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5_mj.html#X8710D75A7A6F88D6">5.1 <span class="Heading">Type G 2 in characteristic 2</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X84EFA4C07D4277BB">2.2 <span class="Heading">Filters</span></a>
 </span>
 <div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X7D4521E27DF5A99B">5.1-1 <span class="Heading">Dimensions of restricted simples</span></a>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7C3D6BB17AFD771C">2.2-1 <span class="Heading">IsWeylModule</span></a>
 </span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X8780D0157A1FFA74">5.1-2 <span class="Heading">Structure of the Weyl module of highest weight $[2,0]$</span></a>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X85565F29822787B3">2.2-2 <span class="Heading">IsQuotientWeylModule</span></a>
 </span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X7B6FFCE0817942B8">5.1-3 <span class="Heading">The socle of the Weyl module of highest weight $[2,2]$</span></a>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X8605C1E3792ED051">2.2-3 <span class="Heading">IsSubWeylModule</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X86683ABB79EE0363">2.2-4 <span class="Heading">IsSubQuotientWeylModule</span></a>
 </span>
 </div></div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap5_mj.html#X80515539841DB516">5.2 <span class="Heading">Type A 2</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X80A0DB15862DA0BC">2.3 <span class="Heading">Operations common to all four types</span></a>
 </span>
 <div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X85D41F8685185C65">5.2-1 <span class="Heading">The Weyl module of highest weight $[7,7]$ in characteristic 2</span></a>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X86F495008280EC28">2.3-1 <span class="Heading">BasisVecs</span></a>
 </span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X82A46C8F838C9C3A">5.2-2 <span class="Heading">The Weyl module of highest weight $[7,7]$ in characteristic 3</span></a>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7BF731DC84FF733A">2.3-2 <span class="Heading">Character</span></a>
 </span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap5_mj.html#X7C3256DC79410D9C">5.2-3 <span class="Heading">The Weyl module of highest weight $[7,7]$ in characteristic 5</span></a>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X837F199C864C8E6C">2.3-3 <span class="Heading">DecompositionNumbers</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X85F55996829581A4">2.3-4 <span class="Heading">Dim</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7D8522E37ED1024A">2.3-5 <span class="Heading">DominantWeights</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7A90A9A57E545164">2.3-6 <span class="Heading">DominantWeightSpaces</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X82C5F58D8788C097">2.3-7 <span class="Heading">Weights</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X84202B3E82DC1872">2.3-8 <span class="Heading">WeightSpaces</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7B02B8F5792DE9EC">2.3-9 <span class="Heading">WeightSpace</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X877A8CC986C47534">2.3-10 <span class="Heading">TheCharacteristic</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X8472B03E8370745D">2.3-11 <span class="Heading">TheLieAlgebra</span></a>
+</span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X7EA0987D85E1974F">2.4 <span class="Heading">Operations common to Weyl modules, submodules, and quotients</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7E2F4CF283259D48">2.4-1 <span class="Heading">MaximalVectors</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X817578D179F5F3C4">2.4-2 <span class="Heading">IsAmbiguous</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7A7BCF4F781B617D">2.4-3 <span class="Heading">AmbiguousMaxVecs</span></a>
+</span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X86B8CB98847B8296">2.5 <span class="Heading">Operations on Weyl modules and their quotients</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7EA043B481E8841B">2.5-1 <span class="Heading">ActOn</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7E6A7D687C0EEF17">2.5-2 <span class="Heading">Generator</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X86C3D00A841C0587">2.5-3 <span class="Heading">GensSocleLayers</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7CD1B4CA81C711EA">2.5-4 <span class="Heading">PrintSocleLayers</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X84A724267E6F136D">2.5-5 <span class="Heading">SocleSeries</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X79C52EB184D3B8D7">2.5-6 <span class="Heading">SocleWeyl</span></a>
+</span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X851311EE81C86683">2.6 <span class="Heading">Operations on Weyl modules</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X79D8492F7B32876C">2.6-1 <span class="Heading">MaximalSubmodule</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7940ABBC78D7D4F6">2.6-2 <span class="Heading">SimpleQuotient</span></a>
+</span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X872C504F86A3EBC0">2.7 <span class="Heading">Operations on quotients</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X808DA4D1782F4884">2.7-1 <span class="Heading">AmbientWeylModule</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7A339C557FAB2FA9">2.7-2 <span class="Heading">DefiningKernel</span></a>
+</span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X7EC2B8FC855E0F64">2.8 <span class="Heading">Operations on submodules</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X808DA4D1782F4884">2.8-1 <span class="Heading">AmbientWeylModule</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7BD5B55C802805B4">2.8-2 <span class="Heading">Generators</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X796F6BF77AE2D92E">2.8-3 <span class="Heading">IsWithin</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7EAA82567AA01643">2.8-4 <span class="Heading">NextSocle</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X8745CE1C7EF10F5F">2.8-5 <span class="Heading">GensNextSocle</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7DCA6B8D82655007">2.8-6 <span class="Heading">SocleLengthTwoQuotient</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X83EA4E2B78CBF8C8">2.8-7 <span class="Heading">TwoFactorQuotientsContaining</span></a>
+</span>
+</div></div>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap2_mj.html#X8659C44E86717B4D">2.9 <span class="Heading">Operations on subquotients</span></a>
+</span>
+<div class="ContSSBlock">
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7E6D5710874F7D0B">2.9-1 <span class="Heading">AmbientQuotient</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7BD5B55C802805B4">2.9-2 <span class="Heading">Generators</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X796F6BF77AE2D92E">2.9-3 <span class="Heading">IsWithin</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap2_mj.html#X7EAA82567AA01643">2.9-4 <span class="Heading">NextSocle</span></a>
 </span>
 </div></div>
 </div>
-<div class="ContChap"><a href="chap6_mj.html#X7FFDD0E77FC6FE23">6 <span class="Heading">Reference: Declarations by File</span></a>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6_mj.html#X80A7304E7D182FE5">6.1 <span class="Heading">Contents of weylmodules.gd</span></a>
+<div class="ContChap"><a href="chap3_mj.html#X85662737843A2AD4">3 <span class="Heading">Weights and Characters</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap3_mj.html#X82C5F58D8788C097">3.1 <span class="Heading">Weights</span></a>
 </span>
 <div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7A7608EE7AE465EC">6.1-1 IsWeylModule</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X84AF39327E59725D">6.1-2 WeylModule</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X829734257CE51E5F">6.1-3 WeylModule</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7EA8C07B795522F0">6.1-4 IsAmbiguous</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7888AC5E8236ED49">6.1-5 AmbiguousMaxVecs</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X84DDF2577B92FA98">6.1-6 TheLieAlgebra</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X872B412C81A39CA1">6.1-7 TheCharacteristic</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X83086AF07F809720">6.1-8 BasisVecs</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7FC03496810E941F">6.1-9 Generator</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X792E60F07E313BAF">6.1-10 Dim</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7DA6241E803BB20E">6.1-11 Weights</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X8604A818852A2168">6.1-12 DominantWeights</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X8282AAF78421722D">6.1-13 WeightSpace</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X86E802677BBC222B">6.1-14 WeightSpaces</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7B67F53A7D7DAEEC">6.1-15 ActOn</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X85C0B48979C81EBB">6.1-16 DominantWeightSpaces</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X8392A7ED79FF0832">6.1-17 Character</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X79585E0E8196DDB2">6.1-18 SimpleLieAlgGens</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X808AB4567CA75339">6.1-19 IsMaximalVector</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7F3839F6788E2036">6.1-20 MaximalVectors</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X8529E4A28500AE1B">6.1-21 MaximalVectors</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7BFF2C1B7ECFC259">6.1-22 SocleSeries</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7C1B5AC57EF2E7A5">6.1-23 SimpleQuotient</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7B807AEB811F0B58">6.1-24 MaximalSubmodule</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7F573CC481D0C1B3">6.1-25 DecompositionNumbers</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7A83790B7BD90776">3.1-1 Weight</a></span>
 </div></div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6_mj.html#X7EF46ECE843F762D">6.2 <span class="Heading">Contents of submodules.gd</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap3_mj.html#X7CCB304878D99999">3.2 <span class="Heading">Characters</span></a>
 </span>
 <div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7C4293A880CA5D99">6.2-1 IsSubWeylModule</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7BF970867C8EE376">6.2-2 SubWeylModule</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X827B43437F91DA28">6.2-3 SubWeylModule</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7C53BAE3855679C2">6.2-4 SubWeylModule</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X83E9AA1D7E2024DC">6.2-5 SubWeylModuleDirectSum</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X878ACA477B462A62">6.2-6 IsAmbiguous</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X8027458B7E76ADBE">6.2-7 AmbiguousMaxVecs</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X79AE972C78B40A2F">6.2-8 Generators</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X83F74F9F83BDC981">6.2-9 BasisVecs</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7D84C58580179602">6.2-10 Dim</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7BE7DC5784D28C11">6.2-11 AmbientWeylModule</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7F10CD1B7B153010">6.2-12 Weights</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X8409DCD4837E7D87">6.2-13 DominantWeights</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X8607F8497F78A026">6.2-14 WeightSpaces</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7F63A03385C25693">6.2-15 Character</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X8494B22B821EC906">6.2-16 DominantWeightSpaces</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X854807B78610BE67">6.2-17 WeightSpace</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X84CCE13785B2F008">6.2-18 IsMaximalVector</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X83E213787E989C44">6.2-19 MaximalVectors</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X83E46D9E7A51DDEE">6.2-20 MaximalVectors</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7D54AC4B7C86D6A1">6.2-21 IsWithin</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X82C0AD2D79D3C3DF">6.2-22 SocleWeyl</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X8233F4C87B9D33EA">6.2-23 NextSocle</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X871CABC4879C316F">6.2-24 GensNextSocle</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X869A8627819AAF5E">3.2-1 <span class="Heading">DecomposeCharacter</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7C0E139B7F9F7F83">3.2-2 <span class="Heading">DifferenceCharacter</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X7FC861037804763F">3.2-3 <span class="Heading">ProductCharacter</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap3_mj.html#X871B3F6E8718C28A">3.2-4 <span class="Heading">SimpleCharacter</span></a>
+</span>
 </div></div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6_mj.html#X8170ED927F25FB00">6.3 <span class="Heading">Contents of characters.gd</span></a>
+</div>
+<div class="ContChap"><a href="chap4_mj.html#X802799E57A84025C">4 <span class="Heading">Schur Algebras</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4_mj.html#X79E8A6E47FD601EF">4.1 <span class="Heading">Constructor and filter</span></a>
 </span>
 <div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7A83790B7BD90776">6.3-1 Weight</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X80FB052C8203D491">6.3-2 DifferenceCharacter</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X8555BDBC8166FE06">6.3-3 ProductCharacter</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X82C78150813EA846">6.3-4 DecomposeCharacter</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7E3A603183A05187">6.3-5 SimpleCharacter</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X82C40C697A63B419">6.3-6 SimpleCharacter</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4_mj.html#X7F659C2A83FD5ECB">4.1-1 <span class="Heading">SchurAlgebraWeylModule</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4_mj.html#X78B486D67FA9DD03">4.1-2 <span class="Heading">IsSchurAlgebraWeylModule</span></a>
+</span>
 </div></div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6_mj.html#X87644C5E87544144">6.4 <span class="Heading">Contents of partitions.gd</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4_mj.html#X78B9FDD383A3FCF8">4.2 <span class="Heading">Decomposition matrices</span></a>
 </span>
 <div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7D55BD8F7B566541">6.4-1 CompositionToWeight</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X82C16B5F847757D4">6.4-2 WeightToComposition</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7AA6705482A42EDB">6.4-3 BoundedPartitions</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7DABA4DF81E39BDD">6.4-4 BoundedPartitions</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X78D3B01F7FAF3CAD">6.4-5 pRestrictedPartitions</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7E22D9817EE8BCED">6.4-6 AllPartitions</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X796223647E619A1D">6.4-7 Conjugate</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7D2F79FE7A6B1911">6.4-8 pRestricted</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X8502679A7BA8D6BD">6.4-9 pRegular</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7EFF862081A1912C">6.4-10 Mullineux</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7CDCD0147B36F7A7">6.4-11 pRegularPartitions</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4_mj.html#X79BFB3007DCB9CF1">4.2-1 <span class="Heading">SchurAlgebraDecompositionMatrix</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4_mj.html#X78755A2F79DE1B84">4.2-2 <span class="Heading">SymmetricGroupDecompositionNumbers</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4_mj.html#X833A2717839A8F36">4.2-3 <span class="Heading">SymmetricGroupDecompositionMatrix</span></a>
+</span>
 </div></div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6_mj.html#X7D194ECF827AD607">6.5 <span class="Heading">Contents of quotient.gd</span></a>
+<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap4_mj.html#X84A6D15F8107008B">4.3 <span class="Heading">Partitions</span></a>
 </span>
 <div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X8622477F829F7CCB">6.5-1 IsQuotientWeylModule</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7B24F92D81C110EC">6.5-2 QuotientWeylModule</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X855B7A5A85406B5B">6.5-3 AmbientWeylModule</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X8120F6BC8259F9D6">6.5-4 DefiningKernel</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7F7B651C873FA922">6.5-5 IsAmbiguous</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X78459E5F7A528047">6.5-6 AmbiguousMaxVecs</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7CA8012D87A8F7D7">6.5-7 TheLieAlgebra</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X878108107BAB56EB">6.5-8 TheCharacteristic</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7F1B557787890B1B">6.5-9 BasisVecs</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7B8B3F1879070824">6.5-10 Generator</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X872624E3813F12FF">6.5-11 Dim</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7CE4B29B81E48C9B">6.5-12 Weights</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7E77F8F97C7A0225">6.5-13 DominantWeights</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X78A14EEA81798734">6.5-14 WeightSpaces</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7DBF79D081F69409">6.5-15 Character</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7B171F318658F512">6.5-16 DominantWeightSpaces</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X8712F2F981F285B2">6.5-17 WeightSpace</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7C3353628112FD32">6.5-18 ActOn</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X82D21BBE87EE1D85">6.5-19 MaximalVectors</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X802830D07ED74B37">6.5-20 MaximalVectors</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X80860CBB80A5498B">6.5-21 SocleSeries</a></span>
-</div></div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6_mj.html#X785B4A9B801AD7CF">6.6 <span class="Heading">Contents of schuralgebras.gd</span></a>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4_mj.html#X7F5BE0C778965ED9">4.3-1 <span class="Heading">CompositionToWeight</span></a>
 </span>
-<div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7A142DF97DA7FC57">6.6-1 IsSchurAlgebraWeylModule</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7BADB611851BF24E">6.6-2 SchurAlgebraWeylModule</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X819204EC85215AEA">6.6-3 SchurAlgebraDecompositionMatrix</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7C934349804AF7F6">6.6-4 SymmetricGroupDecompositionNumbers</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7DD2E56C7D6752D2">6.6-5 SymmetricGroupDecompositionMatrix</a></span>
-</div></div>
-<div class="ContSect"><span class="tocline"><span class="nocss">&nbsp;</span><a href="chap6_mj.html#X79A84B3F79F2B0FF">6.7 <span class="Heading">Contents of subquotient.gd</span></a>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4_mj.html#X81E6D3CE859C9751">4.3-2 <span class="Heading">WeightToComposition</span></a>
 </span>
-<div class="ContSSBlock">
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7D8D0E4A7A20ACC4">6.7-1 IsSubQuotientWeylModule</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X87854A357E724CD1">6.7-2 IsWithin</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X817995B8799471F2">6.7-3 SubWeylModule</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X79ED76798799624A">6.7-4 SubWeylModule</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7F38126A7EF9AF5F">6.7-5 SubWeylModule</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X86BBDD027CDCE992">6.7-6 SubWeylModuleDirectSum</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X84E9848E848E0760">6.7-7 Generators</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X794D1B0779786C9E">6.7-8 BasisVecs</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X8613711B845805F3">6.7-9 Dim</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7EA45084876AD8B1">6.7-10 AmbientQuotient</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7EF05C7587AB22B4">6.7-11 Weights</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X788C11538628836B">6.7-12 WeightSpaces</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X86EEE6FA7F07F38C">6.7-13 Character</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X782BC97082FF36E5">6.7-14 DominantWeightSpaces</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X879E32C3797083D4">6.7-15 WeightSpace</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X7FE9530C81DA5FE4">6.7-16 SocleWeyl</a></span>
-<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap6_mj.html#X78086C8D815896F5">6.7-17 NextSocle</a></span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4_mj.html#X873D727E7E1A113A">4.3-3 <span class="Heading">AllPartitions</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4_mj.html#X87B4FF987D56A4EF">4.3-4 <span class="Heading">BoundedPartitions</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4_mj.html#X87C9E8597DDE0431">4.3-5 <span class="Heading">Conjugate</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4_mj.html#X7C1369AC7922A0AE">4.3-6 <span class="Heading">pRegular</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4_mj.html#X7A951CB38756FC42">4.3-7 <span class="Heading">pRegularPartitions</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4_mj.html#X867CC58F7B74C723">4.3-8 <span class="Heading">pRestricted</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4_mj.html#X80E94CCE87063BDC">4.3-9 <span class="Heading">pRestrictedPartitions</span></a>
+</span>
+<span class="ContSS"><br /><span class="nocss">&nbsp;&nbsp;</span><a href="chap4_mj.html#X7BDED41984BEFB59">4.3-10 <span class="Heading">Mullineux</span></a>
+</span>
 </div></div>
 </div>
 <div class="ContChap"><a href="chapBib_mj.html"><span class="Heading">References</span></a></div>
@@ -311,7 +274,7 @@
 <div class="chlinkprevnextbot">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap1_mj.html">[Next Chapter]</a>&nbsp;  </div>
 
 
-<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chap5_mj.html">5</a>  <a href="chap6_mj.html">6</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chapBib_mj.html">Bib</a>  <a href="chapInd_mj.html">Ind</a>  </div>
 
 <hr />
 <p class="foot">generated by <a href="http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
