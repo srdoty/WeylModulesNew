@@ -19,6 +19,9 @@
 /doc/*.toc
 /doc/manual.pdf
 /doc/_*.xml
+/doc/title.xml
+/doc/WeylModules.xml
+/doc/mathjax
 
 /bin/
 /gen/
