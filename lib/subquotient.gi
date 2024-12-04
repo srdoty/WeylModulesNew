@@ -359,14 +359,15 @@ function(Q)
 end );
 
 #############################################################################
-InstallMethod(NextSocle, "for a sub quotient Weyl module", true,
+InstallMethod(GensNextSocle, "for a sub quotient Weyl module", true,
 [IsSubQuotientWeylModule], 0, 
 function(S)
- # Returns the next socle of Q (the submodule that maps onto soc(Q/S))
+ # Returns list of generators of the next socle of Q
+ # (the submodule that maps onto soc(Q/S))
  local Q, K, gens, SS, QQ;
  Q:= AmbientQuotient(S); # the parent quotient module
  if Dim(S) = Dim(Q) then 
-     return S;
+     return [];  # no additional gens
  fi;
 
  # calculate the preimage SS of S under V -> V/K
@@ -376,8 +377,16 @@ function(S)
 
  QQ:= QuotientWeylModule(SS);
  gens:= Generators(SocleWeyl(QQ));
- return SubWeylModule(S,gens);
+ return gens;
 end );
+
+#############################################################################
+InstallMethod(NextSocle, "for a sub quotient Weyl module", true,
+[IsSubQuotientWeylModule], 0, 
+function(S)
+ # Returns the next socle of Q (the submodule that maps onto soc(Q/S))
+ return SubWeylModule(S, GensNextSocle(S));
+end);
 
 #############################################################################
 InstallMethod(DecompositionNumbers, "for a sub quotient Weyl module", true, 
