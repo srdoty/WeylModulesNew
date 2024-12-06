@@ -328,21 +328,34 @@ function(Q)
 end );
 
 #############################################################################
+InstallMethod(SocleSeriesAndPrims, "for a quotient Weyl module", true,
+[IsQuotientWeylModule], 0, 
+function(V)
+ # Returns the socle series of V and the primitive vectors for the socle
+ # series layers, as a list of length two
+
+ local S, socles, gens, prim_vecs;
+
+ S:= SocleWeyl(V);
+ prim_vecs:= [Generators(S)];
+ socles:= [S];
+ 
+ while Dim(S) < Dim(V) do
+   gens:= GensNextSocle(S);
+   S:= SubWeylModule(S,gens);
+   Add(socles,S); Add(prim_vecs,gens);
+ od;
+ return [socles, prim_vecs];
+end );
+
+#############################################################################
 InstallMethod(SocleSeries, "for a quotient Weyl module", true,
 [IsQuotientWeylModule], 0, 
 function(V)
  # Returns the socle series of V
-
- local S, ans;
-
- S:= SocleWeyl(V);
- ans:= [S];
- 
- while Dim(S) < Dim(V) do
-   S:= NextSocle(S);
-   Add(ans,S);
- od;
- return ans;
+ local two_list;
+ two_list:= SocleSeriesAndPrims(V);
+ return two_list[1];
 end );
 
 #############################################################################
@@ -350,17 +363,12 @@ InstallMethod(GensSocleLayers, "for a quotient Weyl module", true,
 [IsQuotientWeylModule], 0,
 function(Q)
     #returns a list of of lists of generators of the socle layers of Q
-    local ss, soc, k, out, all, start;
-    ss:= SocleSeries(Q);
-    out:=[ Generators(ss[1]) ];
-    for k in [2..Length(ss)] do
-        all:= Generators(ss[k]);
-        start:= 1 + Length(Generators(ss[k-1]));
-        Add(out, all{[start..Length(all)]});
-    od;
-    return(out);
+    local two_list;
+    two_list:= SocleSeriesAndPrims(Q);
+    return two_list[2];
 end );
 
+#############################################################################
 InstallMethod(PrintSocleLayers, "for a Weyl module", true, 
 [IsQuotientWeylModule], 0,
 function(V)

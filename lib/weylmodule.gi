@@ -341,37 +341,44 @@ function(V)
 end );
 
 #############################################################################
-InstallMethod(SocleSeries, "for a Weyl module", true, [IsWeylModule], 0, 
-function(V)
- # Returns the socle series of V
+InstallMethod(SocleSeriesAndPrims, "for a Weyl module", true, [IsWeylModule],
+0, function(V)
+ # Returns the socle series of V and the primitive vectors for the socle
+ # series layers, as a list of length two
 
- local S, ans;
-
+ local S, socles, gens, prim_vecs;
+ 
  S:= SocleWeyl(V);
- ans:= [S];
+ prim_vecs:= [Generators(S)];
+ socles:= [S]; 
  
  while Dim(S) < Dim(V) do
-   S:= NextSocle(S);
-   Add(ans,S);
+   gens:= GensNextSocle(S);
+   S:= SubWeylModule(S,gens);
+   Add(socles,S); Add(prim_vecs,gens);
  od;
- return ans;
+ return [socles, prim_vecs];
+end );
+
+#############################################################################
+InstallMethod(SocleSeries, "for a Weyl module", true, [IsWeylModule],
+0, function(V)
+ # Returns the socle series of V
+ local two_list;
+ two_list:= SocleSeriesAndPrims(V);
+ return two_list[1];
 end );
 
 #############################################################################
 InstallMethod(GensSocleLayers, "for a Weyl module", true, [IsWeylModule], 0,
 function(V)
     #returns a list of lists of generators of the socle layers
-    local ss, soc, k, out, all, start;
-    ss:= SocleSeries(V);
-    out:=[ Generators(ss[1]) ];
-    for k in [2..Length(ss)] do
-        all:= Generators(ss[k]);
-        start:= 1 + Length(Generators(ss[k-1]));
-        Add(out, all{[start..Length(all)]});
-    od;
-    return(out);
+    local two_list;
+    two_list:= SocleSeriesAndPrims(V);
+    return two_list[2];
 end );
 
+#############################################################################
 InstallMethod(PrintSocleLayers, "for a Weyl module", true, [IsWeylModule], 0,
 function(V)
     # prints the highest weights of the composition factors for 
