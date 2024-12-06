@@ -144,6 +144,7 @@ DeclareOperation( "MaximalVectors", [IsQuotientWeylModule,IsList]);
 #! @Group MaximalVectors
 DeclareAttribute( "MaximalVectors", IsQuotientWeylModule );
 
+# The following is not documented at this time
 DeclareAttribute( "SocleSeriesAndPrims", IsQuotientWeylModule );
 
 #! @ChapterInfo Weyl modules, Operations on Weyl modules and their quotients

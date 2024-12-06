@@ -216,11 +216,14 @@ DeclareAttribute("SocleWeyl", IsQuotientWeylModule );
 #! [ [ 2, 0 ], 1, [ 0, 1 ], 1, [ 0, 0 ], 1 ]
 #! gap> N:= NextSocle(subQ);
 #! 22-dimensional submod of 64-dimensional quotient of V[ 3, 0 ]
+#! gap> g:= GensNextSocle(subQ);
+#![ y5*y6*v0 ]
 #! gap> DecompositionNumbers(N);
 #! [ [ 2, 0 ], 1, [ 0, 1 ], 1, [ 0, 0 ], 2 ]
 #! @EndExampleSession
-DeclareOperation("GensNextSocle", [IsSubQuotientWeylModule]);
 DeclareOperation("NextSocle", [IsSubQuotientWeylModule]);
+DeclareOperation("GensNextSocle", [IsSubQuotientWeylModule]);
+
 
 #! @ChapterInfo Weyl modules, Operations common to all four types
 #! @Arguments T

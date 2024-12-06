@@ -381,6 +381,7 @@ DeclareAttribute( "IsAmbiguous",  IsWeylModule );
 #! @EndExampleSession
 DeclareAttribute( "AmbiguousMaxVecs", IsWeylModule );
 
+# The following is not documented at this time
 DeclareAttribute("SocleSeriesAndPrims", IsWeylModule );
 
 #! @ChapterInfo Weyl modules, Operations on Weyl modules and their quotients
