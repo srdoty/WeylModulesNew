@@ -222,6 +222,23 @@ DeclareAttribute("SocleWeyl", IsQuotientWeylModule );
 #! [ [ 2, 0 ], 1, [ 0, 1 ], 1, [ 0, 0 ], 2 ]
 #! @EndExampleSession
 DeclareOperation("NextSocle", [IsSubQuotientWeylModule]);
+
+
+#! @ChapterInfo Weyl_modules, Operations on subquotients
+#! @Group GensNextSocle4SQ
+#! @Returns a weight vector
+#! @Arguments T
+#! @Description
+#! This function returns a list of generators of <A>NextSocle</A>
+#! of its argument.
+#!
+#! In the next example, we assume that `subQ` is the subquotient constructed
+#! in the example for the <Ref Oper="AmbientQuotient"/> command, documented 
+#! above. In other words, we compute generators of <A>N</A> as above.
+#! @BeginExampleSession
+#! gap> g:= GensNextSocle(subQ);
+#![ y5*y6*v0 ]
+#! @EndExampleSession
 DeclareOperation("GensNextSocle", [IsSubQuotientWeylModule]);
 
 
