@@ -8,6 +8,7 @@ if fail = LoadPackage("AutoDoc", "2018.02.14") then
 fi;
 
 AutoDoc( rec( scaffold := true,
+         extract_examples := true,
          autodoc := rec( scan_dirs := ["autodoc_sources", "lib"] ) ) );
 QUIT;
 
